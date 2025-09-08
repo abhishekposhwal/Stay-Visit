@@ -24,7 +24,7 @@ export default function ExperiencesPage() {
         <div className="space-y-8">
           
           {!isMobile && (
-            <div className="sticky top-16 z-40 pb-4">
+            <div className="sticky top-16 z-40 pb-4 -mt-16">
               <div className="mt-8">
                   <SearchBar />
               </div>
