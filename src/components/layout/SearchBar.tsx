@@ -162,7 +162,7 @@ export function SearchBar() {
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
                             <div className="text-sm text-muted-foreground">
-                                {date?.from ? format(date.from, 'LLL dd') : <span className="text-sm">Add dates</span>}
+                                {date?.from ? format(date.from, 'LLL dd') : <span className="text-xs">Add dates</span>}
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ export function SearchBar() {
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check out</label>
                             <div className="text-sm text-muted-foreground">
-                                {date?.to ? format(date.to, 'LLL dd') : <span className="text-sm">Add dates</span>}
+                                {date?.to ? format(date.to, 'LLL dd') : <span className="text-xs">Add dates</span>}
                             </div>
                         </div>
                     </div>
@@ -290,4 +290,6 @@ export function SearchBar() {
 
     
     
+    
+
     
