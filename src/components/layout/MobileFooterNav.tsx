@@ -13,7 +13,7 @@ export function MobileFooterNav() {
     const { user } = useAuth();
 
     const navLinks = [
-        { href: "/", label: "Stays", icon: <Home className="h-6 w-6" /> },
+        { href: "/", label: "Home", icon: <Home className="h-6 w-6" /> },
         { href: "/experiences", label: "Experiences", icon: <Zap className="h-6 w-6" /> },
         { href: "/services", label: "Services", icon: <HardHat className="h-6 w-6" /> },
     ];
