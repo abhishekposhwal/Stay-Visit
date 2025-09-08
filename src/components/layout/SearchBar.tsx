@@ -12,6 +12,7 @@ import { format } from 'date-fns';
 import { Input } from '../ui/input';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface GuestCounts {
     adults: number;
@@ -34,6 +35,7 @@ export function SearchBar() {
   const [isGuestPopoverOpen, setIsGuestPopoverOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
+  const isMobile = useIsMobile();
   const destinationInputRef = useRef<HTMLInputElement>(null);
   const searchBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -52,7 +54,7 @@ export function SearchBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isDatePopoverOpen || isGuestPopoverOpen) return;
+      if (isDatePopoverOpen || isGuestPopoverOpen || isMobile) return;
       const shouldBeCompact = window.scrollY > 20;
       if (shouldBeCompact !== isCompact) {
         setIsCompact(shouldBeCompact);
@@ -61,9 +63,26 @@ export function SearchBar() {
         }
       }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isCompact, isDatePopoverOpen, isGuestPopoverOpen]);
+    if (!isMobile) {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+    
+    return () => {
+        if (!isMobile) {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }
+  }, [isCompact, isDatePopoverOpen, isGuestPopoverOpen, isMobile]);
+
+  useEffect(() => {
+    if(isMobile) {
+        setIsCompact(true);
+        setIsActive(false);
+    } else {
+        const shouldBeCompact = window.scrollY > 20;
+        setIsCompact(shouldBeCompact);
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -74,6 +93,9 @@ export function SearchBar() {
         if (searchBarRef.current && !searchBarRef.current.contains(event.target as Node)) {
             if (isActive) {
                 setIsActive(false);
+                if (isMobile) {
+                    setIsCompact(true);
+                }
             }
         }
     };
@@ -82,7 +104,7 @@ export function SearchBar() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isActive]);
+  }, [isActive, isMobile]);
 
   const totalGuests = guests.adults + guests.children;
   const guestDisplay = totalGuests > 0 ? `${totalGuests} guest${totalGuests > 1 ? 's' : ''}`: 'Add guests';
