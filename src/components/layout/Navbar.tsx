@@ -55,9 +55,6 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
           {isMobileSearchVisible ? (
              <div className="flex items-center w-full gap-2 md:hidden">
-                <Button variant="ghost" size="icon" onClick={() => setIsMobileSearchVisible(false)}>
-                    <ArrowLeft className="h-6 w-6" />
-                </Button>
                 <Input
                     placeholder="Search destinations"
                     value={destination}
@@ -68,6 +65,9 @@ export function Navbar() {
                 />
                 <Button size="icon" onClick={handleSearch} className="rounded-full">
                     <Search className="h-5 w-5" />
+                </Button>
+                <Button variant="ghost" size="icon" onClick={() => setIsMobileSearchVisible(false)} className="rounded-full">
+                    <ArrowLeft className="h-6 w-6" />
                 </Button>
             </div>
           ) : (
