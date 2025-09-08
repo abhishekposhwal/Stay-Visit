@@ -57,7 +57,7 @@ export default function InboxPage() {
         {/* Left Sidebar: Conversations List */}
         <aside className="lg:col-span-1 border-r flex flex-col">
           <div className="p-4 border-b">
-            <h1 className="text-2xl font-bold">Inbox</h1>
+            <h1 className="text-xl font-bold">Inbox</h1>
             <div className="relative mt-4">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input placeholder="Search inbox" className="pl-10" />
@@ -80,7 +80,7 @@ export default function InboxPage() {
                   </Avatar>
                   <div className="flex-grow truncate">
                     <div className="flex justify-between items-center">
-                      <h3 className="font-semibold truncate">{conv.name}</h3>
+                      <h3 className="font-semibold truncate text-sm">{conv.name}</h3>
                       <span className="text-xs text-muted-foreground">{conv.timestamp}</span>
                     </div>
                     <p className="text-sm text-muted-foreground truncate">{conv.lastMessage}</p>
@@ -105,7 +105,7 @@ export default function InboxPage() {
                   <AvatarImage src={selectedConversation.avatar} alt={selectedConversation.name} />
                   <AvatarFallback>{selectedConversation.name.charAt(0)}</AvatarFallback>
                 </Avatar>
-                <h2 className="text-lg font-semibold">{selectedConversation.name}</h2>
+                <h2 className="text-base font-semibold">{selectedConversation.name}</h2>
               </div>
               <div className="flex-grow p-6 overflow-y-auto space-y-6">
                 {selectedConversation.messages.map(msg => (
@@ -115,7 +115,7 @@ export default function InboxPage() {
                       "rounded-2xl px-4 py-2 max-w-sm",
                       msg.sender === 'You' ? 'bg-primary-gradient text-white rounded-br-none' : 'bg-background rounded-bl-none border'
                     )}>
-                      <p>{msg.text}</p>
+                      <p className="text-sm">{msg.text}</p>
                       <p className={cn("text-xs mt-1", msg.sender === 'You' ? 'text-white/70' : 'text-muted-foreground')}>{msg.time}</p>
                     </div>
                   </div>
