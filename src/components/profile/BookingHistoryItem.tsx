@@ -40,7 +40,7 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
           <p><strong>Total paid:</strong> ₹{total.toLocaleString('en-IN')}</p>
         </div>
         <div className="mt-4 flex gap-2">
-            <Button asChild variant="outline">
+            <Button asChild>
                 <Link href={`/listings/${property.id}`}>View Property</Link>
             </Button>
             <Button asChild variant="outline">
