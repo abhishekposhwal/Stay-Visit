@@ -1,6 +1,6 @@
 
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
+import { getAuth, type Auth } from "firebase/auth";
 
 // As this is a public configuration, it's safe to be exposed here
 const firebaseConfig = {
@@ -12,8 +12,19 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
+let app: FirebaseApp;
+let auth: Auth;
+
+// Initialize Firebase only if all config values are present
+if (Object.values(firebaseConfig).every(value => value)) {
+    app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    auth = getAuth(app);
+} else {
+    console.warn("Firebase config is incomplete. Firebase is not initialized.");
+    // Provide dummy objects if Firebase is not initialized
+    app = {} as FirebaseApp;
+    auth = {} as Auth;
+}
+
 
 export { app, auth };

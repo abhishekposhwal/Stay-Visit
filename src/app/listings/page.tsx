@@ -7,7 +7,7 @@ interface ListingsPageProps {
 }
 
 export default function ListingsPage({ searchParams }: ListingsPageProps) {
-  const city = typeof searchParams.city === 'string' ? searchParams.city : undefined;
+  const city = searchParams?.city && typeof searchParams.city === 'string' ? searchParams.city : undefined;
 
   const filteredProperties = city
     ? properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase()))

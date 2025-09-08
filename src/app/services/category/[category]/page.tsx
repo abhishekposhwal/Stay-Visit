@@ -2,7 +2,6 @@
 import ListingsGrid from '@/components/listings/ListingsGrid';
 import { services } from '@/lib/services-data';
 import { notFound } from 'next/navigation';
-import { use } from 'react';
 
 interface ServiceCategoryPageProps {
   params: {
