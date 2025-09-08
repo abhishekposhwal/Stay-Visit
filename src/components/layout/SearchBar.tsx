@@ -97,7 +97,7 @@ export function SearchBar() {
     <div className="container mx-auto flex flex-col items-center justify-center text-center p-4">
         <div
           className={cn(
-            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out max-w-5xl"
+            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center p-2 text-foreground transition-all duration-500 ease-in-out max-w-5xl"
           )}
         >
             <div className="flex-[1.5] relative pr-4">
@@ -111,7 +111,7 @@ export function SearchBar() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4 text-sm"
+                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4 text-xs"
                 />
             </div>
 
