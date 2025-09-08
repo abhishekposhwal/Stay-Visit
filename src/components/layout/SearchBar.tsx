@@ -12,7 +12,6 @@ import { format } from 'date-fns';
 import { Input } from '../ui/input';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 interface GuestCounts {
     adults: number;
