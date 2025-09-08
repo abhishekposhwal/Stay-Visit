@@ -53,7 +53,7 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/profile" className="block px-3 py-1 rounded-lg font-semibold">
+                        <Link href="/profile" className="block px-3 py-1 rounded-lg font-semibold bg-gray-100">
                             About me
                         </Link>
                         <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
@@ -120,7 +120,7 @@ export default function ProfilePage() {
                         </div>
                     </div>
 
-                    <Button className="mt-6">Get started</Button>
+                    <Button variant="default" size="lg" className="mt-6">Get started</Button>
                 </div>
             </main>
         </div>

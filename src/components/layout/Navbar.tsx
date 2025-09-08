@@ -83,9 +83,9 @@ export function Navbar() {
                 </Link>
             </div>
             
-            <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-bold">
+            <nav className="hidden md:flex items-center justify-center space-x-1 text-sm">
             {navLinks.map((link) => (
-                <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent">
+                <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent text-base">
                     <Link href={link.href} className="flex items-center gap-1">
                         {link.icon}
                         <span>{link.label}</span>
@@ -102,7 +102,7 @@ export function Navbar() {
                 </div>
             
                 <Link href="/work-in-progress" className="hidden md:block">
-                <Button variant="ghost" className="transition-colors font-bold text-foreground hover:bg-accent/10 rounded-full">
+                <Button variant="ghost" className="transition-colors text-foreground hover:bg-accent/10 rounded-full text-base">
                     Become a host
                 </Button>
                 </Link>

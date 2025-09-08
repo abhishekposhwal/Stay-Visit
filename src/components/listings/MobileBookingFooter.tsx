@@ -25,7 +25,7 @@ export function MobileBookingFooter({ property }: MobileBookingFooterProps) {
                 </div>
             </SheetTrigger>
             <Link href="/work-in-progress">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button size="lg">
                 Reserve
               </Button>
             </Link>

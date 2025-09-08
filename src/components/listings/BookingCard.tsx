@@ -182,7 +182,7 @@ export function BookingCard({ property }: BookingCardProps) {
       </CardContent>
       <CardFooter className="flex-col items-start space-y-4 p-2">
           <Link href="/work-in-progress" className="w-full">
-            <Button size="lg" className="w-full h-12 text-lg bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button size="lg" className="w-full">
               Reserve
             </Button>
           </Link>
