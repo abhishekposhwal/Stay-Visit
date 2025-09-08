@@ -102,7 +102,7 @@ export function Navbar() {
                 </div>
             
                 <Link href="/work-in-progress" className="hidden md:block">
-                <Button variant="ghost" className="transition-colors text-foreground hover:bg-accent/10 rounded-full text-base">
+                <Button variant="ghost" className="transition-colors text-foreground rounded-full text-base">
                     Become a host
                 </Button>
                 </Link>
