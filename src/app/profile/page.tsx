@@ -53,13 +53,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/profile" className="block px-3 py-2 rounded-lg hover:bg-muted font-semibold">
+                        <Link href="/profile" className="block px-3 rounded-lg hover:bg-muted font-semibold">
                             About me
                         </Link>
-                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 rounded-lg hover:bg-muted">
                             Past trips
                         </Link>
-                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 rounded-lg hover:bg-muted">
                             Connections
                         </Link>
                     </nav>
@@ -77,13 +77,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 rounded-lg hover:bg-muted">
                             Account settings
                         </Link>
-                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 rounded-lg hover:bg-muted">
                             Get help
                         </Link>
-                        <button onClick={signOut} className="w-full text-left px-3 py-2 rounded-lg hover:bg-muted text-destructive">
+                        <button onClick={signOut} className="w-full text-left px-3 rounded-lg hover:bg-muted text-destructive">
                             Log out
                         </button>
                     </nav>
@@ -103,16 +103,16 @@ export default function ProfilePage() {
                     
                     <div className="space-y-4">
                         <div>
-                            <h3 className="font-semibold">Email address</h3>
-                            <p className="text-muted-foreground">{user.email}</p>
+                            <h3 className="font-semibold text-sm">Email address</h3>
+                            <p className="text-muted-foreground text-sm">{user.email}</p>
                         </div>
                          <div>
-                            <h3 className="font-semibold">Phone number</h3>
-                            <p className="text-muted-foreground">Not provided</p>
+                            <h3 className="font-semibold text-sm">Phone number</h3>
+                            <p className="text-muted-foreground text-sm">Not provided</p>
                         </div>
                          <div>
-                            <h3 className="font-semibold">Identity verification</h3>
-                            <p className="text-muted-foreground">Not verified</p>
+                            <h3 className="font-semibold text-sm">Identity verification</h3>
+                            <p className="text-muted-foreground text-sm">Not verified</p>
                         </div>
                     </div>
 
