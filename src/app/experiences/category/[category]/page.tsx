@@ -2,6 +2,7 @@
 import ListingsGrid from '@/components/listings/ListingsGrid';
 import { experiences } from '@/lib/experiences-data';
 import { notFound } from 'next/navigation';
+import { use } from 'react';
 
 interface ExperienceCategoryPageProps {
   params: {

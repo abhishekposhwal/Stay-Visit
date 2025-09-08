@@ -9,7 +9,7 @@ interface ListingsPageProps {
 }
 
 export default function ListingsPage({ searchParams }: ListingsPageProps) {
-  const city = searchParams.city;
+  const city = searchParams?.city;
 
   const filteredProperties = city
     ? properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase()))
