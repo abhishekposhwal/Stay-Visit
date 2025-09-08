@@ -31,7 +31,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
-      <div className="container mx-auto px-4 pt-8">
+      <div className="container mx-auto px-8 pt-8">
         <div className="mb-4">
           <h1 className="text-3xl md:text-4xl font-bold">{property.title}</h1>
           <div className="flex items-center space-x-4 text-muted-foreground mt-2">
