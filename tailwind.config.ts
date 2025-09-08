@@ -18,7 +18,7 @@ export default {
     extend: {
       backgroundImage: {
         'primary-gradient': 'linear-gradient(208deg, rgba(131, 58, 180, 1) 0%, rgba(255, 23, 23, 1) 40%, rgba(252, 176, 69, 1) 100%)',
-        'primary-gradient-hover': 'linear-gradient(208deg, rgba(131, 58, 180, 0.9) 0%, rgba(255, 23, 23, 0.9) 40%, rgba(252, 176, 69, 0.9) 100%)',
+        'primary-gradient-hover': 'linear-gradient(208deg, rgba(131, 58, 180, 1) 0%, rgba(255, 23, 23, 1) 40%, rgba(252, 176, 69, 1) 100%)',
       },
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
