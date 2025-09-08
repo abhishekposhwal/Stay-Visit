@@ -23,7 +23,7 @@ export function MobileFooterNav() {
         { href: "/", label: "Stays", icon: <Home className="h-6 w-6" /> },
         { href: "/experiences", label: "Experiences", icon: <Zap className="h-6 w-6" /> },
         { href: "/wishlist", label: "Wishlist", icon: <Heart className="h-6 w-6" /> },
-        { href: user ? "/work-in-progress" : "/login", label: user ? "Profile" : "Log in", icon: user ? <User className="h-6 w-6" /> : <LogIn className="h-6 w-6" /> },
+        { href: user ? "/profile" : "/login", label: user ? "Profile" : "Log in", icon: user ? <User className="h-6 w-6" /> : <LogIn className="h-6 w-6" /> },
     ];
 
     const handleSearch = () => {
