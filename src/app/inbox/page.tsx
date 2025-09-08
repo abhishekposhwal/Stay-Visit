@@ -52,7 +52,7 @@ export default function InboxPage() {
   const selectedConversation = mockConversations.find(c => c.id === selectedConversationId);
 
   return (
-    <div className="container mx-auto h-[calc(100vh-140px)]">
+    <div className="container mx-auto h-[calc(100vh-140px)] pt-8">
       <div className="grid grid-cols-1 lg:grid-cols-4 h-full border rounded-lg overflow-hidden">
         {/* Left Sidebar: Conversations List */}
         <aside className="lg:col-span-1 border-r flex flex-col">
