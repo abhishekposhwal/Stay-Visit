@@ -46,7 +46,7 @@ export function Navbar() {
             </Link>
           </div>
         
-        <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium">
+        <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-bold">
           {navLinks.map((link) => (
             <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent">
                 <Link href={link.href} className="flex items-center gap-1">
