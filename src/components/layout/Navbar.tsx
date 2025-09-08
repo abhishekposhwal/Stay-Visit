@@ -143,6 +143,12 @@ export function Navbar() {
                         ) : (
                         <>
                             <DropdownMenuItem asChild>
+                                <Link href="/wishlist">
+                                    <Heart className="mr-2" /> Wishlist
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem asChild>
                             <Link href="/login"><LogIn className="mr-2"/> Login</Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
