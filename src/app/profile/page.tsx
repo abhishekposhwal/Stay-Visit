@@ -116,13 +116,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <button onClick={() => setActiveTab('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'about' && 'bg-gray-100')}>
+                        <button onClick={() => setActiveTab('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'about' && 'font-semibold')}>
                             About me
                         </button>
-                        <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'history' && 'bg-gray-100')}>
+                        <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'history' && 'font-semibold')}>
                             Past trips
                         </button>
-                        <button onClick={() => setActiveTab('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'connections' && 'bg-gray-100')}>
+                        <button onClick={() => setActiveTab('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'connections' && 'font-semibold')}>
                             Connections
                         </button>
                     </nav>
@@ -239,3 +239,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
