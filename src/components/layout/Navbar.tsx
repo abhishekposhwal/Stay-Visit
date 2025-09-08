@@ -96,7 +96,7 @@ export function Navbar() {
 
             <div className="flex items-center justify-end flex-1 md:gap-4">
                 <div className="md:hidden">
-                    <Button variant="ghost" size="icon" onClick={() => setIsMobileSearchVisible(true)}>
+                    <Button variant="ghost" size="icon" onClick={() => setIsMobileSearchVisible(true)} className="rounded-full">
                         <Search className="h-6 w-6" />
                     </Button>
                 </div>
