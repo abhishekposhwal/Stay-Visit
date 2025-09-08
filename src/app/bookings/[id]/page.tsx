@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Star, Calendar, MapPin, Users } from 'lucide-react';
+import { Star, Calendar, MapPin, Users, IndianRupee } from 'lucide-react';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 
@@ -65,21 +65,27 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
                     <Image src={booking.image} alt={booking.title} layout="fill" objectFit="cover" data-ai-hint="property exterior" />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mb-8">
-                    <div className="p-4 rounded-lg bg-muted/50">
-                        <Calendar className="mx-auto mb-2 text-accent" />
-                        <h3 className="font-semibold">Dates</h3>
-                        <p className="text-muted-foreground">{booking.dates}</p>
+                <div className="space-y-6 mb-8">
+                    <div className="flex items-center gap-4">
+                        <Calendar className="w-6 h-6 text-accent" />
+                        <div>
+                            <h3 className="font-semibold text-lg">Dates</h3>
+                            <p className="text-muted-foreground">{booking.dates}</p>
+                        </div>
                     </div>
-                    <div className="p-4 rounded-lg bg-muted/50">
-                        <Users className="mx-auto mb-2 text-accent" />
-                        <h3 className="font-semibold">Guests</h3>
-                        <p className="text-muted-foreground">{booking.guests}</p>
+                    <div className="flex items-center gap-4">
+                        <Users className="w-6 h-6 text-accent" />
+                        <div>
+                            <h3 className="font-semibold text-lg">Guests</h3>
+                            <p className="text-muted-foreground">{booking.guests}</p>
+                        </div>
                     </div>
-                    <div className="p-4 rounded-lg bg-muted/50">
-                        <Star className="mx-auto mb-2 text-accent" />
-                        <h3 className="font-semibold">Total Price</h3>
-                        <p className="text-muted-foreground">{booking.price}</p>
+                    <div className="flex items-center gap-4">
+                        <IndianRupee className="w-6 h-6 text-accent" />
+                        <div>
+                            <h3 className="font-semibold text-lg">Total Price</h3>
+                            <p className="text-muted-foreground">{booking.price}</p>
+                        </div>
                     </div>
                 </div>
 
