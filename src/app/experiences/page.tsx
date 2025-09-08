@@ -18,7 +18,7 @@ export default function ExperiencesPage() {
     }, []);
 
     return (
-        <div className="mx-auto px-6 py-8 pt-24 space-y-12 max-w-7xl">
+        <div className="container mx-auto px-4 py-8 pt-24 space-y-12">
           <section>
             <h2 className="text-3xl font-bold my-8">
               <Link href="/experiences/category/Originals" className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">

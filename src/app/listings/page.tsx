@@ -1,4 +1,3 @@
-
 import ListingsGrid from '@/components/listings/ListingsGrid';
 import { properties } from '@/lib/data';
 
@@ -18,7 +17,7 @@ export default function ListingsPage({ searchParams }: ListingsPageProps) {
   const pageTitle = city ? `Stays in ${city}` : 'Explore All Stays';
   
   return (
-    <div className="mx-auto px-4 py-8 pt-24 max-w-7xl">
+    <div className="container mx-auto px-4 py-8 pt-24">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">{pageTitle}</h1>
       </div>

@@ -11,11 +11,11 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useToast } from "@/hooks/use-toast";
+import { logIn, logInWithGoogle } from "@/services/auth";
 import Link from "next/link"
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { logIn, logInWithGoogle } from '@/services/auth';
-import { useToast } from '@/hooks/use-toast';
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -27,26 +27,39 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await logIn(email, password);
-      toast({ title: 'Logged in successfully!' });
       router.push('/');
+      toast({
+        title: "Logged In",
+        description: "Welcome back!",
+      });
     } catch (error: any) {
-      toast({ title: 'Error logging in', description: error.message, variant: 'destructive' });
+      toast({
+        title: "Login Failed",
+        description: error.message,
+        variant: "destructive",
+      });
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
-        await logInWithGoogle();
-        toast({ title: 'Logged in successfully!' });
-        router.push('/');
+      await logInWithGoogle();
+      router.push('/');
+      toast({
+        title: "Logged In",
+        description: "Welcome back!",
+      });
     } catch (error: any) {
-        toast({ title: 'Error with Google login', description: error.message, variant: 'destructive' });
+      toast({
+        title: "Login Failed",
+        description: error.message,
+        variant: "destructive",
+      });
     }
   };
 
-
   return (
-    <div className="flex items-center justify-center py-24">
+    <div className="flex items-center justify-center py-24 px-15">
       <Card className="mx-auto max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>

@@ -111,7 +111,7 @@ export function SearchBar() {
   const showCompact = isCompact && !isActive;
 
   return (
-    <div className="mx-auto flex flex-col items-center justify-center text-center p-4 max-w-7xl" ref={searchBarRef}>
+    <div className="container mx-auto flex flex-col items-center justify-center text-center p-4" ref={searchBarRef}>
         <div
           className={cn(
             "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out",

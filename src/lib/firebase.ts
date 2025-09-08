@@ -3,13 +3,12 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  projectId: "wanderwise-lxdkp",
-  appId: "1:951287364654:web:d60dbe555b906f615ab3bf",
-  storageBucket: "wanderwise-lxdkp.firebasestorage.app",
-  apiKey: "AIzaSyDkI00XHyRL8EAikq7h1OrBRHsb4WTtwf4",
-  authDomain: "wanderwise-lxdkp.firebaseapp.com",
-  measurementId: "",
-  messagingSenderId: "951287364654"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

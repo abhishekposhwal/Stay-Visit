@@ -35,20 +35,19 @@ export function Navbar() {
   const { toast } = useToast();
 
   const handleLogout = async () => {
-    try {
-      await logOut();
-      toast({ title: 'Logged out successfully!' });
-      router.push('/');
-    } catch (error: any) {
-      toast({ title: 'Error logging out', description: error.message, variant: 'destructive' });
-    }
-  };
+    await logOut();
+    router.push('/');
+    toast({
+      title: "Logged Out",
+      description: "You have been successfully logged out.",
+    });
+  }
 
   return (
     <header className={cn(
         "sticky top-0 z-50 w-full border-b transition-colors duration-300 bg-background shadow-sm"
     )}>
-      <div className="mx-auto flex h-16 items-center justify-between px-4 max-w-7xl">
+      <div className="container flex h-16 items-center justify-between mx-auto px-6">
           <div className="flex items-center flex-1">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Home className={cn("h-6 w-6 text-accent transition-colors")} />
@@ -77,8 +76,7 @@ export function Navbar() {
                 Become a host
               </Button>
             </Link>
-            
-            {!loading && (
+
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="relative h-10 w-10 rounded-full">
@@ -89,45 +87,48 @@ export function Navbar() {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end">
-                    <DropdownMenuLabel>{user ? `Welcome, ${user.displayName || user.email}` : 'My Account'}</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
-                        <Link href="/wishlist">
-                            <Heart className="mr-2" /> Wishlist ({wishlist.length})
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                        <Link href="/recommendations">
-                            <Sparkles className="mr-2" /> For You
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    {user ? (
-                      <>
-                        <DropdownMenuItem>
-                            <UserIcon className="mr-2" /> Profile
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <MessageSquare className="mr-2" /> Inbox
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={handleLogout}>
-                            <LogOut className="mr-2" /> Logout
-                        </DropdownMenuItem>
-                      </>
-                    ) : (
-                      <>
-                        <DropdownMenuItem asChild>
-                          <Link href="/login"><LogIn className="mr-2"/> Login</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/signup"><UserPlus className="mr-2"/> Sign up</Link>
-                        </DropdownMenuItem>
-                      </>
-                    )}
+                  {loading ? <DropdownMenuItem>Loading...</DropdownMenuItem> : (
+                    <>
+                      {user ? (
+                        <>
+                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem asChild>
+                              <Link href="/wishlist">
+                                  <Heart className="mr-2" /> Wishlist ({wishlist.length})
+                              </Link>
+                          </DropdownMenuItem>
+                          <DropdownMenuItem asChild>
+                              <Link href="/recommendations">
+                                  <Sparkles className="mr-2" /> For You
+                              </Link>
+                          </DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem>
+                              <UserIcon className="mr-2" /> Profile
+                          </DropdownMenuItem>
+                          <DropdownMenuItem>
+                              <MessageSquare className="mr-2" /> Inbox
+                          </DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                           <DropdownMenuItem onClick={handleLogout}>
+                              <LogOut className="mr-2" /> Logout
+                          </DropdownMenuItem>
+                        </>
+                      ) : (
+                        <>
+                          <DropdownMenuItem asChild>
+                            <Link href="/login"><LogIn className="mr-2"/> Login</Link>
+                          </DropdownMenuItem>
+                          <DropdownMenuItem asChild>
+                            <Link href="/signup"><UserPlus className="mr-2"/> Sign up</Link>
+                          </DropdownMenuItem>
+                        </>
+                      )}
+                    </>
+                  )}
                 </DropdownMenuContent>
             </DropdownMenu>
-            )}
         </div>
       </div>
     </header>
