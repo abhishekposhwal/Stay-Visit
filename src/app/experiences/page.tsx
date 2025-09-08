@@ -6,14 +6,10 @@ import type { Property } from '@/lib/types';
 import { useEffect, useState } from 'react';
 import { experiences } from '@/lib/experiences-data';
 import Link from 'next/link';
-import { SearchBar } from '@/components/layout/SearchBar';
-import { useIsMobile } from '@/hooks/use-mobile';
-
 
 export default function ExperiencesPage() {
     const [originalProperties, setOriginalProperties] = useState<Property[]>([]);
     const [popularProperties, setPopularProperties] = useState<Property[]>([]);
-    const isMobile = useIsMobile();
 
     useEffect(() => {
         setOriginalProperties(experiences.filter(p => p.category === 'Originals'));
@@ -22,21 +18,7 @@ export default function ExperiencesPage() {
 
     return (
         <div className="space-y-8">
-            <header className="relative pt-16">
-                <div className="relative z-10 text-center">
-                
-                </div>
-            </header>
-          
-            {!isMobile && (
-                <div className="sticky top-16 z-40 pb-4 -mt-16">
-                    <div className="mt-8">
-                        <SearchBar />
-                    </div>
-                </div>
-            )}
-
-            <div className="container mx-auto px-4 space-y-12 pt-16">
+            <div className="container mx-auto px-4 space-y-12 pt-24">
                 <section>
                 <h2 className="text-3xl font-bold my-8">
                     <Link href="/experiences/category/Originals" className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">

@@ -9,6 +9,7 @@ import { WishlistProvider } from '@/context/WishlistProvider';
 import { MobileFooterNav } from '@/components/layout/MobileFooterNav';
 import { AuthProvider } from '@/context/AuthContext';
 import './globals.css';
+import { SearchBar } from '@/components/layout/SearchBar';
 
 
 const inter = Inter({
@@ -41,7 +42,12 @@ export default function RootLayout({
           <WishlistProvider>
             <div className="flex min-h-screen flex-col">
               <Navbar />
-              <main className="-mt-16 flex-grow pb-24 md:pb-0">{children}</main>
+              <div className="hidden md:block sticky top-16 z-40 pb-4 bg-background border-b">
+                <div className="-mt-4">
+                  <SearchBar />
+                </div>
+              </div>
+              <main className="flex-grow pb-24 md:pb-0">{children}</main>
               <Footer />
             </div>
             <MobileFooterNav />

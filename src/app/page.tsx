@@ -4,11 +4,8 @@
 
 import { properties } from '@/lib/data';
 import ListingsGrid from '@/components/listings/ListingsGrid';
-import { SearchBar } from '@/components/layout/SearchBar';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Property } from '@/lib/types';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { Playfair_Display, Inter } from 'next/font/google';
 
 const CITIES = [
@@ -41,29 +38,13 @@ const inter = Inter({
 });
 
 export default function Home() {
-  const isMobile = useIsMobile();
-
   const getPropertiesByCity = (city: string): Property[] => {
     return properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase()));
   }
 
   return (
     <div className="space-y-8">
-      <header className="relative pt-16">
-        <div className="relative z-10 text-center">
-          
-        </div>
-      </header>
-      
-      {!isMobile && (
-        <div className="sticky top-16 z-40 pb-4 -mt-16">
-          <div className="mt-8">
-              <SearchBar />
-          </div>
-        </div>
-      )}
-      
-      <div className="container mx-auto px-4 space-y-12 pt-16">
+      <div className="container mx-auto px-4 space-y-12 pt-8">
         {CITIES.map(city => {
           const cityProperties = getPropertiesByCity(city);
           if (cityProperties.length === 0) return null;
