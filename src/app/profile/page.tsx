@@ -69,7 +69,7 @@ export default function ProfilePage() {
                     <div className="p-4 rounded-lg bg-muted/50 text-center">
                         <h3 className="font-bold">Become a host</h3>
                         <p className="text-sm text-muted-foreground mt-1 mb-3">It’s easy to start hosting and earn extra income.</p>
-                        <Button asChild size="sm">
+                        <Button asChild>
                             <Link href="/work-in-progress">Get started</Link>
                         </Button>
                     </div>
@@ -120,7 +120,7 @@ export default function ProfilePage() {
                         </div>
                     </div>
 
-                    <Button variant="default" size="lg" className="mt-6">Get started</Button>
+                    <Button variant="default" className="mt-6">Get started</Button>
                 </div>
             </main>
         </div>

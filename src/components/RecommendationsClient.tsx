@@ -9,6 +9,7 @@ import ListingsGrid from './listings/ListingsGrid';
 import { Button } from './ui/button';
 import { Sparkles, Heart } from 'lucide-react';
 import { Skeleton } from './ui/skeleton';
+import Link from 'next/link';
 
 interface RecommendationsClientProps {
   allProperties: Property[];
@@ -123,7 +124,7 @@ export default function RecommendationsClient({ allProperties }: Recommendations
             <h2 className="mt-6 text-xl font-bold">Start your Wishlist</h2>
             <p className="mt-2 text-muted-foreground">As you browse, tap the heart on any stay to save it here.</p>
             <Button asChild className="mt-4">
-                <a href="/listings">Explore Stays</a>
+                <Link href="/listings">Explore Stays</Link>
             </Button>
         </div>
       )}

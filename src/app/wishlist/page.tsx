@@ -6,6 +6,7 @@ import { properties } from '@/lib/data';
 import ListingsGrid from '@/components/listings/ListingsGrid';
 import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function WishlistPage() {
   const { wishlist } = useWishlist();
@@ -26,7 +27,7 @@ export default function WishlistPage() {
             <h2 className="mt-6 text-xl font-bold">Your wishlist is empty</h2>
             <p className="mt-2 text-muted-foreground">As you browse, tap the heart on any stay to save it here.</p>
             <Button asChild className="mt-4">
-                <a href="/listings">Explore Stays</a>
+                <Link href="/listings">Explore Stays</Link>
             </Button>
         </div>
       )}
