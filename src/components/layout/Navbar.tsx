@@ -48,7 +48,7 @@ export function Navbar() {
     <header className={cn(
         "sticky top-0 z-50 w-full border-b transition-colors duration-300 bg-background shadow-sm"
     )}>
-      <div className="container mx-auto flex h-16 items-center justify-between">
+      <div className="mx-auto flex h-16 items-center justify-between px-4 max-w-7xl">
           <div className="flex items-center flex-1">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Home className={cn("h-6 w-6 text-accent transition-colors")} />

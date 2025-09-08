@@ -31,7 +31,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-24">
+      <div className="mx-auto px-4 py-24 max-w-7xl">
         <div className="mb-4">
           <h1 className="text-3xl md:text-4xl font-bold">{property.title}</h1>
           <div className="flex items-center space-x-4 text-muted-foreground mt-2">

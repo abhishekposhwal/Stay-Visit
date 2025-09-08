@@ -13,7 +13,7 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="container mx-auto px-6 py-8 pt-24 space-y-12">
+    <div className="mx-auto px-6 py-8 pt-24 space-y-12 max-w-7xl">
         <h1 className="text-4xl font-bold text-center">Services for every need</h1>
       {SERVICE_CATEGORIES.map(category => {
         const categoryServices = getServicesByCategory(category, 4);
