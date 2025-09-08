@@ -108,7 +108,11 @@ export default function ProfilePage() {
                         </div>
                          <div>
                             <h3 className="font-semibold text-sm">Phone number</h3>
-                            <p className="text-muted-foreground text-sm">Not provided</p>
+                            <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                        </div>
+                         <div>
+                            <h3 className="font-semibold text-sm">Address</h3>
+                            <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
                         </div>
                          <div>
                             <h3 className="font-semibold text-sm">Identity verification</h3>
