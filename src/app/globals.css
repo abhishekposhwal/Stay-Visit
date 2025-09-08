@@ -116,10 +116,10 @@
   }
   
   .card-content {
-    padding: 12px 4px;
+    padding: 8px 2px;
     display: flex;
     flex-direction: column;
-    height: 90px; 
+    height: 80px; 
   }
 
   .card-title {
