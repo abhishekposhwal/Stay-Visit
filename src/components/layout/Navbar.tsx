@@ -87,8 +87,10 @@ export function Navbar() {
                         <DropdownMenuItem asChild>
                            <Link href="/profile"><UserIcon className="mr-2" /> Profile</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <MessageSquare className="mr-2" /> Inbox
+                        <DropdownMenuItem asChild>
+                            <Link href="/work-in-progress">
+                                <MessageSquare className="mr-2" /> Inbox
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={signOut}>
