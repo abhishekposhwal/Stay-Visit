@@ -38,7 +38,6 @@ export function SearchBar() {
   const destinationInputRef = useRef<HTMLInputElement>(null);
   const searchBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const isMobile = useIsMobile();
 
   const handleSearch = () => {
     if (destination) {
@@ -109,8 +108,6 @@ export function SearchBar() {
     }, 100);
   };
   
-  if (isMobile) return null;
-
   const showCompact = isCompact && !isActive;
 
   return (
