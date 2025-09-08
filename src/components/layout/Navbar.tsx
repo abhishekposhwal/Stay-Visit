@@ -46,7 +46,7 @@ export function Navbar() {
         
         <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium">
           {navLinks.map((link) => (
-            <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent hover:text-accent">
+            <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent">
                 <Link href={link.href} className="flex items-center gap-1">
                     {link.icon}
                     <span>{link.label}</span>
@@ -77,11 +77,6 @@ export function Navbar() {
                     <DropdownMenuItem asChild>
                         <Link href="/wishlist">
                             <Heart className="mr-2" /> Wishlist ({wishlist.length})
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                        <Link href="/recommendations">
-                            <Sparkles className="mr-2" /> For You
                         </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
