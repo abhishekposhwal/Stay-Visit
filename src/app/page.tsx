@@ -77,7 +77,7 @@ export default function Home() {
                 </svg>
               </Link>
             </h2>
-            <div>
+            <div className="flex justify-center">
               <ListingsGrid listings={cityProperties} layout="horizontal" />
             </div>
           </section>
