@@ -84,8 +84,8 @@ export function Navbar() {
                             </Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            <UserIcon className="mr-2" /> Profile
+                        <DropdownMenuItem asChild>
+                           <Link href="/profile"><UserIcon className="mr-2" /> Profile</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <MessageSquare className="mr-2" /> Inbox
