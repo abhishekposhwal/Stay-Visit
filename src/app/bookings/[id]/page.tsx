@@ -65,26 +65,26 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
                     <Image src={booking.image} alt={booking.title} layout="fill" objectFit="cover" data-ai-hint="property exterior" />
                 </div>
 
-                <div className="space-y-6 mb-8">
-                    <div className="flex items-center gap-4">
-                        <Calendar className="w-6 h-6 text-accent" />
+                <div className="space-y-4 mb-8">
+                    <div className="flex items-center gap-3">
+                        <Calendar className="w-5 h-5 text-accent" />
                         <div>
-                            <h3 className="font-semibold text-lg">Dates</h3>
-                            <p className="text-muted-foreground">{booking.dates}</p>
+                            <h3 className="font-semibold text-base">Dates</h3>
+                            <p className="text-sm text-muted-foreground">{booking.dates}</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <Users className="w-6 h-6 text-accent" />
+                    <div className="flex items-center gap-3">
+                        <Users className="w-5 h-5 text-accent" />
                         <div>
-                            <h3 className="font-semibold text-lg">Guests</h3>
-                            <p className="text-muted-foreground">{booking.guests}</p>
+                            <h3 className="font-semibold text-base">Guests</h3>
+                            <p className="text-sm text-muted-foreground">{booking.guests}</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <IndianRupee className="w-6 h-6 text-accent" />
+                    <div className="flex items-center gap-3">
+                        <IndianRupee className="w-5 h-5 text-accent" />
                         <div>
-                            <h3 className="font-semibold text-lg">Total Price</h3>
-                            <p className="text-muted-foreground">{booking.price}</p>
+                            <h3 className="font-semibold text-base">Total Price</h3>
+                            <p className="text-sm text-muted-foreground">{booking.price}</p>
                         </div>
                     </div>
                 </div>
