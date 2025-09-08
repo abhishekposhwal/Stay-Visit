@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { HardHat, Heart, Home, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, ArrowLeft } from 'lucide-react';
+import { HardHat, Heart, Home, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, X } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistProvider';
 import { cn } from '@/lib/utils';
 import React, { useState } from 'react';
@@ -67,7 +67,7 @@ export function Navbar() {
                     <Search className="h-5 w-5" />
                 </Button>
                 <Button variant="ghost" size="icon" onClick={() => setIsMobileSearchVisible(false)} className="rounded-full">
-                    <ArrowLeft className="h-6 w-6" />
+                    <X className="h-6 w-6" />
                 </Button>
             </div>
           ) : (
