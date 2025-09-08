@@ -18,6 +18,12 @@ export function MobileFooterNav() {
         { href: "/services", label: "Services", icon: <HardHat className="h-6 w-6" /> },
     ];
 
+    const isDetailPage = /^\/(listings|experiences|services)\/.+/.test(pathname);
+
+    if (isDetailPage) {
+        return null;
+    }
+
     return (
         <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t shadow-lg z-50">
             <div className="flex justify-around items-center h-16">
