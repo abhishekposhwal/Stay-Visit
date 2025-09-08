@@ -13,7 +13,7 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 pt-8 space-y-12">
+    <div className="container mx-auto px-4 pb-8 space-y-12">
       {SERVICE_CATEGORIES.map(category => {
         const categoryServices = getServicesByCategory(category, 4);
         if (categoryServices.length === 0) return null;
