@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -45,7 +46,7 @@ export function Navbar() {
 
   return (
     <header className={cn(
-        "sticky top-0 z-50 w-full border-b transition-colors duration-300 bg-background shadow-sm"
+        "sticky top-0 z-40 w-full border-b transition-colors duration-300 bg-background shadow-sm"
     )}>
       <div className="container flex h-16 items-center justify-between mx-auto px-6">
           <div className="flex items-center flex-1">
