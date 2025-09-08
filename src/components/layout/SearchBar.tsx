@@ -148,9 +148,9 @@ export function SearchBar() {
         {showCompact ? (
              <div className="flex items-center justify-between w-full px-2">
                 <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
-                <Separator orientation="vertical" className="h-8" />
+                <Separator orientation="vertical" className="h-6" />
                 <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
-                <Separator orientation="vertical" className="h-8" />
+                <Separator orientation="vertical" className="h-6" />
                 <div className="flex items-center">
                     <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
                     <Button onClick={handleSearch} className="bg-accent rounded-full p-2 h-8 w-8 flex items-center justify-center text-accent-foreground hover:bg-accent/90">
