@@ -135,7 +135,7 @@ export function SearchBar() {
     <div className="container mx-auto flex flex-col items-center justify-center text-center p-4" ref={searchBarRef}>
         <div
           className={cn(
-            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center p-1 text-foreground transition-all duration-500 ease-in-out",
+            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center p-2 text-foreground transition-all duration-500 ease-in-out",
             showCompact ? 'max-w-md cursor-pointer' : 'max-w-5xl'
           )}
           onClick={() => {
@@ -147,12 +147,12 @@ export function SearchBar() {
         
         {showCompact ? (
              <div className="flex items-center justify-between w-full px-2">
-                <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
-                <Separator orientation="vertical" className="h-6" />
-                <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
-                <Separator orientation="vertical" className="h-6" />
+                <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
+                <Separator orientation="vertical" className="h-8" />
+                <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
+                <Separator orientation="vertical" className="h-8" />
                 <div className="flex items-center">
-                    <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
+                    <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
                     <Button onClick={handleSearch} className="bg-accent rounded-full p-2 h-8 w-8 flex items-center justify-center text-accent-foreground hover:bg-accent/90">
                         <Search className="h-4 w-4" />
                     </Button>
@@ -175,7 +175,7 @@ export function SearchBar() {
                 />
             </div>
 
-            <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-8" />
             
             <Popover open={isDatePopoverOpen} onOpenChange={setIsDatePopoverOpen}>
                 <PopoverTrigger asChild>
@@ -199,7 +199,7 @@ export function SearchBar() {
                 />
                 </PopoverContent>
             </Popover>
-            <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-8" />
             <Popover>
                 <PopoverTrigger asChild>
                      <div className="flex-1 flex cursor-pointer">
@@ -223,7 +223,7 @@ export function SearchBar() {
                 </PopoverContent>
             </Popover>
             
-            <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-8" />
 
             <div className="flex-[1.5] flex items-center justify-between pr-2">
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
