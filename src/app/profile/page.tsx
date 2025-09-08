@@ -40,7 +40,7 @@ export default function ProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12">
             {/* Left Sidebar */}
             <aside className="lg:col-span-1 mb-8 lg:mb-0">
-                <div className="p-6 rounded-xl border shadow-lg">
+                <div className="p-6 rounded-xl border">
                     <div className="text-center mb-6">
                         <Avatar className="h-24 w-24 mx-auto mb-4">
                             <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
