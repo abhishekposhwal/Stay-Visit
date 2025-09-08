@@ -159,7 +159,7 @@ export default function ProfilePage() {
                 <>
                   <div className="flex justify-between items-center mb-6">
                       <h1 className="text-2xl font-bold">About me</h1>
-                      <Button variant="outline">Edit</Button>
+                      <Button variant="secondary">Edit</Button>
                   </div>
                   
                   <div className="p-8 rounded-xl">
