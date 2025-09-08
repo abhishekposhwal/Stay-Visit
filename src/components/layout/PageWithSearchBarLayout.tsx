@@ -1,4 +1,3 @@
-
 'use client';
 
 import { SearchBar } from './SearchBar';
@@ -10,7 +9,7 @@ export default function PageWithSearchBarLayout({
 }>) {
     return (
         <div>
-            <div className="sticky top-16 z-40 bg-background border-b shadow-sm md:block hidden">
+            <div className="sticky top-16 z-40 border-b shadow-sm md:block hidden">
                 <SearchBar />
             </div>
             <div className="pt-8">
