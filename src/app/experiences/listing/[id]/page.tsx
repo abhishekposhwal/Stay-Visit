@@ -22,8 +22,8 @@ interface ExperiencePageProps {
   };
 }
 
-export default async function ExperiencePage({ params }: ExperiencePageProps) {
-  const property = experiences.find((p) => p.id === params.id);
+export default async function ExperiencePage({ params: { id } }: ExperiencePageProps) {
+  const property = experiences.find((p) => p.id === id);
 
   if (!property) {
     notFound();

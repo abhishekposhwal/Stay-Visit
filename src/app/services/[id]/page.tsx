@@ -22,8 +22,8 @@ interface ServicePageProps {
   };
 }
 
-export default async function ServicePage({ params }: ServicePageProps) {
-  const property = services.find((p) => p.id === params.id);
+export default async function ServicePage({ params: { id } }: ServicePageProps) {
+  const property = services.find((p) => p.id === id);
 
   if (!property) {
     notFound();
