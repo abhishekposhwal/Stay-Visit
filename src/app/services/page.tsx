@@ -21,7 +21,7 @@ export default function ServicesPage() {
         return (
           <section key={category}>
             <h2 className="text-3xl font-bold my-8">
-              <Link href={`/services/category/${encodeURIComponent(category.toLowerCase())}`} className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">
+              <Link href={`/services/category/${encodeURIComponent(category.toLowerCase())}`} className="transition-colors cursor-pointer inline-flex items-center gap-2">
                 {category}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '12px', width: '12px', stroke: 'currentColor', strokeWidth: '5.33333', overflow: 'visible' }}>
                   <path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path>
