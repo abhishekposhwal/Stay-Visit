@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
 import { LifeBuoy, ShieldCheck, FileText, Settings } from 'lucide-react';
+import { AccountSettings } from '@/components/profile/AccountSettings';
 
 const mockBookings = [
     {
@@ -140,9 +141,9 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg hover:bg-muted/50 transition-colors">
+                        <button onClick={() => setActiveTab('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : 'hover:bg-muted/50')}>
                             Account settings
-                        </Link>
+                        </button>
                         <button onClick={() => setActiveTab('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : 'hover:bg-muted/50')}>
                             Get help
                         </button>
@@ -232,6 +233,9 @@ export default function ProfilePage() {
                         ))}
                     </div>
                 </div>
+              )}
+              {activeTab === 'account' && (
+                <AccountSettings user={user} />
               )}
             </main>
         </div>
