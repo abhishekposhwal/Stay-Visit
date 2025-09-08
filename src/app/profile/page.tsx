@@ -53,13 +53,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/profile" className="block p-3 rounded-lg hover:bg-muted font-semibold">
+                        <Link href="/profile" className="block px-3 py-2 rounded-lg hover:bg-muted font-semibold">
                             About me
                         </Link>
-                        <Link href="/work-in-progress" className="block p-3 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
                             Past trips
                         </Link>
-                        <Link href="/work-in-progress" className="block p-3 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
                             Connections
                         </Link>
                     </nav>
@@ -77,13 +77,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/work-in-progress" className="block p-3 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
                             Account settings
                         </Link>
-                        <Link href="/work-in-progress" className="block p-3 rounded-lg hover:bg-muted">
+                        <Link href="/work-in-progress" className="block px-3 py-2 rounded-lg hover:bg-muted">
                             Get help
                         </Link>
-                        <button onClick={signOut} className="w-full text-left p-3 rounded-lg hover:bg-muted text-destructive">
+                        <button onClick={signOut} className="w-full text-left px-3 py-2 rounded-lg hover:bg-muted text-destructive">
                             Log out
                         </button>
                     </nav>
