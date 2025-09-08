@@ -136,7 +136,10 @@ export function Navbar() {
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem onClick={signOut}>
+                            <DropdownMenuItem 
+                                onClick={signOut} 
+                                className="text-destructive hover:bg-destructive hover:text-destructive-foreground focus:bg-destructive focus:text-destructive-foreground"
+                            >
                                 <LogOut className="mr-2" /> Logout
                             </DropdownMenuItem>
                         </>
