@@ -148,12 +148,12 @@ export function SearchBar() {
         {showCompact ? (
              <div className="flex items-center justify-between w-full px-2">
                 <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
-                <Separator orientation="vertical" className="h-5" />
+                <Separator orientation="vertical" className="h-6" />
                 <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
-                <Separator orientation="vertical" className="h-5" />
+                <Separator orientation="vertical" className="h-6" />
                 <div className="flex items-center">
                     <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
-                    <Button onClick={handleSearch} className="rounded-full p-2 h-7 w-7 flex items-center justify-center text-accent-foreground">
+                    <Button onClick={handleSearch} className="rounded-full p-2 h-8 w-8 flex items-center justify-center text-accent-foreground">
                         <Search className="h-4 w-4" />
                     </Button>
                 </div>
@@ -298,7 +298,7 @@ export function SearchBar() {
                         </div>
                     </PopoverContent>
                 </Popover>
-                 <Button onClick={handleSearch} className="rounded-full p-3 flex items-center justify-center text-white">
+                 <Button onClick={handleSearch} className="bg-primary-gradient rounded-full p-3 flex items-center justify-center text-accent-foreground hover:bg-primary-gradient-hover">
                     <Search className="h-5 w-5" />
                 </Button>
             </div>
