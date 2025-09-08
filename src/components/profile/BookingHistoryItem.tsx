@@ -31,7 +31,7 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
         />
       </div>
       <div className="flex-grow">
-        <h3 className="font-bold text-lg">{property.title}</h3>
+        <h3 className="font-bold text-base">{property.title}</h3>
         <p className="text-sm text-muted-foreground">{property.location}</p>
         <Separator className="my-2" />
         <div className="text-sm space-y-1">

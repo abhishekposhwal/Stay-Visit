@@ -83,23 +83,23 @@ export default function ProfilePage() {
                     <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
                     <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
                 </Avatar>
-                <CardTitle className="text-3xl">{user.displayName || 'Welcome!'}</CardTitle>
+                <CardTitle className="text-2xl">{user.displayName || 'Welcome!'}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-6">
                     <div className='space-y-4 text-left'>
                         <div>
                             <p className="text-sm text-muted-foreground">Email</p>
-                            <p className="text-lg font-medium">{user.email}</p>
+                            <p className="text-base font-medium">{user.email}</p>
                         </div>
                         <Separator/>
                         <div>
                             <p className="text-sm text-muted-foreground">Mobile Number</p>
-                            <p className="text-lg font-medium">+91 98765 43210</p>
+                            <p className="text-base font-medium">+91 98765 43210</p>
                         </div>
                         <Separator/>
                         <div>
                             <p className="text-sm text-muted-foreground">Address</p>
-                            <div className="text-lg font-medium">
+                            <div className="text-base font-medium">
                                 <p>123, Sunshine Apartments</p>
                                 <p>Dreamville, Wonderland - 123456</p>
                                 <p>India</p>
