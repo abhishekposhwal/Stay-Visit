@@ -91,7 +91,7 @@ export default function ProfilePage() {
             </aside>
 
             {/* Right Content */}
-            <main className="lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t">
+            <main className="lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-3xl font-bold">About me</h1>
                     <Button variant="outline">Edit</Button>
