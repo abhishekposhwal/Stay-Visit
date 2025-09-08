@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { logOut } from '@/services/auth';
 import { useToast } from '@/hooks/use-toast';
+import { Separator } from '@/components/ui/separator';
 
 export default function ProfilePage() {
   const { user, loading } = useAuth();
@@ -33,13 +34,23 @@ export default function ProfilePage() {
 
   if (loading || !user) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="space-y-4">
-            <Skeleton className="h-24 w-24 rounded-full" />
-            <Skeleton className="h-8 w-48" />
-            <Skeleton className="h-6 w-64" />
-            <Skeleton className="h-10 w-full" />
-        </div>
+      <div className="container mx-auto py-24 px-4 sm:px-6 lg:px-8">
+         <Card className="max-w-md mx-auto">
+          <CardHeader className="text-center">
+             <Skeleton className="w-24 h-24 mx-auto mb-4 rounded-full" />
+             <Skeleton className="h-8 w-48 mx-auto" />
+          </CardHeader>
+          <CardContent className="space-y-6">
+              <div className="text-center">
+                <Skeleton className="h-5 w-64 mx-auto" />
+              </div>
+              <Separator/>
+              <div className="space-y-4">
+                <Skeleton className="h-10 w-full" />
+                <Skeleton className="h-10 w-full" />
+              </div>
+          </CardContent>
+         </Card>
       </div>
     );
   }
@@ -54,9 +65,42 @@ export default function ProfilePage() {
           </Avatar>
           <CardTitle className="text-2xl">{user.displayName || user.email}</CardTitle>
         </CardHeader>
-        <CardContent className="text-center space-y-4">
-            <p className="text-muted-foreground">{user.email}</p>
-            <Button onClick={handleLogout} variant="destructive" className="w-full">
+        <CardContent className="space-y-6">
+            <div className="text-center">
+              <p className="text-muted-foreground">{user.email}</p>
+            </div>
+            
+            <Separator />
+
+            <div className="grid gap-2 text-sm text-left">
+              <h3 className="font-semibold text-lg">Contact Information</h3>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Mobile Number</span>
+                <span>+91 98765 43210</span>
+              </div>
+            </div>
+
+            <div className="grid gap-2 text-sm text-left">
+              <h3 className="font-semibold text-lg">Address</h3>
+               <div className="flex justify-between">
+                <span className="text-muted-foreground">House No</span>
+                <span>123, Sunshine Apartments</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">City</span>
+                <span>Mumbai</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">State</span>
+                <span>Maharashtra</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Pin Code</span>
+                <span>400001</span>
+              </div>
+            </div>
+            
+            <Button onClick={handleLogout} variant="destructive" className="w-full !mt-8">
                 Log Out
             </Button>
         </CardContent>
