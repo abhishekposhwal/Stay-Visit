@@ -12,7 +12,7 @@ export default function ListingsGrid({ listings, layout = 'grid' }: ListingsGrid
   if (listings.length === 0) {
     return (
       <div className="text-center py-16">
-        <h2 className="text-2xl font-bold mb-2">No listings found</h2>
+        <h2 className="text-xl font-bold mb-2">No listings found</h2>
         <p className="text-muted-foreground">Try adjusting your search or filters.</p>
       </div>
     );

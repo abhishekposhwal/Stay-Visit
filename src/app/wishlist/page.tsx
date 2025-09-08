@@ -23,7 +23,7 @@ export default function WishlistPage() {
       ) : (
         <div className="text-center py-16 border-2 border-dashed rounded-lg">
             <Heart className="mx-auto h-12 w-12 text-muted-foreground" />
-            <h2 className="mt-6 text-2xl font-bold">Your wishlist is empty</h2>
+            <h2 className="mt-6 text-xl font-bold">Your wishlist is empty</h2>
             <p className="mt-2 text-muted-foreground">As you browse, tap the heart on any stay to save it here.</p>
             <Button asChild className="mt-4">
                 <a href="/listings">Explore Stays</a>

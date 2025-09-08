@@ -34,7 +34,7 @@ export function Amenities({ amenities }: AmenitiesProps) {
   return (
     <Dialog>
       <div>
-        <h2 className="text-2xl font-semibold mb-4">What this place offers</h2>
+        <h2 className="text-xl font-semibold mb-4">What this place offers</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {displayedAmenities.map((amenity) => (
             <div key={amenity} className="flex items-center space-x-3">

@@ -112,7 +112,7 @@ export default function RecommendationsClient({ allProperties }: Recommendations
 
       {!loading && !error && recommendations.length === 0 && wishlist.length > 0 && (
         <div className="text-center py-16">
-            <h2 className="text-2xl font-bold mb-2">No recommendations to show right now.</h2>
+            <h2 className="text-xl font-bold mb-2">No recommendations to show right now.</h2>
             <p className="text-muted-foreground">Try refreshing, or add more items to your wishlist for better results.</p>
         </div>
       )}
@@ -120,7 +120,7 @@ export default function RecommendationsClient({ allProperties }: Recommendations
        {!loading && wishlist.length === 0 && (
         <div className="text-center py-16 border-2 border-dashed rounded-lg">
             <Heart className="mx-auto h-12 w-12 text-muted-foreground" />
-            <h2 className="mt-6 text-2xl font-bold">Start your Wishlist</h2>
+            <h2 className="mt-6 text-xl font-bold">Start your Wishlist</h2>
             <p className="mt-2 text-muted-foreground">As you browse, tap the heart on any stay to save it here.</p>
             <Button asChild className="mt-4">
                 <a href="/listings">Explore Stays</a>

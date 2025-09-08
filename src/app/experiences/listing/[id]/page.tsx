@@ -57,7 +57,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <div className="pb-6 border-b">
               <div className="flex justify-between items-start">
                   <div>
-                      <h2 className="text-2xl font-semibold">{property.type} hosted by {property.host.name}</h2>
+                      <h2 className="text-xl font-semibold">{property.type} hosted by {property.host.name}</h2>
                       <div className="flex items-center space-x-2 text-muted-foreground mt-1">
                           <span>{property.guests} guests</span>
                           <span>·</span>
@@ -82,12 +82,12 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <Separator className="my-8"/>
 
             <div className="py-8 border-b">
-              <h2 className="text-2xl font-semibold mb-4">AI Summary</h2>
+              <h2 className="text-xl font-semibold mb-4">AI Summary</h2>
               <p className="text-lg text-foreground leading-relaxed">{property.summary}</p>
             </div>
 
             <div className="py-8">
-              <h2 className="text-2xl font-semibold mb-4">About this experience</h2>
+              <h2 className="text-xl font-semibold mb-4">About this experience</h2>
               <p className="text-foreground leading-loose">{property.details}</p>
             </div>
             

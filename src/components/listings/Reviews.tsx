@@ -24,7 +24,7 @@ export default function Reviews({ property }: ReviewsProps) {
   if (!property.reviewDetails || property.reviewDetails.length === 0) {
     return (
         <div className="py-8">
-            <h2 className="text-2xl font-semibold mb-4">No reviews yet</h2>
+            <h2 className="text-xl font-semibold mb-4">No reviews yet</h2>
             <p className="text-muted-foreground">This property doesn't have any reviews yet. Be the first to leave one!</p>
         </div>
     )
@@ -34,7 +34,7 @@ export default function Reviews({ property }: ReviewsProps) {
     <div className="py-8">
       <div className="flex items-center gap-2 mb-8">
         <Star className="h-6 w-6" />
-        <h2 className="text-2xl font-semibold">
+        <h2 className="text-xl font-semibold">
           {property.rating} · {property.reviews} reviews
         </h2>
       </div>

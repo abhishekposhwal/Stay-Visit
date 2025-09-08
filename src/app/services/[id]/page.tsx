@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div className="pb-6 border-b">
               <div className="flex justify-between items-start">
                   <div>
-                      <h2 className="text-2xl font-semibold">{property.category} service by {property.host.name}</h2>
+                      <h2 className="text-xl font-semibold">{property.category} service by {property.host.name}</h2>
                   </div>
                   <Avatar className="h-14 w-14">
                       <AvatarImage src={property.host.avatar} alt={property.host.name} />
@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <Separator className="my-8"/>
 
             <div className="py-8 border-b">
-              <h2 className="text-2xl font-semibold mb-4">About this service</h2>
+              <h2 className="text-xl font-semibold mb-4">About this service</h2>
               <p className="text-foreground leading-loose">{property.details}</p>
             </div>
             
