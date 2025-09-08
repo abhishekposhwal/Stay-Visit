@@ -66,7 +66,7 @@ export function Navbar() {
                     className="flex-grow"
                     autoFocus
                 />
-                <Button size="icon" onClick={handleSearch}>
+                <Button size="icon" onClick={handleSearch} className="rounded-full">
                     <Search className="h-5 w-5" />
                 </Button>
             </div>
