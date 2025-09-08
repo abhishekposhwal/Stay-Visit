@@ -52,7 +52,7 @@ export default function ProfilePage() {
 
                     <Separator className="my-4" />
 
-                    <nav className="space-y-2">
+                    <nav className="space-y-1">
                         <Link href="/profile" className="block p-3 rounded-lg hover:bg-muted font-semibold">
                             About me
                         </Link>
@@ -76,7 +76,7 @@ export default function ProfilePage() {
 
                     <Separator className="my-4" />
 
-                    <nav className="space-y-2">
+                    <nav className="space-y-1">
                         <Link href="/work-in-progress" className="block p-3 rounded-lg hover:bg-muted">
                             Account settings
                         </Link>
