@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Send } from 'lucide-react';
+import { Search, Send, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const mockConversations = [
@@ -49,15 +49,25 @@ const mockConversations = [
 
 export default function InboxPage() {
   const [selectedConversationId, setSelectedConversationId] = useState<string | null>(mockConversations[0].id);
+  const [view, setView] = useState<'list' | 'chat'>('list');
+
   const selectedConversation = mockConversations.find(c => c.id === selectedConversationId);
+  
+  const handleConversationSelect = (id: string) => {
+    setSelectedConversationId(id);
+    setView('chat');
+  }
 
   return (
     <div className="container mx-auto h-[calc(100vh-140px)] pt-8">
       <div className="grid grid-cols-1 lg:grid-cols-4 h-full border rounded-lg overflow-hidden">
         {/* Left Sidebar: Conversations List */}
-        <aside className="lg:col-span-1 border-r flex flex-col">
+        <aside className={cn(
+            "lg:col-span-1 border-r flex-col",
+            view === 'list' ? 'flex' : 'hidden lg:flex'
+        )}>
           <div className="p-4 border-b">
-            <h1 className="text-xl font-bold">Inbox</h1>
+            <h1 className="text-lg font-bold">Inbox</h1>
             <div className="relative mt-4">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input placeholder="Search inbox" className="pl-10" />
@@ -68,7 +78,7 @@ export default function InboxPage() {
               {mockConversations.map(conv => (
                 <button
                   key={conv.id}
-                  onClick={() => setSelectedConversationId(conv.id)}
+                  onClick={() => handleConversationSelect(conv.id)}
                   className={cn(
                     "w-full text-left p-3 rounded-lg transition-colors flex items-start gap-4",
                     selectedConversationId === conv.id ? 'bg-muted' : 'hover:bg-muted/50'
@@ -97,15 +107,21 @@ export default function InboxPage() {
         </aside>
 
         {/* Right Content: Messages */}
-        <main className="lg:col-span-3 flex flex-col h-full bg-muted/20">
+        <main className={cn(
+            "lg:col-span-3 flex-col h-full bg-muted/20",
+            view === 'chat' ? 'flex' : 'hidden lg:flex'
+        )}>
           {selectedConversation ? (
             <>
               <div className="p-4 border-b bg-background flex items-center gap-4">
+                <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setView('list')}>
+                    <ArrowLeft className="h-5 w-5" />
+                </Button>
                 <Avatar className="h-10 w-10">
                   <AvatarImage src={selectedConversation.avatar} alt={selectedConversation.name} />
                   <AvatarFallback>{selectedConversation.name.charAt(0)}</AvatarFallback>
                 </Avatar>
-                <h2 className="text-base font-semibold">{selectedConversation.name}</h2>
+                <h2 className="text-sm font-semibold">{selectedConversation.name}</h2>
               </div>
               <div className="flex-grow p-6 overflow-y-auto space-y-6">
                 {selectedConversation.messages.map(msg => (
