@@ -5,14 +5,40 @@ import { useAuth } from '@/context/AuthProvider';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
+import { properties } from '@/lib/data';
+
+const mockBookings = [
+    {
+        property: properties[0],
+        checkIn: '2024-05-10',
+        checkOut: '2024-05-15',
+        total: 40000,
+    },
+    {
+        property: properties[4],
+        checkIn: '2024-03-20',
+        checkOut: '2024-03-25',
+        total: 75000,
+    },
+    {
+        property: properties[8],
+        checkIn: '2023-12-28',
+        checkOut: '2024-01-02',
+        total: 17500,
+    },
+];
+
 
 export default function ProfilePage() {
   const { user, loading, signOut } = useAuth();
   const router = useRouter();
+  const [activeTab, setActiveTab] = useState('about');
 
   useEffect(() => {
     if (!loading && !user) {
@@ -53,12 +79,12 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/profile" className="block px-3 py-1 rounded-lg font-semibold bg-gray-100">
+                        <button onClick={() => setActiveTab('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'about' && 'bg-gray-100')}>
                             About me
-                        </Link>
-                        <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
+                        </button>
+                        <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'history' && 'bg-gray-100')}>
                             Past trips
-                        </Link>
+                        </button>
                         <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
                             Connections
                         </Link>
@@ -92,36 +118,50 @@ export default function ProfilePage() {
 
             {/* Right Content */}
             <main className="lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2">
-                <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold">About me</h1>
-                    <Button variant="outline">Edit</Button>
-                </div>
-                
-                <div className="p-8 rounded-xl">
-                    <h2 className="text-xl font-bold mb-2">Complete your profile</h2>
-                    <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
-                    
-                    <div className="space-y-4">
-                        <div>
-                            <h3 className="font-semibold text-sm">Email address</h3>
-                            <p className="text-muted-foreground text-sm">{user.email}</p>
-                        </div>
-                         <div>
-                            <h3 className="font-semibold text-sm">Phone number</h3>
-                            <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
-                        </div>
-                         <div>
-                            <h3 className="font-semibold text-sm">Address</h3>
-                            <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
-                        </div>
-                         <div>
-                            <h3 className="font-semibold text-sm">Identity verification</h3>
-                            <p className="text-muted-foreground text-sm">Not verified</p>
-                        </div>
-                    </div>
+              {activeTab === 'about' && (
+                <>
+                  <div className="flex justify-between items-center mb-6">
+                      <h1 className="text-2xl font-bold">About me</h1>
+                      <Button variant="outline">Edit</Button>
+                  </div>
+                  
+                  <div className="p-8 rounded-xl">
+                      <h2 className="text-xl font-bold mb-2">Complete your profile</h2>
+                      <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
+                      
+                      <div className="space-y-4">
+                          <div>
+                              <h3 className="font-semibold text-sm">Email address</h3>
+                              <p className="text-muted-foreground text-sm">{user.email}</p>
+                          </div>
+                          <div>
+                              <h3 className="font-semibold text-sm">Phone number</h3>
+                              <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                          </div>
+                          <div>
+                              <h3 className="font-semibold text-sm">Address</h3>
+                              <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
+                          </div>
+                          <div>
+                              <h3 className="font-semibold text-sm">Identity verification</h3>
+                              <p className="text-muted-foreground text-sm">Not verified</p>
+                          </div>
+                      </div>
 
-                    <Button variant="default" className="mt-6">Get started</Button>
+                      <Button variant="default" className="mt-6">Get started</Button>
+                  </div>
+                </>
+              )}
+              {activeTab === 'history' && (
+                <div>
+                  <h1 className="text-2xl font-bold mb-6">Past trips</h1>
+                  <div className="space-y-6">
+                    {mockBookings.map((booking, index) => (
+                      <BookingHistoryItem key={index} booking={booking} />
+                    ))}
+                  </div>
                 </div>
+              )}
             </main>
         </div>
     </div>
