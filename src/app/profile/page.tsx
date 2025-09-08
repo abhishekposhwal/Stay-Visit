@@ -116,13 +116,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <button onClick={() => setActiveTab('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'about' && 'font-semibold')}>
+                        <button onClick={() => setActiveTab('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : 'hover:bg-muted/50')}>
                             About me
                         </button>
-                        <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'history' && 'font-semibold')}>
+                        <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : 'hover:bg-muted/50')}>
                             Past trips
                         </button>
-                        <button onClick={() => setActiveTab('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'connections' && 'font-semibold')}>
+                        <button onClick={() => setActiveTab('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : 'hover:bg-muted/50')}>
                             Connections
                         </button>
                     </nav>
@@ -140,13 +140,13 @@ export default function ProfilePage() {
                     <Separator className="my-4" />
 
                     <nav className="space-y-1">
-                        <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
+                        <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg hover:bg-muted/50 transition-colors">
                             Account settings
                         </Link>
-                        <button onClick={() => setActiveTab('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'help' && 'font-semibold')}>
+                        <button onClick={() => setActiveTab('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : 'hover:bg-muted/50')}>
                             Get help
                         </button>
-                        <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive">
+                        <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
                             Log out
                         </button>
                     </nav>
@@ -239,5 +239,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
