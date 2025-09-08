@@ -1,4 +1,6 @@
 
+'use client';
+
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -10,6 +12,7 @@ import { MobileFooterNav } from '@/components/layout/MobileFooterNav';
 import './globals.css';
 import { SearchBar } from '@/components/layout/SearchBar';
 import { AuthProvider } from '@/context/AuthProvider';
+import { usePathname } from 'next/navigation';
 
 
 const inter = Inter({
@@ -25,10 +28,27 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-playfair-display',
 });
 
-export const metadata: Metadata = {
-  title: 'StayVisit',
-  description: 'Find your next stay with AI-powered insights.',
-};
+function LayoutContent({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const showSearchBar = pathname !== '/inbox';
+
+  return (
+    <>
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+        {showSearchBar && (
+          <div className="sticky top-16 md:top-20 z-40 py-2">
+            <SearchBar />
+          </div>
+        )}
+        <main className="flex-grow pb-24 md:pb-0">{children}</main>
+        <Footer />
+      </div>
+      <MobileFooterNav />
+      <Toaster />
+    </>
+  );
+}
 
 export default function RootLayout({
   children,
@@ -37,19 +57,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>StayVisit</title>
+        <meta name="description" content="Find your next stay with AI-powered insights." />
+      </head>
       <body className={cn("antialiased bg-background font-body", inter.variable, playfairDisplay.variable)}>
         <AuthProvider>
           <WishlistProvider>
-            <div className="flex min-h-screen flex-col">
-              <Navbar />
-              <div className="sticky top-16 md:top-20 z-40 py-2">
-                  <SearchBar />
-              </div>
-              <main className="flex-grow pb-24 md:pb-0">{children}</main>
-              <Footer />
-            </div>
-            <MobileFooterNav />
-            <Toaster />
+            <LayoutContent>{children}</LayoutContent>
           </WishlistProvider>
         </AuthProvider>
       </body>
