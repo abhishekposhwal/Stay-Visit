@@ -9,6 +9,7 @@ import { WishlistProvider } from '@/context/WishlistProvider';
 import { MobileFooterNav } from '@/components/layout/MobileFooterNav';
 import './globals.css';
 import { SearchBar } from '@/components/layout/SearchBar';
+import { AuthProvider } from '@/context/AuthProvider';
 
 
 const inter = Inter({
@@ -37,18 +38,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("antialiased bg-background font-body", inter.variable, playfairDisplay.variable)}>
-        <WishlistProvider>
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <div className="hidden md:block sticky top-16 z-40 py-4">
-                <SearchBar />
+        <AuthProvider>
+          <WishlistProvider>
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <div className="hidden md:block sticky top-16 z-40 py-4">
+                  <SearchBar />
+              </div>
+              <main className="flex-grow pb-24 md:pb-0">{children}</main>
+              <Footer />
             </div>
-            <main className="flex-grow pb-24 md:pb-0">{children}</main>
-            <Footer />
-          </div>
-          <MobileFooterNav />
-          <Toaster />
-        </WishlistProvider>
+            <MobileFooterNav />
+            <Toaster />
+          </WishlistProvider>
+        </AuthProvider>
       </body>
     </html>
   );

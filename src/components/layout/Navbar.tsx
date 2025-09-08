@@ -17,6 +17,7 @@ import { useWishlist } from '@/context/WishlistProvider';
 import { cn } from '@/lib/utils';
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import { useAuth } from '@/context/AuthProvider';
 
 const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
@@ -26,6 +27,7 @@ const navLinks = [
 
 export function Navbar() {
   const { wishlist } = useWishlist();
+  const { user, signOut } = useAuth();
   const pathname = usePathname();
 
   return (
@@ -66,36 +68,43 @@ export function Navbar() {
                 <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                         <Avatar className="h-9 w-9">
-                            <AvatarImage src="https://picsum.photos/100/100" data-ai-hint="person face" alt="User avatar" />
-                            <AvatarFallback>U</AvatarFallback>
+                            <AvatarImage src={user?.photoURL || "https://picsum.photos/100/100"} data-ai-hint="person face" alt="User avatar" />
+                            <AvatarFallback>{user?.email?.charAt(0).toUpperCase() || 'U'}</AvatarFallback>
                         </Avatar>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end">
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
-                        <Link href="/wishlist">
-                            <Heart className="mr-2" /> Wishlist ({wishlist.length})
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        <UserIcon className="mr-2" /> Profile
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <MessageSquare className="mr-2" /> Inbox
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
-                      <Link href="/login"><LogIn className="mr-2"/> Login</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/signup"><UserPlus className="mr-2"/> Sign up</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <LogOut className="mr-2" /> Logout
-                    </DropdownMenuItem>
+                    {user ? (
+                      <>
+                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem asChild>
+                            <Link href="/wishlist">
+                                <Heart className="mr-2" /> Wishlist ({wishlist.length})
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                            <UserIcon className="mr-2" /> Profile
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <MessageSquare className="mr-2" /> Inbox
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem onClick={signOut}>
+                            <LogOut className="mr-2" /> Logout
+                        </DropdownMenuItem>
+                      </>
+                    ) : (
+                      <>
+                        <DropdownMenuItem asChild>
+                          <Link href="/login"><LogIn className="mr-2"/> Login</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/signup"><UserPlus className="mr-2"/> Sign up</Link>
+                        </DropdownMenuItem>
+                      </>
+                    )}
                 </DropdownMenuContent>
             </DropdownMenu>
         </div>
