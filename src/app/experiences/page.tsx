@@ -18,7 +18,7 @@ export default function ExperiencesPage() {
     }, []);
 
     return (
-        <div className="container mx-auto px-4 py-8 pt-8 space-y-12">
+        <div className="container mx-auto px-4 py-8 space-y-12">
           <section>
             <h2 className="text-3xl font-bold my-8">
               <Link href="/experiences/category/Originals" className="transition-colors cursor-pointer inline-flex items-center gap-2">
