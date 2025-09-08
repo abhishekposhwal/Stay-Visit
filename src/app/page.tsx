@@ -43,20 +43,20 @@ const inter = Inter({
 export default function Home() {
   const isMobile = useIsMobile();
 
-  const getPropertiesByCity = (city: string, count: number): Property[] => {
-    return properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase())).slice(0, count);
+  const getPropertiesByCity = (city: string): Property[] => {
+    return properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase()));
   }
 
   return (
-    <div className="space-y-8 pt-16">
-      <header className="relative">
+    <div className="space-y-8">
+      <header className="relative pt-16">
         <div className="relative z-10 text-center">
           
         </div>
       </header>
       
       {!isMobile && (
-        <div className="sticky top-16 z-40 pb-4 -mt-24">
+        <div className="sticky top-16 z-40 pb-4 -mt-16">
           <div className="mt-8">
               <SearchBar />
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
       )}
 
       {CITIES.map(city => {
-        const cityProperties = getPropertiesByCity(city, 10);
+        const cityProperties = getPropertiesByCity(city);
         if (cityProperties.length === 0) return null;
         
         return (

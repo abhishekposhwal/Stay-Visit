@@ -16,22 +16,22 @@ export default function ExperiencesPage() {
     const isMobile = useIsMobile();
 
     useEffect(() => {
-        setOriginalProperties(experiences.filter(p => p.category === 'Originals').slice(0, 5));
-        setPopularProperties(experiences.filter(p => p.category === 'Popular').slice(0, 5));
+        setOriginalProperties(experiences.filter(p => p.category === 'Originals'));
+        setPopularProperties(experiences.filter(p => p.category === 'Popular'));
     }, []);
 
     return (
-        <div className="space-y-8 pt-16">
+        <div className="space-y-8">
           
           {!isMobile && (
-            <div className="sticky top-16 z-40 pb-4 -mt-24">
+            <div className="sticky top-16 z-40 pb-4">
               <div className="mt-8">
                   <SearchBar />
               </div>
             </div>
           )}
 
-          <div className="container mx-auto px-4 space-y-12">
+          <div className="container mx-auto px-4 space-y-12 pt-16">
             <section>
               <h2 className="text-3xl font-bold my-8">
                 <Link href="/experiences/category/Originals" className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">

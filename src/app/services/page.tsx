@@ -12,24 +12,24 @@ const SERVICE_CATEGORIES = ['Photography' , 'Chefs', 'Training', 'Massage'];
 
 export default function ServicesPage() {
 
-  const getServicesByCategory = (category: string, count: number): Property[] => {
-    return services.filter(p => p.category === category).slice(0, count);
+  const getServicesByCategory = (category: string): Property[] => {
+    return services.filter(p => p.category === category);
   }
   
   const isMobile = useIsMobile();
 
   return (
-    <div className="space-y-8 pt-16">
+    <div className="space-y-8">
       {!isMobile && (
-        <div className="sticky top-16 z-40 pb-4 -mt-24">
+        <div className="sticky top-16 z-40 pb-4">
           <div className="mt-8">
               <SearchBar />
           </div>
         </div>
       )}
-      <div className="container mx-auto px-4 space-y-12">
+      <div className="container mx-auto px-4 space-y-12 pt-16">
         {SERVICE_CATEGORIES.map(category => {
-          const categoryServices = getServicesByCategory(category, 4);
+          const categoryServices = getServicesByCategory(category);
           if (categoryServices.length === 0) return null;
           
           return (
