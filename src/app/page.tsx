@@ -68,8 +68,8 @@ export default function Home() {
         if (cityProperties.length === 0) return null;
         
         return (
-          <section key={city} className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold my-8">
+          <section key={city} className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold my-8 text-left">
               <Link href={`/listings?city=${encodeURIComponent(city)}`} className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">
                 Stays in {city}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '12px', width: '12px', stroke: 'currentColor', strokeWidth: '5.33333', overflow: 'visible' }}>
@@ -77,7 +77,9 @@ export default function Home() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={cityProperties} layout="horizontal" />
+            <div className="inline-block">
+              <ListingsGrid listings={cityProperties} layout="horizontal" />
+            </div>
           </section>
         );
       })}
