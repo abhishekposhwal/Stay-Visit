@@ -2,7 +2,7 @@
 /**
  * @fileOverview A property listing summarization AI agent.
  *
- * - summarizePropertyListings - A function that handles the property listing summarization process.
+ * - summarizePropertyListings - A function that handles the summarization process.
  * - SummarizePropertyListingsInput - The input type for the summarizePropertyListings function.
  * - SummarizePropertyListingsOutput - The return type for the summarizePropertyListings function.
  */
@@ -11,18 +11,18 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const SummarizePropertyListingsInputSchema = z.object({
-  details: z.string().describe('The detailed description of the property.'),
+  propertyDetails: z
+    .string()
+    .describe('Detailed information about the property listing.'),
 });
 export type SummarizePropertyListingsInput = z.infer<typeof SummarizePropertyListingsInputSchema>;
 
 const SummarizePropertyListingsOutputSchema = z.object({
-  summary: z.string().describe('A concise and engaging summary of the property.'),
+  summary: z.string().describe('A concise summary of the property listing.'),
 });
 export type SummarizePropertyListingsOutput = z.infer<typeof SummarizePropertyListingsOutputSchema>;
 
-export async function summarizePropertyListings(
-  input: SummarizePropertyListingsInput
-): Promise<SummarizePropertyListingsOutput> {
+export async function summarizePropertyListings(input: SummarizePropertyListingsInput): Promise<SummarizePropertyListingsOutput> {
   return summarizePropertyListingsFlow(input);
 }
 
@@ -30,12 +30,12 @@ const prompt = ai.definePrompt({
   name: 'summarizePropertyListingsPrompt',
   input: {schema: SummarizePropertyListingsInputSchema},
   output: {schema: SummarizePropertyListingsOutputSchema},
-  prompt: `You are an expert real estate copywriter.
+  prompt: `You are an AI expert in creating concise summaries of property listings.
 
-  You will be provided with a detailed description of a property.
-  Your task is to create a concise and engaging summary that highlights the key features and benefits of the property for potential renters or buyers. The summary should be no more than 50 words.
+  Given the following property details, generate a summary highlighting the key features,
+nearby attractions, and unique selling points. The summary should be easy to understand at a glance.
 
-  Property Details: {{{details}}}`,
+  Property Details: {{{propertyDetails}}}`,
 });
 
 const summarizePropertyListingsFlow = ai.defineFlow(

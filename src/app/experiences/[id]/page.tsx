@@ -1,6 +1,6 @@
 
 import { notFound } from 'next/navigation';
-import { properties } from '@/lib/data';
+import { experiences } from '@/lib/experiences-data';
 import { ListingHero } from '@/components/listings/ListingHero';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -16,14 +16,14 @@ import Reviews from '@/components/listings/Reviews';
 
 export const dynamic = 'force-dynamic';
 
-interface ListingPageProps {
+interface ExperiencePageProps {
   params: {
     id: string;
   };
 }
 
-export default async function ListingPage({ params }: ListingPageProps) {
-  const property = properties.find((p) => p.id === params.id);
+export default async function ExperiencePage({ params }: ExperiencePageProps) {
+  const property = experiences.find((p) => p.id === params.id);
 
   if (!property) {
     notFound();
@@ -75,7 +75,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
               </div>
             </div>
             
-            {(property.rating > 4.8 || property.reviews > 200) && <GuestFavoriteBadge />}
+            {(property.rating > 4.8 || property.reviews > 100) && <GuestFavoriteBadge />}
             
             <ListingHighlights />
             
@@ -87,7 +87,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
             </div>
 
             <div className="py-8">
-              <h2 className="text-2xl font-semibold mb-4">About this space</h2>
+              <h2 className="text-2xl font-semibold mb-4">About this experience</h2>
               <p className="text-foreground leading-loose">{property.details}</p>
             </div>
             

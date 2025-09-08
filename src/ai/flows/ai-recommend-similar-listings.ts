@@ -1,8 +1,9 @@
 'use server';
+
 /**
- * @fileOverview An AI agent that recommends similar listings based on a user's wishlist.
+ * @fileOverview A Genkit flow for recommending similar listings based on AI summaries of user's saved listings.
  *
- * - recommendSimilarListings - A function that takes a list of listing summaries and recommends similar listings.
+ * - recommendSimilarListings - A function that handles the recommendation process.
  * - RecommendSimilarListingsInput - The input type for the recommendSimilarListings function.
  * - RecommendSimilarListingsOutput - The return type for the recommendSimilarListings function.
  */
@@ -11,22 +12,24 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const RecommendSimilarListingsInputSchema = z.object({
-  wishlistSummaries: z
+  savedListingSummaries: z
     .array(z.string())
-    .describe('A list of summaries of the listings in the user\'s wishlist.'),
-  allListingSummaries: z
+    .describe('AI summaries of the user\'s saved listings.'),
+  unstarredListingSummaries: z
     .array(z.string())
-    .describe('A list of summaries of all available listings.'),
+    .describe('AI summaries of listings the user has not yet starred.'),
+  numberOfRecommendations: z
+    .number()
+    .default(3)
+    .describe('The number of listing recommendations to return.'),
 });
 export type RecommendSimilarListingsInput = z.infer<
   typeof RecommendSimilarListingsInputSchema
 >;
 
-const RecommendSimilarListingsOutputSchema = z.object({
-  recommendedListingSummaries: z
-    .array(z.string())
-    .describe('A list of summaries of recommended listings.'),
-});
+const RecommendSimilarListingsOutputSchema = z.array(z.string()).describe(
+  'A list of recommended listing summaries, ordered by similarity to the user\'s saved listings.'
+);
 export type RecommendSimilarListingsOutput = z.infer<
   typeof RecommendSimilarListingsOutputSchema
 >;
@@ -41,22 +44,27 @@ const prompt = ai.definePrompt({
   name: 'recommendSimilarListingsPrompt',
   input: {schema: RecommendSimilarListingsInputSchema},
   output: {schema: RecommendSimilarListingsOutputSchema},
-  prompt: `You are a travel expert. A user has a wishlist of the following listings:
+  prompt: `You are an AI assistant designed to recommend property listings to users based on their saved listings.
 
-{{#each wishlistSummaries}}
+You will receive a list of AI summaries of the user's saved listings, and a list of AI summaries of listings the user has not yet starred.
+
+Compare the unstarred listings to the saved listings and return a list of the most similar unstarred listings, ordered by similarity.
+
+You should only return listing summaries from the unstarred listings.
+
+Saved Listing Summaries:
+{{#each savedListingSummaries}}
 - {{{this}}}
 {{/each}}
 
-Based on these listings, recommend other listings from the following list that the user might like:
-
-{{#each allListingSummaries}}
+Unstarred Listing Summaries:
+{{#each unstarredListingSummaries}}
 - {{{this}}}
 {{/each}}
 
-Only return the summaries of the recommended listings.
+Number of Recommendations: {{{numberOfRecommendations}}}
 
-Make sure the recommended listings are similar to the listings in the user's wishlist.
-`,
+Recommended Listings:`,
 });
 
 const recommendSimilarListingsFlow = ai.defineFlow(

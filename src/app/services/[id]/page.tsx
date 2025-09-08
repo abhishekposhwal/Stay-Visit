@@ -1,11 +1,11 @@
 
 import { notFound } from 'next/navigation';
-import { properties } from '@/lib/data';
+import { services } from '@/lib/services-data';
 import { ListingHero } from '@/components/listings/ListingHero';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { BedDouble, Bath, Users, Star, Award } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { BookingCard } from '@/components/listings/BookingCard';
 import { Amenities } from '@/components/listings/Amenities';
 import { MobileBookingFooter } from '@/components/listings/MobileBookingFooter';
@@ -16,14 +16,14 @@ import Reviews from '@/components/listings/Reviews';
 
 export const dynamic = 'force-dynamic';
 
-interface ListingPageProps {
+interface ServicePageProps {
   params: {
     id: string;
   };
 }
 
-export default async function ListingPage({ params }: ListingPageProps) {
-  const property = properties.find((p) => p.id === params.id);
+export default async function ServicePage({ params }: ServicePageProps) {
+  const property = services.find((p) => p.id === params.id);
 
   if (!property) {
     notFound();
@@ -40,12 +40,6 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 <span className="font-medium text-foreground">{property.rating} ({property.reviews} reviews)</span>
             </div>
             <span>·</span>
-            {property.host.isSuperhost && (
-              <>
-                <Badge variant="secondary">Superhost</Badge>
-                <span>·</span>
-              </>
-            )}
             <span className="font-medium text-foreground underline">{property.location}</span>
           </div>
         </div>
@@ -57,16 +51,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <div className="pb-6 border-b">
               <div className="flex justify-between items-start">
                   <div>
-                      <h2 className="text-2xl font-semibold">{property.type} hosted by {property.host.name}</h2>
-                      <div className="flex items-center space-x-2 text-muted-foreground mt-1">
-                          <span>{property.guests} guests</span>
-                          <span>·</span>
-                          <span>{property.bedrooms} bedrooms</span>
-                          <span>·</span>
-                          <span>{property.beds} beds</span>
-                          <span>·</span>
-                          <span>{property.baths} baths</span>
-                      </div>
+                      <h2 className="text-2xl font-semibold">{property.category} service by {property.host.name}</h2>
                   </div>
                   <Avatar className="h-14 w-14">
                       <AvatarImage src={property.host.avatar} alt={property.host.name} />
@@ -75,27 +60,18 @@ export default async function ListingPage({ params }: ListingPageProps) {
               </div>
             </div>
             
-            {(property.rating > 4.8 || property.reviews > 200) && <GuestFavoriteBadge />}
+            {(property.rating > 4.8 || property.reviews > 100) && <GuestFavoriteBadge />}
             
             <ListingHighlights />
             
             <Separator className="my-8"/>
 
             <div className="py-8 border-b">
-              <h2 className="text-2xl font-semibold mb-4">AI Summary</h2>
-              <p className="text-lg text-foreground leading-relaxed">{property.summary}</p>
-            </div>
-
-            <div className="py-8">
-              <h2 className="text-2xl font-semibold mb-4">About this space</h2>
+              <h2 className="text-2xl font-semibold mb-4">About this service</h2>
               <p className="text-foreground leading-loose">{property.details}</p>
             </div>
             
             <Separator className="my-8"/>
-
-            <div className="py-8 border-b">
-              <Amenities amenities={property.amenities} />
-            </div>
 
             <HostInfo host={property.host} />
 

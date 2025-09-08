@@ -1,39 +1,35 @@
-"use client";
 
-import { useWishlist } from '@/context/WishlistContext';
-import { ListingGrid } from '@/components/listings/ListingGrid';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+'use client';
+
+import { useWishlist } from '@/context/WishlistProvider';
+import { properties } from '@/lib/data';
+import ListingsGrid from '@/components/listings/ListingsGrid';
 import { Heart } from 'lucide-react';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
-import { MobileNav } from '@/components/layout/MobileNav';
+import { Button } from '@/components/ui/button';
 
 export default function WishlistPage() {
   const { wishlist } = useWishlist();
+  const wishlistedProperties = properties.filter(p => wishlist.includes(p.id));
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-3xl md:text-4xl font-bold font-headline mb-6">My Wishlist</h1>
-        {wishlist.length > 0 ? (
-          <ListingGrid properties={wishlist} />
-        ) : (
-          <div className="text-center py-16 border-dashed border-2 rounded-lg">
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Your Wishlist</h1>
+        <p className="text-lg text-muted-foreground">All your favorite stays, saved in one place.</p>
+      </div>
+      
+      {wishlistedProperties.length > 0 ? (
+        <ListingsGrid listings={wishlistedProperties} />
+      ) : (
+        <div className="text-center py-16 border-2 border-dashed rounded-lg">
             <Heart className="mx-auto h-12 w-12 text-muted-foreground" />
-            <h2 className="mt-6 text-xl font-semibold">Your wishlist is empty</h2>
-            <p className="mt-2 text-muted-foreground">
-              Start exploring and add your favorite finds by clicking the heart icon.
-            </p>
-            <Button asChild className="mt-6">
-              <Link href="/">Start Exploring</Link>
+            <h2 className="mt-6 text-2xl font-bold">Your wishlist is empty</h2>
+            <p className="mt-2 text-muted-foreground">As you browse, tap the heart on any stay to save it here.</p>
+            <Button asChild className="mt-4">
+                <a href="/listings">Explore Stays</a>
             </Button>
-          </div>
-        )}
-      </main>
-      <Footer />
-      <MobileNav />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,22 +1,39 @@
-export type PropertyType = 'Stay' | 'Experience' | 'Service';
-
-export type Property = {
+export interface Property {
   id: string;
   title: string;
-  type: PropertyType;
-  category?: string;
+  type: string;
   location: string;
-  city: string;
+  coords: {
+    lat: number;
+    lng: number;
+  };
   price: number;
   rating: number;
   reviews: number;
-  images: string[];
-  details: string;
-  summary: string;
+  reviewDetails?: {
+    id: string;
+    author: string;
+    authorAvatar: string;
+    date: string;
+    text: string;
+  }[];
+  guests: number;
+  bedrooms: number;
+  beds: number;
+  baths: number;
   amenities: string[];
   host: {
     name: string;
     avatar: string;
-    joinYear: number;
+    isSuperhost: boolean;
   };
-};
+  images: string[];
+  details: string;
+  summary: string;
+  category?: string;
+}
+
+export interface User {
+  name: string;
+  avatar: string;
+}

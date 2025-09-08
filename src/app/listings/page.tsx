@@ -1,39 +1,27 @@
+import ListingsGrid from '@/components/listings/ListingsGrid';
 import { properties } from '@/lib/data';
-import { ListingGrid } from '@/components/listings/ListingGrid';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
-import { MobileNav } from '@/components/layout/MobileNav';
 
-export default function ListingsPage({
-  searchParams,
-}: {
-  searchParams: { city?: string; type?: string };
-}) {
-  const filteredProperties = properties.filter((property) => {
-    const cityMatch = searchParams.city
-      ? property.city.toLowerCase() === searchParams.city.toLowerCase()
-      : true;
-    const typeMatch = searchParams.type
-      ? property.type === searchParams.type
-      : true;
-    return cityMatch && typeMatch;
-  });
+interface ListingsPageProps {
+  searchParams: {
+    city?: string;
+  };
+}
+
+export default function ListingsPage({ searchParams }: ListingsPageProps) {
+  const { city } = searchParams;
+
+  const filteredProperties = city
+    ? properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase()))
+    : properties;
+
+  const pageTitle = city ? `Stays in ${city}` : 'Explore All Stays';
   
-  const title = searchParams.city 
-    ? `Results for "${searchParams.city}"` 
-    : searchParams.type 
-    ? `${searchParams.type}s` 
-    : 'All Listings';
-
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-3xl md:text-4xl font-bold font-headline mb-6">{title}</h1>
-        <ListingGrid properties={filteredProperties} />
-      </main>
-      <Footer />
-      <MobileNav />
+    <div className="container mx-auto px-4 py-8 pt-24">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">{pageTitle}</h1>
+      </div>
+      <ListingsGrid listings={filteredProperties} />
     </div>
   );
 }

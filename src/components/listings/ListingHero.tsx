@@ -1,62 +1,71 @@
+
+'use client';
+
 import Image from 'next/image';
 import type { Property } from '@/lib/types';
+import { useState } from 'react';
+import { ImageCarouselModal } from './ImageCarouselModal';
+import { Button } from '@/components/ui/button';
 
-export function ListingHero({ property }: { property: Property }) {
-  const [mainImage, ...otherImages] = property.images;
+interface ListingHeroProps {
+  property: Property;
+}
+
+export function ListingHero({ property }: ListingHeroProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const openModal = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const displayImages = property.images.slice(0, 5);
+  const mainImage = displayImages[0];
+  const galleryImages = displayImages.slice(1);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-2 max-h-[60vh] rounded-xl overflow-hidden">
-      <div className="md:row-span-2 relative">
-        <Image
-          src={mainImage}
-          alt={`Main image for ${property.title}`}
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-          data-ai-hint="listing view"
-        />
-      </div>
-      {otherImages.slice(0, 2).map((image, index) => (
-        <div key={index} className="relative hidden md:block">
-          <Image
-            src={image}
-            alt={`Image ${index + 2} for ${property.title}`}
-            fill
-            className="object-cover"
-            sizes="25vw"
-            data-ai-hint="interior detail"
-          />
-        </div>
-      ))}
-      {property.images.length > 3 && (
-        <div className="hidden md:block">
-            <div className="relative">
+    <>
+      <div className="relative h-[250px] md:h-[500px] overflow-hidden rounded-xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-2 h-full">
+            <div className="relative md:col-span-2 md:row-span-2 h-full">
+            <button onClick={() => openModal(0)} className="w-full h-full">
                 <Image
-                    src={otherImages[2]}
-                    alt={`Image 4 for ${property.title}`}
-                    fill
-                    className="object-cover"
-                    sizes="25vw"
-                    data-ai-hint="amenity photo"
-                />
-                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <span className="text-white text-lg font-bold">+{property.images.length - 3} more</span>
-                </div>
-            </div>
-        </div>
-      )}
-       {property.images.length <= 3 && otherImages.length < 2 && (
-         <div className="hidden md:block relative">
-            <Image
-                src={property.images[0]}
-                alt={`Placeholder image`}
+                src={mainImage}
+                data-ai-hint="property exterior"
+                alt={`Main view of ${property.title}`}
                 fill
-                className="object-cover blur-sm"
-                sizes="25vw"
-            />
+                className="object-cover w-full h-full"
+                priority
+                />
+            </button>
+            </div>
+            {galleryImages.map((image, index) => (
+            <div key={index} className="relative hidden md:block h-full">
+                <button onClick={() => openModal(index + 1)} className="w-full h-full">
+                <Image
+                    src={image}
+                    data-ai-hint="property room"
+                    alt={`View ${index + 2} of ${property.title}`}
+                    fill
+                    className="object-cover w-full h-full"
+                />
+                </button>
+            </div>
+            ))}
         </div>
-      )}
-    </div>
+        <Button onClick={() => openModal(0)} className="absolute bottom-4 right-4 bg-white/90 text-foreground hover:bg-white">
+            Show all photos
+        </Button>
+      </div>
+
+
+      <ImageCarouselModal
+        images={property.images}
+        startIndex={selectedImageIndex}
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+      />
+    </>
   );
 }

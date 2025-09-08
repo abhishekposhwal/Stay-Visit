@@ -1,15 +1,30 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import { Inter, Playfair_Display } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { WishlistProvider } from '@/context/WishlistContext';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import { WishlistProvider } from '@/context/WishlistProvider';
+import { MobileFooterNav } from '@/components/layout/MobileFooterNav';
+import './globals.css';
+
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: '700',
+  display: 'swap',
+  variable: '--font-playfair-display',
+});
 
 export const metadata: Metadata = {
-  title: 'StayVisit: Your AI-Powered Travel Planner',
-  description: 'Discover and book your next stay, experience, or service with StayVisit.',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  title: 'StayVisit',
+  description: 'Find your next stay with AI-powered insights.',
 };
 
 export default function RootLayout({
@@ -19,17 +34,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={cn('font-body antialiased')}>
+      <body className={cn("antialiased bg-background font-body", inter.variable, playfairDisplay.variable)}>
         <WishlistProvider>
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="-mt-16 flex-grow pb-24 md:pb-0">{children}</main>
+            <Footer />
+          </div>
+          <MobileFooterNav />
           <Toaster />
         </WishlistProvider>
       </body>
