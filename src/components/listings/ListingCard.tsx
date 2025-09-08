@@ -27,7 +27,7 @@ export default function ListingCard({ property }: ListingCardProps) {
     }
   };
 
-  const href = property.category ? (property.type === 'Experience' ? `/experiences/listing/${property.id}` : `/services/listing/${property.id}`) : `/listings/${property.id}`;
+  const href = property.category ? (property.type === 'Experience' && property.category !== 'Originals' && property.category !== 'Popular' ? `/services/${property.id}` : `/experiences/${property.id}`) : `/listings/${property.id}`;
 
   return (
     <Link href={href} className="card">
