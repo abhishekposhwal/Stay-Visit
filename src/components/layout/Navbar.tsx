@@ -98,11 +98,6 @@ export function Navbar() {
                                   <Heart className="mr-2" /> Wishlist ({wishlist.length})
                               </Link>
                           </DropdownMenuItem>
-                          <DropdownMenuItem asChild>
-                              <Link href="/recommendations">
-                                  <Sparkles className="mr-2" /> For You
-                              </Link>
-                          </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem asChild>
                             <Link href="/profile">
