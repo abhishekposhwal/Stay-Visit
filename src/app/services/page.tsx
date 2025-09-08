@@ -1,45 +1,38 @@
 
-
-'use client';
-
 import Link from 'next/link';
 import ListingsGrid from '@/components/listings/ListingsGrid';
 import type { Property } from '@/lib/types';
 import { services } from '@/lib/services-data';
-import PageWithSearchBarLayout from '@/components/layout/PageWithSearchBarLayout';
 
 const SERVICE_CATEGORIES = ['Photography' , 'Chefs', 'Training', 'Massage'];
 
 export default function ServicesPage() {
 
-  const getServicesByCategory = (category: string): Property[] => {
-    return services.filter(p => p.category === category);
+  const getServicesByCategory = (category: string, count: number): Property[] => {
+    return services.filter(p => p.category === category).slice(0, count);
   }
-  
+
   return (
-    <PageWithSearchBarLayout>
-        <div className="space-y-8">
-        <div className="container mx-auto px-4 space-y-12">
-            {SERVICE_CATEGORIES.map(category => {
-            const categoryServices = getServicesByCategory(category);
-            if (categoryServices.length === 0) return null;
-            
-            return (
-                <section key={category}>
-                <h2 className="text-3xl font-bold my-8">
-                    <Link href={`/services/category/${encodeURIComponent(category)}`} className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">
-                    {category}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '12px', width: '12px', stroke: 'currentColor', strokeWidth: '5.33333', overflow: 'visible' }}>
-                        <path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path>
-                    </svg>
-                    </Link>
-                </h2>
-                <ListingsGrid listings={categoryServices} />
-                </section>
-            );
-            })}
-        </div>
-        </div>
-    </PageWithSearchBarLayout>
+    <div className="container mx-auto px-4 py-8 pt-24 space-y-12">
+        <h1 className="text-4xl font-bold text-center">Services for every need</h1>
+      {SERVICE_CATEGORIES.map(category => {
+        const categoryServices = getServicesByCategory(category, 4);
+        if (categoryServices.length === 0) return null;
+        
+        return (
+          <section key={category}>
+            <h2 className="text-3xl font-bold my-8">
+              <Link href={`/services/category/${encodeURIComponent(category)}`} className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">
+                {category}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '12px', width: '12px', stroke: 'currentColor', strokeWidth: '5.33333', overflow: 'visible' }}>
+                  <path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path>
+                </svg>
+              </Link>
+            </h2>
+            <ListingsGrid listings={categoryServices} />
+          </section>
+        );
+      })}
+    </div>
   );
 }

@@ -22,8 +22,8 @@ interface ListingPageProps {
   };
 }
 
-export default async function ListingPage({ params: { id } }: ListingPageProps) {
-  const property = properties.find((p) => p.id === id);
+export default async function ListingPage({ params }: ListingPageProps) {
+  const property = properties.find((p) => p.id === params.id);
 
   if (!property) {
     notFound();

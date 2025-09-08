@@ -53,7 +53,6 @@ export default function ListingCard({ property }: ListingCardProps) {
       </div>
       <div className="card-content">
         <h3 className="card-title">{property.title}</h3>
-        <p className="text-sm text-muted-foreground">{property.location}</p>
         <div className="flex-grow"></div>
         <div className="flex justify-between items-center mt-1">
             <p className="card-price">
@@ -62,7 +61,7 @@ export default function ListingCard({ property }: ListingCardProps) {
             </p>
             <div className="card-rating">
             <Star className="h-3 w-3 fill-current" />
-            <span>{property.rating.toFixed(2)}</span>
+            <span>{property.rating.toFixed(2)} ({property.reviews})</span>
             </div>
         </div>
       </div>

@@ -11,7 +11,8 @@ interface ServiceCategoryPageProps {
 
 const SERVICE_CATEGORIES = ['Photography' , 'Chefs', 'Training', 'Massage'];
 
-export default function ServiceCategoryPage({ params: { category } }: ServiceCategoryPageProps) {
+export default function ServiceCategoryPage({ params }: ServiceCategoryPageProps) {
+  const { category } = params;
 
   const validCategories = SERVICE_CATEGORIES.map(c => c.toLowerCase());
 

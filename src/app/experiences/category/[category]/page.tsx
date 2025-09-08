@@ -9,7 +9,8 @@ interface ExperienceCategoryPageProps {
   };
 }
 
-export default function ExperienceCategoryPage({ params: { category } }: ExperienceCategoryPageProps) {
+export default function ExperienceCategoryPage({ params }: ExperienceCategoryPageProps) {
+  const { category } = params;
 
   const validCategories = ['Originals', 'Popular'];
 

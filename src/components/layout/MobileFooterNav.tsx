@@ -2,29 +2,27 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { HardHat, Heart, Home, LogIn, Search, User, Zap } from 'lucide-react';
+import { HardHat, Heart, Home, LogIn, Search, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
-import { useAuth } from '@/context/AuthContext';
 
+
+const navLinks = [
+    { href: "/", label: "Stays", icon: <Home className="h-6 w-6" /> },
+    { href: "/experiences", label: "Experiences", icon: <Zap className="h-6 w-6" /> },
+    { href: "/wishlist", label: "Wishlist", icon: <Heart className="h-6 w-6" /> },
+    { href: "/login", label: "Log in", icon: <LogIn className="h-6 w-6" /> },
+];
 
 export function MobileFooterNav() {
     const pathname = usePathname();
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [destination, setDestination] = useState('');
     const router = useRouter();
-    const { user } = useAuth();
-
-    const navLinks = [
-        { href: "/", label: "Stays", icon: <Home className="h-6 w-6" /> },
-        { href: "/experiences", label: "Experiences", icon: <Zap className="h-6 w-6" /> },
-        { href: "/wishlist", label: "Wishlist", icon: <Heart className="h-6 w-6" /> },
-        { href: user ? "/profile" : "/login", label: user ? "Profile" : "Log in", icon: user ? <User className="h-6 w-6" /> : <LogIn className="h-6 w-6" /> },
-    ];
 
     const handleSearch = () => {
         if (destination) {

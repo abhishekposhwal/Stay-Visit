@@ -30,23 +30,14 @@ export function SearchBar() {
     infants: 0,
     pets: 0,
   });
+  const [isCompact, setIsCompact] = useState(false);
   const [isDatePopoverOpen, setIsDatePopoverOpen] = useState(false);
   const [isGuestPopoverOpen, setIsGuestPopoverOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const destinationInputRef = useRef<HTMLInputElement>(null);
+  const searchBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-
-  useEffect(() => {
-    const handleScroll = () => {
-        const heroSection = document.getElementById('hero-section');
-        const offset = heroSection ? heroSection.offsetHeight : 200;
-        setIsScrolled(window.scrollY > offset);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
 
   const handleSearch = () => {
     if (destination) {
@@ -60,6 +51,40 @@ export function SearchBar() {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isDatePopoverOpen || isGuestPopoverOpen) return;
+      const shouldBeCompact = window.scrollY > 20;
+      if (shouldBeCompact !== isCompact) {
+        setIsCompact(shouldBeCompact);
+        if (!shouldBeCompact) {
+          setIsActive(false);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isCompact, isDatePopoverOpen, isGuestPopoverOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+        if ((event.target as HTMLElement).closest('[data-radix-popper-content-wrapper]')) {
+            return;
+        }
+
+        if (searchBarRef.current && !searchBarRef.current.contains(event.target as Node)) {
+            if (isActive) {
+                setIsActive(false);
+            }
+        }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isActive]);
+
   const totalGuests = guests.adults + guests.children;
   const guestDisplay = totalGuests > 0 ? `${totalGuests} guest${totalGuests > 1 ? 's' : ''}`: 'Add guests';
 
@@ -70,36 +95,50 @@ export function SearchBar() {
     }));
   }
 
-  if (isScrolled) {
-    return (
-        <div className="flex justify-center items-center h-16">
-            <Button 
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                variant="ghost"
-                className="rounded-full shadow-lg border h-12 w-auto px-4 bg-background"
-            >
-                <div className="flex items-center divide-x">
-                    <span className="px-3 text-sm font-medium">Anywhere</span>
-                    <span className="px-3 text-sm font-medium">Anytime</span>
-                    <span className="px-3 text-sm text-muted-foreground">Add guest</span>
-                    <div className="pl-2">
-                         <div className="bg-accent rounded-full p-2 flex items-center justify-center text-accent-foreground">
-                            <Search className="h-4 w-4" />
-                        </div>
-                    </div>
-                </div>
-            </Button>
-        </div>
-    )
-  }
+  const handleCompactClick = (section: 'destination' | 'date' | 'guest') => {
+    setIsActive(true);
+    setTimeout(() => {
+      if (section === 'destination' && destinationInputRef.current) {
+        destinationInputRef.current.focus();
+      } else if (section === 'date') {
+        setIsDatePopoverOpen(true);
+      } else if (section === 'guest') {
+        setIsGuestPopoverOpen(true);
+      }
+    }, 100);
+  };
+
+  const showCompact = isCompact && !isActive;
 
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center text-center p-4">
+    <div className="container mx-auto flex flex-col items-center justify-center text-center p-4" ref={searchBarRef}>
         <div
           className={cn(
-            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center p-2 text-foreground transition-all duration-500 ease-in-out max-w-5xl"
+            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out",
+            showCompact ? 'max-w-md cursor-pointer' : 'max-w-5xl'
           )}
+          onClick={() => {
+            if (showCompact && !isActive) {
+              setIsActive(true);
+            }
+          }}
         >
+        
+        {showCompact ? (
+             <div className="flex items-center justify-between w-full px-2">
+                <Button variant="ghost" className="rounded-full font-normal" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
+                <Separator orientation="vertical" className="h-6" />
+                <Button variant="ghost" className="rounded-full font-normal" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
+                <Separator orientation="vertical" className="h-6" />
+                <div className="flex items-center">
+                    <Button variant="ghost" className="rounded-full font-normal" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
+                    <Button onClick={handleSearch} className="bg-accent rounded-full p-2 h-8 w-8 flex items-center justify-center text-accent-foreground hover:bg-accent/90">
+                        <Search className="h-4 w-4" />
+                    </Button>
+                </div>
+            </div>
+        ) : (
+            <>
             <div className="flex-[1.5] relative pr-4">
                 <label htmlFor="destination" className="block text-xs font-bold text-left pl-4 text-foreground/80">
                 Where
@@ -111,7 +150,7 @@ export function SearchBar() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4 text-xs"
+                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4"
                 />
             </div>
 
@@ -122,7 +161,7 @@ export function SearchBar() {
                     <div className="flex-1 flex cursor-pointer">
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
-                            <div className="text-xs text-muted-foreground">
+                            <div className="text-sm text-muted-foreground">
                                 {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
                             </div>
                         </div>
@@ -145,7 +184,7 @@ export function SearchBar() {
                      <div className="flex-1 flex cursor-pointer">
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check out</label>
-                            <div className="text-xs text-muted-foreground">
+                            <div className="text-sm text-muted-foreground">
                                 {date?.to ? format(date.to, 'LLL dd') : <span>Add dates</span>}
                             </div>
                         </div>
@@ -170,7 +209,7 @@ export function SearchBar() {
                     <PopoverTrigger asChild>
                         <div className="text-left w-full pl-4 cursor-pointer">
                             <label className="block text-xs font-bold text-foreground/80">Who</label>
-                            <div className="text-xs text-muted-foreground truncate">{guestDisplay}</div>
+                            <div className="text-sm text-muted-foreground truncate">{guestDisplay}</div>
                         </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-80">
@@ -242,7 +281,13 @@ export function SearchBar() {
                     <Search className="h-5 w-5" />
                 </Button>
             </div>
+            </>
+        )}
         </div>
     </div>
   );
 }
+
+    
+    
+    
