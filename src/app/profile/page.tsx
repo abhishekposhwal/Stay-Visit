@@ -97,7 +97,7 @@ export default function ProfilePage() {
                     <Button variant="outline">Edit</Button>
                 </div>
                 
-                <div className="p-8 rounded-xl border">
+                <div className="p-8 rounded-xl">
                     <h2 className="text-2xl font-bold mb-2">Complete your profile</h2>
                     <p className="text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
                     
