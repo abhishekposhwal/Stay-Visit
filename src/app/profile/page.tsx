@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
+import { LifeBuoy, ShieldCheck, FileText, Settings } from 'lucide-react';
 
 const mockBookings = [
     {
@@ -42,6 +43,33 @@ const mockConnections = [
     { name: 'Neha', avatar: 'https://picsum.photos/seed/p5/100/100' },
     { name: 'Karan', avatar: 'https://picsum.photos/seed/p6/100/100' },
 ];
+
+const helpTopics = [
+    { 
+        icon: <LifeBuoy className="h-6 w-6 text-accent" />,
+        title: "Contact Support",
+        description: "Get help from our support team 24/7.",
+        link: "/work-in-progress"
+    },
+    { 
+        icon: <ShieldCheck className="h-6 w-6 text-accent" />,
+        title: "Safety Center",
+        description: "Learn about our safety features and guidelines.",
+        link: "/work-in-progress"
+    },
+    { 
+        icon: <FileText className="h-6 w-6 text-accent" />,
+        title: "Terms of Service",
+        description: "Read our terms and conditions.",
+        link: "/work-in-progress"
+    },
+    { 
+        icon: <Settings className="h-6 w-6 text-accent" />,
+        title: "Account Settings",
+        description: "Manage your account preferences and notifications.",
+        link: "/work-in-progress"
+    },
+]
 
 
 export default function ProfilePage() {
@@ -115,9 +143,9 @@ export default function ProfilePage() {
                         <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
                             Account settings
                         </Link>
-                        <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
+                        <button onClick={() => setActiveTab('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg", activeTab === 'help' && 'font-semibold')}>
                             Get help
-                        </Link>
+                        </button>
                         <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive">
                             Log out
                         </button>
@@ -175,7 +203,7 @@ export default function ProfilePage() {
                 <div>
                   <div className="flex justify-between items-center mb-6">
                       <h1 className="text-2xl font-bold">Connections</h1>
-                      <Button>Add friends</Button>
+                      <Button variant="default">Add friends</Button>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {mockConnections.map((connection, index) => (
@@ -188,6 +216,22 @@ export default function ProfilePage() {
                           </div>
                       ))}
                   </div>
+                </div>
+              )}
+              {activeTab === 'help' && (
+                <div>
+                    <h1 className="text-2xl font-bold mb-6">Get Help</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {helpTopics.map((topic, index) => (
+                            <Link href={topic.link} key={index} className="border rounded-lg p-4 flex items-start gap-4 hover:bg-muted/50 transition-colors">
+                                {topic.icon}
+                                <div>
+                                    <h3 className="font-semibold">{topic.title}</h3>
+                                    <p className="text-sm text-muted-foreground">{topic.description}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
               )}
             </main>
