@@ -68,7 +68,7 @@ export default function Home() {
         if (cityProperties.length === 0) return null;
         
         return (
-          <section key={city} className="container mx-auto px-6">
+          <section key={city} className="container mx-auto px-4 mt-8">
             <h2 className="text-3xl font-bold my-8">
               <Link href={`/listings?city=${encodeURIComponent(city)}`} className="hover:text-accent transition-colors cursor-pointer inline-flex items-center gap-2">
                 Stays in {city}
