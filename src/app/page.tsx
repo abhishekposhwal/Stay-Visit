@@ -77,7 +77,7 @@ export default function Home() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={cityProperties} columns={5} />
+            <ListingsGrid listings={cityProperties} />
           </section>
         );
       })}

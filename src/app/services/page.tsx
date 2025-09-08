@@ -28,7 +28,7 @@ export default function ServicesPage() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={categoryServices} columns={4} />
+            <ListingsGrid listings={categoryServices} />
           </section>
         );
       })}

@@ -8,7 +8,7 @@ interface ListingsGridProps {
   columns?: 2 | 3 | 4 | 5;
 }
 
-export default function ListingsGrid({ listings, columns = 4 }: ListingsGridProps) {
+export default function ListingsGrid({ listings, columns = 5 }: ListingsGridProps) {
   if (listings.length === 0) {
     return (
       <div className="text-center py-16">

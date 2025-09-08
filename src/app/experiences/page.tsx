@@ -28,7 +28,7 @@ export default function ExperiencesPage() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={originalProperties} columns={5} />
+            <ListingsGrid listings={originalProperties} />
           </section>
           <section>
             <h2 className="text-3xl font-bold my-8">
@@ -39,7 +39,7 @@ export default function ExperiencesPage() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={popularProperties} columns={5} />
+            <ListingsGrid listings={popularProperties} />
           </section>
         </div>
     );
