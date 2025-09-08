@@ -107,23 +107,23 @@ export default function ProfilePage() {
             <div className="lg:col-span-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Booking History</CardTitle>
-                        <CardDescription>View your past and upcoming reservations.</CardDescription>
+                        <CardTitle className="text-xl">Booking History</CardTitle>
+                        <CardDescription className="text-sm">View your past and upcoming reservations.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       {bookingHistory.length > 0 ? (
                         bookingHistory.map((booking) => (
-                           <Link href={`/bookings/${booking.id}`} key={booking.id} className="block hover:bg-muted/50 rounded-lg p-4 transition-colors">
+                           <Link href={`/bookings/${booking.id}`} key={booking.id} className="block hover:bg-muted/50 rounded-lg p-3 transition-colors">
                               <div className="flex items-start gap-4">
-                                <img src={booking.image} data-ai-hint="building exterior" alt={booking.title} className="w-32 h-24 object-cover rounded-md"/>
+                                <img src={booking.image} data-ai-hint="building exterior" alt={booking.title} className="w-28 h-20 object-cover rounded-md"/>
                                 <div className="flex-1">
-                                  <h3 className="font-semibold text-lg">{booking.title}</h3>
-                                  <p className="text-sm text-muted-foreground">{booking.location}</p>
-                                  <div className="flex items-center text-sm text-muted-foreground mt-2">
-                                      <Calendar className="w-4 h-4 mr-2" />
+                                  <h3 className="font-semibold text-base">{booking.title}</h3>
+                                  <p className="text-xs text-muted-foreground">{booking.location}</p>
+                                  <div className="flex items-center text-xs text-muted-foreground mt-1">
+                                      <Calendar className="w-3 h-3 mr-1.5" />
                                       <span>{booking.dates}</span>
                                   </div>
-                                  <p className="font-semibold text-md mt-2">{booking.price}</p>
+                                  <p className="font-semibold text-sm mt-1">{booking.price}</p>
                                 </div>
                                 <Button variant="outline" size="sm">View Details</Button>
                               </div>
@@ -145,29 +145,29 @@ export default function ProfilePage() {
             <div className="lg:col-span-1">
                 <Card>
                     <CardHeader className="text-center">
-                    <Avatar className="w-24 h-24 mx-auto mb-4">
+                    <Avatar className="w-20 h-20 mx-auto mb-4">
                         <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" />
                         <AvatarFallback>{user.displayName?.[0] || user.email?.[0].toUpperCase() || 'U'}</AvatarFallback>
                     </Avatar>
-                    <CardTitle className="text-2xl">{user.displayName || user.email}</CardTitle>
+                    <CardTitle className="text-xl">{user.displayName || user.email}</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-6">
+                    <CardContent className="space-y-4">
                         <div className="text-center">
-                        <p className="text-muted-foreground">{user.email}</p>
+                        <p className="text-sm text-muted-foreground">{user.email}</p>
                         </div>
                         
                         <Separator />
 
-                        <div className="grid gap-2 text-sm text-left">
-                        <h3 className="font-semibold text-lg">Contact Information</h3>
+                        <div className="grid gap-1.5 text-xs text-left">
+                        <h3 className="font-semibold text-base mb-1">Contact Information</h3>
                         <div className="flex justify-between">
                             <span className="text-muted-foreground">Mobile Number</span>
                             <span>+91 98765 43210</span>
                         </div>
                         </div>
 
-                        <div className="grid gap-2 text-sm text-left">
-                        <h3 className="font-semibold text-lg">Address</h3>
+                        <div className="grid gap-1.5 text-xs text-left">
+                        <h3 className="font-semibold text-base mb-1">Address</h3>
                         <div className="flex justify-between">
                             <span className="text-muted-foreground">House No</span>
                             <span>123, Sunshine Apartments</span>
@@ -186,7 +186,7 @@ export default function ProfilePage() {
                         </div>
                         </div>
                         
-                        <Button onClick={handleLogout} variant="destructive" className="w-full !mt-8">
+                        <Button onClick={handleLogout} variant="destructive" className="w-full !mt-6">
                             Log Out
                         </Button>
                     </CardContent>
