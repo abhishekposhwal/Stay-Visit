@@ -20,6 +20,12 @@ export default function ServicesPage() {
 
   return (
     <div className="space-y-8">
+      <header className="relative pt-16">
+        <div className="relative z-10 text-center">
+        
+        </div>
+      </header>
+
       {!isMobile && (
         <div className="sticky top-16 z-40 pb-4 -mt-16">
           <div className="mt-8">
@@ -27,7 +33,7 @@ export default function ServicesPage() {
           </div>
         </div>
       )}
-      <div className="container mx-auto px-4 space-y-12 pt-16">
+      <div className="container mx-auto px-4 space-y-12">
         {SERVICE_CATEGORIES.map(category => {
           const categoryServices = getServicesByCategory(category);
           if (categoryServices.length === 0) return null;
