@@ -55,8 +55,8 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
         <div className="md:col-span-2">
            <Card>
             <CardHeader>
-                <CardTitle className="text-3xl font-bold">{booking.title}</CardTitle>
-                <CardDescription className="flex items-center gap-2 text-md text-muted-foreground">
+                <CardTitle className="text-2xl font-bold">{booking.title}</CardTitle>
+                <CardDescription className="flex items-center gap-2 text-base text-muted-foreground">
                     <MapPin className="w-4 h-4"/> {booking.location}
                 </CardDescription>
             </CardHeader>
@@ -67,24 +67,24 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
 
                 <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-3">
-                        <Calendar className="w-5 h-5 text-accent" />
+                        <Calendar className="w-4 h-4 text-accent" />
                         <div>
-                            <h3 className="font-semibold text-base">Dates</h3>
-                            <p className="text-sm text-muted-foreground">{booking.dates}</p>
+                            <h3 className="font-semibold text-sm">Dates</h3>
+                            <p className="text-xs text-muted-foreground">{booking.dates}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <Users className="w-5 h-5 text-accent" />
+                        <Users className="w-4 h-4 text-accent" />
                         <div>
-                            <h3 className="font-semibold text-base">Guests</h3>
-                            <p className="text-sm text-muted-foreground">{booking.guests}</p>
+                            <h3 className="font-semibold text-sm">Guests</h3>
+                            <p className="text-xs text-muted-foreground">{booking.guests}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <IndianRupee className="w-5 h-5 text-accent" />
+                        <IndianRupee className="w-4 h-4 text-accent" />
                         <div>
-                            <h3 className="font-semibold text-base">Total Price</h3>
-                            <p className="text-sm text-muted-foreground">{booking.price}</p>
+                            <h3 className="font-semibold text-sm">Total Price</h3>
+                            <p className="text-xs text-muted-foreground">{booking.price}</p>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
                 
                 {isPastBooking ? (
                     <div>
-                        <h2 className="text-2xl font-semibold mb-4">Leave a Review</h2>
+                        <h2 className="text-xl font-semibold mb-4">Leave a Review</h2>
                         <form>
                             <div className="grid gap-4">
                             <div className="grid gap-2">
@@ -101,7 +101,7 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
                                 <div className="flex items-center gap-1">
                                     {[1, 2, 3, 4, 5].map((star) => (
                                         <Button key={star} variant="ghost" size="icon" className="text-yellow-400 hover:text-yellow-500">
-                                            <Star className="w-6 h-6" />
+                                            <Star className="w-5 h-5" />
                                         </Button>
                                     ))}
                                 </div>
@@ -116,7 +116,7 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
                     </div>
                 ) : (
                     <div>
-                        <h2 className="text-2xl font-semibold mb-4">Upcoming Booking</h2>
+                        <h2 className="text-xl font-semibold mb-4">Upcoming Booking</h2>
                         <p className="text-muted-foreground">You can't review this property until after your stay. We hope you have a wonderful time!</p>
                     </div>
                 )}
@@ -126,14 +126,14 @@ export default function BookingDetailsPage({ params }: { params: { id: string } 
         <div className="md:col-span-1">
           <Card>
             <CardHeader>
-                <CardTitle>Host Information</CardTitle>
+                <CardTitle className="text-xl">Host Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
-                <Image src={property.host.avatar} alt={property.host.name} width={64} height={64} className="rounded-full" />
+                <Image src={property.host.avatar} alt={property.host.name} width={56} height={56} className="rounded-full" />
                 <div>
-                  <h3 className="font-semibold text-lg">{property.host.name}</h3>
-                  {property.host.isSuperhost && <p className="text-sm text-accent font-medium">Superhost</p>}
+                  <h3 className="font-semibold text-base">{property.host.name}</h3>
+                  {property.host.isSuperhost && <p className="text-xs text-accent font-medium">Superhost</p>}
                 </div>
               </div>
               <Button className="w-full">Contact Host</Button>
