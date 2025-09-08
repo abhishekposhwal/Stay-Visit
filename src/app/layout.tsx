@@ -40,7 +40,7 @@ export default function RootLayout({
         <WishlistProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <div className="hidden md:block sticky top-16 z-40">
+            <div className="hidden md:block sticky top-16 z-40 bg-background py-2">
                 <SearchBar />
             </div>
             <main className="flex-grow pb-24 md:pb-0">{children}</main>
