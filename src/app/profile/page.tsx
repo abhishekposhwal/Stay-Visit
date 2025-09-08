@@ -65,6 +65,19 @@ export default function ProfilePage() {
     return (
       <div className="container mx-auto py-24 px-4 sm:px-6 lg:px-8">
          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+                <Card>
+                    <CardHeader>
+                        <Skeleton className="h-8 w-1/3" />
+                        <Skeleton className="h-5 w-1/2" />
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <Skeleton className="h-24 w-full" />
+                        <Skeleton className="h-24 w-full" />
+                        <Skeleton className="h-24 w-full" />
+                    </CardContent>
+                </Card>
+            </div>
             <div className="lg:col-span-1">
                 <Card>
                     <CardHeader className="text-center">
@@ -83,19 +96,6 @@ export default function ProfilePage() {
                     </CardContent>
                 </Card>
             </div>
-            <div className="lg:col-span-2">
-                <Card>
-                    <CardHeader>
-                        <Skeleton className="h-8 w-1/3" />
-                        <Skeleton className="h-5 w-1/2" />
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <Skeleton className="h-24 w-full" />
-                        <Skeleton className="h-24 w-full" />
-                        <Skeleton className="h-24 w-full" />
-                    </CardContent>
-                </Card>
-            </div>
         </div>
       </div>
     );
@@ -104,6 +104,44 @@ export default function ProfilePage() {
   return (
     <div className="container mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div className="lg:col-span-2">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Booking History</CardTitle>
+                        <CardDescription>View your past and upcoming reservations.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      {bookingHistory.length > 0 ? (
+                        bookingHistory.map((booking) => (
+                           <Link href={`/listings/${booking.id}`} key={booking.id} className="block hover:bg-muted/50 rounded-lg p-4 transition-colors">
+                              <div className="flex items-start gap-4">
+                                <img src={booking.image} data-ai-hint="building exterior" alt={booking.title} className="w-32 h-24 object-cover rounded-md"/>
+                                <div className="flex-1">
+                                  <h3 className="font-semibold text-lg">{booking.title}</h3>
+                                  <p className="text-sm text-muted-foreground">{booking.location}</p>
+                                  <div className="flex items-center text-sm text-muted-foreground mt-2">
+                                      <Calendar className="w-4 h-4 mr-2" />
+                                      <span>{booking.dates}</span>
+                                  </div>
+                                  <p className="font-semibold text-md mt-2">{booking.price}</p>
+                                </div>
+                                <Button variant="outline" size="sm">View Details</Button>
+                              </div>
+                           </Link>
+                        ))
+                      ) : (
+                        <div className="text-center py-12">
+                          <Home className="mx-auto h-12 w-12 text-muted-foreground" />
+                           <h3 className="mt-4 text-lg font-semibold">No bookings yet</h3>
+                           <p className="mt-1 text-sm text-muted-foreground">You haven't made any reservations yet. Start exploring to find your next stay!</p>
+                           <Button asChild className="mt-4">
+                                <Link href="/listings">Explore Stays</Link>
+                            </Button>
+                        </div>
+                      )}
+                    </CardContent>
+                </Card>
+            </div>
             <div className="lg:col-span-1">
                 <Card>
                     <CardHeader className="text-center">
@@ -151,44 +189,6 @@ export default function ProfilePage() {
                         <Button onClick={handleLogout} variant="destructive" className="w-full !mt-8">
                             Log Out
                         </Button>
-                    </CardContent>
-                </Card>
-            </div>
-            <div className="lg:col-span-2">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Booking History</CardTitle>
-                        <CardDescription>View your past and upcoming reservations.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      {bookingHistory.length > 0 ? (
-                        bookingHistory.map((booking) => (
-                           <Link href={`/listings/${booking.id}`} key={booking.id} className="block hover:bg-muted/50 rounded-lg p-4 transition-colors">
-                              <div className="flex items-start gap-4">
-                                <img src={booking.image} data-ai-hint="building exterior" alt={booking.title} className="w-32 h-24 object-cover rounded-md"/>
-                                <div className="flex-1">
-                                  <h3 className="font-semibold text-lg">{booking.title}</h3>
-                                  <p className="text-sm text-muted-foreground">{booking.location}</p>
-                                  <div className="flex items-center text-sm text-muted-foreground mt-2">
-                                      <Calendar className="w-4 h-4 mr-2" />
-                                      <span>{booking.dates}</span>
-                                  </div>
-                                  <p className="font-semibold text-md mt-2">{booking.price}</p>
-                                </div>
-                                <Button variant="outline" size="sm">View Details</Button>
-                              </div>
-                           </Link>
-                        ))
-                      ) : (
-                        <div className="text-center py-12">
-                          <Home className="mx-auto h-12 w-12 text-muted-foreground" />
-                           <h3 className="mt-4 text-lg font-semibold">No bookings yet</h3>
-                           <p className="mt-1 text-sm text-muted-foreground">You haven't made any reservations yet. Start exploring to find your next stay!</p>
-                           <Button asChild className="mt-4">
-                                <Link href="/listings">Explore Stays</Link>
-                            </Button>
-                        </div>
-                      )}
                     </CardContent>
                 </Card>
             </div>
