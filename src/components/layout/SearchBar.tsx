@@ -32,9 +32,19 @@ export function SearchBar() {
   });
   const [isDatePopoverOpen, setIsDatePopoverOpen] = useState(false);
   const [isGuestPopoverOpen, setIsGuestPopoverOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const destinationInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    const handleScroll = () => {
+        setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   const handleSearch = () => {
     if (destination) {
@@ -58,11 +68,34 @@ export function SearchBar() {
     }));
   }
 
+  if (isScrolled) {
+    return (
+        <div className="hidden md:flex items-center">
+            <Button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                variant="ghost"
+                className="rounded-full shadow-lg border h-12 w-auto px-4"
+            >
+                <div className="flex items-center divide-x">
+                    <span className="px-3 text-sm font-medium">Anywhere</span>
+                    <span className="px-3 text-sm font-medium">Anytime</span>
+                    <span className="px-3 text-sm text-muted-foreground">Add guest</span>
+                    <div className="pl-2">
+                         <div className="bg-accent rounded-full p-2 flex items-center justify-center text-accent-foreground">
+                            <Search className="h-4 w-4" />
+                        </div>
+                    </div>
+                </div>
+            </Button>
+        </div>
+    )
+  }
+
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center text-center p-4">
+    <div className="hidden md:flex flex-col items-center justify-center text-center p-4">
         <div
           className={cn(
-            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out max-w-2xl"
+            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out max-w-5xl"
           )}
         >
             <div className="flex-[1.5] relative pr-4">
@@ -76,7 +109,7 @@ export function SearchBar() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4"
+                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4 text-sm"
                 />
             </div>
 

@@ -10,12 +10,7 @@ export default function PageWithSearchBarLayout({
 }>) {
     return (
         <div>
-            <div className="hidden md:block sticky top-16 z-30 pb-4 bg-background border-b">
-                 <div className="-mt-16">
-                    <SearchBar />
-                </div>
-            </div>
-            <div className="pt-8">
+            <div className="pt-24 md:pt-8">
                 {children}
             </div>
         </div>

@@ -21,6 +21,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { logOut } from '@/services/auth';
 import { useToast } from '@/hooks/use-toast';
+import { SearchBar } from './SearchBar';
 
 const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
@@ -44,6 +45,9 @@ export function Navbar() {
     });
   }
 
+  const showSearchBar = ['/', '/experiences', '/services'].includes(pathname) || pathname.startsWith('/listings') || pathname.startsWith('/experiences/category') || pathname.startsWith('/services/category');
+
+
   return (
     <header className={cn(
         "sticky top-0 z-40 w-full border-b transition-colors duration-300 bg-background shadow-sm"
@@ -60,16 +64,22 @@ export function Navbar() {
             </Link>
           </div>
         
-        <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium">
-          {navLinks.map((link) => (
-            <Button key={link.label} asChild variant="ghost" className={cn(pathname === link.href ? "font-semibold text-accent" : "", "hover:bg-transparent hover:text-accent")}>
-                <Link href={link.href} className="flex items-center gap-1">
-                    {link.icon}
-                    <span>{link.label}</span>
-                </Link>
-            </Button>
-          ))}
-        </nav>
+        {showSearchBar ? (
+            <div className="absolute left-1/2 -translate-x-1/2 w-auto">
+                <SearchBar />
+            </div>
+        ) : (
+            <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium">
+            {navLinks.map((link) => (
+                <Button key={link.label} asChild variant="ghost" className={cn(pathname === link.href ? "font-semibold text-accent" : "", "hover:bg-transparent hover:text-accent")}>
+                    <Link href={link.href} className="flex items-center gap-1">
+                        {link.icon}
+                        <span>{link.label}</span>
+                    </Link>
+                </Button>
+            ))}
+            </nav>
+        )}
 
         <div className="hidden md:flex items-center justify-end flex-1">
             <Link href="/work-in-progress">
