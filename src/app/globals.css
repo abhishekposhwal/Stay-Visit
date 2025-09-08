@@ -119,29 +119,27 @@
     padding: 12px 4px;
     display: flex;
     flex-direction: column;
-    height: 90px; 
+    height: 100px; 
   }
 
   .card-title {
-    font-weight: normal;
-    font-size: 14px;
-    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
     line-height: 1.4;
-    color: #222222;
-    white-space: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-rating {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 10px;
-    color: #717171;
+    font-size: 0.875rem;
   }
 
   .card-price {
-    font-weight: 500;
-    font-size: 10px;
-    color: #222222;
+    font-weight: 600;
+    font-size: 1rem;
   }
 }

@@ -77,7 +77,7 @@ export default function Home() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={cityProperties} layout="horizontal" />
+            <ListingsGrid listings={cityProperties} layout="grid" />
           </section>
         );
       })}

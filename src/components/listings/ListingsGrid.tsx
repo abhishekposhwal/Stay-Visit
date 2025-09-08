@@ -18,22 +18,16 @@ export default function ListingsGrid({ listings, layout = 'grid' }: ListingsGrid
     );
   }
 
-  if (layout === 'horizontal') {
-    return (
-      <div className="grid grid-flow-col auto-cols-max gap-4 pb-4 overflow-x-auto">
-        {listings.map((property) => (
-          <div key={property.id} className="w-44 flex-shrink-0">
-            <ListingCard property={property} />
-          </div>
-        ))}
-      </div>
-    );
-  }
+  const gridClasses = layout === 'horizontal' 
+    ? "grid-flow-col auto-cols-max gap-4 pb-4 overflow-x-auto"
+    : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6";
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div className={cn("grid", gridClasses)}>
       {listings.map((property) => (
-        <ListingCard key={property.id} property={property} />
+        <div key={property.id} className={cn(layout === 'horizontal' && "w-64 flex-shrink-0")}>
+          <ListingCard property={property} />
+        </div>
       ))}
     </div>
   );
