@@ -161,8 +161,8 @@ export function SearchBar() {
                     <div className="flex-1 flex cursor-pointer">
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
-                            <div className="text-sm text-muted-foreground">
-                                {date?.from ? format(date.from, 'LLL dd') : <span className="text-xs">Add dates</span>}
+                            <div className="text-xs text-muted-foreground">
+                                {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
                             </div>
                         </div>
                     </div>
@@ -184,8 +184,8 @@ export function SearchBar() {
                      <div className="flex-1 flex cursor-pointer">
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check out</label>
-                            <div className="text-sm text-muted-foreground">
-                                {date?.to ? format(date.to, 'LLL dd') : <span className="text-xs">Add dates</span>}
+                            <div className="text-xs text-muted-foreground">
+                                {date?.to ? format(date.to, 'LLL dd') : <span>Add dates</span>}
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@ export function SearchBar() {
                     <PopoverTrigger asChild>
                         <div className="text-left w-full pl-4 cursor-pointer">
                             <label className="block text-xs font-bold text-foreground/80">Who</label>
-                            <div className="text-sm text-muted-foreground truncate">{guestDisplay}</div>
+                            <div className="text-xs text-muted-foreground truncate">{guestDisplay}</div>
                         </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-80">
