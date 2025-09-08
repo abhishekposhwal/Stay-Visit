@@ -113,7 +113,7 @@ export default function ProfilePage() {
                     <CardContent className="space-y-4">
                       {bookingHistory.length > 0 ? (
                         bookingHistory.map((booking) => (
-                           <Link href={`/listings/${booking.id}`} key={booking.id} className="block hover:bg-muted/50 rounded-lg p-4 transition-colors">
+                           <Link href={`/bookings/${booking.id}`} key={booking.id} className="block hover:bg-muted/50 rounded-lg p-4 transition-colors">
                               <div className="flex items-start gap-4">
                                 <img src={booking.image} data-ai-hint="building exterior" alt={booking.title} className="w-32 h-24 object-cover rounded-md"/>
                                 <div className="flex-1">
