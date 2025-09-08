@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label"
 
 export default function SignupPage() {
   return (
-    <div className="flex items-center justify-center py-24">
+    <div className="flex items-center justify-center pt-8">
         <Card className="mx-auto max-w-sm">
         <CardHeader>
             <CardTitle className="text-xl">Sign Up</CardTitle>
