@@ -46,7 +46,7 @@ export function Navbar() {
         
         <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium">
           {navLinks.map((link) => (
-            <Button key={link.label} asChild variant="ghost" className={cn(pathname === link.href ? "font-semibold text-accent" : "", "hover:bg-transparent hover:text-accent")}>
+            <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent hover:text-accent">
                 <Link href={link.href} className="flex items-center gap-1">
                     {link.icon}
                     <span>{link.label}</span>
