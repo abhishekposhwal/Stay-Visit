@@ -4,8 +4,6 @@
 
 import { properties } from '@/lib/data';
 import ListingsGrid from '@/components/listings/ListingsGrid';
-import { SearchBar } from '@/components/layout/SearchBar';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Property } from '@/lib/types';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -48,21 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className="space-y-8 pt-16">
-      <header className="relative">
-        <div className="relative z-10 text-center">
-          
-        </div>
-      </header>
-      
-      {!isMobile && (
-        <div className="sticky top-16 z-40 pb-4 -mt-24">
-          <div className="mt-8">
-              <SearchBar />
-          </div>
-        </div>
-      )}
-
+    <div className="space-y-8 pt-8">
       {CITIES.map(city => {
         const cityProperties = getPropertiesByCity(city, 7);
         if (cityProperties.length === 0) return null;

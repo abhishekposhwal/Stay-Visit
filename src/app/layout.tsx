@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -7,6 +8,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { WishlistProvider } from '@/context/WishlistProvider';
 import { MobileFooterNav } from '@/components/layout/MobileFooterNav';
 import './globals.css';
+import { SearchBar } from '@/components/layout/SearchBar';
 
 
 const inter = Inter({
@@ -38,7 +40,10 @@ export default function RootLayout({
         <WishlistProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="-mt-16 flex-grow pb-24 md:pb-0">{children}</main>
+            <div className="hidden md:block sticky top-16 z-40">
+                <SearchBar />
+            </div>
+            <main className="flex-grow pb-24 md:pb-0">{children}</main>
             <Footer />
           </div>
           <MobileFooterNav />

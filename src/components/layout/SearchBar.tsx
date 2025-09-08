@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import { format } from 'date-fns';
 import { Input } from '../ui/input';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface GuestCounts {
     adults: number;
@@ -38,6 +38,7 @@ export function SearchBar() {
   const destinationInputRef = useRef<HTMLInputElement>(null);
   const searchBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const isMobile = useIsMobile();
 
   const handleSearch = () => {
     if (destination) {
@@ -107,6 +108,8 @@ export function SearchBar() {
       }
     }, 100);
   };
+  
+  if (isMobile) return null;
 
   const showCompact = isCompact && !isActive;
 
@@ -114,7 +117,7 @@ export function SearchBar() {
     <div className="container mx-auto flex flex-col items-center justify-center text-center p-4" ref={searchBarRef}>
         <div
           className={cn(
-            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out",
+            "bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center p-2 text-foreground transition-all duration-500 ease-in-out",
             showCompact ? 'max-w-md cursor-pointer' : 'max-w-5xl'
           )}
           onClick={() => {
@@ -287,7 +290,3 @@ export function SearchBar() {
     </div>
   );
 }
-
-    
-    
-    
