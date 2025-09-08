@@ -1,3 +1,4 @@
+
 import ListingsGrid from '@/components/listings/ListingsGrid';
 import { properties } from '@/lib/data';
 
@@ -8,7 +9,7 @@ interface ListingsPageProps {
 }
 
 export default function ListingsPage({ searchParams }: ListingsPageProps) {
-  const { city } = searchParams;
+  const city = searchParams.city;
 
   const filteredProperties = city
     ? properties.filter(p => p.location.toLowerCase().includes(city.toLowerCase()))
