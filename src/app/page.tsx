@@ -46,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className="space-y-8 pt-8">
+    <div className="space-y-8">
       {CITIES.map(city => {
         const cityProperties = getPropertiesByCity(city, 7);
         if (cityProperties.length === 0) return null;
