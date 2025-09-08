@@ -25,7 +25,7 @@ export function MobileBookingFooter({ property }: MobileBookingFooterProps) {
                 </div>
             </SheetTrigger>
             <Link href="/work-in-progress">
-              <Button size="lg">
+              <Button>
                 Reserve
               </Button>
             </Link>
