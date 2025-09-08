@@ -34,6 +34,15 @@ const mockBookings = [
     },
 ];
 
+const mockConnections = [
+    { name: 'Priya', avatar: 'https://picsum.photos/seed/p1/100/100' },
+    { name: 'Amit', avatar: 'https://picsum.photos/seed/p2/100/100' },
+    { name: 'Sunita', avatar: 'https://picsum.photos/seed/p3/100/100' },
+    { name: 'Vikram', avatar: 'https://picsum.photos/seed/p4/100/100' },
+    { name: 'Neha', avatar: 'https://picsum.photos/seed/p5/100/100' },
+    { name: 'Karan', avatar: 'https://picsum.photos/seed/p6/100/100' },
+];
+
 
 export default function ProfilePage() {
   const { user, loading, signOut } = useAuth();
@@ -85,9 +94,9 @@ export default function ProfilePage() {
                         <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'history' && 'bg-gray-100')}>
                             Past trips
                         </button>
-                        <Link href="/work-in-progress" className="block px-3 py-1 rounded-lg">
+                        <button onClick={() => setActiveTab('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg font-semibold", activeTab === 'connections' && 'bg-gray-100')}>
                             Connections
-                        </Link>
+                        </button>
                     </nav>
 
                     <Separator className="my-4" />
@@ -159,6 +168,25 @@ export default function ProfilePage() {
                     {mockBookings.map((booking, index) => (
                       <BookingHistoryItem key={index} booking={booking} />
                     ))}
+                  </div>
+                </div>
+              )}
+              {activeTab === 'connections' && (
+                <div>
+                  <div className="flex justify-between items-center mb-6">
+                      <h1 className="text-2xl font-bold">Connections</h1>
+                      <Button variant="outline">Add friends</Button>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {mockConnections.map((connection, index) => (
+                          <div key={index} className="border rounded-lg p-4 flex items-center gap-4">
+                              <Avatar>
+                                  <AvatarImage src={connection.avatar} alt={connection.name} />
+                                  <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
+                              </Avatar>
+                              <span className="font-semibold">{connection.name}</span>
+                          </div>
+                      ))}
                   </div>
                 </div>
               )}
