@@ -131,7 +131,7 @@ export function Navbar() {
                             <Link href="/profile"><UserIcon className="mr-2" /> Profile</Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <Link href="/work-in-progress">
+                                <Link href="/inbox">
                                     <MessageSquare className="mr-2" /> Inbox
                                 </Link>
                             </DropdownMenuItem>
