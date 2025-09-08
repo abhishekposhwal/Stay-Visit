@@ -14,7 +14,7 @@ export default function WishlistPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Your Wishlist</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">Your Wishlist</h1>
         <p className="text-lg text-muted-foreground">All your favorite stays, saved in one place.</p>
       </div>
       
