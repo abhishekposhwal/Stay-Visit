@@ -153,7 +153,7 @@ export function SearchBar() {
                 <Separator orientation="vertical" className="h-5" />
                 <div className="flex items-center">
                     <Button variant="ghost" size="sm" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
-                    <Button onClick={handleSearch} className="bg-accent rounded-full p-2 h-7 w-7 flex items-center justify-center text-accent-foreground hover:bg-accent/90">
+                    <Button onClick={handleSearch} className="rounded-full p-2 h-7 w-7 flex items-center justify-center text-accent-foreground">
                         <Search className="h-4 w-4" />
                     </Button>
                 </div>
@@ -298,7 +298,7 @@ export function SearchBar() {
                         </div>
                     </PopoverContent>
                 </Popover>
-                 <Button onClick={handleSearch} className="bg-accent rounded-full p-3 flex items-center justify-center text-accent-foreground hover:bg-accent/90">
+                 <Button onClick={handleSearch} className="rounded-full p-3 flex items-center justify-center text-white">
                     <Search className="h-5 w-5" />
                 </Button>
             </div>
