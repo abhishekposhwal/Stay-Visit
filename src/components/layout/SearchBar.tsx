@@ -126,12 +126,12 @@ export function SearchBar() {
         
         {showCompact ? (
              <div className="flex items-center justify-between w-full px-2">
-                <Button variant="ghost" className="rounded-full font-normal" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
+                <Button variant="ghost" className="rounded-full font-normal text-sm" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
                 <Separator orientation="vertical" className="h-6" />
-                <Button variant="ghost" className="rounded-full font-normal" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
+                <Button variant="ghost" className="rounded-full font-normal text-sm" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
                 <Separator orientation="vertical" className="h-6" />
                 <div className="flex items-center">
-                    <Button variant="ghost" className="rounded-full font-normal" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
+                    <Button variant="ghost" className="rounded-full font-normal text-sm" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
                     <Button onClick={handleSearch} className="bg-accent rounded-full p-2 h-8 w-8 flex items-center justify-center text-accent-foreground hover:bg-accent/90">
                         <Search className="h-4 w-4" />
                     </Button>
@@ -150,7 +150,7 @@ export function SearchBar() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4"
+                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4 text-sm"
                 />
             </div>
 
@@ -162,7 +162,7 @@ export function SearchBar() {
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
                             <div className="text-sm text-muted-foreground">
-                                {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
+                                {date?.from ? format(date.from, 'LLL dd') : <span className="text-sm">Add dates</span>}
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ export function SearchBar() {
                         <div className="flex-1 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check out</label>
                             <div className="text-sm text-muted-foreground">
-                                {date?.to ? format(date.to, 'LLL dd') : <span>Add dates</span>}
+                                {date?.to ? format(date.to, 'LLL dd') : <span className="text-sm">Add dates</span>}
                             </div>
                         </div>
                     </div>
