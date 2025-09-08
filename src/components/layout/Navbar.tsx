@@ -12,12 +12,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { HardHat, Heart, Home, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus } from 'lucide-react';
+import { HardHat, Heart, Home, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistProvider';
 import { cn } from '@/lib/utils';
-import React from 'react';
-import { usePathname } from 'next/navigation';
+import React, { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthProvider';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
+import { Input } from '../ui/input';
 
 const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
@@ -29,6 +31,23 @@ export function Navbar() {
   const { wishlist } = useWishlist();
   const { user, signOut } = useAuth();
   const pathname = usePathname();
+
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [destination, setDestination] = useState('');
+  const router = useRouter();
+
+  const handleSearch = () => {
+      if (destination) {
+          router.push(`/listings?city=${encodeURIComponent(destination)}`);
+          setIsSearchOpen(false);
+      }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Enter') {
+          handleSearch();
+      }
+  };
 
   return (
     <header className={cn(
@@ -57,8 +76,37 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center justify-end flex-1">
-            <Link href="/work-in-progress">
+        <div className="flex items-center justify-end flex-1 md:gap-4">
+            <div className="md:hidden">
+              <Sheet open={isSearchOpen} onOpenChange={setIsSearchOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Search className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="bottom" className="h-auto">
+                  <SheetHeader>
+                    <SheetTitle>Search by City</SheetTitle>
+                  </SheetHeader>
+                  <div className="flex items-center space-x-2 py-4">
+                    <div className="grid flex-1 gap-2">
+                      <Input
+                        id="city-mobile"
+                        placeholder="Enter a city..."
+                        value={destination}
+                        onChange={(e) => setDestination(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                      />
+                    </div>
+                    <Button type="submit" size="icon" onClick={handleSearch}>
+                      <Search className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          
+            <Link href="/work-in-progress" className="hidden md:block">
               <Button variant="ghost" className="transition-colors font-bold text-foreground hover:bg-accent/10 rounded-full">
                 Become a host
               </Button>
