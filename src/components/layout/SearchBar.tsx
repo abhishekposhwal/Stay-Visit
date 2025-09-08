@@ -39,7 +39,9 @@ export function SearchBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-        setIsScrolled(window.scrollY > 0);
+        const heroSection = document.getElementById('hero-section');
+        const offset = heroSection ? heroSection.offsetHeight : 200;
+        setIsScrolled(window.scrollY > offset);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -70,11 +72,11 @@ export function SearchBar() {
 
   if (isScrolled) {
     return (
-        <div className="hidden md:flex items-center">
+        <div className="flex justify-center items-center h-16">
             <Button 
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 variant="ghost"
-                className="rounded-full shadow-lg border h-12 w-auto px-4"
+                className="rounded-full shadow-lg border h-12 w-auto px-4 bg-background"
             >
                 <div className="flex items-center divide-x">
                     <span className="px-3 text-sm font-medium">Anywhere</span>
@@ -92,7 +94,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className="hidden md:flex flex-col items-center justify-center text-center p-4">
+    <div className="container mx-auto flex flex-col items-center justify-center text-center p-4">
         <div
           className={cn(
             "bg-background/80 backdrop-blur-sm rounded-full shadow-lg border flex items-center p-2 text-foreground transition-all duration-500 ease-in-out max-w-5xl"
