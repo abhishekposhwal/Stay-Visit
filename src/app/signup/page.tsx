@@ -18,6 +18,8 @@ import { useToast } from "@/hooks/use-toast";
 import { signUp, logInWithGoogle } from "@/services/auth";
 
 export default function SignupPage() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
@@ -26,7 +28,7 @@ export default function SignupPage() {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await signUp(email, password);
+      await signUp(email, password, `${firstName} ${lastName}`);
       router.push('/');
       toast({
         title: "Account Created",
@@ -73,11 +75,23 @@ export default function SignupPage() {
               <div className="grid grid-cols-2 gap-4">
                   <div className="grid gap-2">
                   <Label htmlFor="first-name">First name</Label>
-                  <Input id="first-name" placeholder="Max" required />
+                  <Input 
+                    id="first-name" 
+                    placeholder="Max" 
+                    required 
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
                   </div>
                   <div className="grid gap-2">
                   <Label htmlFor="last-name">Last name</Label>
-                  <Input id="last-name" placeholder="Robinson" required />
+                  <Input 
+                    id="last-name" 
+                    placeholder="Robinson" 
+                    required 
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
                   </div>
               </div>
               <div className="grid gap-2">

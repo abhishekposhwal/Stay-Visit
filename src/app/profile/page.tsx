@@ -50,9 +50,9 @@ export default function ProfilePage() {
         <CardHeader className="text-center">
           <Avatar className="w-24 h-24 mx-auto mb-4">
             <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" />
-            <AvatarFallback>{user.email?.[0].toUpperCase() ?? 'U'}</AvatarFallback>
+            <AvatarFallback>{user.displayName?.[0] || user.email?.[0].toUpperCase() || 'U'}</AvatarFallback>
           </Avatar>
-          <CardTitle className="text-2xl">{user.displayName || 'User Profile'}</CardTitle>
+          <CardTitle className="text-2xl">{user.displayName || user.email}</CardTitle>
         </CardHeader>
         <CardContent className="text-center space-y-4">
             <p className="text-muted-foreground">{user.email}</p>
