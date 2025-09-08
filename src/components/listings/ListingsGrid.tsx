@@ -5,10 +5,10 @@ import { cn } from '@/lib/utils';
 
 interface ListingsGridProps {
   listings: Property[];
-  layout?: 'grid' | 'horizontal';
+  columns?: 2 | 3 | 4 | 5;
 }
 
-export default function ListingsGrid({ listings, layout = 'grid' }: ListingsGridProps) {
+export default function ListingsGrid({ listings, columns = 4 }: ListingsGridProps) {
   if (listings.length === 0) {
     return (
       <div className="text-center py-16">
@@ -18,14 +18,17 @@ export default function ListingsGrid({ listings, layout = 'grid' }: ListingsGrid
     );
   }
 
-  const gridClasses = layout === 'horizontal' 
-    ? "grid-flow-col auto-cols-max gap-4 pb-4 overflow-x-auto"
-    : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6";
+  const gridClasses = {
+    2: 'grid-cols-1 sm:grid-cols-2 gap-6',
+    3: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6',
+    4: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6',
+    5: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6',
+  }
 
   return (
-    <div className={cn("grid", gridClasses)}>
+    <div className={cn("grid", gridClasses[columns])}>
       {listings.map((property) => (
-        <div key={property.id} className={cn(layout === 'horizontal' && "w-64 flex-shrink-0")}>
+        <div key={property.id}>
           <ListingCard property={property} />
         </div>
       ))}

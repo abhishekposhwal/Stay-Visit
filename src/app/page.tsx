@@ -64,7 +64,7 @@ export default function Home() {
       )}
 
       {CITIES.map(city => {
-        const cityProperties = getPropertiesByCity(city, 7);
+        const cityProperties = getPropertiesByCity(city, 10);
         if (cityProperties.length === 0) return null;
         
         return (
@@ -77,7 +77,7 @@ export default function Home() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={cityProperties} layout="grid" />
+            <ListingsGrid listings={cityProperties} columns={5} />
           </section>
         );
       })}

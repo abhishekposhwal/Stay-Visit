@@ -13,8 +13,8 @@ export default function ExperiencesPage() {
     const [popularProperties, setPopularProperties] = useState<Property[]>([]);
 
     useEffect(() => {
-        setOriginalProperties(experiences.filter(p => p.category === 'Originals').slice(0, 4));
-        setPopularProperties(experiences.filter(p => p.category === 'Popular').slice(0, 4));
+        setOriginalProperties(experiences.filter(p => p.category === 'Originals').slice(0, 5));
+        setPopularProperties(experiences.filter(p => p.category === 'Popular').slice(0, 5));
     }, []);
 
     return (
@@ -28,7 +28,7 @@ export default function ExperiencesPage() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={originalProperties} />
+            <ListingsGrid listings={originalProperties} columns={5} />
           </section>
           <section>
             <h2 className="text-3xl font-bold my-8">
@@ -39,7 +39,7 @@ export default function ExperiencesPage() {
                 </svg>
               </Link>
             </h2>
-            <ListingsGrid listings={popularProperties} />
+            <ListingsGrid listings={popularProperties} columns={5} />
           </section>
         </div>
     );

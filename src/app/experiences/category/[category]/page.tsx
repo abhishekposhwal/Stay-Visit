@@ -28,7 +28,7 @@ export default function ExperienceCategoryPage({ params: { category } }: Experie
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">{pageTitle}</h1>
       </div>
-      <ListingsGrid listings={filteredExperiences} />
+      <ListingsGrid listings={filteredExperiences} columns={5} />
     </div>
   );
 }

@@ -28,7 +28,7 @@ export default function ServiceCategoryPage({ params: { category } }: ServiceCat
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">{pageTitle} Services</h1>
       </div>
-      <ListingsGrid listings={filteredServices} />
+      <ListingsGrid listings={filteredServices} columns={4} />
     </div>
   );
 }
