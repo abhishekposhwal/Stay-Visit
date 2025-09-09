@@ -55,7 +55,7 @@ export function AccountSettings({ user }: AccountSettingsProps) {
 
   return (
     <div>
-        <h1 className="text-2xl font-bold mb-6">Account Settings</h1>
+        <h1 className="text-xl md:text-2xl font-bold mb-6">Account Settings</h1>
         <div className="space-y-4">
             {settingsSections.map((section, index) => (
                 <Link href={section.link} key={index} className="block border rounded-lg p-4 hover:bg-muted/50 transition-colors">

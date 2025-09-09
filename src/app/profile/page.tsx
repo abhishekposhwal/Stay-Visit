@@ -172,15 +172,15 @@ export default function ProfilePage() {
                 "lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2 px-6",
                 activeView === 'content' ? 'block' : 'hidden lg:block'
             )}>
-                <Button variant="ghost" className="lg:hidden mb-4 -mx-3" onClick={() => setActiveView('menu')}>
+                <Button variant="ghost" className="lg:hidden mb-4 -mx-6" onClick={() => setActiveView('menu')}>
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Back to menu
                 </Button>
               {activeTab === 'about' && (
                 <div>
-                  <h1 className="text-2xl font-bold mb-6">About me</h1>
-                  <div className="p-8 rounded-xl border">
-                      <h2 className="text-xl font-bold mb-2">Complete your profile</h2>
+                  <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
+                  <div className="p-6 md:p-8 rounded-xl border">
+                      <h2 className="text-lg md:text-xl font-bold mb-2">Complete your profile</h2>
                       <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
                       
                       <div className="space-y-4">
@@ -208,7 +208,7 @@ export default function ProfilePage() {
               )}
               {activeTab === 'history' && (
                 <div>
-                  <h1 className="text-2xl font-bold mb-6">Past trips</h1>
+                  <h1 className="text-xl md:text-2xl font-bold mb-6">Past trips</h1>
                   <div className="space-y-6">
                     {mockBookings.map((booking, index) => (
                       <BookingHistoryItem key={index} booking={booking} />
@@ -219,7 +219,7 @@ export default function ProfilePage() {
               {activeTab === 'connections' && (
                 <div>
                   <div className="flex justify-between items-center mb-6">
-                      <h1 className="text-2xl font-bold">Connections</h1>
+                      <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
                       <Button variant="default">Add friends</Button>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -237,7 +237,7 @@ export default function ProfilePage() {
               )}
               {activeTab === 'help' && (
                 <div>
-                    <h1 className="text-2xl font-bold mb-6">Get Help</h1>
+                    <h1 className="text-xl md:text-2xl font-bold mb-6">Get Help</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {helpTopics.map((topic, index) => (
                             <Link href={topic.link} key={index} className="border rounded-lg p-4 flex items-start gap-4 hover:bg-muted/50 transition-colors">
