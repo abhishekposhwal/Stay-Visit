@@ -15,7 +15,7 @@ import {
 import { HardHat, Heart, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, X, Home } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistProvider';
 import { cn } from '@/lib/utils';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthProvider';
 import { Input } from '../ui/input';
@@ -33,6 +33,9 @@ export function Navbar() {
 
   const [destination, setDestination] = useState('');
   const [isMobileSearchVisible, setIsMobileSearchVisible] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const router = useRouter();
 
   const handleSearch = () => {
@@ -48,9 +51,29 @@ export function Navbar() {
       }
   };
 
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+      // Hide nav on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
     <header className={cn(
-        "w-full border-b transition-colors duration-300 bg-background shadow-sm z-50 md:sticky top-0"
+        "w-full border-b transition-all duration-300 bg-background shadow-sm z-50 md:sticky top-0",
+        "md:transform-none", // Keep it always visible on md+
+        showNav ? "translate-y-0" : "-translate-y-full"
     )}>
       <div className="container flex h-16 items-center justify-between">
           {isMobileSearchVisible ? (
