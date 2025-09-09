@@ -111,6 +111,7 @@ export default function SignupPage() {
                   disabled={loading}
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  className="border"
                 />
                 </div>
                 <div className="grid gap-2">
@@ -122,6 +123,7 @@ export default function SignupPage() {
                   disabled={loading}
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
+                  className="border"
                 />
                 </div>
               </div>
