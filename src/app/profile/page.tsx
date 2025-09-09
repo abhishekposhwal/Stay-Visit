@@ -112,20 +112,20 @@ export default function ProfilePage() {
                 <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
                 <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
             </Avatar>
-            <h2 className="text-2xl font-bold">{user.displayName || 'Welcome!'}</h2>
-            <p className="text-muted-foreground">Guest</p>
+            <h2 className="text-xl font-bold">{user.displayName || 'Welcome!'}</h2>
+            <p className="text-sm text-muted-foreground">Guest</p>
         </div>
 
         <Separator className="my-2" />
 
         <nav>
-            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'about' ? 'font-semibold' : '')}>
                 About me
             </button>
-            <button onClick={() => handleMenuClick('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'history' ? 'font-semibold' : '')}>
                 Past trips
             </button>
-            <button onClick={() => handleMenuClick('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'connections' ? 'font-semibold' : '')}>
                 Connections
             </button>
         </nav>
@@ -133,8 +133,8 @@ export default function ProfilePage() {
         <Separator className="my-2" />
         
         <div className="p-3 rounded-lg bg-muted/50 text-center">
-            <h3 className="font-bold">Become a host</h3>
-            <p className="text-sm text-muted-foreground mt-1 mb-2">It’s easy to start hosting and earn extra income.</p>
+            <h3 className="font-bold text-sm">Become a host</h3>
+            <p className="text-xs text-muted-foreground mt-1 mb-2">It’s easy to start hosting and earn extra income.</p>
             <Button asChild>
                 <Link href="/work-in-progress">Get started</Link>
             </Button>
@@ -143,13 +143,13 @@ export default function ProfilePage() {
         <Separator className="my-2" />
 
         <nav>
-            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'account' ? 'font-semibold' : '')}>
                 Account settings
             </button>
-            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'help' ? 'font-semibold' : '')}>
                 Get help
             </button>
-            <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
+            <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors text-sm">
                 Log out
             </button>
         </nav>
