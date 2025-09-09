@@ -104,6 +104,13 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      text: {
+        'primary-gradient': {
+          'background-image': 'linear-gradient(208deg, rgba(131, 58, 180, 1) 0%, rgba(255, 23, 23, 1) 40%, rgba(252, 176, 69, 1) 100%)',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+        }
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

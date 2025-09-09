@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { HardHat, Heart, Home, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, X } from 'lucide-react';
+import { HardHat, Heart, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, X, Home } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistProvider';
 import { cn } from '@/lib/utils';
 import React, { useState } from 'react';
