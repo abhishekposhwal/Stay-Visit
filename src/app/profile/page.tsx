@@ -12,8 +12,9 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, Menu } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const mockBookings = [
     {
@@ -99,59 +100,79 @@ export default function ProfilePage() {
     );
   }
 
+  const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
+    <div className="p-6 rounded-xl">
+        <div className="text-center mb-6">
+            <Avatar className="h-24 w-24 mx-auto mb-4">
+                <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
+                <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
+            </Avatar>
+            <h2 className="text-2xl font-bold">{user.displayName || 'Welcome!'}</h2>
+            <p className="text-muted-foreground">Guest</p>
+        </div>
+
+        <Separator className="my-4" />
+
+        <nav className="space-y-1">
+            <button onClick={() => { setActiveTab('about'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
+                About me
+            </button>
+            <button onClick={() => { setActiveTab('history'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
+                Past trips
+            </button>
+            <button onClick={() => { setActiveTab('connections'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
+                Connections
+            </button>
+        </nav>
+
+        <Separator className="my-4" />
+        
+        <div className="p-4 rounded-lg bg-muted/50 text-center">
+            <h3 className="font-bold">Become a host</h3>
+            <p className="text-sm text-muted-foreground mt-1 mb-3">It’s easy to start hosting and earn extra income.</p>
+            <Button asChild>
+                <Link href="/work-in-progress">Get started</Link>
+            </Button>
+        </div>
+
+        <Separator className="my-4" />
+
+        <nav className="space-y-1">
+            <button onClick={() => { setActiveTab('account'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
+                Account settings
+            </button>
+            <button onClick={() => { setActiveTab('help'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
+                Get help
+            </button>
+            <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
+                Log out
+            </button>
+        </nav>
+    </div>
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
+        <Sheet>
+            <SheetTrigger asChild>
+                <Button variant="outline" className="lg:hidden mb-4">
+                    <Menu className="mr-2 h-4 w-4" />
+                    Profile Menu
+                </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-full sm:w-80 p-0">
+                <SidebarContent onLinkClick={() => {
+                    const closeButton = document.querySelector('[data-radix-dialog-default-open=false]');
+                    if (closeButton instanceof HTMLElement) {
+                        closeButton.click();
+                    }
+                }} />
+            </SheetContent>
+        </Sheet>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12">
             {/* Left Sidebar */}
-            <aside className="lg:col-span-1 mb-8 lg:mb-0">
-                <div className="p-6 rounded-xl">
-                    <div className="text-center mb-6">
-                        <Avatar className="h-24 w-24 mx-auto mb-4">
-                            <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
-                            <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
-                        </Avatar>
-                        <h2 className="text-2xl font-bold">{user.displayName || 'Welcome!'}</h2>
-                        <p className="text-muted-foreground">Guest</p>
-                    </div>
-
-                    <Separator className="my-4" />
-
-                    <nav className="space-y-1">
-                        <button onClick={() => setActiveTab('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
-                            About me
-                        </button>
-                        <button onClick={() => setActiveTab('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
-                            Past trips
-                        </button>
-                        <button onClick={() => setActiveTab('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
-                            Connections
-                        </button>
-                    </nav>
-
-                    <Separator className="my-4" />
-                    
-                    <div className="p-4 rounded-lg bg-muted/50 text-center">
-                        <h3 className="font-bold">Become a host</h3>
-                        <p className="text-sm text-muted-foreground mt-1 mb-3">It’s easy to start hosting and earn extra income.</p>
-                        <Button asChild>
-                            <Link href="/work-in-progress">Get started</Link>
-                        </Button>
-                    </div>
-
-                    <Separator className="my-4" />
-
-                    <nav className="space-y-1">
-                        <button onClick={() => setActiveTab('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
-                            Account settings
-                        </button>
-                        <button onClick={() => setActiveTab('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
-                            Get help
-                        </button>
-                        <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
-                            Log out
-                        </button>
-                    </nav>
-                </div>
+            <aside className="hidden lg:block lg:col-span-1">
+                <SidebarContent />
             </aside>
 
             {/* Right Content */}
