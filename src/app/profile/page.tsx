@@ -177,7 +177,7 @@ export default function ProfilePage() {
                     Back to menu
                 </Button>
               {activeTab === 'about' && (
-                <>
+                <div className="px-4">
                   <div className="flex justify-between items-center mb-6">
                       <h1 className="text-2xl font-bold">About me</h1>
                   </div>
@@ -207,7 +207,7 @@ export default function ProfilePage() {
 
                       <Button variant="default" className="mt-6">Get started</Button>
                   </div>
-                </>
+                </div>
               )}
               {activeTab === 'history' && (
                 <div>
@@ -262,5 +262,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
