@@ -54,7 +54,7 @@ export function AccountSettings({ user }: AccountSettingsProps) {
   if (!user) return null;
 
   return (
-    <div>
+    <div className="px-4">
         <h1 className="text-2xl font-bold mb-6">Account Settings</h1>
         <div className="space-y-4">
             {settingsSections.map((section, index) => (
