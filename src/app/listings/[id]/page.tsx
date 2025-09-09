@@ -30,7 +30,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
   }
 
   return (
-    <>
+    <div className="pb-24">
       <div className="container mx-auto px-12 pt-8">
         <div className="mb-4">
           <h1 className="text-3xl md:text-4xl font-bold">{property.title}</h1>
@@ -111,6 +111,6 @@ export default async function ListingPage({ params }: ListingPageProps) {
         </div>
       </div>
       <MobileBookingFooter property={property} />
-    </>
+    </div>
   );
 }
