@@ -63,8 +63,8 @@ export function AccountSettings({ user }: AccountSettingsProps) {
                         <div className="flex items-start gap-4">
                             {section.icon}
                             <div>
-                                <h3 className="font-semibold">{section.title}</h3>
-                                <p className="text-sm text-muted-foreground">{section.description}</p>
+                                <h3 className="font-semibold text-sm">{section.title}</h3>
+                                <p className="text-xs text-muted-foreground">{section.description}</p>
                             </div>
                         </div>
                         <ChevronRight className="h-5 w-5 text-muted-foreground" />
