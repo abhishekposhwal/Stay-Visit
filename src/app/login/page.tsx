@@ -75,9 +75,13 @@ export default function LoginPage() {
       router.push('/');
     } catch (error) {
       console.error(error);
+      let errorMessage = "Could not log in with Google. Please try again.";
+      if (error instanceof FirebaseError && error.code === 'auth/unauthorized-domain') {
+        errorMessage = "This domain is not authorized for Google sign-in. Please contact support.";
+      }
       toast({
         title: "Google Login Failed",
-        description: "Could not log in with Google. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {

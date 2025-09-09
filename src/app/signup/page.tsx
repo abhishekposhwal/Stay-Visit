@@ -90,9 +90,13 @@ export default function SignupPage() {
       router.push('/');
     } catch (error) {
       console.error(error);
+      let errorMessage = "Could not sign up with Google. Please try again.";
+      if (error instanceof FirebaseError && error.code === 'auth/unauthorized-domain') {
+        errorMessage = "This domain is not authorized for Google sign-up. Please contact support.";
+      }
       toast({
         title: "Google Signup Failed",
-        description: "Could not sign up with Google. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
