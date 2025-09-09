@@ -108,7 +108,7 @@ export default function ProfilePage() {
                     <div className="text-center mb-6">
                         <Avatar className="h-24 w-24 mx-auto mb-4">
                             <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
-                            <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
+                            <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
                         </Avatar>
                         <h2 className="text-2xl font-bold">{user.displayName || 'Welcome!'}</h2>
                         <p className="text-muted-foreground">Guest</p>
