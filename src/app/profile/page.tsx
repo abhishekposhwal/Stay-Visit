@@ -169,7 +169,7 @@ export default function ProfilePage() {
 
             {/* Right Content */}
             <main className={cn(
-                "lg:col-span-3 px-6",
+                "lg:col-span-3 px-6 lg:pt-8",
                 activeView === 'content' ? 'block' : 'hidden lg:block'
             )}>
                 <Button variant="ghost" className="lg:hidden mb-4 -mx-6" onClick={() => setActiveView('menu')}>
