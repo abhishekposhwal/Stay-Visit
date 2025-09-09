@@ -25,7 +25,7 @@ export default function SignupPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signUp, signInWithGoogle, updateUserProfile } = useAuth();
+  const { signUp, updateUserProfile } = useAuth();
   const router = useRouter();
   const { toast } = useToast();
 
@@ -64,6 +64,9 @@ export default function SignupPage() {
             case 'auth/invalid-email':
               errorMessage = "Please enter a valid email address.";
               break;
+            case 'auth/unauthorized-domain':
+              errorMessage = "This domain is not authorized. Please add it to your Firebase project's authorized domains in the Authentication > Settings tab.";
+              break;
             default:
               errorMessage = "Failed to create an account. Please try again later.";
               break;
@@ -71,31 +74,6 @@ export default function SignupPage() {
         }
       toast({
         title: "Signup Failed",
-        description: errorMessage,
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-  const handleGoogleSignup = async () => {
-    setLoading(true);
-    try {
-      await signInWithGoogle();
-      toast({
-        title: "Account Created",
-        description: "Welcome! You have been successfully signed up.",
-      });
-      router.push('/');
-    } catch (error) {
-      console.error(error);
-      let errorMessage = "Could not sign up with Google. Please try again.";
-      if (error instanceof FirebaseError && error.code === 'auth/unauthorized-domain') {
-        errorMessage = "This domain is not authorized. Please add it to your Firebase project's authorized domains in the Authentication > Settings tab.";
-      }
-      toast({
-        title: "Google Signup Failed",
         description: errorMessage,
         variant: "destructive",
       });
@@ -184,19 +162,6 @@ export default function SignupPage() {
               </Button>
             </div>
           </form>
-          <div className="relative my-4">
-            <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">
-                Or continue with
-                </span>
-            </div>
-          </div>
-          <Button variant="outline" className="w-full" onClick={handleGoogleSignup} disabled={loading}>
-            Sign up with Google
-          </Button>
           <div className="mt-4 text-center text-sm">
             Already have an account?{" "}
             <Link href="/login" className="underline">
