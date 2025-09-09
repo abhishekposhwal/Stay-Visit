@@ -142,7 +142,7 @@ export default function LoginPage() {
                 </span>
             </div>
           </div>
-          <Button variant="outline" className="w-full" onClick={handleGoogleLogin} disabled={loading}>
+          <Button variant="outline" className="w-full" onClick={handleGoogleLogin} disabled={true}>
             Login with Google
           </Button>
           <div className="mt-4 text-center text-sm">
