@@ -169,7 +169,7 @@ export default function ProfilePage() {
 
             {/* Right Content */}
             <main className={cn(
-                "lg:col-span-3 lg:border-t-0 px-6",
+                "lg:col-span-3 px-6",
                 activeView === 'content' ? 'block' : 'hidden lg:block'
             )}>
                 <Button variant="ghost" className="lg:hidden mb-4 -mx-6" onClick={() => setActiveView('menu')}>
@@ -177,33 +177,31 @@ export default function ProfilePage() {
                     Back to menu
                 </Button>
               {activeTab === 'about' && (
-                <div>
-                  <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
-                  <div className="p-6 md:p-8 rounded-xl border">
-                      <h2 className="text-lg md:text-xl font-bold mb-2">Complete your profile</h2>
-                      <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
-                      
-                      <div className="space-y-4">
-                          <div>
-                              <h3 className="font-semibold text-sm">Email address</h3>
-                              <p className="text-muted-foreground text-sm">{user.email}</p>
-                          </div>
-                          <div>
-                              <h3 className="font-semibold text-sm">Phone number</h3>
-                              <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
-                          </div>
-                          <div>
-                              <h3 className="font-semibold text-sm">Address</h3>
-                              <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
-                          </div>
-                          <div>
-                              <h3 className="font-semibold text-sm">Identity verification</h3>
-                              <p className="text-muted-foreground text-sm">Not verified</p>
-                          </div>
-                      </div>
+                <div className="p-6 md:p-8 rounded-xl border">
+                    <h1 className="text-xl md:text-2xl font-bold mb-4">About me</h1>
+                    <h2 className="text-lg md:text-xl font-bold mb-2">Complete your profile</h2>
+                    <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
+                    
+                    <div className="space-y-4">
+                        <div>
+                            <h3 className="font-semibold text-sm">Email address</h3>
+                            <p className="text-muted-foreground text-sm">{user.email}</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-sm">Phone number</h3>
+                            <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-sm">Address</h3>
+                            <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-sm">Identity verification</h3>
+                            <p className="text-muted-foreground text-sm">Not verified</p>
+                        </div>
+                    </div>
 
-                      <Button variant="default" className="mt-6">Get started</Button>
-                  </div>
+                    <Button variant="default" className="mt-6">Get started</Button>
                 </div>
               )}
               {activeTab === 'history' && (
