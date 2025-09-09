@@ -169,7 +169,7 @@ export default function ProfilePage() {
 
             {/* Right Content */}
             <main className={cn(
-                "lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2",
+                "lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2 px-4",
                 activeView === 'content' ? 'block' : 'hidden lg:block'
             )}>
                 <Button variant="ghost" className="lg:hidden mb-4" onClick={() => setActiveView('menu')}>
@@ -177,7 +177,7 @@ export default function ProfilePage() {
                     Back to menu
                 </Button>
               {activeTab === 'about' && (
-                <div className="px-4">
+                <div>
                   <div className="flex justify-between items-center mb-6">
                       <h1 className="text-2xl font-bold">About me</h1>
                   </div>
