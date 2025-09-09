@@ -157,7 +157,7 @@ export default function ProfilePage() {
   );
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12">
             {/* Left Sidebar */}
             <aside className={cn(
@@ -169,7 +169,7 @@ export default function ProfilePage() {
 
             {/* Right Content */}
             <main className={cn(
-                "lg:col-span-3 lg:pt-0 lg:border-t-0 border-t-2 px-6",
+                "lg:col-span-3 lg:border-t-0 border-t-2 px-6",
                 activeView === 'content' ? 'block' : 'hidden lg:block'
             )}>
                 <Button variant="ghost" className="lg:hidden mb-4 -mx-6" onClick={() => setActiveView('menu')}>
