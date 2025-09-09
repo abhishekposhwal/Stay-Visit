@@ -14,9 +14,6 @@ import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
 import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
-import { useToast } from '@/hooks/use-toast';
-import { auth } from '@/lib/firebase';
-import { FirebaseError } from 'firebase/app';
 
 const mockBookings = [
     {
@@ -80,48 +77,12 @@ export default function ProfilePage() {
   const { user, loading, signOut } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('about');
-  const { toast } = useToast();
 
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login');
     }
   }, [user, loading, router]);
-
-  const handleTestConnection = async () => {
-    if (!auth.currentUser) {
-      toast({
-        title: "Connection Failed",
-        description: "You are not logged in.",
-        variant: "destructive",
-      });
-      return;
-    }
-    try {
-      await auth.currentUser.reload();
-      const token = await auth.currentUser.getIdToken(true);
-      if (token) {
-        toast({
-          title: "Successful Connection",
-          description: "Firebase connection is working correctly.",
-        });
-      } else {
-        throw new Error("Failed to retrieve token.");
-      }
-    } catch (error) {
-        let errorMessage = "An unknown error occurred.";
-        if (error instanceof FirebaseError) {
-            errorMessage = error.message;
-        } else if (error instanceof Error) {
-            errorMessage = error.message;
-        }
-        toast({
-            title: "Connection Failed",
-            description: errorMessage,
-            variant: "destructive",
-        });
-    }
-  }
 
   if (loading || !user) {
     return (
@@ -185,9 +146,6 @@ export default function ProfilePage() {
                         </button>
                         <button onClick={() => setActiveTab('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
                             Get help
-                        </button>
-                        <button onClick={handleTestConnection} className="w-full text-left flex items-center gap-2 px-3 py-1 rounded-lg transition-colors">
-                            <Wifi className="h-4 w-4"/> Test Connection
                         </button>
                         <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
                             Log out
