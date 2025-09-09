@@ -5,6 +5,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import { onAuthStateChanged, User, signOut as firebaseSignOut, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, type UserCredential } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { useToast } from "@/hooks/use-toast"
+import { useRouter } from 'next/navigation';
 
 interface AuthContextType {
   user: User | null;
@@ -22,6 +23,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
+  const router = useRouter();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -52,6 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         title: "Signed Out",
         description: "You have been successfully signed out.",
       });
+      router.push('/');
     } catch (error) {
       console.error("Error signing out:", error);
       toast({
