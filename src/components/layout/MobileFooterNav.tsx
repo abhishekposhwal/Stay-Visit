@@ -13,9 +13,9 @@ export function MobileFooterNav() {
     const { user } = useAuth();
 
     const navLinks = [
-        { href: "/", label: "Home", icon: <Home className="h-6 w-6" /> },
-        { href: "/experiences", label: "Experiences", icon: <Zap className="h-6 w-6" /> },
-        { href: "/services", label: "Services", icon: <HardHat className="h-6 w-6" /> },
+        { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
+        { href: "/experiences", label: "Experiences", icon: <Zap className="h-5 w-5" /> },
+        { href: "/services", label: "Services", icon: <HardHat className="h-5 w-5" /> },
     ];
 
     const isDetailPage = /^\/(listings|experiences|services)\/.+/.test(pathname);
@@ -31,7 +31,7 @@ export function MobileFooterNav() {
                     const isActive = pathname === link.href;
                     return (
                         <Link key={link.label} href={link.href} className={cn(
-                            "flex flex-col items-center justify-center text-xs gap-1 w-full h-full",
+                            "flex flex-col items-center justify-center text-[10px] gap-1 w-full h-full",
                             isActive ? "font-semibold" : "text-muted-foreground hover:text-foreground"
                         )}>
                             <span className={cn(isActive && 'text-accent')}>{link.icon}</span>
