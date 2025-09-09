@@ -92,7 +92,7 @@ export default function ProfilePage() {
 
   if (loading || !user) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               <div className="lg:col-span-1">
                   <Skeleton className="h-96 w-full" />
@@ -179,7 +179,7 @@ export default function ProfilePage() {
               {activeTab === 'about' && (
                 <div>
                   <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
-                  <div className="p-6 md:p-8 rounded-xl border">
+                  <div className="lg:p-8 lg:rounded-xl lg:border">
                       <h2 className="text-lg md:text-xl font-bold mb-2">Complete your profile</h2>
                       <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
                       
