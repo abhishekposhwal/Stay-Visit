@@ -119,6 +119,7 @@ export default function SignupPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={loading}
+                  className="border"
                 />
               </div>
               <div className="grid gap-2">
@@ -130,6 +131,7 @@ export default function SignupPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading}
+                  className="border"
                 />
               </div>
               <Button type="submit" className="w-full" disabled={loading}>
