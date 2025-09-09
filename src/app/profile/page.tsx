@@ -177,9 +177,10 @@ export default function ProfilePage() {
                     Back to menu
                 </Button>
               {activeTab === 'about' && (
-                <div className="p-6 md:p-8 rounded-xl border">
-                    <h1 className="text-xl md:text-2xl font-bold mb-4">About me</h1>
-                    <h2 className="text-lg md:text-xl font-bold mb-2">Complete your profile</h2>
+                <div>
+                  <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
+                  <div className="p-6 md:p-8 rounded-xl border">
+                    <h2 className="text-lg font-bold mb-2">Complete your profile</h2>
                     <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
                     
                     <div className="space-y-4">
@@ -202,6 +203,7 @@ export default function ProfilePage() {
                     </div>
 
                     <Button variant="default" className="mt-6">Get started</Button>
+                  </div>
                 </div>
               )}
               {activeTab === 'history' && (
@@ -257,3 +259,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
