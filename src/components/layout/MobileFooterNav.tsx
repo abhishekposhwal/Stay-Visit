@@ -32,10 +32,10 @@ export function MobileFooterNav() {
                     return (
                         <Link key={link.label} href={link.href} className={cn(
                             "flex flex-col items-center justify-center text-xs gap-1 w-full h-full",
-                            isActive ? "font-semibold bg-primary-gradient text-transparent bg-clip-text" : "text-muted-foreground hover:text-foreground"
+                            isActive ? "font-semibold" : "text-muted-foreground hover:text-foreground"
                         )}>
-                            {link.icon}
-                            <span>{link.label}</span>
+                            <span className={cn(isActive && 'text-accent')}>{link.icon}</span>
+                            <span className={cn(isActive && 'bg-primary-gradient bg-clip-text text-transparent')}>{link.label}</span>
                         </Link>
                     );
                 })}
