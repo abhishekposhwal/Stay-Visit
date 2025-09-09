@@ -161,7 +161,7 @@ export default function ProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12">
             {/* Left Sidebar */}
             <aside className={cn(
-                "lg:col-span-1",
+                "lg:col-span-1 px-4 lg:px-0",
                 activeView === 'menu' ? 'block' : 'hidden lg:block'
             )}>
                 <SidebarContent />
@@ -170,7 +170,7 @@ export default function ProfilePage() {
             {/* Right Content */}
             <main className={cn(
                 "lg:col-span-3 lg:pt-8",
-                activeView === 'content' ? 'block' : 'hidden lg:block'
+                 activeView === 'content' ? 'block px-4 lg:px-0' : 'hidden lg:block'
             )}>
                 <Button variant="ghost" className="lg:hidden mb-4" onClick={() => setActiveView('menu')}>
                     <ArrowLeft className="h-4 w-4 mr-2" />
