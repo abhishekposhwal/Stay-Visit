@@ -157,7 +157,7 @@ export default function ProfilePage() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12">
             {/* Left Sidebar */}
             <aside className={cn(
@@ -169,7 +169,7 @@ export default function ProfilePage() {
 
             {/* Right Content */}
             <main className={cn(
-                "lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2",
+                "lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2 px-6",
                 activeView === 'content' ? 'block' : 'hidden lg:block'
             )}>
                 <Button variant="ghost" className="lg:hidden mb-4 -mx-3" onClick={() => setActiveView('menu')}>
@@ -243,8 +243,8 @@ export default function ProfilePage() {
                             <Link href={topic.link} key={index} className="border rounded-lg p-4 flex items-start gap-4 hover:bg-muted/50 transition-colors">
                                 {topic.icon}
                                 <div>
-                                    <h3 className="font-semibold">{section.title}</h3>
-                                    <p className="text-sm text-muted-foreground">{section.description}</p>
+                                    <h3 className="font-semibold">{topic.title}</h3>
+                                    <p className="text-sm text-muted-foreground">{topic.description}</p>
                                 </div>
                             </Link>
                         ))}
