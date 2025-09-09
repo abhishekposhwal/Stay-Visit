@@ -31,8 +31,8 @@ export function MobileFooterNav() {
                     const isActive = pathname === link.href;
                     return (
                         <Link key={link.label} href={link.href} className={cn(
-                            "flex flex-col items-center justify-center text-xs gap-1 transition-colors w-full h-full",
-                            isActive ? "text-accent font-semibold" : "text-muted-foreground hover:text-foreground"
+                            "flex flex-col items-center justify-center text-xs gap-1 w-full h-full",
+                            isActive ? "font-semibold bg-primary-gradient text-transparent bg-clip-text" : "text-muted-foreground hover:text-foreground"
                         )}>
                             {link.icon}
                             <span>{link.label}</span>
