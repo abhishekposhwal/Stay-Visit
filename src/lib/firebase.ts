@@ -16,8 +16,12 @@ let app: FirebaseApp;
 let auth: Auth;
 
 // Initialize Firebase only if all config values are present
-if (Object.values(firebaseConfig).every(value => value)) {
-    app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+if (firebaseConfig.apiKey && firebaseConfig.authDomain) {
+    if (!getApps().length) {
+        app = initializeApp(firebaseConfig);
+    } else {
+        app = getApp();
+    }
     auth = getAuth(app);
 } else {
     console.warn("Firebase config is incomplete. Firebase is not initialized.");
