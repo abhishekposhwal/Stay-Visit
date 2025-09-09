@@ -50,7 +50,7 @@ export function Navbar() {
 
   return (
     <header className={cn(
-        "sticky top-0 z-50 w-full border-b transition-colors duration-300 bg-background shadow-sm"
+        "w-full border-b transition-colors duration-300 bg-background shadow-sm z-50 md:sticky top-0"
     )}>
       <div className="container flex h-16 items-center justify-between">
           {isMobileSearchVisible ? (

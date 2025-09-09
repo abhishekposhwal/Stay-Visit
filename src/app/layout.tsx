@@ -37,11 +37,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
       <div className="flex min-h-screen flex-col">
         <Navbar />
         {showSearchBar && (
-          <div className="sticky top-16 md:top-20 z-40 py-2">
+          <div className="sticky top-16 z-40 py-2">
             <SearchBar />
           </div>
         )}
-        <main className="flex-grow pb-24 md:pb-0">{children}</main>
+        <main className="flex-grow pb-24 md:pb-0 pt-16 md:pt-0">{children}</main>
         <Footer />
       </div>
       <MobileFooterNav />
