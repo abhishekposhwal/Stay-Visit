@@ -41,7 +41,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             <SearchBar />
           </div>
         )}
-        <main className="flex-grow pb-24 md:pb-0 pt-16 md:pt-0">{children}</main>
+        <main className="flex-grow md:pb-0 pt-16 md:pt-0">{children}</main>
         <Footer />
       </div>
       <MobileFooterNav />
