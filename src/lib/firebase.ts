@@ -12,7 +12,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase for SSR
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const app: FirebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const auth: Auth = getAuth(app);
 
 export { app, auth };
