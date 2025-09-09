@@ -190,7 +190,7 @@ export default function SignupPage() {
                 </span>
             </div>
           </div>
-          <Button variant="outline" className="w-full" onClick={handleGoogleSignup} disabled={true}>
+          <Button variant="outline" className="w-full" onClick={handleGoogleSignup} disabled={loading}>
             Sign up with Google
           </Button>
           <div className="mt-4 text-center text-sm">
