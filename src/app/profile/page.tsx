@@ -118,7 +118,7 @@ export default function ProfilePage() {
 
         <Separator className="my-2" />
 
-        <nav className="space-y-0">
+        <nav>
             <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
                 About me
             </button>
@@ -142,7 +142,7 @@ export default function ProfilePage() {
 
         <Separator className="my-2" />
 
-        <nav className="space-y-0">
+        <nav>
             <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
                 Account settings
             </button>
@@ -229,7 +229,7 @@ export default function ProfilePage() {
                                   <AvatarImage src={connection.avatar} alt={connection.name} />
                                   <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
                               </Avatar>
-                              <span className="font-semibold">{connection.name}</span>
+                              <span className="font-semibold text-sm">{connection.name}</span>
                           </div>
                       ))}
                   </div>
