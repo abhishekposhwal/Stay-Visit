@@ -41,9 +41,8 @@ export function SearchBar() {
   const router = useRouter();
 
   const handleSearch = () => {
-    if (destination) {
-      router.push(`/listings?city=${encodeURIComponent(destination)}`);
-    }
+    const city = destination || 'Goa';
+    router.push(`/listings?city=${encodeURIComponent(city)}`);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -147,12 +146,12 @@ export function SearchBar() {
         
         {showCompact ? (
              <div className="flex items-center justify-between w-full px-2">
-                <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
+                <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent text-sm" onClick={(e) => { e.stopPropagation(); handleCompactClick('destination'); }}>Anywhere</Button>
                 <Separator orientation="vertical" className="h-8" />
-                <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
+                <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent text-sm" onClick={(e) => { e.stopPropagation(); handleCompactClick('date'); }}>Anytime</Button>
                 <Separator orientation="vertical" className="h-8" />
                 <div className="flex items-center">
-                    <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
+                    <Button variant="ghost" className="rounded-full font-normal hover:bg-transparent text-sm" onClick={(e) => { e.stopPropagation(); handleCompactClick('guest'); }}>Add guests</Button>
                     <Button onClick={handleSearch} className="rounded-full p-2 h-10 w-10 flex items-center justify-center text-accent-foreground">
                         <Search className="h-4 w-4" />
                     </Button>
