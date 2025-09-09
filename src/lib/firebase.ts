@@ -11,18 +11,15 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-function getFirebaseApp() {
-  if (typeof window !== "undefined") {
-    // On the client, use getApps to avoid re-initializing
-    return getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-  }
-  // On the server, we can probably just initialize it.
-  // But to be safe, we can check for existing apps.
-  return getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+let app: FirebaseApp;
+let auth: Auth;
+
+if (getApps().length === 0) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApp();
 }
 
-const app: FirebaseApp = getFirebaseApp();
-const auth: Auth = getAuth(app);
-
+auth = getAuth(app);
 
 export { app, auth };
