@@ -77,7 +77,7 @@ export default function LoginPage() {
       console.error(error);
       let errorMessage = "Could not log in with Google. Please try again.";
       if (error instanceof FirebaseError && error.code === 'auth/unauthorized-domain') {
-        errorMessage = "This domain is not authorized for Google sign-in. Please contact support.";
+        errorMessage = "This domain is not authorized. Please add it to your Firebase project's authorized domains in the Authentication > Settings tab.";
       }
       toast({
         title: "Google Login Failed",

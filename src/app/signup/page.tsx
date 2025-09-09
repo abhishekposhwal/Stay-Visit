@@ -92,7 +92,7 @@ export default function SignupPage() {
       console.error(error);
       let errorMessage = "Could not sign up with Google. Please try again.";
       if (error instanceof FirebaseError && error.code === 'auth/unauthorized-domain') {
-        errorMessage = "This domain is not authorized for Google sign-up. Please contact support.";
+        errorMessage = "This domain is not authorized. Please add it to your Firebase project's authorized domains in the Authentication > Settings tab.";
       }
       toast({
         title: "Google Signup Failed",
