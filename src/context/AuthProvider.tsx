@@ -2,17 +2,18 @@
 'use client';
 
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import { onAuthStateChanged, User, signOut as firebaseSignOut, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { onAuthStateChanged, User, signOut as firebaseSignOut, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, type UserCredential } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { useToast } from "@/hooks/use-toast"
 
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  signIn: (email: string, pass: string) => Promise<any>;
-  signUp: (email: string, pass: string) => Promise<any>;
-  signInWithGoogle: () => Promise<any>;
+  signIn: (email: string, pass: string) => Promise<UserCredential>;
+  signUp: (email: string, pass: string) => Promise<UserCredential>;
+  signInWithGoogle: () => Promise<UserCredential>;
   signOut: () => Promise<void>;
+  updateUserProfile: (profile: { displayName?: string; photoURL?: string; }) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -61,6 +62,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const updateUserProfile = async (profile: { displayName?: string; photoURL?: string; }) => {
+    if (!auth.currentUser) {
+        throw new Error("No user is signed in to update the profile.");
+    }
+    await updateProfile(auth.currentUser, profile);
+    // Manually update the user state to reflect the change immediately
+    setUser(auth.currentUser);
+  }
+
   const value = {
     user,
     loading,
@@ -68,6 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     signUp,
     signInWithGoogle,
     signOut,
+    updateUserProfile,
   };
 
   return (
