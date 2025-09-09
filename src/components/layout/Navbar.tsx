@@ -85,7 +85,7 @@ export function Navbar() {
             
             <nav className="hidden md:flex items-center justify-center space-x-1 text-sm">
             {navLinks.map((link) => (
-                <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent text-base">
+                <Button key={link.label} asChild variant="ghost" className="hover:bg-transparent text-sm">
                     <Link href={link.href} className="flex items-center gap-1">
                         {link.icon}
                         <span>{link.label}</span>
