@@ -12,9 +12,8 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, Menu } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const mockBookings = [
     {
@@ -78,12 +77,18 @@ export default function ProfilePage() {
   const { user, loading, signOut } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('about');
+  const [activeView, setActiveView] = useState<'menu' | 'content'>('menu');
 
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login');
     }
   }, [user, loading, router]);
+
+  const handleMenuClick = (tab: string) => {
+    setActiveTab(tab);
+    setActiveView('content');
+  };
 
   if (loading || !user) {
     return (
@@ -100,7 +105,7 @@ export default function ProfilePage() {
     );
   }
 
-  const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
+  const SidebarContent = () => (
     <div className="p-6 rounded-xl">
         <div className="text-center mb-6">
             <Avatar className="h-24 w-24 mx-auto mb-4">
@@ -114,13 +119,13 @@ export default function ProfilePage() {
         <Separator className="my-4" />
 
         <nav className="space-y-1">
-            <button onClick={() => { setActiveTab('about'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
                 About me
             </button>
-            <button onClick={() => { setActiveTab('history'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
                 Past trips
             </button>
-            <button onClick={() => { setActiveTab('connections'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
                 Connections
             </button>
         </nav>
@@ -138,10 +143,10 @@ export default function ProfilePage() {
         <Separator className="my-4" />
 
         <nav className="space-y-1">
-            <button onClick={() => { setActiveTab('account'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
                 Account settings
             </button>
-            <button onClick={() => { setActiveTab('help'); onLinkClick?.(); }} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
                 Get help
             </button>
             <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
@@ -153,30 +158,24 @@ export default function ProfilePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-        <Sheet>
-            <SheetTrigger asChild>
-                <Button variant="outline" className="lg:hidden mb-4">
-                    <Menu className="mr-2 h-4 w-4" />
-                    Profile Menu
-                </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-full sm:w-80 p-0">
-                <SidebarContent onLinkClick={() => {
-                    const closeButton = document.querySelector('[data-radix-dialog-default-open=false]');
-                    if (closeButton instanceof HTMLElement) {
-                        closeButton.click();
-                    }
-                }} />
-            </SheetContent>
-        </Sheet>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12">
             {/* Left Sidebar */}
-            <aside className="hidden lg:block lg:col-span-1">
+            <aside className={cn(
+                "lg:col-span-1",
+                activeView === 'menu' ? 'block' : 'hidden lg:block'
+            )}>
                 <SidebarContent />
             </aside>
 
             {/* Right Content */}
-            <main className="lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2">
+            <main className={cn(
+                "lg:col-span-3 pt-8 lg:pt-0 lg:border-t-0 border-t-2",
+                activeView === 'content' ? 'block' : 'hidden lg:block'
+            )}>
+                <Button variant="ghost" className="lg:hidden mb-4" onClick={() => setActiveView('menu')}>
+                    <ArrowLeft className="h-4 w-4 mr-2" />
+                    Back to menu
+                </Button>
               {activeTab === 'about' && (
                 <>
                   <div className="flex justify-between items-center mb-6">
@@ -263,3 +262,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
