@@ -107,7 +107,7 @@ export default function ProfilePage() {
 
   const SidebarContent = () => (
     <div className="p-6 rounded-xl">
-        <div className="text-center mb-6">
+        <div className="text-center mb-4">
             <Avatar className="h-24 w-24 mx-auto mb-4">
                 <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
                 <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
@@ -116,21 +116,21 @@ export default function ProfilePage() {
             <p className="text-muted-foreground">Guest</p>
         </div>
 
-        <Separator className="my-4" />
+        <Separator className="my-3" />
 
-        <nav className="space-y-1">
-            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
+        <nav className="space-y-0.5">
+            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1.5 rounded-lg transition-colors", activeTab === 'about' ? 'font-semibold' : '')}>
                 About me
             </button>
-            <button onClick={() => handleMenuClick('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('history')} className={cn("w-full text-left block px-3 py-1.5 rounded-lg transition-colors", activeTab === 'history' ? 'font-semibold' : '')}>
                 Past trips
             </button>
-            <button onClick={() => handleMenuClick('connections')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('connections')} className={cn("w-full text-left block px-3 py-1.5 rounded-lg transition-colors", activeTab === 'connections' ? 'font-semibold' : '')}>
                 Connections
             </button>
         </nav>
 
-        <Separator className="my-4" />
+        <Separator className="my-3" />
         
         <div className="p-4 rounded-lg bg-muted/50 text-center">
             <h3 className="font-bold">Become a host</h3>
@@ -140,16 +140,16 @@ export default function ProfilePage() {
             </Button>
         </div>
 
-        <Separator className="my-4" />
+        <Separator className="my-3" />
 
-        <nav className="space-y-1">
-            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
+        <nav className="space-y-0.5">
+            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1.5 rounded-lg transition-colors", activeTab === 'account' ? 'font-semibold' : '')}>
                 Account settings
             </button>
-            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1.5 rounded-lg transition-colors", activeTab === 'help' ? 'font-semibold' : '')}>
                 Get help
             </button>
-            <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
+            <button onClick={signOut} className="w-full text-left px-3 py-1.5 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors">
                 Log out
             </button>
         </nav>
