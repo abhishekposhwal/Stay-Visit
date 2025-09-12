@@ -234,7 +234,6 @@ export default function ProfilePage() {
                                     <p className="text-muted-foreground text-xs">{userInfo.displayName || 'Not provided'}</p>
                                 )}
                             </div>
-                            <Separator />
                             <div className="grid gap-2">
                                 <Label htmlFor="email" className="text-sm">Email</Label>
                                  {isEditing ? (
@@ -243,7 +242,6 @@ export default function ProfilePage() {
                                     <p className="text-muted-foreground text-xs">{userInfo.email}</p>
                                 )}
                             </div>
-                            <Separator />
                             <div className="grid gap-2">
                                 <Label htmlFor="phoneNumber" className="text-sm">Phone number</Label>
                                  {isEditing ? (
@@ -252,7 +250,6 @@ export default function ProfilePage() {
                                     <p className="text-muted-foreground text-xs">{userInfo.phoneNumber}</p>
                                 )}
                             </div>
-                            <Separator />
                             <div className="grid gap-2">
                                 <Label htmlFor="address" className="text-sm">Address</Label>
                                  {isEditing ? (
@@ -261,7 +258,6 @@ export default function ProfilePage() {
                                     <p className="text-muted-foreground text-xs">{userInfo.address}</p>
                                 )}
                             </div>
-                            <Separator />
                             <div className="flex justify-between items-center">
                                 <div>
                                     <p className="font-semibold text-sm">Identity verification</p>
