@@ -815,7 +815,7 @@ export default function ProfilePage() {
                                     <h3 className="font-semibold">{connection.name}</h3>
                                 </div>
                             </div>
-                            <Button asChild variant="default" size="sm">
+                            <Button asChild variant="secondary" size="sm">
                                 <Link href={`/profile/${connection.id}`}>
                                     <Eye className="mr-2 h-4 w-4" />
                                     View Profile
