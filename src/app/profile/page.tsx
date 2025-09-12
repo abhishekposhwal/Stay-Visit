@@ -565,23 +565,25 @@ export default function ProfilePage() {
       case 'about':
         return (
           <div>
-            <h1 className="text-xl md:text-2xl font-bold mb-6">{user.displayName}’s confirmed information</h1>
+            <h1 className="text-xl md:text-2xl font-bold mb-6">Confirmed Information</h1>
             <div className="p-6 md:p-8 rounded-xl border">
               <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <Mail className="h-5 w-5 text-muted-foreground" />
-                    <span className="text-sm">{user.email}</span>
                     <CheckCircle className="h-5 w-5 text-green-600" />
+                    <span className="text-sm font-semibold">Email address</span>
+                    <span className="text-sm text-muted-foreground ml-auto">{user.email}</span>
                   </div>
+                  <Separator/>
                   <div className="flex items-center gap-4">
-                    <Phone className="h-5 w-5 text-muted-foreground" />
-                    <span className="text-sm">{user.phoneNumber || 'Not provided'}</span>
-                     {user.phoneNumber ? <CheckCircle className="h-5 w-5 text-green-600" /> : <span className="text-xs text-amber-600">Not verified</span>}
+                     {user.phoneNumber ? <CheckCircle className="h-5 w-5 text-green-600" /> : <AlertCircle className="h-5 w-5 text-amber-500" />}
+                    <span className="text-sm font-semibold">Phone number</span>
+                    <span className="text-sm text-muted-foreground ml-auto">{user.phoneNumber || 'Not provided'}</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <Shield className="h-5 w-5 text-muted-foreground" />
-                    <span className="text-sm">Identity not verified</span>
-                    <Button variant="outline" size="sm">Verify</Button>
+                   <Separator/>
+                   <div className="flex items-center gap-4">
+                    <AlertCircle className="h-5 w-5 text-amber-500" />
+                    <span className="text-sm font-semibold">Identity verification</span>
+                    <Button variant="outline" size="sm" className="ml-auto">Verify</Button>
                   </div>
               </div>
 
@@ -610,7 +612,7 @@ export default function ProfilePage() {
             </div>
             <div className="grid grid-cols-1 gap-4">
                 {mockConnections.map((connection) => (
-                    <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-lg transition-shadow duration-300">
+                    <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
                         <div className="flex items-center gap-4">
                           <Avatar className="h-12 w-12">
                               <AvatarImage src={connection.avatar} alt={connection.name} />
@@ -678,7 +680,5 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
 
     
