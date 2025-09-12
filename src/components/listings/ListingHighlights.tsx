@@ -22,12 +22,12 @@ const highlights = [
 export function ListingHighlights() {
     return (
         <div className="py-8 border-b">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {highlights.map((highlight) => (
                     <div key={highlight.title} className="flex items-start gap-4">
                         {highlight.icon}
                         <div>
-                            <h3 className="font-semibold">{highlight.title}</h3>
+                            <h3 className="font-bold">{highlight.title}</h3>
                             <p className="text-sm text-muted-foreground">{highlight.subtitle}</p>
                         </div>
                     </div>
