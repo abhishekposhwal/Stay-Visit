@@ -159,7 +159,7 @@ export function SearchBar() {
             </div>
         ) : (
             <>
-            <div className="flex-[1.5] relative pr-4">
+            <div className="flex-shrink-0 relative pr-4">
                 <label htmlFor="destination" className="block text-xs font-bold text-left pl-4 text-foreground/80">
                 Where
                 </label>
@@ -178,8 +178,8 @@ export function SearchBar() {
             
             <Popover open={isDatePopoverOpen} onOpenChange={setIsDatePopoverOpen}>
                 <PopoverTrigger asChild>
-                    <div className="flex-1 flex cursor-pointer">
-                        <div className="flex-1 text-left px-4">
+                    <div className="flex-shrink-0 flex cursor-pointer">
+                        <div className="flex-shrink-0 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
                             <div className="text-sm text-muted-foreground">
                                 {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
@@ -201,8 +201,8 @@ export function SearchBar() {
             <Separator orientation="vertical" className="h-8" />
             <Popover>
                 <PopoverTrigger asChild>
-                     <div className="flex-1 flex cursor-pointer">
-                        <div className="flex-1 text-left px-4">
+                     <div className="flex-shrink-0 flex cursor-pointer">
+                        <div className="flex-shrink-0 text-left px-4">
                             <label className="block text-xs font-bold text-foreground/80">Check out</label>
                             <div className="text-sm text-muted-foreground">
                                 {date?.to ? format(date.to, 'LLL dd') : <span>Add dates</span>}
@@ -224,7 +224,7 @@ export function SearchBar() {
             
             <Separator orientation="vertical" className="h-8" />
 
-            <div className="flex-[1.5] flex items-center justify-between pr-2">
+            <div className="flex-shrink-0 flex items-center justify-between pr-2">
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
                     <PopoverTrigger asChild>
                         <div className="text-left w-full pl-4 cursor-pointer">
@@ -307,6 +307,8 @@ export function SearchBar() {
     </div>
   );
 }
+
+    
 
     
 
