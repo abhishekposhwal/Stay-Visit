@@ -505,7 +505,7 @@ export default function ProfilePage() {
                                 </Button>
                             </div>
                             <div className="space-y-6">
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center justify-between gap-4">
                                     <div className="w-full bg-primary-gradient p-6 rounded-xl text-white shadow-lg flex flex-col justify-between h-48 max-w-xs">
                                         <div className="flex justify-between items-start">
                                             <CreditCard className="h-8 w-8" />
@@ -539,7 +539,7 @@ export default function ProfilePage() {
 
                                 <Separator />
 
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center justify-between gap-4">
                                     <div className="border rounded-xl p-4 flex-grow flex items-center gap-4">
                                         <Banknote className="h-8 w-8 text-muted-foreground" />
                                         <div className="flex-grow">
@@ -561,7 +561,7 @@ export default function ProfilePage() {
 
                                 <Separator />
 
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center justify-between gap-4">
                                     <div className="border rounded-xl p-4 flex-grow flex items-center gap-4">
                                         <Landmark className="h-8 w-8 text-muted-foreground" />
                                         <div className="flex-grow">
