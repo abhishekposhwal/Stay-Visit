@@ -57,7 +57,7 @@ export function ListingActions({ property }: ListingActionsProps) {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center">
       <Button variant="ghost" size="sm" className="underline" onClick={handleShare}>
         <Share className="h-4 w-4" />
         Share
