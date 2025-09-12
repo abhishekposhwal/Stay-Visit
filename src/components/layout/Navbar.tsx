@@ -122,7 +122,7 @@ export function Navbar() {
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
                 <span className={cn(
-                    "font-bold text-lg transition-colors text-primary-gradient"
+                    "font-bold text-lg transition-colors bg-primary-gradient bg-clip-text text-transparent"
                 )}>
                     StayVisit
                 </span>

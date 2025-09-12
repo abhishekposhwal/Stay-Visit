@@ -105,14 +105,6 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
-      text: {
-        'primary-gradient': {
-          'background-image': 'linear-gradient(to right, #1488cc, #2b32b2)',
-          '-webkit-background-clip': 'text',
-          'background-clip': 'text',
-          color: 'transparent',
-        }
-      }
     },
   },
   plugins: [require('tailwindcss-animate')],
