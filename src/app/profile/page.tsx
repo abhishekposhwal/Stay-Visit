@@ -378,7 +378,6 @@ export default function ProfilePage() {
                                     <p className="text-muted-foreground text-xs mt-1">Last updated 2 months ago</p>
                                 </div>
                                 <Button variant="outline" size="sm">
-                                    <Repeat className="h-4 w-4" />
                                     Update
                                 </Button>
                             </div>
@@ -742,8 +741,3 @@ export default function ProfilePage() {
 }
 
     
-
-    
-
-    
-
