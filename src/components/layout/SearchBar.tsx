@@ -159,7 +159,7 @@ export function SearchBar() {
             </div>
         ) : (
             <>
-            <div className="flex-[1.5] relative pr-4">
+            <div className="flex-[1.5] relative pr-2">
                 <label htmlFor="destination" className="block text-xs font-bold text-left pl-6 text-foreground/80">
                 Where
                 </label>
@@ -307,3 +307,5 @@ export function SearchBar() {
     </div>
   );
 }
+
+    
