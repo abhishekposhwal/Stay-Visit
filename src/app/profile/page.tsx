@@ -712,18 +712,18 @@ export default function ProfilePage() {
             return <NotificationSettings />;
         }
 
-        let title = '';
-        if (activeSetting === 'taxes') title = 'Taxes';
-        else if (activeSetting === 'privacy') title = 'Privacy & Sharing';
-
-        return (
-            <div>
-                <h1 className="text-xl md:text-2xl font-bold mb-6">{title}</h1>
-                <div className="p-6 md:p-8 rounded-xl border text-center">
-                    <p className="text-muted-foreground">This section is a work in progress.</p>
+        if (activeSetting === 'privacy') {
+            return (
+                <div>
+                    <h1 className="text-xl md:text-2xl font-bold mb-6">Privacy &amp; Sharing</h1>
+                    <div className="p-6 md:p-8 rounded-xl border text-center">
+                        <p className="text-muted-foreground">This section is a work in progress.</p>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
+
+        return null;
     }
 
     switch (activeTab) {
@@ -733,7 +733,7 @@ export default function ProfilePage() {
             <h1 className="text-xl md:text-2xl font-bold mb-6">Confirmed Information</h1>
             <div className="p-6 md:p-8 rounded-xl border">
               <ul className="space-y-4">
-                  <li className="flex items-center justify-between">
+                  <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
                       <div className='flex items-center gap-4'>
                           <Mail className="h-6 w-6 text-muted-foreground" />
                           <div>
@@ -747,7 +747,7 @@ export default function ProfilePage() {
                       </div>
                   </li>
                   <Separator/>
-                  <li className="flex items-center justify-between">
+                  <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
                        <div className="flex items-center gap-4">
                            <Phone className="h-6 w-6 text-muted-foreground" />
                            <div>
@@ -767,7 +767,7 @@ export default function ProfilePage() {
                         )}
                    </li>
                    <Separator/>
-                   <li className="flex items-center justify-between">
+                   <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
                         <div className="flex items-center gap-4">
                            <Shield className="h-6 w-6 text-muted-foreground" />
                            <div>
@@ -878,7 +878,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-
-    
