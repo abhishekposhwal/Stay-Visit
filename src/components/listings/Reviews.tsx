@@ -55,11 +55,8 @@ export default function Reviews({ property }: ReviewsProps) {
             <div key={category.name} className="flex items-center justify-between">
                 <span className="text-sm">{category.name}</span>
                 <div className="flex items-center gap-2">
-                    <Progress value={(category.value / 5) * 100} className="w-24 h-1"/>
-                    <span className={cn(
-                        "text-xs font-medium",
-                        category.value >= 4.5 ? "text-green-600" : "text-foreground"
-                    )}>{category.value.toFixed(1)}</span>
+                    <Progress value={(category.value / 5) * 100} className={cn("w-24 h-1", category.value >= 4.5 ? '[&>div]:bg-green-600' : '')} />
+                    <span className="text-xs font-medium text-foreground">{category.value.toFixed(1)}</span>
                 </div>
             </div>
         ))}
@@ -94,3 +91,4 @@ export default function Reviews({ property }: ReviewsProps) {
     </div>
   );
 }
+
