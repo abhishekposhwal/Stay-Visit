@@ -115,7 +115,7 @@ export default function ProfilePage() {
     }
     if (user) {
         setUserInfo({
-            displayName: user.displayName || '',
+            displayName: user.displayName || 'Name not set',
             email: user.email || '',
             phoneNumber: user.phoneNumber || 'Not provided',
             address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
@@ -138,7 +138,7 @@ export default function ProfilePage() {
   const handleCancel = () => {
     if (user) {
         setUserInfo({ // Reset to original values
-            displayName: user.displayName || '',
+            displayName: user.displayName || 'Name not set',
             email: user.email || '',
             phoneNumber: user.phoneNumber || 'Not provided',
             address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
@@ -197,10 +197,12 @@ export default function ProfilePage() {
   const SidebarContent = () => (
     <div className="p-6 rounded-xl">
         <div className="text-center mb-4">
-            <Avatar className="h-24 w-24 mx-auto mb-4">
-                <AvatarImage src={userInfo.photoURL} data-ai-hint="person face" alt={user.displayName || 'User'} />
-                <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
-            </Avatar>
+            <div className="w-28 h-28 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
+                <Avatar className="h-full w-full">
+                    <AvatarImage src={userInfo.photoURL} data-ai-hint="person face" alt={user.displayName || 'User'} />
+                    <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
+                </Avatar>
+            </div>
             <h2 className="text-xl font-bold">{user.displayName || 'Welcome!'}</h2>
             <p className="text-sm text-muted-foreground">Guest</p>
         </div>
@@ -260,7 +262,7 @@ export default function ProfilePage() {
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4">
-                                    <Avatar className="h-20 w-20">
+                                     <Avatar className="h-20 w-20">
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
                                         <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
                                     </Avatar>
@@ -289,7 +291,7 @@ export default function ProfilePage() {
                                 {isEditing ? (
                                     <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} />
                                 ) : (
-                                    <p className="text-muted-foreground text-sm">{userInfo.displayName || 'Not provided'}</p>
+                                    <p className="text-muted-foreground text-sm">{userInfo.displayName}</p>
                                 )}
                             </div>
                             <div>
@@ -396,7 +398,7 @@ export default function ProfilePage() {
                             </div>
                              <div className="flex justify-between items-center">
                                 <div className="flex items-center gap-3">
-                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M22.999 6.246c0-1.01-.933-1.838-2.086-1.838-1.01 0-1.802.587-2.124 1.192l-4.707-2.652c.23-.46.36-1 .36-1.57C14.442 1.258 13.184 0 11.85 0 10.516 0 9.258 1.258 9.258 2.378c0 .57.13 1.11.36 1.57L4.91 6.59c-.322-.605-1.114-1.192-2.124-1.192C1.753 5.4 1 6.246 1 7.256c0 .142.02.28.05.412-1.31 2.392-1.042 6.13 0 8.53.11.23.23.44.37.64v3.13c0 1.25 1.014 2.82 2.256 2.82 1.244 0 2.257-1.57 2.257-2.82v-3.13c.14-.2.26-.41.37-.64 1.043 2.4 1.312 6.138 0 8.53-.03.132-.05.27-.05.412 0 1.01.753 1.848 1.886 1.848 1.154 0 2.087-.83 2.087-1.848 0-.54-.12-1.05-.33-1.5l4.76-2.68s.26.02.32.02c.06 0 .26-.02.26-.02l4.76 2.68c-.21.45-.33.96-.33 1.5 0 1.018.933 1.848 2.087 1.848 1.152 0 1.905-.83 1.905-1.848 0-.142-.02-.28-.05-.412 1.31-2.392-1.042-6.13 0-8.53-.11-.23-.23-.44-.37-.64v-3.13c.14-.2.26-.41.37-.64 1.043-2.4 1.312-6.138 0-8.53.03-.132.05-.27.05-.412z"/></svg>
+                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M22.999 6.246c0-1.01-.933-1.838-2.086-1.838-1.01 0-1.802.587-2.124 1.192l-4.707-2.652c.23-.46.36-1 .36-1.57C14.442 1.258 13.184 0 11.85 0 10.516 0 9.258 1.258 9.258 2.378c0 .57.13 1.11.36 1.57L4.91 6.59c-.322-.605-1.114-1.192-2.124-1.192C1.753 5.4 1 6.246 1 7.256c0 .142.02.28.05.412-1.31 2.392-1.042 6.13 0 8.53.11.23.23.44.37.64v3.13c0 1.25 1.014 2.82 2.256 2.82 1.244 0 2.257-1.57 2.257-2.82v-3.13c.14-.2.26-.41.37-.64 1.043 2.4 1.312 6.138 0 8.53-.03.132-.05.27-.05.412 0 1.01.753 1.848 1.886 1.848 1.154 0 2.087-.83 2.087-1.848 0-.54-.12-1.05-.33-1.5l4.76-2.68s.26.02.32.02c.06 0 .26-.02.26-.02l4.76 2.68c-.21.45-.33.96-.33 1.5 0 1.018.933 1.848 2.087 1.848 1.152 0 1.905-.83 1.905-1.848 0-.142-.02-.28-.05-.412 1.31-2.392 1.042-6.13 0-8.53-.11-.23-.23-.44-.37-.64v-3.13c.14-.2.26-.41.37-.64 1.043-2.4 1.312-6.138 0-8.53.03-.132.05-.27.05-.412z"/></svg>
                                     <div>
                                         <p className="font-semibold text-sm">Snapchat</p>
                                         <p className="text-muted-foreground text-xs">Not connected</p>
@@ -677,3 +679,5 @@ export default function ProfilePage() {
 }
 
     
+
+      
