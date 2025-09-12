@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 
 const mockBookings = [
@@ -78,6 +78,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('about');
   const [activeView, setActiveView] = useState<'menu' | 'content'>('menu');
+  const [activeSetting, setActiveSetting] = useState<string | null>(null);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -87,8 +88,23 @@ export default function ProfilePage() {
 
   const handleMenuClick = (tab: string) => {
     setActiveTab(tab);
+    setActiveSetting(null); // Reset setting when changing main tab
     setActiveView('content');
   };
+
+  const handleSettingClick = (setting: string) => {
+    setActiveTab('account');
+    setActiveSetting(setting);
+    setActiveView('content');
+  }
+
+  const handleBackToMenu = () => {
+    if (activeSetting) {
+        setActiveSetting(null);
+    } else {
+        setActiveView('menu');
+    }
+  }
 
   if (loading || !user) {
     return (
@@ -119,7 +135,7 @@ export default function ProfilePage() {
         <Separator className="my-2" />
 
         <nav>
-            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'about' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('about')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'about' && !activeSetting ? 'font-semibold' : '')}>
                 About me
             </button>
             <button onClick={() => handleMenuClick('history')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'history' ? 'font-semibold' : '')}>
@@ -143,7 +159,7 @@ export default function ProfilePage() {
         <Separator className="my-2" />
 
         <nav>
-            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'account' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'account' && !activeSetting ? 'font-semibold' : '')}>
                 Account settings
             </button>
             <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'help' ? 'font-semibold' : '')}>
@@ -155,6 +171,113 @@ export default function ProfilePage() {
         </nav>
     </div>
   );
+
+  const renderContent = () => {
+    if (activeSetting) {
+        let title = '';
+        if (activeSetting === 'personal-info') title = 'Personal Info';
+        else if (activeSetting === 'login-security') title = 'Login & Security';
+        else if (activeSetting === 'payments') title = 'Payments & Payouts';
+        else if (activeSetting === 'notifications') title = 'Notifications';
+        else if (activeSetting === 'taxes') title = 'Taxes';
+        else if (activeSetting === 'privacy') title = 'Privacy & Sharing';
+
+        return (
+            <div>
+                <h1 className="text-xl md:text-2xl font-bold mb-6">{title}</h1>
+                <div className="p-6 md:p-8 rounded-xl border text-center">
+                    <p className="text-muted-foreground">This section is a work in progress.</p>
+                </div>
+            </div>
+        );
+    }
+
+    switch (activeTab) {
+      case 'about':
+        return (
+          <div>
+            <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
+            <div className="p-6 md:p-8 rounded-xl border">
+              <h2 className="text-lg font-bold mb-2">Complete your profile</h2>
+              <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
+              
+              <div className="space-y-4">
+                  <div>
+                      <h3 className="font-semibold text-sm">Email address</h3>
+                      <p className="text-muted-foreground text-sm">{user.email}</p>
+                  </div>
+                  <div>
+                      <h3 className="font-semibold text-sm">Phone number</h3>
+                      <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                  </div>
+                  <div>
+                      <h3 className="font-semibold text-sm">Address</h3>
+                      <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
+                  </div>
+                  <div>
+                      <h3 className="font-semibold text-sm">Identity verification</h3>
+                      <p className="text-muted-foreground text-sm">Not verified</p>
+                  </div>
+              </div>
+
+              <Button variant="default" className="mt-6">Get started</Button>
+            </div>
+          </div>
+        );
+      case 'history':
+        return (
+          <div>
+            <h1 className="text-xl md:text-2xl font-bold mb-6">Past trips</h1>
+            <div className="space-y-6">
+              {mockBookings.map((booking, index) => (
+                <BookingHistoryItem key={index} booking={booking} />
+              ))}
+            </div>
+          </div>
+        );
+      case 'connections':
+        return (
+          <div>
+            <div className="flex justify-between items-center mb-6">
+                <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
+                <Button variant="default">Add friends</Button>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {mockConnections.map((connection) => (
+                    <Link href={`/profile/${connection.id}`} key={connection.id} className="block border rounded-lg p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+                        <Avatar>
+                            <AvatarImage src={connection.avatar} alt={connection.name} />
+                            <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                        <span className="font-semibold text-sm">{connection.name}</span>
+                    </Link>
+                ))}
+            </div>
+          </div>
+        );
+      case 'help':
+        return (
+          <div>
+              <h1 className="text-xl md:text-2xl font-bold mb-6">Get Help</h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {helpTopics.map((topic, index) => (
+                      <Link href={topic.link} key={index} className="border rounded-lg p-4 flex items-start gap-4 hover:bg-muted/50 transition-colors">
+                          {topic.icon}
+                          <div>
+                              <h3 className="font-semibold text-sm">{topic.title}</h3>
+                              <p className="text-xs text-muted-foreground">{topic.description}</p>
+                          </div>
+                      </Link>
+                  ))}
+              </div>
+          </div>
+        );
+      case 'account':
+        return <AccountSettings user={user} onSettingClick={handleSettingClick} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="container mx-auto pb-8">
@@ -172,88 +295,13 @@ export default function ProfilePage() {
                 "lg:col-span-3 lg:pt-8",
                  activeView === 'content' ? 'block px-4 lg:px-0' : 'hidden lg:block'
             )}>
-                <Button variant="ghost" className="lg:hidden mb-4 -ml-4" onClick={() => setActiveView('menu')}>
+                <Button variant="ghost" className="lg:hidden mb-4 -ml-4" onClick={handleBackToMenu}>
                     <ArrowLeft className="h-4 w-4 mr-2" />
-                    Back to menu
+                    Back
                 </Button>
-              {activeTab === 'about' && (
-                <div>
-                  <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
-                  <div className="p-6 md:p-8 rounded-xl border">
-                    <h2 className="text-lg font-bold mb-2">Complete your profile</h2>
-                    <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
-                    
-                    <div className="space-y-4">
-                        <div>
-                            <h3 className="font-semibold text-sm">Email address</h3>
-                            <p className="text-muted-foreground text-sm">{user.email}</p>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-sm">Phone number</h3>
-                            <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-sm">Address</h3>
-                            <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-sm">Identity verification</h3>
-                            <p className="text-muted-foreground text-sm">Not verified</p>
-                        </div>
-                    </div>
+              
+              {renderContent()}
 
-                    <Button variant="default" className="mt-6">Get started</Button>
-                  </div>
-                </div>
-              )}
-              {activeTab === 'history' && (
-                <div>
-                  <h1 className="text-xl md:text-2xl font-bold mb-6">Past trips</h1>
-                  <div className="space-y-6">
-                    {mockBookings.map((booking, index) => (
-                      <BookingHistoryItem key={index} booking={booking} />
-                    ))}
-                  </div>
-                </div>
-              )}
-              {activeTab === 'connections' && (
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                      <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
-                      <Button variant="default">Add friends</Button>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {mockConnections.map((connection) => (
-                          <Link href={`/profile/${connection.id}`} key={connection.id} className="block border rounded-lg p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
-                              <Avatar>
-                                  <AvatarImage src={connection.avatar} alt={connection.name} />
-                                  <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
-                              </Avatar>
-                              <span className="font-semibold text-sm">{connection.name}</span>
-                          </Link>
-                      ))}
-                  </div>
-                </div>
-              )}
-              {activeTab === 'help' && (
-                <div>
-                    <h1 className="text-xl md:text-2xl font-bold mb-6">Get Help</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {helpTopics.map((topic, index) => (
-                            <Link href={topic.link} key={index} className="border rounded-lg p-4 flex items-start gap-4 hover:bg-muted/50 transition-colors">
-                                {topic.icon}
-                                <div>
-                                    <h3 className="font-semibold text-sm">{topic.title}</h3>
-                                    <p className="text-xs text-muted-foreground">{topic.description}</p>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-              )}
-              {activeTab === 'account' && (
-                <AccountSettings user={user} />
-              )}
             </main>
         </div>
     </div>
