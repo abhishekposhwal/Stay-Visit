@@ -333,7 +333,6 @@ export default function ProfilePage() {
                                 <div className="flex justify-between items-start">
                                     <div>
                                         <Label htmlFor="address" className="font-semibold">Address</Label>
-                                        <p className="text-xs text-muted-foreground mt-1">Your primary residential address.</p>
                                         {isEditing ? (
                                             <Input id="address" value={userInfo.address} onChange={handleInputChange} className="border mt-1" />
                                         ) : (
@@ -730,5 +729,6 @@ export default function ProfilePage() {
     
 
     
+
 
 
