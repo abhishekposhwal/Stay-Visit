@@ -174,9 +174,43 @@ export default function ProfilePage() {
 
   const renderContent = () => {
     if (activeSetting) {
+        if (activeSetting === 'personal-info') {
+            return (
+                <div>
+                    <h1 className="text-xl md:text-2xl font-bold mb-6">Personal Info</h1>
+                    <div className="p-6 md:p-8 rounded-xl border">
+                        <div className="space-y-6">
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold">Name</p>
+                                    <p className="text-muted-foreground text-sm">{user.displayName || 'Not provided'}</p>
+                                </div>
+                                <Button variant="outline">Edit</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold">Email</p>
+                                    <p className="text-muted-foreground text-sm">{user.email}</p>
+                                </div>
+                                <Button variant="outline">Edit</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold">Phone number</p>
+                                    <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                                </div>
+                                <Button variant="outline">Edit</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
         let title = '';
-        if (activeSetting === 'personal-info') title = 'Personal Info';
-        else if (activeSetting === 'login-security') title = 'Login & Security';
+        if (activeSetting === 'login-security') title = 'Login & Security';
         else if (activeSetting === 'payments') title = 'Payments & Payouts';
         else if (activeSetting === 'notifications') title = 'Notifications';
         else if (activeSetting === 'taxes') title = 'Taxes';
