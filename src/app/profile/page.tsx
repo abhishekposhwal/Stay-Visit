@@ -377,7 +377,10 @@ export default function ProfilePage() {
                                     <p className="font-semibold text-sm">Password</p>
                                     <p className="text-muted-foreground text-xs">Last updated 2 months ago</p>
                                 </div>
-                                <Button variant="outline" size="sm">Update</Button>
+                                <Button variant="outline" size="sm">
+                                    <Repeat className="h-4 w-4" />
+                                    Update
+                                </Button>
                             </div>
                         </div>
 
@@ -728,6 +731,8 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
 
