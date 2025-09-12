@@ -59,11 +59,11 @@ export function ListingActions({ property }: ListingActionsProps) {
   return (
     <div className="flex items-center gap-2">
       <Button variant="ghost" size="sm" className="underline" onClick={handleShare}>
-        <Share className="mr-2 h-4 w-4" />
+        <Share className="h-4 w-4" />
         Share
       </Button>
       <Button variant="ghost" size="sm" className="underline" onClick={handleWishlistToggle}>
-        <Heart className={cn('mr-2 h-4 w-4', isWishlisted && 'fill-rose-500 text-rose-500')} />
+        <Heart className={cn('h-4 w-4', isWishlisted && 'fill-rose-500 text-rose-500')} />
         {isWishlisted ? 'Saved' : 'Save'}
       </Button>
     </div>
