@@ -3,17 +3,17 @@ import { DoorOpen, Medal, Sparkles } from 'lucide-react';
 
 const highlights = [
     {
-        icon: <DoorOpen className="h-6 w-6" />,
+        icon: <DoorOpen className="h-6 w-6 shrink-0" />,
         title: 'Self check-in',
         subtitle: 'Check yourself in with the lockbox.',
     },
     {
-        icon: <Medal className="h-6 w-6" />,
+        icon: <Medal className="h-6 w-6 shrink-0" />,
         title: 'Superhost',
         subtitle: 'Superhosts are experienced, highly-rated hosts who are committed to providing great stays for guests.',
     },
     {
-        icon: <Sparkles className="h-6 w-6" />,
+        icon: <Sparkles className="h-6 w-6 shrink-0" />,
         title: 'Clean and tidy',
         subtitle: '15 recent guests said this place was sparkling clean.',
     },
