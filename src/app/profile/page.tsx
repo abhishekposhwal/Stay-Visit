@@ -311,7 +311,6 @@ export default function ProfilePage() {
                                 <div className="flex justify-between items-start">
                                      <div>
                                         <Label htmlFor="email" className="font-semibold">Email</Label>
-                                        <p className="text-xs text-muted-foreground mt-1">This is the email you use to log in and receive notifications.</p>
                                         {isEditing ? (
                                             <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} className="border mt-1" />
                                         ) : (
@@ -732,3 +731,4 @@ export default function ProfilePage() {
     
 
     
+
