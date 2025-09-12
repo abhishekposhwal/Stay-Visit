@@ -53,13 +53,13 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
         <div className="mt-4 flex flex-col sm:flex-row gap-2">
             <Button asChild size="sm">
                 <Link href={`/listings/${property.id}`}>
-                    <Repeat className="h-4 w-4 mr-2" />
+                    <Repeat className="h-4 w-4" />
                     Rebook
                 </Link>
             </Button>
             <Button asChild variant="outline" size="sm">
                 <Link href="/work-in-progress">
-                    <FileText className="h-4 w-4 mr-2" />
+                    <FileText className="h-4 w-4" />
                     Get Invoice
                 </Link>
             </Button>
