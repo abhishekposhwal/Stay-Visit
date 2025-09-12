@@ -14,6 +14,8 @@ import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
 import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const mockBookings = [
     {
@@ -80,11 +82,50 @@ export default function ProfilePage() {
   const [activeView, setActiveView] = useState<'menu' | 'content'>('menu');
   const [activeSetting, setActiveSetting] = useState<string | null>(null);
 
+  const [isEditing, setIsEditing] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    displayName: '',
+    email: '',
+    phoneNumber: '',
+    address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
+  });
+
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login');
     }
+    if (user) {
+        setUserInfo({
+            displayName: user.displayName || '',
+            email: user.email || '',
+            phoneNumber: user.phoneNumber || 'Not provided',
+            address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
+        })
+    }
   }, [user, loading, router]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setUserInfo(prev => ({...prev, [id]: value}));
+  }
+
+  const handleSave = () => {
+    // Here you would typically call an API to save the user info
+    console.log('Saving user info:', userInfo);
+    setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    if (user) {
+        setUserInfo({ // Reset to original values
+            displayName: user.displayName || '',
+            email: user.email || '',
+            phoneNumber: user.phoneNumber || 'Not provided',
+            address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
+        })
+    }
+    setIsEditing(false);
+  }
 
   const handleMenuClick = (tab: string) => {
     setActiveTab(tab);
@@ -177,39 +218,48 @@ export default function ProfilePage() {
         if (activeSetting === 'personal-info') {
             return (
                 <div>
-                    <h1 className="text-xl md:text-2xl font-bold mb-6">Personal Info</h1>
+                    <div className="flex justify-between items-center mb-6">
+                        <h1 className="text-xl md:text-2xl font-bold">Personal Info</h1>
+                        {!isEditing && (
+                            <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>Edit</Button>
+                        )}
+                    </div>
                     <div className="p-6 md:p-8 rounded-xl border">
                         <div className="space-y-4">
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <p className="font-semibold text-sm">Name</p>
-                                    <p className="text-muted-foreground text-xs">{user.displayName || 'Not provided'}</p>
-                                </div>
-                                <Button variant="outline" size="sm">Edit</Button>
+                            <div className="grid gap-2">
+                                <Label htmlFor="displayName" className="text-sm">Name</Label>
+                                {isEditing ? (
+                                    <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} />
+                                ) : (
+                                    <p className="text-muted-foreground text-xs">{userInfo.displayName || 'Not provided'}</p>
+                                )}
                             </div>
                             <Separator />
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <p className="font-semibold text-sm">Email</p>
-                                    <p className="text-muted-foreground text-xs">{user.email}</p>
-                                </div>
-                                <Button variant="outline" size="sm">Edit</Button>
+                            <div className="grid gap-2">
+                                <Label htmlFor="email" className="text-sm">Email</Label>
+                                 {isEditing ? (
+                                    <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} />
+                                ) : (
+                                    <p className="text-muted-foreground text-xs">{userInfo.email}</p>
+                                )}
                             </div>
                             <Separator />
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <p className="font-semibold text-sm">Phone number</p>
-                                    <p className="text-muted-foreground text-xs">{user.phoneNumber || 'Not provided'}</p>
-                                </div>
-                                <Button variant="outline" size="sm">Edit</Button>
+                            <div className="grid gap-2">
+                                <Label htmlFor="phoneNumber" className="text-sm">Phone number</Label>
+                                 {isEditing ? (
+                                    <Input id="phoneNumber" value={userInfo.phoneNumber} onChange={handleInputChange} />
+                                ) : (
+                                    <p className="text-muted-foreground text-xs">{userInfo.phoneNumber}</p>
+                                )}
                             </div>
                             <Separator />
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <p className="font-semibold text-sm">Address</p>
-                                    <p className="text-muted-foreground text-xs">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
-                                </div>
-                                <Button variant="outline" size="sm">Edit</Button>
+                            <div className="grid gap-2">
+                                <Label htmlFor="address" className="text-sm">Address</Label>
+                                 {isEditing ? (
+                                    <Input id="address" value={userInfo.address} onChange={handleInputChange} />
+                                ) : (
+                                    <p className="text-muted-foreground text-xs">{userInfo.address}</p>
+                                )}
                             </div>
                             <Separator />
                             <div className="flex justify-between items-center">
@@ -219,6 +269,13 @@ export default function ProfilePage() {
                                 </div>
                                 <Button variant="outline" size="sm">Verify</Button>
                             </div>
+
+                             {isEditing && (
+                                <div className="flex justify-end gap-2 mt-4">
+                                    <Button variant="outline" onClick={handleCancel}>Cancel</Button>
+                                    <Button onClick={handleSave}>Save</Button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -357,7 +414,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-
-    
