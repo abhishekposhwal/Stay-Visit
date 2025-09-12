@@ -254,12 +254,6 @@ export default function ProfilePage() {
                 <div>
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-xl md:text-2xl font-bold">Personal Info</h1>
-                         {!isEditing && (
-                            <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
-                                <Pencil />
-                                Edit
-                            </Button>
-                         )}
                     </div>
                     <div className="space-y-4">
                         <div className="p-6 md:p-8 rounded-xl border">
@@ -291,6 +285,12 @@ export default function ProfilePage() {
                                         onChange={handlePhotoUpload} 
                                     />
                                 </div>
+                                {!isEditing && (
+                                    <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
+                                        <Pencil />
+                                        Edit Profile
+                                    </Button>
+                                 )}
                             </div>
                         </div>
 
@@ -305,6 +305,7 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-sm">{userInfo.displayName}</p>
                                         )}
                                     </div>
+                                    {!isEditing && <Button variant="ghost" size="sm" onClick={() => setIsEditing(true)}><Pencil/>Edit</Button>}
                                 </div>
                                 <Separator />
                                 <div className="flex justify-between items-start">
@@ -316,6 +317,7 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-sm">{userInfo.email}</p>
                                         )}
                                     </div>
+                                    {!isEditing && <Button variant="ghost" size="sm" onClick={() => setIsEditing(true)}><Pencil/>Edit</Button>}
                                 </div>
                                 <Separator />
                                  <div className="flex justify-between items-start">
@@ -327,6 +329,7 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
                                         )}
                                     </div>
+                                    {!isEditing && <Button variant="ghost" size="sm" onClick={() => setIsEditing(true)}><Pencil/>Edit</Button>}
                                 </div>
                                 <Separator />
                                 <div className="flex justify-between items-start">
@@ -338,6 +341,7 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-sm">{userInfo.address}</p>
                                         )}
                                     </div>
+                                    {!isEditing && <Button variant="ghost" size="sm" onClick={() => setIsEditing(true)}><Pencil/>Edit</Button>}
                                 </div>
                                 <Separator />
                                 <div className="flex justify-between items-center">
@@ -345,7 +349,7 @@ export default function ProfilePage() {
                                         <p className="font-semibold">Identity verification</p>
                                         <p className="text-xs text-muted-foreground mt-1">Verify your identity to build trust in the community.</p>
                                     </div>
-                                    <Button variant="outline" size="sm">Verify</Button>
+                                    <Button variant="destructive" size="sm"><AlertCircle />Verify</Button>
                                 </div>
                             </div>
                         </div>
@@ -737,5 +741,3 @@ export default function ProfilePage() {
 }
 
     
-
-  
