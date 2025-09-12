@@ -625,8 +625,7 @@ export default function ProfilePage() {
                             </div>
                         ) : (
                              <div className="flex items-center gap-2">
-                                 <AlertCircle className="h-5 w-5 text-destructive" />
-                                 <Button variant="destructive" size="sm">Verify</Button>
+                                 <Button variant="destructive" size="sm"><AlertCircle/>Verify</Button>
                              </div>
                         )}
                    </div>
@@ -637,8 +636,7 @@ export default function ProfilePage() {
                             <p className="text-sm text-muted-foreground">Show your ID to build trust</p>
                         </div>
                         <div className="flex items-center gap-2">
-                            <AlertCircle className="h-5 w-5 text-destructive" />
-                            <Button variant="destructive" size="sm">Verify</Button>
+                            <Button variant="destructive" size="sm"><AlertCircle/>Verify</Button>
                         </div>
                   </div>
               </div>
@@ -739,3 +737,4 @@ export default function ProfilePage() {
     
 
     
+
