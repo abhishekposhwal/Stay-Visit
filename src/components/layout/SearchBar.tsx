@@ -159,8 +159,8 @@ export function SearchBar() {
             </div>
         ) : (
             <>
-            <div className="flex-[1.5] relative">
-                <label htmlFor="destination" className="block text-xs font-bold text-left pl-6 text-foreground/80">
+            <div className="flex-[1.5] relative pr-2">
+                <label htmlFor="destination" className="block text-xs font-bold text-left pl-4 text-foreground/80">
                 Where
                 </label>
                 <Input
@@ -170,7 +170,7 @@ export function SearchBar() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-6"
+                className="border-none focus-visible:ring-transparent p-0 h-auto bg-transparent pl-4"
                 />
             </div>
 
