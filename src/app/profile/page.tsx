@@ -398,7 +398,12 @@ export default function ProfilePage() {
                     <h1 className="text-xl md:text-2xl font-bold mb-6">Payments &amp; Payouts</h1>
                     <div className="space-y-8">
                         <div className="p-6 md:p-8 rounded-xl border">
-                            <h2 className="font-bold text-lg mb-4">Payment Methods</h2>
+                            <div className="flex justify-between items-center mb-4">
+                                <h2 className="font-bold text-lg">Payment Methods</h2>
+                                <Button variant="outline" size="sm">
+                                    <Plus className="h-4 w-4 mr-2" /> Add payment method
+                                </Button>
+                            </div>
                             <div className="space-y-4">
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-3">
@@ -409,11 +414,6 @@ export default function ProfilePage() {
                                         </div>
                                     </div>
                                     <Button variant="outline" size="sm">Remove</Button>
-                                </div>
-                                <div className="flex justify-end">
-                                    <Button variant="outline" size="sm">
-                                        <Plus className="h-4 w-4 mr-2" /> Add payment method
-                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -630,6 +630,8 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
 
