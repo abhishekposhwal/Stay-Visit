@@ -7,21 +7,31 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
+import React, { useMemo } from 'react';
+
 
 interface ReviewsProps {
   property: Property;
 }
 
-const ratingCategories = [
-    { name: 'Cleanliness', value: 4.9 },
-    { name: 'Accuracy', value: 4.9 },
-    { name: 'Check-in', value: 5.0 },
-    { name: 'Communication', value: 5.0 },
-    { name: 'Location', value: 4.8 },
-    { name: 'Value', value: 4.8 },
-];
-
 export default function Reviews({ property }: ReviewsProps) {
+  const ratingCategories = useMemo(() => {
+    const baseRating = property.rating;
+    const createRating = (offset: number, max: number = 5) => {
+        const rating = baseRating + offset;
+        return Math.max(4.5, Math.min(max, parseFloat(rating.toFixed(1))));
+    }
+
+    return [
+        { name: 'Cleanliness', value: createRating(0.1) },
+        { name: 'Accuracy', value: createRating(0.05) },
+        { name: 'Check-in', value: createRating(0.2) },
+        { name: 'Communication', value: createRating(0.15) },
+        { name: 'Location', value: createRating(-0.1) },
+        { name: 'Value', value: createRating(-0.05) },
+    ];
+  }, [property.rating]);
+
   if (!property.reviewDetails || property.reviewDetails.length === 0) {
     return (
         <div className="py-8">
