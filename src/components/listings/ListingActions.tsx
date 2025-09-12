@@ -43,6 +43,10 @@ export function ListingActions({ property }: ListingActionsProps) {
         });
       }
     } catch (error) {
+      // Silently fail if the user cancels the share dialog
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        return;
+      }
       console.error('Error sharing:', error);
       toast({
         title: 'Error',
