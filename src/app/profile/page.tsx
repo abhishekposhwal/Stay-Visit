@@ -5,14 +5,14 @@ import { useAuth } from '@/context/AuthProvider';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -96,6 +96,7 @@ export default function ProfilePage() {
     email: '',
     phoneNumber: '',
     address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
+    photoURL: '',
   });
 
   const [transactionPage, setTransactionPage] = useState(1);
@@ -105,7 +106,8 @@ export default function ProfilePage() {
     (transactionPage - 1) * transactionsPerPage,
     transactionPage * transactionsPerPage
   );
-
+  
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -117,6 +119,7 @@ export default function ProfilePage() {
             email: user.email || '',
             phoneNumber: user.phoneNumber || 'Not provided',
             address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
+            photoURL: user.photoURL || 'https://picsum.photos/200',
         })
     }
   }, [user, loading, router]);
@@ -139,9 +142,21 @@ export default function ProfilePage() {
             email: user.email || '',
             phoneNumber: user.phoneNumber || 'Not provided',
             address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
+            photoURL: user.photoURL || 'https://picsum.photos/200',
         })
     }
     setIsEditing(false);
+  }
+
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files && e.target.files[0]) {
+          const file = e.target.files[0];
+          const reader = new FileReader();
+          reader.onloadend = () => {
+              setUserInfo(prev => ({...prev, photoURL: reader.result as string}));
+          };
+          reader.readAsDataURL(file);
+      }
   }
 
   const handleMenuClick = (tab: string) => {
@@ -183,7 +198,7 @@ export default function ProfilePage() {
     <div className="p-6 rounded-xl">
         <div className="text-center mb-4">
             <Avatar className="h-24 w-24 mx-auto mb-4">
-                <AvatarImage src={user.photoURL || 'https://picsum.photos/200'} data-ai-hint="person face" alt={user.displayName || 'User'} />
+                <AvatarImage src={userInfo.photoURL} data-ai-hint="person face" alt={user.displayName || 'User'} />
                 <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
             </Avatar>
             <h2 className="text-xl font-bold">{user.displayName || 'Welcome!'}</h2>
@@ -243,6 +258,31 @@ export default function ProfilePage() {
                     </div>
                     <div className="p-6 md:p-8 rounded-xl border">
                         <div className="space-y-4">
+                            <div className="flex items-center gap-4">
+                                <Avatar className="h-20 w-20">
+                                    <AvatarImage src={userInfo.photoURL} alt="User avatar" />
+                                    <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
+                                </Avatar>
+                                {isEditing && (
+                                    <div>
+                                        <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
+                                            <Camera className="mr-2 h-4 w-4" />
+                                            Update photo
+                                        </Button>
+                                        <input 
+                                            type="file" 
+                                            ref={fileInputRef} 
+                                            className="hidden"
+                                            accept="image/*"
+                                            onChange={handlePhotoUpload} 
+                                        />
+                                        <p className="text-xs text-muted-foreground mt-2">Recommended: a clear, front-facing photo.</p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <Separator />
+
                             <div>
                                 <Label htmlFor="displayName" className="text-sm font-semibold">Name</Label>
                                 {isEditing ? (
@@ -634,3 +674,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
