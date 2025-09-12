@@ -84,7 +84,7 @@ export function NotificationSettings() {
             <CardContent className="space-y-6">
                 <div className="grid grid-cols-3 gap-4 font-semibold text-sm">
                     <div className="col-span-1"></div>
-                    <div className="col-span-1 text-center">Mobile</div>
+                    <div className="col-span-1 text-center">Email</div>
                     <div className="col-span-1 text-center">Mobile</div>
                 </div>
                 {notificationCategories.map((category, index) => (
