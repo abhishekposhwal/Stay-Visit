@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { HardHat, Heart, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, X, Home } from 'lucide-react';
+import { HardHat, Heart, LogIn, LogOut, MessageSquare, Sparkles, User as UserIcon, Zap, UserPlus, Search, X, Home, Bell } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistProvider';
 import { cn } from '@/lib/utils';
 import React, { useState, useEffect } from 'react';
@@ -177,6 +177,11 @@ export function Navbar() {
                             <DropdownMenuItem asChild>
                                 <Link href="/inbox">
                                     <MessageSquare className="mr-2" /> Inbox
+                                </Link>
+                            </DropdownMenuItem>
+                             <DropdownMenuItem asChild>
+                                <Link href="/work-in-progress">
+                                    <Bell className="mr-2" /> Notifications
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
