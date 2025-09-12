@@ -242,7 +242,7 @@ export default function ProfilePage() {
                 )}
             >
                 <Settings className="h-5 w-5" />
-                <span>Account settings</span>
+                <span className="text-sm">Account settings</span>
             </button>
             <button 
                 onClick={() => handleMenuClick('help')} 
@@ -252,14 +252,14 @@ export default function ProfilePage() {
                 )}
             >
                 <LifeBuoy className="h-5 w-5" />
-                <span>Get help</span>
+                <span className="text-sm">Get help</span>
             </button>
             <button 
                 onClick={signOut} 
                 className="w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors text-sm"
             >
                 <LogOut className="h-5 w-5" />
-                <span>Log out</span>
+                <span className="text-sm">Log out</span>
             </button>
         </nav>
     </div>
@@ -852,5 +852,7 @@ export default function ProfilePage() {
     
 
 
+
+    
 
     
