@@ -153,6 +153,7 @@ export function Navbar() {
                   <HoverBorderGradient
                     containerClassName="rounded-full"
                     as="button"
+                    duration={0.5}
                     className="dark:bg-black bg-white text-black dark:text-white flex items-center text-sm"
                   >
                     Become a host
