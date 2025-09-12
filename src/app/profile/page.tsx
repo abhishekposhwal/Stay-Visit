@@ -410,9 +410,11 @@ export default function ProfilePage() {
                                     </div>
                                     <Button variant="outline" size="sm">Remove</Button>
                                 </div>
-                                <Button variant="outline" className="w-full">
-                                    <Plus className="h-4 w-4 mr-2" /> Add payment method
-                                </Button>
+                                <div className="flex justify-end">
+                                    <Button variant="outline" size="sm">
+                                        <Plus className="h-4 w-4 mr-2" /> Add payment method
+                                    </Button>
+                                </div>
                             </div>
                         </div>
 
@@ -626,10 +628,5 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-    
-
-    
 
     
