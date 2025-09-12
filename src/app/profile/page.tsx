@@ -258,7 +258,7 @@ export default function ProfilePage() {
                             <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>Edit</Button>
                         )}
                     </div>
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                         <div className="p-6 md:p-8 rounded-xl border">
                              <div className="flex flex-col sm:flex-row items-center gap-6">
                                 <div className="relative">
@@ -732,3 +732,6 @@ export default function ProfilePage() {
 
 
 
+
+
+    
