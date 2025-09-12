@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Wifi, Tv, Wind, Utensils, ParkingCircle, PawPrint, Droplets, Snowflake } from 'lucide-react';
+import { Wifi, Tv, Wind, Utensils, ParkingCircle, PawPrint, Droplets, Snowflake, Sparkles } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
   Dialog,
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog"
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { BedDouble, Bath, Users, Star, Award, Share, Heart, DoorOpen, Medal, Sparkles } from 'lucide-react';
+import { BedDouble, Bath, Users, Star, Award, Share, Heart, DoorOpen, Medal } from 'lucide-react';
 
 
 const iconMap: { [key: string]: React.ReactNode } = {
@@ -72,4 +72,3 @@ export function Amenities({ amenities }: AmenitiesProps) {
     </Dialog>
   );
 }
-
