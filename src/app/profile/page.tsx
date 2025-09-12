@@ -258,81 +258,108 @@ export default function ProfilePage() {
                             <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>Edit</Button>
                         )}
                     </div>
-                    <div className="p-6 md:p-8 rounded-xl border">
-                        <div className="space-y-4">
-                            <div className="text-center mb-4">
-                                <div className="w-32 h-32 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
-                                    <Avatar className="h-full w-full border-2 border-white">
+                    <div className="space-y-6">
+                        <div className="p-6 md:p-8 rounded-xl border">
+                             <div className="flex flex-col sm:flex-row items-center gap-6">
+                                <div className="relative">
+                                    <Avatar className="h-24 w-24 border-2 border-white">
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
                                         <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
                                     </Avatar>
-                                </div>
-                                {isEditing && (
-                                    <div>
-                                        <Button variant="outline" size="sm" onClick={() => fileInputRef.current?.click()}>
-                                            <Camera className="mr-2 h-4 w-4" />
-                                            Update photo
+                                    {isEditing && (
+                                        <Button 
+                                            variant="outline" 
+                                            size="icon" 
+                                            className="absolute bottom-0 right-0 rounded-full h-8 w-8 bg-background"
+                                            onClick={() => fileInputRef.current?.click()}
+                                        >
+                                            <Camera className="h-4 w-4" />
                                         </Button>
-                                        <input 
-                                            type="file" 
-                                            ref={fileInputRef} 
-                                            className="hidden"
-                                            accept="image/*"
-                                            onChange={handlePhotoUpload} 
-                                        />
-                                    </div>
-                                )}
-                            </div>
-
-                            <Separator />
-
-                            <div>
-                                <Label htmlFor="displayName" className="text-sm font-semibold">Name</Label>
-                                {isEditing ? (
-                                    <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} className="border" />
-                                ) : (
-                                    <p className="text-muted-foreground text-sm">{userInfo.displayName}</p>
-                                )}
-                            </div>
-                            <div>
-                                <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
-                                 {isEditing ? (
-                                    <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} className="border" />
-                                ) : (
+                                    )}
+                                </div>
+                                <div className="text-center sm:text-left">
+                                    <h3 className="font-bold text-lg">{userInfo.displayName}</h3>
                                     <p className="text-muted-foreground text-sm">{userInfo.email}</p>
-                                )}
-                            </div>
-                            <div>
-                                <Label htmlFor="phoneNumber" className="text-sm font-semibold">Phone number</Label>
-                                 {isEditing ? (
-                                    <Input id="phoneNumber" type="tel" value={userInfo.phoneNumber} onChange={handleInputChange} className="border" pattern="^\+?[1-9]\d{1,14}$" maxLength={15} />
-                                ) : (
-                                    <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
-                                )}
-                            </div>
-                            <div>
-                                <Label htmlFor="address" className="text-sm font-semibold">Address</Label>
-                                 {isEditing ? (
-                                    <Input id="address" value={userInfo.address} onChange={handleInputChange} className="border" />
-                                ) : (
-                                    <p className="text-muted-foreground text-sm">{userInfo.address}</p>
-                                )}
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <p className="font-semibold text-sm">Identity verification</p>
-                                    <p className="text-muted-foreground text-sm">Not verified</p>
+                                    {isEditing && (
+                                        <>
+                                            <input 
+                                                type="file" 
+                                                ref={fileInputRef} 
+                                                className="hidden"
+                                                accept="image/*"
+                                                onChange={handlePhotoUpload} 
+                                            />
+                                        </>
+                                    )}
                                 </div>
-                                <Button variant="outline" size="sm">Verify</Button>
                             </div>
-
-                             {isEditing && (
-                                <div className="flex justify-end gap-2 mt-4">
-                                    <Button onClick={handleSave} size="sm">Save</Button>
-                                    <Button variant="outline" onClick={handleCancel} size="sm">Cancel</Button>
-                                </div>
-                            )}
                         </div>
+
+                        <div className="p-6 md:p-8 rounded-xl border">
+                            <div className="space-y-6">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <Label htmlFor="displayName" className="font-semibold">Name</Label>
+                                        {isEditing ? (
+                                            <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} className="border mt-1" />
+                                        ) : (
+                                            <p className="text-muted-foreground text-sm">{userInfo.displayName}</p>
+                                        )}
+                                    </div>
+                                </div>
+                                <Separator />
+                                <div className="flex justify-between items-start">
+                                     <div>
+                                        <Label htmlFor="email" className="font-semibold">Email</Label>
+                                        <p className="text-xs text-muted-foreground mt-1">This is the email you use to log in and receive notifications.</p>
+                                        {isEditing ? (
+                                            <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} className="border mt-1" />
+                                        ) : (
+                                            <p className="text-muted-foreground text-sm">{userInfo.email}</p>
+                                        )}
+                                    </div>
+                                </div>
+                                <Separator />
+                                 <div className="flex justify-between items-start">
+                                    <div>
+                                        <Label htmlFor="phoneNumber" className="font-semibold">Phone number</Label>
+                                         <p className="text-xs text-muted-foreground mt-1">Used for verification and communication with hosts/guests.</p>
+                                        {isEditing ? (
+                                            <Input id="phoneNumber" type="tel" value={userInfo.phoneNumber} onChange={handleInputChange} className="border mt-1" pattern="^\+?[1-9]\d{1,14}$" maxLength={15} />
+                                        ) : (
+                                            <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
+                                        )}
+                                    </div>
+                                </div>
+                                <Separator />
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <Label htmlFor="address" className="font-semibold">Address</Label>
+                                        <p className="text-xs text-muted-foreground mt-1">Your primary residential address.</p>
+                                        {isEditing ? (
+                                            <Input id="address" value={userInfo.address} onChange={handleInputChange} className="border mt-1" />
+                                        ) : (
+                                            <p className="text-muted-foreground text-sm">{userInfo.address}</p>
+                                        )}
+                                    </div>
+                                </div>
+                                <Separator />
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="font-semibold">Identity verification</p>
+                                        <p className="text-xs text-muted-foreground mt-1">Verify your identity to build trust in the community.</p>
+                                    </div>
+                                    <Button variant="outline" size="sm">Verify</Button>
+                                </div>
+                            </div>
+                        </div>
+
+                         {isEditing && (
+                            <div className="flex justify-end gap-2 mt-4">
+                                <Button onClick={handleSave} size="sm">Save changes</Button>
+                                <Button variant="outline" onClick={handleCancel} size="sm">Cancel</Button>
+                            </div>
+                        )}
                     </div>
                 </div>
             )
@@ -580,22 +607,22 @@ export default function ProfilePage() {
                   </div>
                   <Separator/>
                   <div className="flex items-center justify-between">
-                      <div>
-                          <p className="text-sm font-semibold">Phone number</p>
-                          <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
-                      </div>
-                       {user.phoneNumber ? (
-                           <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
-                              <CheckCircle className="h-5 w-5" />
-                              <span>Verified</span>
-                           </div>
-                       ) : (
-                            <div className="flex items-center gap-2">
-                                <AlertCircle className="h-5 w-5 text-destructive" />
-                                <Button variant="outline" size="sm">Verify</Button>
+                       <div>
+                           <p className="text-sm font-semibold">Phone number</p>
+                           <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
+                       </div>
+                        {user.phoneNumber ? (
+                            <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                               <CheckCircle className="h-5 w-5" />
+                               <span>Verified</span>
                             </div>
-                       )}
-                  </div>
+                        ) : (
+                             <div className="flex items-center gap-2">
+                                 <AlertCircle className="h-5 w-5 text-destructive" />
+                                 <Button variant="outline" size="sm">Verify</Button>
+                             </div>
+                        )}
+                   </div>
                    <Separator/>
                    <div className="flex items-center justify-between">
                         <div>
@@ -628,10 +655,10 @@ export default function ProfilePage() {
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
                     <Button variant="default" size="sm">
-                        <UserPlus className="mr-2" /> Add friends
+                        <UserPlus /> Add friends
                     </Button>
                 </div>
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {mockConnections.map((connection) => (
                         <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
                             <div className="flex items-center gap-4">
@@ -701,5 +728,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
