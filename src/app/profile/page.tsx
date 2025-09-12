@@ -17,6 +17,7 @@ import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NotificationSettings } from '@/components/profile/NotificationSettings';
+import { addDays } from 'date-fns';
 
 const mockTransactions = [
     { type: 'payment', description: properties[0].title, date: '2024-05-10', amount: 40000 },
@@ -36,12 +37,16 @@ const mockTransactions = [
     { type: 'payment', description: properties[25].title, date: '2023-01-10', amount: 15000 },
 ];
 
-const mockBookings = mockTransactions.filter(t => t.type === 'payment').map(t => {
+const mockBookings = mockTransactions.filter(t => t.type === 'payment').map((t, i) => {
     const property = properties.find(p => p.title === t.description);
+    const checkInDate = new Date(t.date);
+    const nights = (i % 5) + 2; // Stay for 2 to 6 nights
+    const checkOutDate = addDays(checkInDate, nights);
+
     return {
         property: property || properties[0], // fallback for safety
-        checkIn: t.date,
-        checkOut: t.date,
+        checkIn: checkInDate.toISOString().split('T')[0],
+        checkOut: checkOutDate.toISOString().split('T')[0],
         total: t.amount,
     }
 });
@@ -852,3 +857,4 @@ export default function ProfilePage() {
     
 
     
+

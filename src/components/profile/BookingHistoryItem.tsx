@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import type { Property } from '@/lib/types';
-import { format } from 'date-fns';
+import { format, differenceInCalendarDays } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Calendar, FileText, Repeat } from 'lucide-react';
 
@@ -21,11 +21,11 @@ interface BookingHistoryItemProps {
 
 export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
   const { property, checkIn, checkOut, total } = booking;
-  const nights = Math.ceil((new Date(checkOut).getTime() - new Date(checkIn).getTime()) / (1000 * 3600 * 24));
+  const nights = differenceInCalendarDays(new Date(checkOut), new Date(checkIn));
 
   return (
-    <div className="border rounded-xl p-4 flex flex-col sm:flex-row gap-4 hover:shadow-lg transition-shadow duration-300">
-      <div className="w-full sm:w-48 h-40 sm:h-auto flex-shrink-0 relative rounded-lg overflow-hidden">
+    <div className="border rounded-xl p-4 flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-shadow duration-300">
+      <div className="w-full sm:w-60 h-48 sm:h-auto flex-shrink-0 relative rounded-lg overflow-hidden">
         <Image
           src={property.images[0]}
           alt={property.title}
@@ -34,11 +34,16 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
         />
       </div>
       <div className="flex-grow flex flex-col">
-        <Link href={`/listings/${property.id}`} className="hover:underline">
-          <h3 className="font-bold text-lg">{property.title}</h3>
-        </Link>
-        <p className="text-sm text-muted-foreground">{property.host.name} · {property.location}</p>
+        <div>
+          <p className="text-sm text-muted-foreground">{property.type}</p>
+          <Link href={`/listings/${property.id}`} className="hover:underline">
+            <h3 className="font-bold text-lg leading-tight">{property.title}</h3>
+          </Link>
+          <p className="text-sm text-muted-foreground">{property.host.name} · {property.location}</p>
+        </div>
+        
         <Separator className="my-3" />
+        
         <div className="text-sm text-muted-foreground flex items-center gap-4">
             <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
@@ -50,6 +55,7 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
         <p className="text-sm font-semibold mt-1">Total paid: ₹{total.toLocaleString('en-IN')}</p>
         
         <div className="flex-grow"></div>
+
         <div className="mt-4 flex flex-col sm:flex-row gap-2">
             <Button asChild size="sm">
                 <Link href={`/listings/${property.id}`}>
