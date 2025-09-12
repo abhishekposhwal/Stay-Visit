@@ -153,9 +153,8 @@ export function Navbar() {
                   <HoverBorderGradient
                     containerClassName="rounded-full"
                     as="button"
-                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+                    className="dark:bg-black bg-white text-black dark:text-white flex items-center text-sm"
                   >
-                    <Sparkles className="mr-2" />
                     Become a host
                   </HoverBorderGradient>
                 </Link>
