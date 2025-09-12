@@ -71,7 +71,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
               <div className="flex justify-between items-start">
                   <div>
                       <h2 className={cn("text-2xl font-semibold")}>{property.type} hosted by {property.host.name}</h2>
-                      <div className="flex items-center space-x-2 text-muted-foreground mt-1">
+                      <div className="flex items-center space-x-2 text-muted-foreground mt-1 text-sm">
                           <span>{property.guests} guests</span>
                           <span>·</span>
                           <span>{property.bedrooms} bedrooms</span>
