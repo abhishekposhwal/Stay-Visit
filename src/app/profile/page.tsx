@@ -261,7 +261,7 @@ export default function ProfilePage() {
                     <div className="p-6 md:p-8 rounded-xl border">
                         <div className="space-y-4">
                             <div className="text-center mb-4">
-                                <div className="w-24 h-24 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
+                                <div className="w-28 h-28 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
                                     <Avatar className="h-full w-full">
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
                                         <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
@@ -680,4 +680,5 @@ export default function ProfilePage() {
     
 
       
+
 
