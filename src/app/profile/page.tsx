@@ -732,22 +732,28 @@ export default function ProfilePage() {
           <div>
             <h1 className="text-xl md:text-2xl font-bold mb-6">Confirmed Information</h1>
             <div className="p-6 md:p-8 rounded-xl border">
-              <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                      <div>
-                          <p className="text-sm font-semibold">Email address</p>
-                          <p className="text-sm text-muted-foreground">{user.email}</p>
+              <ul className="space-y-4">
+                  <li className="flex items-center justify-between">
+                      <div className='flex items-center gap-4'>
+                          <Mail className="h-6 w-6 text-muted-foreground" />
+                          <div>
+                              <p className="text-sm font-semibold">Email address</p>
+                              <p className="text-sm text-muted-foreground">{user.email}</p>
+                          </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
                           <CheckCircle className="h-5 w-5" />
                           <span>Verified</span>
                       </div>
-                  </div>
+                  </li>
                   <Separator/>
-                  <div className="flex items-center justify-between">
-                       <div>
-                           <p className="text-sm font-semibold">Phone number</p>
-                           <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
+                  <li className="flex items-center justify-between">
+                       <div className="flex items-center gap-4">
+                           <Phone className="h-6 w-6 text-muted-foreground" />
+                           <div>
+                               <p className="text-sm font-semibold">Phone number</p>
+                               <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
+                           </div>
                        </div>
                         {user.phoneNumber ? (
                             <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
@@ -755,22 +761,25 @@ export default function ProfilePage() {
                                <span>Verified</span>
                             </div>
                         ) : (
-                             <div className="flex items-center gap-2">
-                                 <Button variant="destructive" size="sm"><AlertCircle/>Verify</Button>
-                             </div>
+                              <Button variant="destructive" size="sm">
+                                  <AlertCircle className="mr-2 h-4 w-4" /> Verify
+                              </Button>
                         )}
-                   </div>
+                   </li>
                    <Separator/>
-                   <div className="flex items-center justify-between">
-                        <div>
-                            <p className="text-sm font-semibold">Identity verification</p>
-                            <p className="text-sm text-muted-foreground">Show your ID to build trust</p>
+                   <li className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                           <Shield className="h-6 w-6 text-muted-foreground" />
+                           <div>
+                               <p className="text-sm font-semibold">Identity verification</p>
+                               <p className="text-sm text-muted-foreground">Show your ID to build trust</p>
+                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Button variant="destructive" size="sm"><AlertCircle/>Verify</Button>
-                        </div>
-                  </div>
-              </div>
+                        <Button variant="destructive" size="sm">
+                            <AlertCircle className="mr-2 h-4 w-4" /> Verify
+                        </Button>
+                  </li>
+              </ul>
             </div>
           </div>
         );
@@ -863,6 +872,8 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
 
