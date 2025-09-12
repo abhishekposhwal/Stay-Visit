@@ -289,7 +289,7 @@ export default function ProfilePage() {
                             <div>
                                 <Label htmlFor="displayName" className="text-sm font-semibold">Name</Label>
                                 {isEditing ? (
-                                    <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} />
+                                    <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} className="border" />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.displayName}</p>
                                 )}
@@ -297,7 +297,7 @@ export default function ProfilePage() {
                             <div>
                                 <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
                                  {isEditing ? (
-                                    <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} />
+                                    <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} className="border" />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.email}</p>
                                 )}
@@ -305,7 +305,7 @@ export default function ProfilePage() {
                             <div>
                                 <Label htmlFor="phoneNumber" className="text-sm font-semibold">Phone number</Label>
                                  {isEditing ? (
-                                    <Input id="phoneNumber" value={userInfo.phoneNumber} onChange={handleInputChange} />
+                                    <Input id="phoneNumber" value={userInfo.phoneNumber} onChange={handleInputChange} className="border" />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
                                 )}
@@ -313,7 +313,7 @@ export default function ProfilePage() {
                             <div>
                                 <Label htmlFor="address" className="text-sm font-semibold">Address</Label>
                                  {isEditing ? (
-                                    <Input id="address" value={userInfo.address} onChange={handleInputChange} />
+                                    <Input id="address" value={userInfo.address} onChange={handleInputChange} className="border" />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.address}</p>
                                 )}
@@ -683,6 +683,8 @@ export default function ProfilePage() {
 
 
 
+
+    
 
     
 
