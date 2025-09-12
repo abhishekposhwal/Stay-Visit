@@ -498,7 +498,7 @@ export default function ProfilePage() {
                     <h1 className="text-xl md:text-2xl font-bold mb-6">Payments &amp; Payouts</h1>
                     <div className="space-y-8">
                         <div className="p-6 md:p-8 rounded-xl border">
-                             <div className="flex justify-between items-center mb-6">
+                            <div className="flex justify-between items-center mb-6">
                                 <h2 className="font-bold text-lg">Payment Methods</h2>
                                 <Button variant="default" size="sm">
                                     <Plus className="h-4 w-4" /> Add payment method
@@ -777,12 +777,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-
-    
-
-
-    
-
-    
