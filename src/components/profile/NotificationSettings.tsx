@@ -9,7 +9,7 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
-type NotificationChannel = 'email' | 'push';
+type NotificationChannel = 'email' | 'mobile';
 type NotificationType = 'messages' | 'reminders' | 'promotions' | 'policy';
 
 type NotificationPreferences = Record<NotificationType, Record<NotificationChannel, boolean>>;
@@ -40,10 +40,10 @@ const notificationCategories = [
 export function NotificationSettings() {
   const { toast } = useToast();
   const [preferences, setPreferences] = useState<NotificationPreferences>({
-    messages: { email: true, push: true },
-    reminders: { email: true, push: true },
-    promotions: { email: false, push: false },
-    policy: { email: true, push: false },
+    messages: { email: true, mobile: true },
+    reminders: { email: true, mobile: true },
+    promotions: { email: false, mobile: false },
+    policy: { email: true, mobile: false },
   });
   const [isSaving, setIsSaving] = useState(false);
 
@@ -85,7 +85,7 @@ export function NotificationSettings() {
                 <div className="grid grid-cols-3 gap-4 font-semibold text-sm">
                     <div className="col-span-1"></div>
                     <div className="col-span-1 text-center">Email</div>
-                    <div className="col-span-1 text-center">Push</div>
+                    <div className="col-span-1 text-center">Mobile</div>
                 </div>
                 {notificationCategories.map((category, index) => (
                     <div key={category.id}>
@@ -104,10 +104,10 @@ export function NotificationSettings() {
                             </div>
                              <div className="col-span-1 flex justify-center">
                                 <Switch
-                                    id={`${category.id}-push`}
-                                    checked={preferences[category.id].push}
-                                    onCheckedChange={() => handleToggle(category.id, 'push')}
-                                    aria-label={`${category.title} push notifications`}
+                                    id={`${category.id}-mobile`}
+                                    checked={preferences[category.id].mobile}
+                                    onCheckedChange={() => handleToggle(category.id, 'mobile')}
+                                    aria-label={`${category.title} mobile notifications`}
                                 />
                             </div>
                         </div>
