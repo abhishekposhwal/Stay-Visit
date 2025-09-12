@@ -135,7 +135,7 @@ export function SearchBar() {
         <div
           className={cn(
             "bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center p-2 text-foreground transition-all duration-500 ease-in-out border",
-            showCompact ? 'max-w-md cursor-pointer' : 'max-w-5xl'
+            showCompact ? 'max-w-md cursor-pointer' : ''
           )}
           onClick={() => {
             if (showCompact && !isActive) {
@@ -307,5 +307,7 @@ export function SearchBar() {
     </div>
   );
 }
+
+    
 
     
