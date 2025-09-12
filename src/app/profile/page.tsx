@@ -595,11 +595,14 @@ export default function ProfilePage() {
                   </div>
                    <Separator/>
                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-semibold">Identity verification</p>
-                        <p className="text-sm text-muted-foreground">Not verified</p>
-                      </div>
-                      <Button variant="outline" size="sm" className="ml-auto">Verify</Button>
+                        <div>
+                            <p className="text-sm font-semibold">Identity verification</p>
+                            <p className="text-sm text-muted-foreground">Verified</p>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                            <CheckCircle className="h-5 w-5" />
+                            <span>Verified</span>
+                        </div>
                   </div>
               </div>
             </div>
@@ -618,30 +621,30 @@ export default function ProfilePage() {
         );
       case 'connections':
         return (
-          <div>
-            <div className="flex justify-between items-center mb-6">
-                <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
-                <Button variant="default" size="sm">
-                    <UserPlus /> Add friends
-                </Button>
-            </div>
-            <div className="space-y-4">
-                {mockConnections.map((connection) => (
-                    <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
-                        <div className="flex items-center gap-4">
-                          <Avatar className="h-12 w-12">
-                              <AvatarImage src={connection.avatar} alt={connection.name} />
-                              <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
-                          </Avatar>
-                          <span className="font-semibold text-sm">{connection.name}</span>
+            <div>
+                <div className="flex justify-between items-center mb-6">
+                    <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
+                    <Button variant="default" size="sm">
+                        <UserPlus /> Add friends
+                    </Button>
+                </div>
+                <div className="space-y-4">
+                    {mockConnections.map((connection) => (
+                        <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
+                            <div className="flex items-center gap-4">
+                              <Avatar className="h-12 w-12">
+                                  <AvatarImage src={connection.avatar} alt={connection.name} />
+                                  <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
+                              </Avatar>
+                              <span className="font-semibold text-sm">{connection.name}</span>
+                            </div>
+                            <Button asChild variant="outline" size="sm">
+                                <Link href={`/profile/${connection.id}`}>View Profile</Link>
+                            </Button>
                         </div>
-                        <Button asChild variant="outline" size="sm">
-                            <Link href={`/profile/${connection.id}`}>View Profile</Link>
-                        </Button>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-          </div>
         );
       case 'help':
         return (
