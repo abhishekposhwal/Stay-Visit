@@ -182,26 +182,34 @@ export default function ProfilePage() {
                         <div className="space-y-6">
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <p className="font-semibold">Name</p>
-                                    <p className="text-muted-foreground text-sm">{user.displayName || 'Not provided'}</p>
+                                    <p className="font-semibold text-sm">Name</p>
+                                    <p className="text-muted-foreground text-xs">{user.displayName || 'Not provided'}</p>
                                 </div>
-                                <Button variant="outline">Edit</Button>
+                                <Button variant="outline" size="sm">Edit</Button>
                             </div>
                             <Separator />
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <p className="font-semibold">Email</p>
-                                    <p className="text-muted-foreground text-sm">{user.email}</p>
+                                    <p className="font-semibold text-sm">Email</p>
+                                    <p className="text-muted-foreground text-xs">{user.email}</p>
                                 </div>
-                                <Button variant="outline">Edit</Button>
+                                <Button variant="outline" size="sm">Edit</Button>
                             </div>
                             <Separator />
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <p className="font-semibold">Phone number</p>
-                                    <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                                    <p className="font-semibold text-sm">Phone number</p>
+                                    <p className="text-muted-foreground text-xs">{user.phoneNumber || 'Not provided'}</p>
                                 </div>
-                                <Button variant="outline">Edit</Button>
+                                <Button variant="outline" size="sm">Edit</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold text-sm">Address</p>
+                                    <p className="text-muted-foreground text-xs">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
+                                </div>
+                                <Button variant="outline" size="sm">Edit</Button>
                             </div>
                         </div>
                     </div>
