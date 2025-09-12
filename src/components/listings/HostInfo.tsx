@@ -9,7 +9,7 @@ interface HostInfoProps {
 
 export function HostInfo({ host }: HostInfoProps) {
   return (
-    <div className="py-8">
+    <div className="py-8 border-b">
       <div className="flex items-center gap-4">
         <Avatar className="h-16 w-16">
           <AvatarImage src={host.avatar} alt={host.name} />
