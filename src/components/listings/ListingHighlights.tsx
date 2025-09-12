@@ -28,7 +28,7 @@ export function ListingHighlights() {
                         {highlight.icon}
                         <div>
                             <h3 className="font-bold">{highlight.title}</h3>
-                            <p className="text-sm text-muted-foreground">{highlight.subtitle}</p>
+                            <p className="text-xs text-muted-foreground">{highlight.subtitle}</p>
                         </div>
                     </div>
                 ))}
