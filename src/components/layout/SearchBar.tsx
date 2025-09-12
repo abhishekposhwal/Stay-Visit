@@ -159,7 +159,7 @@ export function SearchBar() {
             </div>
         ) : (
             <>
-            <div className="flex-1 relative pr-4">
+            <div className="flex-[1.5] relative pr-4">
                 <label htmlFor="destination" className="block text-xs font-bold text-left pl-6 text-foreground/80">
                 Where
                 </label>
@@ -224,7 +224,7 @@ export function SearchBar() {
             
             <Separator orientation="vertical" className="h-8" />
 
-            <div className="flex-[1.5] flex items-center justify-between pr-2">
+            <div className="flex-1 flex items-center justify-between pr-2">
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
                     <PopoverTrigger asChild>
                         <div className="text-left w-full pl-4 cursor-pointer">
