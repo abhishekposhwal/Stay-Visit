@@ -470,10 +470,25 @@ export default function ProfilePage() {
 
                          <div className="p-6 md:p-8 rounded-xl border bg-muted/30">
                             <h2 className="font-bold text-lg mb-4">Payout Methods</h2>
-                            <div className="text-center py-4">
-                                <AlertCircle className="mx-auto h-8 w-8 text-muted-foreground mb-2" />
-                                <p className="text-sm text-muted-foreground">You have no payout methods. To get paid, you need to set one up.</p>
-                                <Button className="mt-4">Set up payouts</Button>
+                            <div className="space-y-4">
+                                <p className="text-sm text-muted-foreground">To get paid as a host, you need to set up a payout method.</p>
+                                <div>
+                                    <Label htmlFor="accHolderName" className="text-xs">Account Holder Name</Label>
+                                    <Input id="accHolderName" placeholder="e.g. John Doe" />
+                                </div>
+                                <div>
+                                    <Label htmlFor="bankName" className="text-xs">Bank Name</Label>
+                                    <Input id="bankName" placeholder="e.g. State Bank of India" />
+                                </div>
+                                <div>
+                                    <Label htmlFor="accNumber" className="text-xs">Account Number</Label>
+                                    <Input id="accNumber" placeholder="e.g. 1234567890" />
+                                </div>
+                                <div>
+                                    <Label htmlFor="ifscCode" className="text-xs">IFSC Code</Label>
+                                    <Input id="ifscCode" placeholder="e.g. SBIN0001234" />
+                                </div>
+                                <Button className="w-full">Save Payout Method</Button>
                             </div>
                         </div>
                     </div>
