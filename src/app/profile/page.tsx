@@ -476,22 +476,36 @@ export default function ProfilePage() {
                     <h1 className="text-xl md:text-2xl font-bold mb-6">Payments &amp; Payouts</h1>
                     <div className="space-y-8">
                         <div className="p-6 md:p-8 rounded-xl border">
-                             <div className="flex justify-between items-center mb-4">
+                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="font-bold text-lg">Payment Methods</h2>
                                 <Button variant="outline" size="sm">
                                     <Plus className="h-4 w-4" /> Add payment method
                                 </Button>
                             </div>
                             <div className="space-y-4">
-                                <div className="flex justify-between items-center">
-                                    <div className="flex items-center gap-3">
-                                        <CreditCard className="h-6 w-6" />
-                                        <div>
-                                            <p className="font-semibold text-sm">Visa **** 4242</p>
-                                            <p className="text-muted-foreground text-xs">Expires 12/26</p>
+                                <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 rounded-xl border bg-muted/30">
+                                    <div className="w-full md:w-auto bg-primary-gradient p-6 rounded-xl text-white shadow-lg flex flex-col justify-between h-48 aspect-video">
+                                        <div className="flex justify-between items-start">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 38 24" fill="white" className="-mt-2"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3zM21.5 16h-5c-.3 0-.5-.2-.5-.5v-7c0-.3.2-.5.5-.5h5c.3 0 .5.2.5.5v7c0 .3-.2.5-.5.5zm-14-5.5c0-.3.2-.5.5-.5h2.8l2.2-5.9c.1-.3 0-.6-.3-.7-.2-.1-.5 0-.6.2L14 10.4V8.5c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5v2.2c0 .2-.1.4-.3.5-.2.1-.4.1-.6-.1l-2.2-1.5-2.1 5.9v.5c0 .3.2.5.5.5h4.3c.3 0 .5-.2.5-.5v-2c0-.3-.2-.5-.5-.5h-2.3l.8-2.3 2.1 1.5c.3.2.6.2.8 0l.9-2.3c.1-.2 0-.5-.2-.6s-.5-.1-.6.1l-.8 2.2-1.2-1.1c-.2-.1-.4-.1-.6 0-.2.1-.3.3-.2.5l1.4 3.9h-3.1c-.3 0-.5.2-.5.5v.4c0 .3.2.5.5.5H13c.3 0 .5-.2.5-.5v-2.2c0 .2-.1.4-.3.5-.2.1-.4.1-.6-.1l-2.2-1.5-2.1 5.9v.5c0 .3.2.5.5.5h4.3c.3 0 .5-.2.5-.5v2c0 .3.2.5.5.5h2.3l-.8 2.3-2.1-1.5c-.3-.2-.6-.2-.8 0l-.9 2.3c-.1.2 0 .5.2.6s.5.1.6-.1l.8-2.2 1.2 1.1c-.2-.1-.4-.1-.6 0-.2.1-.3.3-.2.5l1.4 3.9h-3.1c-.3 0-.5.2-.5.5v.4c0 .3.2.5.5.5H30c.3 0 .5-.2.5-.5v-5.5z"></path></svg>
+                                        </div>
+                                        <div className="text-lg font-mono tracking-widest text-center pt-2">
+                                            **** **** **** 4242
+                                        </div>
+                                        <div className="flex justify-between items-end text-xs font-mono">
+                                            <div>
+                                                <p className="uppercase">Card Holder</p>
+                                                <p className="uppercase font-semibold">{user?.displayName}</p>
+                                            </div>
+                                            <div>
+                                                <p className="uppercase">Expires</p>
+                                                <p className="font-semibold">12/26</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <Button variant="outline" size="sm">Remove</Button>
+                                    <div className="flex-shrink-0">
+                                        <Button variant="outline" size="sm">Remove</Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -737,4 +751,5 @@ export default function ProfilePage() {
     
 
     
+
 
