@@ -224,10 +224,10 @@ export function SearchBar() {
             
             <Separator orientation="vertical" className="h-8" />
 
-            <div className="flex-1 flex items-center justify-between">
+            <div className="flex-1 flex items-center justify-between pl-4 pr-2">
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
                     <PopoverTrigger asChild>
-                        <div className="text-left w-full pl-4 cursor-pointer">
+                        <div className="text-left w-full cursor-pointer">
                             <label className="block text-xs font-bold text-foreground/80">Who</label>
                             <div className="text-sm text-muted-foreground truncate">{guestDisplay}</div>
                         </div>
