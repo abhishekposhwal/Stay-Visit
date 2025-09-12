@@ -279,10 +279,16 @@ export default function ProfilePage() {
                 <div>
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-xl md:text-2xl font-bold">Personal Info</h1>
+                         {!isEditing && (
+                            <Button variant="default" size="sm" onClick={() => setIsEditing(true)}>
+                                <Pencil className="mr-2 h-4 w-4" />
+                                Edit Profile
+                            </Button>
+                         )}
                     </div>
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                         <div className="p-6 md:p-8 rounded-xl border">
-                             <div className="flex flex-col sm:flex-row items-center gap-6">
+                            <div className="flex flex-col sm:flex-row items-center gap-6">
                                 <div className="relative">
                                     <Avatar className="h-24 w-24 border-2 border-white">
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
@@ -296,13 +302,10 @@ export default function ProfilePage() {
                                             onClick={() => fileInputRef.current?.click()}
                                         >
                                             <Camera className="h-4 w-4" />
+                                            <span className="sr-only">Upload photo</span>
                                         </Button>
                                     )}
-                                </div>
-                                <div className="text-center sm:text-left flex-grow">
-                                    <h3 className="font-bold text-lg">{userInfo.displayName}</h3>
-                                    <p className="text-muted-foreground text-sm">{userInfo.email}</p>
-                                    <input 
+                                     <input 
                                         type="file" 
                                         ref={fileInputRef} 
                                         className="hidden"
@@ -310,12 +313,17 @@ export default function ProfilePage() {
                                         onChange={handlePhotoUpload} 
                                     />
                                 </div>
-                                {!isEditing && (
-                                    <Button variant="default" size="sm" onClick={() => setIsEditing(true)}>
-                                        <Pencil />
-                                        Edit Profile
-                                    </Button>
-                                 )}
+                                <div className="text-center sm:text-left flex-grow">
+                                    {isEditing ? (
+                                        <div className="space-y-2">
+                                            <Label htmlFor="displayName" className="text-xs font-semibold">Name</Label>
+                                            <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} className="border text-lg font-bold p-2" />
+                                        </div>
+                                    ) : (
+                                        <h3 className="font-bold text-2xl">{userInfo.displayName}</h3>
+                                    )}
+                                    <p className="text-muted-foreground text-sm">{userInfo.email}</p>
+                                </div>
                             </div>
                         </div>
 
@@ -323,23 +331,16 @@ export default function ProfilePage() {
                             <div className="space-y-4">
                                 <div className="flex justify-between items-start">
                                     <div>
-                                        <Label htmlFor="displayName" className="font-semibold">Name</Label>
-                                        {isEditing ? (
-                                            <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} className="border mt-1" />
-                                        ) : (
-                                            <p className="text-muted-foreground text-sm">{userInfo.displayName}</p>
-                                        )}
-                                    </div>
-                                </div>
-                                <Separator />
-                                <div className="flex justify-between items-start">
-                                     <div>
                                         <Label htmlFor="email" className="font-semibold">Email</Label>
                                         {isEditing ? (
                                             <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} className="border mt-1" />
                                         ) : (
                                             <p className="text-muted-foreground text-sm">{userInfo.email}</p>
                                         )}
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                                        <CheckCircle className="h-5 w-5" />
+                                        <span>Verified</span>
                                     </div>
                                 </div>
                                 <Separator />
@@ -352,6 +353,16 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
                                         )}
                                     </div>
+                                     {userInfo.phoneNumber !== "Not provided" ? (
+                                        <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                                           <CheckCircle className="h-5 w-5" />
+                                           <span>Verified</span>
+                                        </div>
+                                    ) : (
+                                         <div className="flex items-center gap-2">
+                                             <Button variant="destructive" size="sm"><AlertCircle className="mr-2 h-4 w-4"/>Verify</Button>
+                                         </div>
+                                    )}
                                 </div>
                                 <Separator />
                                 <div className="flex justify-between items-start">
@@ -370,7 +381,7 @@ export default function ProfilePage() {
                                         <p className="font-semibold">Identity verification</p>
                                         <p className="text-xs text-muted-foreground mt-1">Verify your identity to build trust in the community.</p>
                                     </div>
-                                    <Button variant="destructive" size="sm"><AlertCircle />Verify</Button>
+                                    <Button variant="destructive" size="sm"><AlertCircle className="mr-2 h-4 w-4"/>Verify</Button>
                                 </div>
                             </div>
                         </div>
@@ -852,11 +863,5 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-
-    
-
-
 
     
