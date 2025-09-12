@@ -382,7 +382,7 @@ export default function ProfilePage() {
 
                         <div className="p-6 md:p-8 rounded-xl border">
                             <h2 className="font-bold text-lg mb-4">Social accounts</h2>
-                            <div className="space-y-6">
+                            <div className="space-y-4">
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"></path></svg>
@@ -500,7 +500,7 @@ export default function ProfilePage() {
                         <div className="p-6 md:p-8 rounded-xl border">
                              <div className="flex justify-between items-center mb-6">
                                 <h2 className="font-bold text-lg">Payment Methods</h2>
-                                <Button variant="secondary" size="sm">
+                                <Button size="sm">
                                     <Plus className="h-4 w-4" /> Add payment method
                                 </Button>
                             </div>
@@ -782,5 +782,7 @@ export default function ProfilePage() {
 
 
 
+
+    
 
     
