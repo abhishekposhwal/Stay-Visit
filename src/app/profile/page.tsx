@@ -305,7 +305,7 @@ export default function ProfilePage() {
                             <div>
                                 <Label htmlFor="phoneNumber" className="text-sm font-semibold">Phone number</Label>
                                  {isEditing ? (
-                                    <Input id="phoneNumber" value={userInfo.phoneNumber} onChange={handleInputChange} className="border" />
+                                    <Input id="phoneNumber" type="tel" value={userInfo.phoneNumber} onChange={handleInputChange} className="border" />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
                                 )}
@@ -683,6 +683,8 @@ export default function ProfilePage() {
 
 
 
+
+    
 
     
 
