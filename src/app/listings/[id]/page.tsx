@@ -32,7 +32,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
   }
 
   return (
-    <div className="pb-24">
+    <div className="pb-28">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-8">
         <div className="mb-4">
           <h1 className={cn("text-2xl md:text-3xl font-bold")}>{property.title}</h1>
