@@ -197,7 +197,7 @@ export default function ProfilePage() {
   const SidebarContent = () => (
     <div className="p-6 rounded-xl">
         <div className="text-center mb-4">
-            <div className="w-28 h-28 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
+            <div className="w-32 h-32 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
                 <Avatar className="h-full w-full">
                     <AvatarImage src={userInfo.photoURL} data-ai-hint="person face" alt={user.displayName || 'User'} />
                     <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
@@ -680,3 +680,4 @@ export default function ProfilePage() {
     
 
       
+
