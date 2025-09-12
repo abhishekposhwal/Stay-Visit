@@ -101,7 +101,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
             <div className="py-8">
               <h2 className={cn("text-2xl font-semibold mb-4")}>About this space</h2>
-              <p className="text-foreground leading-loose">{property.details}</p>
+              <p className="text-foreground">{property.details}</p>
             </div>
             
             <Separator className="my-8"/>
