@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus, Repeat, Pencil, X, LogOut, ArrowRight, Banknote, Landmark } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus, Repeat, Pencil, X, LogOut, ArrowRight, Banknote, Landmark, Eye } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -767,7 +767,7 @@ export default function ProfilePage() {
         return (
           <div>
             <h1 className="text-xl md:text-2xl font-bold mb-6">Past trips</h1>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {mockBookings.map((booking, index) => (
                 <BookingHistoryItem key={index} booking={booking} />
               ))}
@@ -780,21 +780,20 @@ export default function ProfilePage() {
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
                     <Button variant="default" size="sm">
-                        <UserPlus /> Add friends
+                        <UserPlus className="mr-2 h-4 w-4" /> Add friends
                     </Button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {mockConnections.map((connection) => (
-                        <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
-                            <div className="flex items-center gap-4">
-                              <Avatar className="h-12 w-12">
-                                  <AvatarImage src={connection.avatar} alt={connection.name} />
-                                  <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
-                              </Avatar>
-                              <span className="font-semibold text-sm">{connection.name}</span>
-                            </div>
-                            <Button asChild variant="outline" size="sm">
-                                <Link href={`/profile/${connection.id}`}>View Profile</Link>
+                        <div key={connection.id} className="relative group p-4 border rounded-xl flex flex-col items-center justify-center text-center hover:shadow-lg transition-all duration-300">
+                           <div className="absolute inset-0 bg-primary-gradient opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl"></div>
+                            <Avatar className="h-20 w-20 mb-4 border-2 border-primary-gradient p-1">
+                                <AvatarImage src={connection.avatar} alt={connection.name} />
+                                <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <span className="font-bold text-md mb-2">{connection.name}</span>
+                            <Button asChild variant="default" size="sm" className="mt-auto">
+                                <Link href={`/profile/${connection.id}`}><Eye className="mr-2 h-4 w-4" />View Profile</Link>
                             </Button>
                         </div>
                     ))}
@@ -858,3 +857,6 @@ export default function ProfilePage() {
 
     
 
+
+
+    
