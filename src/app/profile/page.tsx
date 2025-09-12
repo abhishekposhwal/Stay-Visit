@@ -373,8 +373,9 @@ export default function ProfilePage() {
                                     <p className="font-semibold text-sm">Password</p>
                                     <p className="text-muted-foreground text-xs mt-1">Last updated 2 months ago</p>
                                 </div>
-                                <Button variant="default" size="sm">
-                                    <Pencil/>Update
+                                <Button size="sm">
+                                    <Pencil />
+                                    Update
                                 </Button>
                             </div>
                         </div>
@@ -390,7 +391,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Connected</p>
                                         </div>
                                     </div>
-                                    <Button variant="destructive" size="sm"><X/>Disconnect</Button>
+                                    <Button variant="destructive" size="sm">
+                                        <X />
+                                        Disconnect
+                                    </Button>
                                 </div>
                                 <Separator/>
                                 <div className="flex justify-between items-center">
@@ -401,7 +405,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Not connected</p>
                                         </div>
                                     </div>
-                                    <Button size="sm"><Plus/>Connect</Button>
+                                    <Button size="sm">
+                                        <Plus />
+                                        Connect
+                                    </Button>
                                 </div>
                                 <Separator/>
                                 <div className="flex justify-between items-center">
@@ -412,7 +419,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Not connected</p>
                                         </div>
                                     </div>
-                                    <Button size="sm"><Plus/>Connect</Button>
+                                    <Button size="sm">
+                                        <Plus />
+                                        Connect
+                                    </Button>
                                 </div>
                                 <Separator/>
                                 <div className="flex justify-between items-center">
@@ -423,7 +433,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Not connected</p>
                                         </div>
                                     </div>
-                                    <Button size="sm"><Plus/>Connect</Button>
+                                    <Button size="sm">
+                                        <Plus />
+                                        Connect
+                                    </Button>
                                 </div>
                                 <Separator/>
                                 <div className="flex justify-between items-center">
@@ -434,7 +447,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Not connected</p>
                                         </div>
                                     </div>
-                                    <Button size="sm"><Plus/>Connect</Button>
+                                    <Button size="sm">
+                                        <Plus />
+                                        Connect
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -450,7 +466,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Active now</p>
                                         </div>
                                     </div>
-                                    <Button variant="destructive" size="sm"><LogOut />Log out</Button>
+                                    <Button variant="destructive" size="sm">
+                                        <LogOut />
+                                        Log out
+                                    </Button>
                                 </div>
                                 <Separator/>
                                 <div className="flex justify-between items-center">
@@ -461,7 +480,10 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">2 days ago</p>
                                         </div>
                                     </div>
-                                    <Button variant="destructive" size="sm"><LogOut />Log out</Button>
+                                    <Button variant="destructive" size="sm">
+                                        <LogOut />
+                                        Log out
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -478,7 +500,7 @@ export default function ProfilePage() {
                         <div className="p-6 md:p-8 rounded-xl border">
                              <div className="flex justify-between items-center mb-6">
                                 <h2 className="font-bold text-lg">Payment Methods</h2>
-                                <Button variant="outline" size="sm">
+                                <Button variant="secondary" size="sm">
                                     <Plus className="h-4 w-4" /> Add payment method
                                 </Button>
                             </div>
@@ -504,7 +526,10 @@ export default function ProfilePage() {
                                         </div>
                                     </div>
                                     <div className="flex-shrink-0">
-                                        <Button variant="outline" size="sm">Remove</Button>
+                                        <Button variant="destructive" size="sm">
+                                            <X />
+                                            Remove
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
@@ -565,7 +590,10 @@ export default function ProfilePage() {
                          <div className="p-6 md:p-8 rounded-xl border bg-muted/30">
                             <div className="flex justify-between items-center mb-4">
                                 <h2 className="font-bold text-lg">Payout Methods</h2>
-                                <Button variant="outline" size="sm">Update Payout Method</Button>
+                                <Button variant="secondary" size="sm">
+                                    <Pencil />
+                                    Update Payout Method
+                                </Button>
                             </div>
                             <div className="space-y-4">
                                 <div className="p-4 bg-background rounded-md border">
@@ -753,3 +781,6 @@ export default function ProfilePage() {
     
 
 
+
+
+    
