@@ -24,12 +24,12 @@ export default function Reviews({ property }: ReviewsProps) {
     }
 
     return [
-        { name: 'Cleanliness', value: createRating(Math.random() * 0.4 - 0.2) },
-        { name: 'Accuracy', value: createRating(Math.random() * 0.4 - 0.2) },
-        { name: 'Check-in', value: createRating(Math.random() * 0.4 - 0.2) },
-        { name: 'Communication', value: createRating(Math.random() * 0.4 - 0.2) },
-        { name: 'Location', value: createRating(Math.random() * 0.4 - 0.2) },
-        { name: 'Value', value: createRating(Math.random() * 0.4 - 0.2) },
+        { name: 'Cleanliness', value: createRating(Math.random() * 1.0 - 0.5) },
+        { name: 'Accuracy', value: createRating(Math.random() * 1.0 - 0.5) },
+        { name: 'Check-in', value: createRating(Math.random() * 1.0 - 0.5) },
+        { name: 'Communication', value: createRating(Math.random() * 1.0 - 0.5) },
+        { name: 'Location', value: createRating(Math.random() * 1.0 - 0.5) },
+        { name: 'Value', value: createRating(Math.random() * 1.0 - 0.5) },
     ];
   }, [property.rating]);
 
