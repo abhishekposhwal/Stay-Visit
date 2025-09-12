@@ -805,7 +805,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="space-y-4">
                     {mockConnections.map((connection) => (
-                        <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:bg-muted/50 transition-shadow duration-200">
+                        <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:bg-muted/50 transition-colors duration-200">
                             <div className="flex items-center gap-4">
                                 <Avatar className="h-12 w-12">
                                     <AvatarImage src={connection.avatar} alt={connection.name} />
@@ -817,7 +817,7 @@ export default function ProfilePage() {
                             </div>
                             <Button asChild variant="secondary" size="sm">
                                 <Link href={`/profile/${connection.id}`}>
-                                    <Eye className="mr-2 h-4 w-4" />
+                                    <Eye className="mr-1 h-4 w-4" />
                                     View Profile
                                 </Link>
                             </Button>
@@ -878,5 +878,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
