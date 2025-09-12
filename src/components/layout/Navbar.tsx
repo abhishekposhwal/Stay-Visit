@@ -19,6 +19,7 @@ import React, { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthProvider';
 import { Input } from '../ui/input';
+import { mockNotifications } from '@/lib/notifications-data';
 
 const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
@@ -37,6 +38,8 @@ export function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const router = useRouter();
+
+  const unreadNotifications = mockNotifications.filter(n => !n.read).length;
 
   const handleSearch = () => {
       if (destination) {
@@ -167,7 +170,7 @@ export function Navbar() {
                             <DropdownMenuSeparator />
                             <DropdownMenuItem asChild>
                                 <Link href="/notifications">
-                                    <Bell className="mr-2" /> Notifications
+                                    <Bell className="mr-2" /> Notifications {unreadNotifications > 0 && `(${unreadNotifications})`}
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
