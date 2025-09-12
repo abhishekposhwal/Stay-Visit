@@ -16,19 +16,20 @@ interface ReviewsProps {
 
 export default function Reviews({ property }: ReviewsProps) {
   const ratingCategories = useMemo(() => {
+    if (!property.rating) return [];
     const baseRating = property.rating;
     const createRating = (offset: number, max: number = 5) => {
         const rating = baseRating + offset;
-        return Math.max(4.5, Math.min(max, parseFloat(rating.toFixed(1))));
+        return Math.max(0.1, Math.min(max, parseFloat(rating.toFixed(1))));
     }
 
     return [
-        { name: 'Cleanliness', value: createRating(0.1) },
-        { name: 'Accuracy', value: createRating(0.05) },
-        { name: 'Check-in', value: createRating(0.2) },
-        { name: 'Communication', value: createRating(0.15) },
-        { name: 'Location', value: createRating(-0.1) },
-        { name: 'Value', value: createRating(-0.05) },
+        { name: 'Cleanliness', value: createRating(Math.random() * 0.4 - 0.2) },
+        { name: 'Accuracy', value: createRating(Math.random() * 0.4 - 0.2) },
+        { name: 'Check-in', value: createRating(Math.random() * 0.4 - 0.2) },
+        { name: 'Communication', value: createRating(Math.random() * 0.4 - 0.2) },
+        { name: 'Location', value: createRating(Math.random() * 0.4 - 0.2) },
+        { name: 'Value', value: createRating(Math.random() * 0.4 - 0.2) },
     ];
   }, [property.rating]);
 
@@ -55,7 +56,13 @@ export default function Reviews({ property }: ReviewsProps) {
             <div key={category.name} className="flex items-center justify-between">
                 <span className="text-sm">{category.name}</span>
                 <div className="flex items-center gap-2">
-                    <Progress value={(category.value / 5) * 100} className={cn("w-24 h-1", category.value >= 4.5 ? '[&>div]:bg-green-600' : '')} />
+                    <Progress value={(category.value / 5) * 100} className={cn("w-24 h-1", 
+                      {
+                        '[&>div]:bg-green-600': category.value >= 4.5,
+                        '[&>div]:bg-orange-500': category.value >= 3 && category.value < 4.5,
+                        '[&>div]:bg-red-600': category.value < 3
+                      }
+                    )} />
                     <span className="text-xs font-medium text-foreground">{category.value.toFixed(1)}</span>
                 </div>
             </div>
@@ -83,7 +90,7 @@ export default function Reviews({ property }: ReviewsProps) {
       </div>
       
       {property.reviews > 6 && (
-        <Button variant="default" className="mt-8" size="sm">
+        <Button variant="default" size="sm" className="mt-8">
             Show all {property.reviews} reviews
             <ChevronRight />
         </Button>
@@ -91,4 +98,3 @@ export default function Reviews({ property }: ReviewsProps) {
     </div>
   );
 }
-
