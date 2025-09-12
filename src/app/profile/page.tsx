@@ -233,15 +233,33 @@ export default function ProfilePage() {
 
         <Separator className="my-2" />
 
-        <nav>
-            <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'account' && !activeSetting ? 'font-semibold' : '')}>
-                Account settings
+        <nav className="space-y-1">
+            <button 
+                onClick={() => handleMenuClick('account')} 
+                className={cn(
+                    "w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg transition-colors text-sm", 
+                    activeTab === 'account' && !activeSetting ? 'font-semibold bg-muted' : 'hover:bg-muted/50'
+                )}
+            >
+                <Settings className="h-5 w-5" />
+                <span>Account settings</span>
             </button>
-            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'help' ? 'font-semibold' : '')}>
-                Get help
+            <button 
+                onClick={() => handleMenuClick('help')} 
+                className={cn(
+                    "w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg transition-colors text-sm", 
+                    activeTab === 'help' ? 'font-semibold bg-muted' : 'hover:bg-muted/50'
+                )}
+            >
+                <LifeBuoy className="h-5 w-5" />
+                <span>Get help</span>
             </button>
-            <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors text-sm">
-                Log out
+            <button 
+                onClick={signOut} 
+                className="w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors text-sm"
+            >
+                <LogOut className="h-5 w-5" />
+                <span>Log out</span>
             </button>
         </nav>
     </div>
