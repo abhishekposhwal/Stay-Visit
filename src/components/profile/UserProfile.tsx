@@ -27,7 +27,7 @@ export function UserProfile({ user }: UserProfileProps) {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             <aside className="lg:col-span-1">
-                <div className="p-6 rounded-xl border-2 text-center sticky top-24">
+                <div className="p-6 rounded-xl border text-center sticky top-24 shadow-lg">
                     <Avatar className="h-32 w-32 mx-auto mb-4">
                         <AvatarImage src={user.avatar} alt={user.name} />
                         <AvatarFallback>{user.name.charAt(0).toUpperCase()}</AvatarFallback>
@@ -37,11 +37,11 @@ export function UserProfile({ user }: UserProfileProps) {
                     
                     <div className="space-y-2 text-sm text-left">
                         <div className="flex items-center gap-2">
-                            <Star className="h-4 w-4" />
+                            <Star className="h-4 w-4 text-muted-foreground" />
                             <span>{user.reviews} reviews</span>
                         </div>
                          <div className="flex items-center gap-2">
-                            <Award className="h-4 w-4" />
+                            <Award className="h-4 w-4 text-muted-foreground" />
                             <span>Identity verified</span>
                         </div>
                     </div>
@@ -68,15 +68,9 @@ export function UserProfile({ user }: UserProfileProps) {
 
                     <Separator className="my-6" />
 
-                    <h3 className="font-bold text-left mb-2">{user.name}'s confirmed information</h3>
-                    <ul className="text-sm text-left space-y-1">
-                        <li>✓ Email address</li>
-                        <li>✓ Phone number</li>
-                    </ul>
-
-                    <Button asChild variant="outline" className="w-full mt-6">
+                    <Button asChild className="w-full">
                         <Link href={`/inbox?conversationId=${user.id}`}>
-                            <MessageSquare className="h-4 w-4 mr-2" />
+                            <MessageSquare className="mr-2 h-4 w-4" />
                             Message {user.name}
                         </Link>
                     </Button>
@@ -87,7 +81,7 @@ export function UserProfile({ user }: UserProfileProps) {
                 <p className="text-muted-foreground mb-8">From {user.location}</p>
 
                 <div className="prose max-w-none text-foreground">
-                    <h3 className="font-bold">About</h3>
+                    <h3 className="text-xl font-bold border-b pb-2 mb-4">About</h3>
                     <p>{user.bio}</p>
                 </div>
                 
@@ -107,10 +101,13 @@ export function UserProfile({ user }: UserProfileProps) {
                  <div>
                     <h3 className="text-xl font-bold mb-4">Reviews</h3>
                     <div className="flex items-center gap-2">
-                        <Star className="h-6 w-6" />
+                        <Star className="h-6 w-6 text-yellow-500" />
                         <span className="text-xl font-semibold">{user.reviews} reviews</span>
                     </div>
-                    {/* Placeholder for reviews */}
+                    {/* Placeholder for reviews list */}
+                    <div className="mt-4 text-muted-foreground">
+                        <p>Reviews will be displayed here in a future update.</p>
+                    </div>
                  </div>
             </main>
         </div>
