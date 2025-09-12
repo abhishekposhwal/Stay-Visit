@@ -803,22 +803,24 @@ export default function ProfilePage() {
                         <UserPlus className="mr-2 h-4 w-4" /> Add friends
                     </Button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="space-y-4">
                     {mockConnections.map((connection) => (
-                        <div key={connection.id} className="relative group overflow-hidden rounded-xl border hover:shadow-lg transition-all duration-300">
-                            <Link href={`/profile/${connection.id}`} className="block">
-                                <Avatar className="h-48 w-full rounded-none">
-                                    <AvatarImage src={connection.avatar} alt={connection.name} className="object-cover" />
+                        <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
+                            <div className="flex items-center gap-4">
+                                <Avatar className="h-12 w-12">
+                                    <AvatarImage src={connection.avatar} alt={connection.name} />
                                     <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
                                 </Avatar>
-                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                                    <h3 className="font-bold text-white text-lg">{connection.name}</h3>
-                                    <Button variant="secondary" size="sm" className="mt-2 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <Eye className="mr-2 h-4 w-4" />
-                                        View Profile
-                                    </Button>
+                                <div>
+                                    <h3 className="font-semibold">{connection.name}</h3>
                                 </div>
-                            </Link>
+                            </div>
+                            <Button asChild variant="secondary" size="sm">
+                                <Link href={`/profile/${connection.id}`}>
+                                    <Eye className="mr-2 h-4 w-4" />
+                                    View Profile
+                                </Link>
+                            </Button>
                         </div>
                     ))}
                 </div>
@@ -882,3 +884,4 @@ export default function ProfilePage() {
     
 
     
+
