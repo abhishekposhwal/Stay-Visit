@@ -5,7 +5,7 @@ import { ListingHero } from '@/components/listings/ListingHero';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { BedDouble, Bath, Users, Star, Award, Share, Heart } from 'lucide-react';
+import { BedDouble, Bath, Users, Star, Award } from 'lucide-react';
 import { BookingCard } from '@/components/listings/BookingCard';
 import { Amenities } from '@/components/listings/Amenities';
 import { MobileBookingFooter } from '@/components/listings/MobileBookingFooter';
@@ -14,7 +14,7 @@ import { HostInfo } from '@/components/listings/HostInfo';
 import { GuestFavoriteBadge } from '@/components/listings/GuestFavoriteBadge';
 import Reviews from '@/components/listings/Reviews';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { ListingActions } from '@/components/listings/ListingActions';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,16 +50,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 )}
                 <span className="font-medium underline">{property.location}</span>
             </div>
-            <div className="flex items-center gap-2">
-                <Button variant="ghost" size="sm" className="underline">
-                    <Share className="h-4 w-4 mr-2" />
-                    Share
-                </Button>
-                <Button variant="ghost" size="sm" className="underline">
-                    <Heart className="h-4 w-4 mr-2" />
-                    Save
-                </Button>
-            </div>
+            <ListingActions property={property} />
           </div>
         </div>
 
