@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -118,7 +117,7 @@ export function NotificationSettings() {
                  <Separator className="my-6"/>
 
                  <div className="flex justify-end">
-                    <Button onClick={handleSave} disabled={isSaving}>
+                    <Button onClick={handleSave} disabled={isSaving} size="sm">
                         {isSaving ? 'Saving...' : 'Save Preferences'}
                     </Button>
                 </div>
