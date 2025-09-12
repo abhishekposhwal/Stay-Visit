@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -231,37 +231,41 @@ export default function ProfilePage() {
                                 {isEditing ? (
                                     <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} />
                                 ) : (
-                                    <p className="text-muted-foreground text-xs">{userInfo.displayName || 'Not provided'}</p>
+                                    <p className="text-muted-foreground text-sm">{userInfo.displayName || 'Not provided'}</p>
                                 )}
                             </div>
+                            <Separator />
                             <div className="grid gap-2">
                                 <Label htmlFor="email" className="text-sm">Email</Label>
                                  {isEditing ? (
                                     <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} />
                                 ) : (
-                                    <p className="text-muted-foreground text-xs">{userInfo.email}</p>
+                                    <p className="text-muted-foreground text-sm">{userInfo.email}</p>
                                 )}
                             </div>
+                            <Separator />
                             <div className="grid gap-2">
                                 <Label htmlFor="phoneNumber" className="text-sm">Phone number</Label>
                                  {isEditing ? (
                                     <Input id="phoneNumber" value={userInfo.phoneNumber} onChange={handleInputChange} />
                                 ) : (
-                                    <p className="text-muted-foreground text-xs">{userInfo.phoneNumber}</p>
+                                    <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
                                 )}
                             </div>
+                            <Separator />
                             <div className="grid gap-2">
                                 <Label htmlFor="address" className="text-sm">Address</Label>
                                  {isEditing ? (
                                     <Input id="address" value={userInfo.address} onChange={handleInputChange} />
                                 ) : (
-                                    <p className="text-muted-foreground text-xs">{userInfo.address}</p>
+                                    <p className="text-muted-foreground text-sm">{userInfo.address}</p>
                                 )}
                             </div>
+                            <Separator />
                             <div className="flex justify-between items-center">
                                 <div>
                                     <p className="font-semibold text-sm">Identity verification</p>
-                                    <p className="text-muted-foreground text-xs">Not verified</p>
+                                    <p className="text-muted-foreground text-sm">Not verified</p>
                                 </div>
                                 <Button variant="outline" size="sm">Verify</Button>
                             </div>
@@ -278,9 +282,63 @@ export default function ProfilePage() {
             )
         }
 
+        if (activeSetting === 'login-security') {
+            return (
+                <div>
+                    <h1 className="text-xl md:text-2xl font-bold mb-6">Login & Security</h1>
+                    <div className="space-y-6">
+                        <div className="p-6 md:p-8 rounded-xl border">
+                            <h2 className="font-bold text-lg mb-4">Login</h2>
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold text-sm">Password</p>
+                                    <p className="text-muted-foreground text-xs">Last updated 2 months ago</p>
+                                </div>
+                                <Button variant="outline" size="sm">Update</Button>
+                            </div>
+                        </div>
+
+                        <div className="p-6 md:p-8 rounded-xl border">
+                            <h2 className="font-bold text-lg mb-4">Social accounts</h2>
+                             <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold text-sm">Google</p>
+                                    <p className="text-muted-foreground text-xs">Connected</p>
+                                </div>
+                                <Button variant="outline" size="sm">Disconnect</Button>
+                            </div>
+                        </div>
+
+                        <div className="p-6 md:p-8 rounded-xl border">
+                            <h2 className="font-bold text-lg mb-4">Device history</h2>
+                             <div className="flex justify-between items-center mb-4">
+                                <div className="flex items-center gap-4">
+                                    <Monitor className="h-6 w-6 text-muted-foreground" />
+                                    <div>
+                                        <p className="font-semibold text-sm">Chrome on MacOS</p>
+                                        <p className="text-muted-foreground text-xs">Active now</p>
+                                    </div>
+                                </div>
+                                <Button variant="outline" size="sm">Log out</Button>
+                            </div>
+                             <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-4">
+                                    <Smartphone className="h-6 w-6 text-muted-foreground" />
+                                    <div>
+                                        <p className="font-semibold text-sm">iPhone App</p>
+                                        <p className="text-muted-foreground text-xs">2 days ago</p>
+                                    </div>
+                                </div>
+                                <Button variant="outline" size="sm">Log out</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
         let title = '';
-        if (activeSetting === 'login-security') title = 'Login & Security';
-        else if (activeSetting === 'payments') title = 'Payments & Payouts';
+        if (activeSetting === 'payments') title = 'Payments & Payouts';
         else if (activeSetting === 'notifications') title = 'Notifications';
         else if (activeSetting === 'taxes') title = 'Taxes';
         else if (activeSetting === 'privacy') title = 'Privacy & Sharing';
@@ -410,3 +468,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
