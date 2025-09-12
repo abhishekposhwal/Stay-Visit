@@ -159,7 +159,7 @@ export function SearchBar() {
             </div>
         ) : (
             <>
-            <div className="flex-[1.5] relative">
+            <div className="flex-[1.25] relative">
                 <label htmlFor="destination" className="block text-xs font-bold text-left pl-6 text-foreground/80">
                 Where
                 </label>
@@ -179,7 +179,7 @@ export function SearchBar() {
             <Popover open={isDatePopoverOpen} onOpenChange={setIsDatePopoverOpen}>
                 <PopoverTrigger asChild>
                     <div className="flex-1 flex cursor-pointer">
-                        <div className="flex-1 text-left px-4">
+                        <div className="flex-1 text-left pl-4">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
                             <div className="text-sm text-muted-foreground">
                                 {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
@@ -224,7 +224,7 @@ export function SearchBar() {
             
             <Separator orientation="vertical" className="h-8" />
 
-            <div className="flex-1 flex items-center justify-between pl-4">
+            <div className="flex-1 flex items-center justify-between pl-4 pr-2">
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
                     <PopoverTrigger asChild>
                         <div className="text-left w-full cursor-pointer">
