@@ -286,8 +286,8 @@ export default function ProfilePage() {
                                     />
                                 </div>
                                 {!isEditing && (
-                                    <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
-                                        <Pencil/>
+                                    <Button variant="default" size="sm" onClick={() => setIsEditing(true)}>
+                                        <Pencil />
                                         Edit Profile
                                     </Button>
                                  )}
@@ -373,7 +373,7 @@ export default function ProfilePage() {
                                     <p className="font-semibold text-sm">Password</p>
                                     <p className="text-muted-foreground text-xs mt-1">Last updated 2 months ago</p>
                                 </div>
-                                <Button size="sm">
+                                <Button variant="default" size="sm">
                                     <Pencil/>Update
                                 </Button>
                             </div>
