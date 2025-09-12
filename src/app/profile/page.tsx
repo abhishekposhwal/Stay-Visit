@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus, Repeat } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus, Repeat, Pencil } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -255,7 +255,10 @@ export default function ProfilePage() {
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-xl md:text-2xl font-bold">Personal Info</h1>
                         {!isEditing && (
-                            <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>Edit</Button>
+                            <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
+                                <Pencil className="mr-2 h-4 w-4" />
+                                Edit
+                            </Button>
                         )}
                     </div>
                     <div className="space-y-4">
@@ -725,3 +728,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
