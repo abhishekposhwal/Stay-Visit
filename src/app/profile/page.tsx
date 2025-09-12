@@ -258,11 +258,17 @@ export default function ProfilePage() {
                     </div>
                     <div className="p-6 md:p-8 rounded-xl border">
                         <div className="space-y-4">
-                            <div className="flex items-center gap-4">
-                                <Avatar className="h-20 w-20">
-                                    <AvatarImage src={userInfo.photoURL} alt="User avatar" />
-                                    <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
-                                </Avatar>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-4">
+                                    <Avatar className="h-20 w-20">
+                                        <AvatarImage src={userInfo.photoURL} alt="User avatar" />
+                                        <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
+                                    </Avatar>
+                                    <div>
+                                        <p className="font-semibold">{userInfo.displayName || 'Name not set'}</p>
+                                        <p className="text-sm text-muted-foreground">{userInfo.email}</p>
+                                    </div>
+                                </div>
                                 {isEditing && (
                                     <div>
                                         <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
@@ -276,7 +282,6 @@ export default function ProfilePage() {
                                             accept="image/*"
                                             onChange={handlePhotoUpload} 
                                         />
-                                        <p className="text-xs text-muted-foreground mt-2">Recommended: a clear, front-facing photo.</p>
                                     </div>
                                 )}
                             </div>
@@ -674,6 +679,8 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
 
