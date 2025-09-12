@@ -17,19 +17,14 @@ interface ReviewsProps {
 export default function Reviews({ property }: ReviewsProps) {
   const ratingCategories = useMemo(() => {
     if (!property.rating) return [];
-    const baseRating = property.rating;
-    const createRating = (offset: number, max: number = 5) => {
-        const rating = baseRating + offset;
-        return Math.max(0.1, Math.min(max, parseFloat(rating.toFixed(1))));
-    }
-
+    
     return [
-        { name: 'Cleanliness', value: createRating(Math.random() * 1.0 - 0.5) },
-        { name: 'Accuracy', value: createRating(Math.random() * 1.0 - 0.5) },
-        { name: 'Check-in', value: createRating(Math.random() * 1.0 - 0.5) },
-        { name: 'Communication', value: createRating(Math.random() * 1.0 - 0.5) },
-        { name: 'Location', value: createRating(Math.random() * 1.0 - 0.5) },
-        { name: 'Value', value: createRating(Math.random() * 1.0 - 0.5) },
+        { name: 'Cleanliness', value: 5.0 },
+        { name: 'Accuracy', value: 4.8 },
+        { name: 'Check-in', value: 4.4 },
+        { name: 'Communication', value: 3.6 },
+        { name: 'Location', value: 2.3 },
+        { name: 'Value', value: 1.2 },
     ];
   }, [property.rating]);
 
