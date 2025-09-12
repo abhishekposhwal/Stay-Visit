@@ -53,8 +53,8 @@ export default function Reviews({ property }: ReviewsProps) {
                 <div className="flex items-center gap-2">
                     <Progress value={(category.value / 5) * 100} className={cn("w-24 h-1", 
                       {
-                        '[&>div]:bg-green-600': category.value >= 4.5,
-                        '[&>div]:bg-orange-500': category.value >= 3 && category.value < 4.5,
+                        '[&>div]:bg-green-600': category.value >= 4.0,
+                        '[&>div]:bg-orange-500': category.value >= 3 && category.value < 4.0,
                         '[&>div]:bg-red-600': category.value < 3
                       }
                     )} />
