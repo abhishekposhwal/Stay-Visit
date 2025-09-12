@@ -441,7 +441,7 @@ export default function ProfilePage() {
                                 <Separator/>
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-4">
-                                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="text-muted-foreground" fill="currentColor"><path d="M22.999 6.246c0-1.01-.933-1.838-2.086-1.838-1.01 0-1.802.587-2.124 1.192l-4.707-2.652c.23-.46.36-1 .36-1.57C14.442 1.258 13.184 0 11.85 0 10.516 0 9.258 1.258 9.258 2.378c0 .57.13 1.11.36 1.57L4.91 6.59c-.322-.605-1.114-1.192-2.124-1.192C1.753 5.4 1 6.246 1 7.256c0 .142.02.28.05.412-1.31 2.392-1.042 6.13 0 8.53.11.23.23.44.37.64v3.13c0 1.25 1.014 2.82 2.256 2.82 1.244 0 2.257-1.57 2.257-2.82v-3.13c.14-.2.26-.41.37-.64 1.043 2.4 1.312 6.138 0 8.53-.03.132-.05.27-.05.412 0 1.01.753 1.848 1.886 1.848 1.154 0 2.087-.83 2.087-1.848 0-.54-.12-1.05-.33-1.5l4.76-2.68s.26.02.32.02c.06 0 .26-.02.26-.02l4.76 2.68c-.21.45-.33.96-.33 1.5 0 1.018.933 1.848 2.087 1.848 1.152 0 1.905-.83 1.905-1.848 0-.142-.02-.28-.05-.412 1.31-2.392 1.042 6.13 0-8.53-.11-.23-.23-.44-.37-.64v-3.13c.14-.2.26-.41.37-.64 1.043-2.4 1.312-6.138 0-8.53.03-.132.05-.27.05-.412z"/></svg>
+                                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="text-muted-foreground" fill="currentColor"><path d="M22.999 6.246c0-1.01-.933-1.838-2.086-1.838-1.01 0-1.802.587-2.124 1.192l-4.707-2.652c.23-.46.36-1 .36-1.57C14.442 1.258 13.184 0 11.85 0 10.516 0 9.258 1.258 9.258 2.378c0 .57.13 1.11.36 1.57L4.91 6.59c-.322-.605-1.114-1.192-2.124-1.192C1.753 5.4 1 6.246 1 7.256c0 .142.02.28.05.412-1.31 2.392-1.042 6.13 0 8.53.11.23.23.44.37.64v3.13c0 1.25 1.014 2.82 2.256 2.82 1.244 0 2.257-1.57 2.257-2.82v-3.13c.14-.2.26-.41.37-.64 1.043 2.4 1.312 6.138 0 8.53-.03.132-.05.27-.05.412 0 1.01.753 1.848 1.886 1.848 1.154 0 2.087-.83 2.087-1.848 0-.54-.12-1.05-.33-1.5l4.76-2.68s.26.02.32.02c.06 0 .26-.02.26-.02l4.76 2.68c-.21.45-.33.96-.33 1.5 0 1.018.933 1.848 2.087 1.848 1.152 0 1.905-.83 1.905-1.848 0-.142-.02-.28-.05-.412 1.31-2.392 1.042-6.13 0-8.53-.11-.23-.23-.44-.37-.64v-3.13c.14-.2.26-.41.37-.64 1.043-2.4 1.312-6.138 0-8.53.03-.132.05-.27.05-.412z"/></svg>
                                         <div>
                                             <p className="font-semibold text-sm">Snapchat</p>
                                             <p className="text-muted-foreground text-xs mt-1">Not connected</p>
@@ -504,8 +504,8 @@ export default function ProfilePage() {
                                     <Plus className="h-4 w-4" /> Add payment method
                                 </Button>
                             </div>
-                            <div className="relative max-w-xs">
-                                <div className="w-full bg-primary-gradient p-6 rounded-xl text-white shadow-lg flex flex-col justify-between h-48">
+                            <div className="flex items-center gap-4">
+                                <div className="w-full bg-primary-gradient p-6 rounded-xl text-white shadow-lg flex flex-col justify-between h-48 max-w-xs">
                                     <div className="flex justify-between items-start">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 38 24" fill="white" className="-mt-2"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3zM21.5 16h-5c-.3 0-.5-.2-.5-.5v-7c0-.3.2-.5.5-.5h5c.3 0 .5.2.5.5v7c0 .3-.2.5-.5.5zm-14-5.5c0-.3.2-.5.5-.5h2.8l2.2-5.9c.1-.3 0-.6-.3-.7-.2-.1-.5 0-.6.2L14 10.4V8.5c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5v2.2c0 .2-.1.4-.3.5-.2.1-.4.1-.6-.1l-2.2-1.5-2.1 5.9v.5c0 .3.2.5.5.5h4.3c.3 0 .5-.2.5-.5v-2c0-.3-.2-.5-.5-.5h-2.3l.8-2.3 2.1 1.5c.3.2.6.2.8 0l.9-2.3c.1-.2 0-.5-.2-.6s-.5-.1-.6.1l-.8-2.2-1.2-1.1c-.2-.1-.4-.1-.6 0-.2.1-.3.3-.2.5l1.4 3.9h-3.1c-.3 0-.5.2-.5.5v.4c0 .3.2.5.5.5H13c.3 0 .5-.2.5-.5v-2.2c0 .2-.1.4-.3.5-.2.1-.4.1-.6-.1l-2.2-1.5-2.1 5.9v.5c0 .3.2.5.5.5h4.3c.3 0 .5-.2.5-.5v2c0 .3.2.5.5.5h2.3l-.8 2.3-2.1-1.5c-.3-.2-.6-.2-.8 0l-.9 2.3c-.1.2 0 .5.2.6s.5.1.6-.1l.8-2.2 1.2 1.1c-.2-.1-.4-.1-.6 0-.2.1-.3.3-.2.5l1.4 3.9h-3.1c-.3 0-.5.2-.5.5v.4c0 .3.2.5.5.5H30c.3 0 .5-.2.5-.5v-5.5z"></path></svg>
@@ -524,7 +524,7 @@ export default function ProfilePage() {
                                         </div>
                                     </div>
                                 </div>
-                                <Button variant="destructive" size="sm" className="absolute -bottom-2 -right-2">
+                                <Button variant="destructive" size="sm">
                                     <X />
                                     Remove
                                 </Button>
