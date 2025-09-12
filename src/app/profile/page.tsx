@@ -296,7 +296,7 @@ export default function ProfilePage() {
                         </div>
 
                         <div className="p-6 md:p-8 rounded-xl border">
-                            <div className="space-y-6">
+                            <div className="space-y-4">
                                 <div className="flex justify-between items-start">
                                     <div>
                                         <Label htmlFor="displayName" className="font-semibold">Name</Label>
@@ -725,13 +725,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-
-    
-
-
-
-
-
-    
