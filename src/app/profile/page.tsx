@@ -732,54 +732,54 @@ export default function ProfilePage() {
           <div>
             <h1 className="text-xl md:text-2xl font-bold mb-6">Confirmed Information</h1>
             <div className="p-6 md:p-8 rounded-xl border">
-              <ul className="space-y-4">
-                  <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
-                      <div className='flex items-center gap-4'>
-                          <Mail className="h-6 w-6 text-muted-foreground" />
-                          <div>
-                              <p className="text-sm font-semibold">Email address</p>
-                              <p className="text-sm text-muted-foreground">{user.email}</p>
-                          </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
-                          <CheckCircle className="h-5 w-5" />
-                          <span>Verified</span>
-                      </div>
-                  </li>
-                  <Separator/>
-                  <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
-                       <div className="flex items-center gap-4">
-                           <Phone className="h-6 w-6 text-muted-foreground" />
-                           <div>
-                               <p className="text-sm font-semibold">Phone number</p>
-                               <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
-                           </div>
-                       </div>
-                        {user.phoneNumber ? (
-                            <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
-                               <CheckCircle className="h-5 w-5" />
-                               <span>Verified</span>
-                            </div>
-                        ) : (
-                              <Button variant="destructive" size="sm">
-                                  <AlertCircle className="mr-2 h-4 w-4" /> Verify
-                              </Button>
-                        )}
-                   </li>
-                   <Separator/>
-                   <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
+                <ul className="space-y-4">
+                    <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
                         <div className="flex items-center gap-4">
-                           <Shield className="h-6 w-6 text-muted-foreground" />
-                           <div>
-                               <p className="text-sm font-semibold">Identity verification</p>
-                               <p className="text-sm text-muted-foreground">Show your ID to build trust</p>
-                           </div>
+                        <Mail className="h-6 w-6 text-muted-foreground" />
+                        <div>
+                            <p className="text-sm font-semibold">Email address</p>
+                            <p className="text-sm text-muted-foreground">{user.email}</p>
                         </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                        <CheckCircle className="h-5 w-5" />
+                        <span>Verified</span>
+                        </div>
+                    </li>
+                    <Separator />
+                    <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
+                        <div className="flex items-center gap-4">
+                        <Phone className="h-6 w-6 text-muted-foreground" />
+                        <div>
+                            <p className="text-sm font-semibold">Phone number</p>
+                            <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
+                        </div>
+                        </div>
+                        {user.phoneNumber ? (
+                        <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                            <CheckCircle className="h-5 w-5" />
+                            <span>Verified</span>
+                        </div>
+                        ) : (
                         <Button variant="destructive" size="sm">
                             <AlertCircle className="mr-2 h-4 w-4" /> Verify
                         </Button>
-                  </li>
-              </ul>
+                        )}
+                    </li>
+                    <Separator />
+                    <li className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50">
+                        <div className="flex items-center gap-4">
+                        <Shield className="h-6 w-6 text-muted-foreground" />
+                        <div>
+                            <p className="text-sm font-semibold">Identity verification</p>
+                            <p className="text-sm text-muted-foreground">Show your ID to build trust</p>
+                        </div>
+                        </div>
+                        <Button variant="destructive" size="sm">
+                        <AlertCircle className="mr-2 h-4 w-4" /> Verify
+                        </Button>
+                    </li>
+                </ul>
             </div>
           </div>
         );
@@ -787,7 +787,7 @@ export default function ProfilePage() {
         return (
           <div>
             <h1 className="text-xl md:text-2xl font-bold mb-6">Past trips</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6">
               {mockBookings.map((booking, index) => (
                 <BookingHistoryItem key={index} booking={booking} />
               ))}
@@ -800,7 +800,7 @@ export default function ProfilePage() {
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
                     <Button variant="default" size="sm">
-                        <UserPlus className="mr-2 h-4 w-4" /> Add friends
+                        <UserPlus className="mr-1 h-4 w-4" /> Add friends
                     </Button>
                 </div>
                 <div className="space-y-4">
@@ -878,3 +878,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    

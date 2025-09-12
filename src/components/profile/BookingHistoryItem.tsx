@@ -24,8 +24,8 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
   const nights = differenceInCalendarDays(new Date(checkOut), new Date(checkIn));
 
   return (
-    <div className="border rounded-xl p-4 flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-shadow duration-300">
-      <div className="w-full sm:w-60 h-48 sm:h-auto flex-shrink-0 relative rounded-lg overflow-hidden">
+    <div className="border rounded-xl p-4 flex flex-col md:flex-row gap-6 hover:shadow-lg transition-shadow duration-300">
+      <div className="w-full md:w-60 h-48 md:h-auto flex-shrink-0 relative rounded-lg overflow-hidden">
         <Image
           src={property.images[0]}
           alt={property.title}
@@ -74,3 +74,5 @@ export function BookingHistoryItem({ booking }: BookingHistoryItemProps) {
     </div>
   );
 }
+
+    
