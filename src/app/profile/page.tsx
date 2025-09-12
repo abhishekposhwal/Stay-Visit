@@ -471,24 +471,24 @@ export default function ProfilePage() {
                          <div className="p-6 md:p-8 rounded-xl border bg-muted/30">
                             <h2 className="font-bold text-lg mb-4">Payout Methods</h2>
                             <div className="space-y-4">
-                                <p className="text-sm text-muted-foreground">To get paid as a host, you need to set up a payout method.</p>
-                                <div>
-                                    <Label htmlFor="accHolderName" className="text-xs">Account Holder Name</Label>
-                                    <Input id="accHolderName" placeholder="e.g. John Doe" />
+                                <p className="text-sm text-muted-foreground">This is where your payout information would be displayed. For security reasons, we are not showing a live form.</p>
+                                <div className="p-4 bg-background rounded-md border">
+                                    <p className="font-semibold text-sm">Account Holder Name</p>
+                                    <p className="text-muted-foreground text-sm">John Doe</p>
                                 </div>
-                                <div>
-                                    <Label htmlFor="bankName" className="text-xs">Bank Name</Label>
-                                    <Input id="bankName" placeholder="e.g. State Bank of India" />
+                                <div className="p-4 bg-background rounded-md border">
+                                    <p className="font-semibold text-sm">Bank Name</p>
+                                    <p className="text-muted-foreground text-sm">State Bank of India</p>
                                 </div>
-                                <div>
-                                    <Label htmlFor="accNumber" className="text-xs">Account Number</Label>
-                                    <Input id="accNumber" placeholder="e.g. 1234567890" />
+                                <div className="p-4 bg-background rounded-md border">
+                                    <p className="font-semibold text-sm">Account Number</p>
+                                    <p className="text-muted-foreground text-sm">**** **** 1234</p>
                                 </div>
-                                <div>
-                                    <Label htmlFor="ifscCode" className="text-xs">IFSC Code</Label>
-                                    <Input id="ifscCode" placeholder="e.g. SBIN0001234" />
+                                <div className="p-4 bg-background rounded-md border">
+                                    <p className="font-semibold text-sm">IFSC Code</p>
+                                    <p className="text-muted-foreground text-sm">SBIN0001234</p>
                                 </div>
-                                <Button className="w-full">Save Payout Method</Button>
+                                <Button variant="outline" className="w-full">Update Payout Method</Button>
                             </div>
                         </div>
                     </div>
@@ -628,6 +628,8 @@ export default function ProfilePage() {
 }
 
     
+    
+
     
 
     
