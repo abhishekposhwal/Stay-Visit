@@ -260,16 +260,16 @@ export default function ProfilePage() {
                     </div>
                     <div className="p-6 md:p-8 rounded-xl border">
                         <div className="space-y-4">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-4">
-                                     <Avatar className="h-20 w-20">
+                            <div className="text-center mb-4">
+                                <div className="w-24 h-24 rounded-full p-1 bg-primary-gradient mx-auto mb-4">
+                                    <Avatar className="h-full w-full">
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
                                         <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
                                     </Avatar>
                                 </div>
                                 {isEditing && (
                                     <div>
-                                        <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
+                                        <Button variant="outline" size="sm" onClick={() => fileInputRef.current?.click()}>
                                             <Camera className="mr-2 h-4 w-4" />
                                             Update photo
                                         </Button>
@@ -520,7 +520,6 @@ export default function ProfilePage() {
                                 <Button variant="outline" size="sm">Update Payout Method</Button>
                             </div>
                             <div className="space-y-4">
-                                <p className="text-sm text-muted-foreground">This is where your payout information would be displayed. For security reasons, we are not showing a live form.</p>
                                 <div className="p-4 bg-background rounded-md border">
                                     <p className="font-semibold text-sm">Account Holder Name</p>
                                     <p className="text-muted-foreground text-sm">{user.displayName}</p>
