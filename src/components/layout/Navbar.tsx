@@ -149,9 +149,10 @@ export function Navbar() {
                 </div>
             
                 <Link href="/work-in-progress" className="hidden md:block">
-                <Button variant="ghost" className="transition-colors text-foreground rounded-full text-sm">
-                    Become a host
-                </Button>
+                  <Button variant="default" size="sm" className="rounded-full">
+                      <Sparkles className="mr-2" />
+                      Become a host
+                  </Button>
                 </Link>
 
                 <DropdownMenu>
