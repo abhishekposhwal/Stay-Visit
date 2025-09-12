@@ -179,7 +179,7 @@ export default function ProfilePage() {
                 <div>
                     <h1 className="text-xl md:text-2xl font-bold mb-6">Personal Info</h1>
                     <div className="p-6 md:p-8 rounded-xl border">
-                        <div className="space-y-6">
+                        <div className="space-y-4">
                             <div className="flex justify-between items-center">
                                 <div>
                                     <p className="font-semibold text-sm">Name</p>
