@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -567,29 +567,26 @@ export default function ProfilePage() {
           <div>
             <h1 className="text-xl md:text-2xl font-bold mb-6">About me</h1>
             <div className="p-6 md:p-8 rounded-xl border">
-              <h2 className="text-lg font-bold mb-2">Complete your profile</h2>
-              <p className="text-sm text-muted-foreground mb-6">Your Airbnb profile is an important part of every reservation. Create yours to help other hosts and guests get to know you.</p>
+              <p className="text-sm text-muted-foreground mb-6">This information is not shared with anyone and is only used to verify your identity.</p>
               
               <div className="space-y-4">
-                  <div>
-                      <h3 className="font-semibold text-sm">Email address</h3>
-                      <p className="text-muted-foreground text-sm">{user.email}</p>
+                  <div className="flex items-center gap-4">
+                    <Mail className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-sm">{user.email}</span>
+                    <CheckCircle className="h-5 w-5 text-green-600" />
                   </div>
-                  <div>
-                      <h3 className="font-semibold text-sm">Phone number</h3>
-                      <p className="text-muted-foreground text-sm">{user.phoneNumber || 'Not provided'}</p>
+                  <div className="flex items-center gap-4">
+                    <Phone className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-sm">{user.phoneNumber || 'Not provided'}</span>
+                     {user.phoneNumber ? <CheckCircle className="h-5 w-5 text-green-600" /> : <span className="text-xs text-amber-600">Not verified</span>}
                   </div>
-                  <div>
-                      <h3 className="font-semibold text-sm">Address</h3>
-                      <p className="text-muted-foreground text-sm">123, Sunshine Apartments, Dreamville, Wonderland - 123456, India</p>
-                  </div>
-                  <div>
-                      <h3 className="font-semibold text-sm">Identity verification</h3>
-                      <p className="text-muted-foreground text-sm">Not verified</p>
+                  <div className="flex items-center gap-4">
+                    <Shield className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-sm">Identity not verified</span>
+                    <Button variant="outline" size="sm">Verify</Button>
                   </div>
               </div>
 
-              <Button variant="default" className="mt-6">Get started</Button>
             </div>
           </div>
         );
