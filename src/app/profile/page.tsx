@@ -471,7 +471,10 @@ export default function ProfilePage() {
                         </div>
 
                          <div className="p-6 md:p-8 rounded-xl border bg-muted/30">
-                            <h2 className="font-bold text-lg mb-4">Payout Methods</h2>
+                            <div className="flex justify-between items-center mb-4">
+                                <h2 className="font-bold text-lg">Payout Methods</h2>
+                                <Button variant="outline" size="sm">Update Payout Method</Button>
+                            </div>
                             <div className="space-y-4">
                                 <p className="text-sm text-muted-foreground">This is where your payout information would be displayed. For security reasons, we are not showing a live form.</p>
                                 <div className="p-4 bg-background rounded-md border">
@@ -489,9 +492,6 @@ export default function ProfilePage() {
                                 <div className="p-4 bg-background rounded-md border">
                                     <p className="font-semibold text-sm">IFSC Code</p>
                                     <p className="text-muted-foreground text-sm">SBIN0001234</p>
-                                </div>
-                                <div className="flex justify-end">
-                                    <Button variant="outline" size="sm">Update Payout Method</Button>
                                 </div>
                             </div>
                         </div>
