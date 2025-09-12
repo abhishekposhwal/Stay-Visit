@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Award, Star, MessageSquare } from 'lucide-react';
 import { properties } from '@/lib/data';
 import ListingsGrid from '../listings/ListingsGrid';
+import Link from 'next/link';
 
 interface UserProfileProps {
     user: {
@@ -53,7 +54,12 @@ export function UserProfile({ user }: UserProfileProps) {
                         <li>✓ Phone number</li>
                     </ul>
 
-                    <Button variant="outline" className="w-full mt-6">Message {user.name}</Button>
+                    <Button asChild variant="outline" className="w-full mt-6">
+                        <Link href={`/inbox?conversationId=${user.id}`}>
+                            <MessageSquare className="h-4 w-4 mr-2" />
+                            Message {user.name}
+                        </Link>
+                    </Button>
                 </div>
             </aside>
             <main className="lg:col-span-3">

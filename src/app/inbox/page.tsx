@@ -1,56 +1,103 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, Send, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useSearchParams } from 'next/navigation';
 
 const mockConversations = [
   {
-    id: 'conv1',
-    name: 'Rohan (Sea-facing Apartment)',
+    id: '1',
+    name: 'Priya (Sea-facing Apartment)',
     avatar: 'https://picsum.photos/seed/p1/100/100',
     lastMessage: 'Your booking is confirmed! Let me know if you have questions.',
     timestamp: '10:42 AM',
     unread: 2,
     messages: [
-      { id: 'm1', sender: 'Rohan', text: 'Hi there! Thanks for booking my apartment.', time: '10:40 AM' },
-      { id: 'm2', sender: 'Rohan', text: 'Your booking is confirmed! Let me know if you have questions.', time: '10:42 AM' },
-      { id: 'm3', sender: 'You', text: 'Great, thanks Rohan! Looking forward to it.', time: '11:15 AM' },
+      { id: 'm1', sender: 'Priya', text: 'Hi there! Thanks for booking my apartment.', time: '10:40 AM' },
+      { id: 'm2', sender: 'Priya', text: 'Your booking is confirmed! Let me know if you have questions.', time: '10:42 AM' },
+      { id: 'm3', sender: 'You', text: 'Great, thanks Priya! Looking forward to it.', time: '11:15 AM' },
     ],
   },
   {
-    id: 'conv2',
-    name: 'Aisha (Heritage Haveli)',
+    id: '2',
+    name: 'Amit (Heritage Haveli)',
     avatar: 'https://picsum.photos/seed/p2/100/100',
     lastMessage: 'Yes, breakfast is included from 8 AM to 10 AM.',
     timestamp: 'Yesterday',
     unread: 0,
     messages: [
        { id: 'm1', sender: 'You', text: 'Is breakfast included?', time: 'Yesterday' },
-       { id: 'm2', sender: 'Aisha', text: 'Yes, breakfast is included from 8 AM to 10 AM.', time: 'Yesterday' },
+       { id: 'm2', sender: 'Amit', text: 'Yes, breakfast is included from 8 AM to 10 AM.', time: 'Yesterday' },
     ]
   },
   {
-    id: 'conv3',
-    name: 'Maria (Portuguese Villa)',
+    id: '3',
+    name: 'Sunita (Portuguese Villa)',
     avatar: 'https://picsum.photos/seed/p3/100/100',
     lastMessage: 'The pool is private and available 24/7.',
     timestamp: '2 days ago',
     unread: 0,
      messages: [
-       { id: 'm1', sender: 'Maria', text: 'The pool is private and available 24/7.', time: '2 days ago' },
+       { id: 'm1', sender: 'Sunita', text: 'The pool is private and available 24/7.', time: '2 days ago' },
+    ]
+  },
+  {
+    id: '4',
+    name: 'Vikram (Modern Tech Hub Penthouse)',
+    avatar: 'https://picsum.photos/seed/p4/100/100',
+    lastMessage: 'Can you please confirm your check-in time?',
+    timestamp: '3 days ago',
+    unread: 1,
+     messages: [
+       { id: 'm1', sender: 'Vikram', text: 'Can you please confirm your check-in time?', time: '3 days ago' },
+    ]
+  },
+  {
+    id: '5',
+    name: 'Neha (Yoga Retreat)',
+    avatar: 'https://picsum.photos/seed/p5/100/100',
+    lastMessage: 'The yoga session starts at 7 AM tomorrow.',
+    timestamp: '4 days ago',
+    unread: 0,
+     messages: [
+       { id: 'm1', sender: 'Neha', text: 'The yoga session starts at 7 AM tomorrow.', time: '4 days ago' },
+    ]
+  },
+  {
+    id: '6',
+    name: 'Karan (Culinary Masterclass)',
+    avatar: 'https://picsum.photos/seed/p6/100/100',
+    lastMessage: 'Looking forward to our cooking session!',
+    timestamp: '5 days ago',
+    unread: 0,
+     messages: [
+       { id: 'm1', sender: 'Karan', text: 'Looking forward to our cooking session!', time: '5 days ago' },
     ]
   },
 ];
 
-export default function InboxPage() {
-  const [selectedConversationId, setSelectedConversationId] = useState<string | null>(mockConversations[0].id);
-  const [view, setView] = useState<'list' | 'chat'>('list');
+function InboxPageContent() {
+  const searchParams = useSearchParams();
+  const conversationId = searchParams.get('conversationId');
 
+  const [selectedConversationId, setSelectedConversationId] = useState<string | null>(conversationId || mockConversations[0].id);
+  const [view, setView] = useState<'list' | 'chat'>(conversationId ? 'chat' : 'list');
+
+  useEffect(() => {
+    if (conversationId) {
+      const conversationExists = mockConversations.some(c => c.id === conversationId);
+      if (conversationExists) {
+        setSelectedConversationId(conversationId);
+        setView('chat');
+      }
+    }
+  }, [conversationId]);
+  
   const selectedConversation = mockConversations.find(c => c.id === selectedConversationId);
   
   const handleConversationSelect = (id: string) => {
@@ -158,4 +205,12 @@ export default function InboxPage() {
       </div>
     </div>
   );
+}
+
+export default function InboxPage() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <InboxPageContent />
+        </React.Suspense>
+    )
 }
