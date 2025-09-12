@@ -604,7 +604,7 @@ export default function ProfilePage() {
           <div>
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
-                <Button variant="default">
+                <Button variant="default" size="sm">
                     <UserPlus className="h-4 w-4" /> Add friends
                 </Button>
             </div>
@@ -678,5 +678,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
