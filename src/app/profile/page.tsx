@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus, Repeat, Pencil, X } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus, Repeat, Pencil, X, LogOut } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -254,6 +254,12 @@ export default function ProfilePage() {
                 <div>
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-xl md:text-2xl font-bold">Personal Info</h1>
+                         {!isEditing && (
+                            <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
+                                <Pencil />
+                                Edit
+                            </Button>
+                         )}
                     </div>
                     <div className="space-y-4">
                         <div className="p-6 md:p-8 rounded-xl border">
@@ -263,14 +269,16 @@ export default function ProfilePage() {
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
                                         <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
                                     </Avatar>
-                                    <Button 
-                                        variant="outline" 
-                                        size="icon" 
-                                        className="absolute bottom-0 right-0 rounded-full h-8 w-8 bg-background"
-                                        onClick={() => fileInputRef.current?.click()}
-                                    >
-                                        <Camera className="h-4 w-4" />
-                                    </Button>
+                                    {isEditing && (
+                                        <Button 
+                                            variant="outline" 
+                                            size="icon" 
+                                            className="absolute bottom-0 right-0 rounded-full h-8 w-8 bg-background"
+                                            onClick={() => fileInputRef.current?.click()}
+                                        >
+                                            <Camera className="h-4 w-4" />
+                                        </Button>
+                                    )}
                                 </div>
                                 <div className="text-center sm:text-left flex-grow">
                                     <h3 className="font-bold text-lg">{userInfo.displayName}</h3>
@@ -283,10 +291,6 @@ export default function ProfilePage() {
                                         onChange={handlePhotoUpload} 
                                     />
                                 </div>
-                                 <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
-                                    <Pencil />
-                                    Edit
-                                </Button>
                             </div>
                         </div>
 
@@ -341,7 +345,7 @@ export default function ProfilePage() {
                                         <p className="font-semibold">Identity verification</p>
                                         <p className="text-xs text-muted-foreground mt-1">Verify your identity to build trust in the community.</p>
                                     </div>
-                                    <Button variant="destructive" size="sm">Verify</Button>
+                                    <Button variant="outline" size="sm">Verify</Button>
                                 </div>
                             </div>
                         </div>
@@ -361,7 +365,7 @@ export default function ProfilePage() {
             return (
                 <div>
                     <h1 className="text-xl md:text-2xl font-bold mb-6">Login &amp; Security</h1>
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                         <div className="p-6 md:p-8 rounded-xl border">
                             <h2 className="font-bold text-lg mb-4">Login</h2>
                             <div className="flex justify-between items-center">
@@ -446,7 +450,7 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">Active now</p>
                                         </div>
                                     </div>
-                                    <Button variant="outline" size="sm">Log out</Button>
+                                    <Button variant="destructive" size="sm"><LogOut />Log out</Button>
                                 </div>
                                 <Separator/>
                                 <div className="flex justify-between items-center">
@@ -457,7 +461,7 @@ export default function ProfilePage() {
                                             <p className="text-muted-foreground text-xs mt-1">2 days ago</p>
                                         </div>
                                     </div>
-                                    <Button variant="outline" size="sm">Log out</Button>
+                                    <Button variant="destructive" size="sm"><LogOut />Log out</Button>
                                 </div>
                             </div>
                         </div>
@@ -733,3 +737,5 @@ export default function ProfilePage() {
 }
 
     
+
+  
