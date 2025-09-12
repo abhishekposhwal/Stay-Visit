@@ -137,10 +137,10 @@ function InboxPageContent() {
                   </Avatar>
                   <div className="flex-grow truncate">
                     <div className="flex justify-between items-center">
-                      <h3 className="font-semibold truncate text-sm">{conv.name}</h3>
+                      <h3 className="font-semibold truncate text-xs">{conv.name}</h3>
                       <span className="text-xs text-muted-foreground">{conv.timestamp}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground truncate">{conv.lastMessage}</p>
+                    <p className="text-xs text-muted-foreground truncate">{conv.lastMessage}</p>
                   </div>
                   {conv.unread > 0 && (
                     <span className="bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center flex-shrink-0">
