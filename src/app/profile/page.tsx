@@ -328,8 +328,8 @@ export default function ProfilePage() {
 
                              {isEditing && (
                                 <div className="flex justify-end gap-2 mt-4">
-                                    <Button variant="outline" onClick={handleCancel}>Cancel</Button>
-                                    <Button onClick={handleSave}>Save</Button>
+                                    <Button variant="outline" onClick={handleCancel} size="sm">Cancel</Button>
+                                    <Button onClick={handleSave} size="sm">Save</Button>
                                 </div>
                             )}
                         </div>
@@ -683,6 +683,8 @@ export default function ProfilePage() {
 
 
 
+
+    
 
     
 
