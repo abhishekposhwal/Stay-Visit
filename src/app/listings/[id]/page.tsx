@@ -112,8 +112,6 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
             <HostInfo host={property.host} />
 
-            <Separator className="my-8"/>
-
             <Reviews property={property} />
 
           </div>
