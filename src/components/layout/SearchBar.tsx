@@ -179,7 +179,7 @@ export function SearchBar() {
             <Popover open={isDatePopoverOpen} onOpenChange={setIsDatePopoverOpen}>
                 <PopoverTrigger asChild>
                     <div className="flex-1 flex cursor-pointer">
-                        <div className="flex-1 text-left pl-6">
+                        <div className="flex-1 text-left">
                             <label className="block text-xs font-bold text-foreground/80">Check in</label>
                             <div className="text-sm text-muted-foreground">
                                 {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
@@ -307,5 +307,7 @@ export function SearchBar() {
     </div>
   );
 }
+
+    
 
     
