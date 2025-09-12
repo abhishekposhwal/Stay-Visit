@@ -17,80 +17,33 @@ import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
-const mockBookings = [
-    {
-        property: properties[0],
-        checkIn: '2024-05-10',
-        checkOut: '2024-05-15',
-        total: 40000,
-    },
-    {
-        property: properties[4],
-        checkIn: '2024-03-20',
-        checkOut: '2024-03-25',
-        total: 75000,
-    },
-    {
-        property: properties[8],
-        checkIn: '2023-12-28',
-        checkOut: '2024-01-02',
-        total: 17500,
-    },
-    {
-        property: properties[2],
-        checkIn: '2023-11-15',
-        checkOut: '2023-11-20',
-        total: 60000,
-    },
-    {
-        property: properties[6],
-        checkIn: '2023-09-01',
-        checkOut: '2023-09-05',
-        total: 20000,
-    },
-    {
-        property: properties[10],
-        checkIn: '2023-08-10',
-        checkOut: '2023-08-15',
-        total: 35000,
-    },
-    {
-        property: properties[12],
-        checkIn: '2023-07-01',
-        checkOut: '2023-07-05',
-        total: 90000,
-    },
-    {
-        property: properties[15],
-        checkIn: '2023-06-20',
-        checkOut: '2023-06-25',
-        total: 65000,
-    },
-    {
-        property: properties[18],
-        checkIn: '2023-05-01',
-        checkOut: '2023-05-06',
-        total: 37500,
-    },
-     {
-        property: properties[20],
-        checkIn: '2023-04-12',
-        checkOut: '2023-04-17',
-        total: 22500,
-    },
-     {
-        property: properties[22],
-        checkIn: '2023-02-15',
-        checkOut: '2023-02-20',
-        total: 55000,
-    },
-     {
-        property: properties[25],
-        checkIn: '2023-01-10',
-        checkOut: '2023-01-15',
-        total: 15000,
-    },
+const mockTransactions = [
+    { type: 'payment', description: properties[0].title, date: '2024-05-10', amount: 40000 },
+    { type: 'payment', description: properties[4].title, date: '2024-03-20', amount: 75000 },
+    { type: 'payout', description: 'Host payout for "Heritage Haveli"', date: '2024-03-15', amount: 60000 },
+    { type: 'payment', description: properties[8].title, date: '2023-12-28', amount: 17500 },
+    { type: 'payment', description: properties[2].title, date: '2023-11-15', amount: 60000 },
+    { type: 'payout', description: 'Host payout for "Sea-facing Apartment"', date: '2023-11-01', amount: 50000 },
+    { type: 'payment', description: properties[6].title, date: '2023-09-01', amount: 20000 },
+    { type: 'payment', description: properties[10].title, date: '2023-08-10', amount: 35000 },
+    { type: 'payment', description: properties[12].title, date: '2023-07-01', amount: 90000 },
+    { type: 'payout', description: 'Host payout for "Modern Tech Hub Penthouse"', date: '2023-06-28', amount: 72000 },
+    { type: 'payment', description: properties[15].title, date: '2023-06-20', amount: 65000 },
+    { type: 'payment', description: properties[18].title, date: '2023-05-01', amount: 37500 },
+    { type: 'payment', description: properties[20].title, date: '2023-04-12', amount: 22500 },
+    { type: 'payment', description: properties[22].title, date: '2023-02-15', amount: 55000 },
+    { type: 'payment', description: properties[25].title, date: '2023-01-10', amount: 15000 },
 ];
+
+const mockBookings = mockTransactions.filter(t => t.type === 'payment').map(t => {
+    const property = properties.find(p => p.title === t.description);
+    return {
+        property: property || properties[0], // fallback for safety
+        checkIn: t.date,
+        checkOut: t.date,
+        total: t.amount,
+    }
+});
 
 const mockConnections = [
     { id: '1', name: 'Priya', avatar: 'https://picsum.photos/seed/p1/100/100' },
@@ -146,8 +99,8 @@ export default function ProfilePage() {
 
   const [transactionPage, setTransactionPage] = useState(1);
   const transactionsPerPage = 10;
-  const totalTransactionPages = Math.ceil(mockBookings.length / transactionsPerPage);
-  const transactionsToShow = mockBookings.slice(
+  const totalTransactionPages = Math.ceil(mockTransactions.length / transactionsPerPage);
+  const transactionsToShow = mockTransactions.slice(
     (transactionPage - 1) * transactionsPerPage,
     transactionPage * transactionsPerPage
   );
@@ -469,23 +422,28 @@ export default function ProfilePage() {
                                 <table className="w-full text-sm text-left">
                                     <thead className="text-xs text-muted-foreground uppercase">
                                         <tr>
-                                            <th scope="col" className="px-6 py-3">Property</th>
+                                            <th scope="col" className="px-6 py-3">Description</th>
                                             <th scope="col" className="px-6 py-3">Date</th>
                                             <th scope="col" className="px-6 py-3 text-right">Amount</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {transactionsToShow.map((booking, i) => (
+                                        {transactionsToShow.map((transaction, i) => (
                                             <tr key={i} className="border-b">
-                                                <td className="px-6 py-4 font-semibold">{booking.property.title}</td>
-                                                <td className="px-6 py-4 text-muted-foreground">{booking.checkIn}</td>
-                                                <td className="px-6 py-4 font-semibold text-right">-₹{booking.total.toLocaleString()}</td>
+                                                <td className="px-6 py-4 font-semibold">{transaction.description}</td>
+                                                <td className="px-6 py-4 text-muted-foreground">{transaction.date}</td>
+                                                <td className={cn(
+                                                    "px-6 py-4 font-semibold text-right",
+                                                    transaction.type === 'payout' ? 'text-green-600' : 'text-red-600'
+                                                )}>
+                                                    {transaction.type === 'payout' ? '+' : '-'}₹{transaction.amount.toLocaleString()}
+                                                </td>
                                             </tr>
                                         ))}
                                     </tbody>
                                 </table>
                             </div>
-                            {mockBookings.length > transactionsPerPage && (
+                            {mockTransactions.length > transactionsPerPage && (
                                 <div className="flex justify-between items-center mt-4">
                                     <Button 
                                         variant="outline"
