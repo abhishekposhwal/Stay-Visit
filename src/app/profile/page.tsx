@@ -597,12 +597,9 @@ export default function ProfilePage() {
                    <div className="flex items-center justify-between">
                         <div>
                             <p className="text-sm font-semibold">Identity verification</p>
-                            <p className="text-sm text-muted-foreground">Verified</p>
+                            <p className="text-sm text-muted-foreground">Not verified</p>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
-                            <CheckCircle className="h-5 w-5" />
-                            <span>Verified</span>
-                        </div>
+                        <Button variant="outline" size="sm">Verify</Button>
                   </div>
               </div>
             </div>
