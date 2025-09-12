@@ -18,15 +18,18 @@ export default function Reviews({ property }: ReviewsProps) {
   const ratingCategories = useMemo(() => {
     if (!property.rating) return [];
     
-    return [
-      { name: 'Cleanliness', value: 4.9 },
-      { name: 'Accuracy', value: 4.8 },
-      { name: 'Check-in', value: 4.7 },
-      { name: 'Communication', value: 4.6 },
-      { name: 'Location', value: 4.5 },
-      { name: 'Value', value: 4.4 },
-    ];
-  }, [property.rating]);
+    const categories = ['Cleanliness', 'Accuracy', 'Check-in', 'Communication', 'Location', 'Value'];
+    
+    return categories.map((category, index) => {
+        // Create a pseudo-random but deterministic offset based on property ID and category
+        const seed = parseInt(property.id, 36) + index;
+        const randomOffset = parseFloat(((Math.sin(seed) * 0.2)).toFixed(2));
+        let value = property.rating + randomOffset;
+        value = Math.max(3.5, Math.min(5.0, value)); // Ensure rating is between 3.5 and 5.0
+        return { name: category, value: parseFloat(value.toFixed(1)) };
+    });
+
+  }, [property.rating, property.id]);
 
   if (!property.reviewDetails || property.reviewDetails.length === 0) {
     return (
@@ -54,8 +57,8 @@ export default function Reviews({ property }: ReviewsProps) {
                     <Progress value={(category.value / 5) * 100} className={cn("w-24 h-1", 
                       {
                         'bg-green-100 [&>div]:bg-green-600': category.value >= 4.0,
-                        'bg-orange-100 [&>div]:bg-orange-500': category.value >= 3 && category.value < 4.0,
-                        'bg-red-100 [&>div]:bg-red-600': category.value < 3
+                        'bg-orange-100 [&>div]:bg-orange-500': category.value >= 3.0 && category.value < 4.0,
+                        'bg-red-100 [&>div]:bg-red-600': category.value < 3.0
                       }
                     )} />
                     <span className="text-xs font-medium text-foreground">{category.value.toFixed(1)}</span>
