@@ -32,12 +32,12 @@ export const properties: Property[] = [
     details: 'Enjoy stunning sunsets from this beautiful apartment in the heart of Bandra. Located on Carter Road, you are just steps away from trendy cafes, boutiques, and the ocean. The apartment is modern, spacious, and offers breathtaking views of the Arabian Sea.',
     summary: 'A modern, spacious apartment in Mumbai\'s trendy Bandra neighborhood with stunning sea views, close to cafes and boutiques.',
     reviewDetails: [
-        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/100/100', date: 'August 2024', text: 'Rohan\'s place is absolutely stunning. The view is to die for, and the apartment is clean, modern, and has everything you need. Highly recommend!' },
-        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/100/100', date: 'July 2024', text: 'Amazing location in Bandra. We loved being so close to the sea and all the great restaurants. The apartment was perfect for our family.' },
-        { id: 'r3', author: 'Sunita', authorAvatar: 'https://picsum.photos/100/100', date: 'July 2024', text: 'A true gem in Mumbai. The host was very responsive and helpful. Waking up to the sea view was the best part of our trip.' },
-        { id: 'r4', author: 'Vikram', authorAvatar: 'https://picsum.photos/100/100', date: 'June 2024', text: 'This is a fantastic place. Very well maintained and in a prime location. Would definitely stay here again.' },
-        { id: 'r5', author: 'Neha', authorAvatar: 'https://picsum.photos/100/100', date: 'May 2024', text: 'We had a wonderful time. The apartment is even better than the pictures. It\'s spacious, clean, and the views are incredible.'},
-        { id: 'r6', author: 'Karan', authorAvatar: 'https://picsum.photos/100/100', date: 'May 2024', text: 'Perfect stay. Rohan is a superhost for a reason. Everything was smooth from check-in to check-out. The apartment is top-notch.' },
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Rohan\'s place is absolutely stunning. The view is to die for, and the apartment is clean, modern, and has everything you need. Highly recommend!' },
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Amazing location in Bandra. We loved being so close to the sea and all the great restaurants. The apartment was perfect for our family.' },
+        { id: 'r3', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'A true gem in Mumbai. The host was very responsive and helpful. Waking up to the sea view was the best part of our trip.' },
+        { id: 'r4', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'June 2024', text: 'This is a fantastic place. Very well maintained and in a prime location. Would definitely stay here again.' },
+        { id: 'r5', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'May 2024', text: 'We had a wonderful time. The apartment is even better than the pictures. It\'s spacious, clean, and the views are incredible.'},
+        { id: 'r6', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'May 2024', text: 'Perfect stay. Rohan is a superhost for a reason. Everything was smooth from check-in to check-out. The apartment is top-notch.' },
     ]
   },
   {
@@ -56,7 +56,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Air conditioning', 'Breakfast included', 'Courtyard'],
     host: {
       name: 'Aisha',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p7/100/100',
       isSuperhost: true,
     },
     images: [
@@ -68,7 +68,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/12/800/600',
     ],
     details: 'Experience the charm of Old Delhi in this beautifully restored Haveli. Your room opens to a tranquil courtyard, offering a peaceful escape from the bustling city. Located near Chandni Chowk, you can easily explore historic monuments, and savor delicious street food.',
-    summary: 'A restored heritage haveli in Old Delhi near Chandni Chowk, offering a tranquil courtyard and easy access to historic sites and street food.'
+    summary: 'A restored heritage haveli in Old Delhi near Chandni Chowk, offering a tranquil courtyard and easy access to historic sites and street food.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Aisha\'s haveli is a hidden gem. So peaceful and beautiful. The breakfast was delicious!'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Incredible experience. Felt like stepping back in time. The location is perfect for exploring Old Delhi.'}
+    ]
   },
   {
     id: '3',
@@ -86,7 +90,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Kitchen', 'Pool', 'Gym', 'Rooftop terrace'],
     host: {
       name: 'Vikram',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p4/100/100',
       isSuperhost: true,
     },
     images: [
@@ -98,7 +102,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/18/800/600',
     ],
     details: 'Live in style in this luxurious penthouse in the heart of Bengaluru\'s tech corridor. The apartment offers panoramic city views from its private rooftop terrace. Featuring modern design, a gourmet kitchen, and access to a building pool and gym. Perfect for business travelers or families.',
-    summary: 'Luxurious penthouse in Bengaluru\'s tech hub with a private rooftop terrace, city views, modern design, gourmet kitchen, pool, and gym access.'
+    summary: 'Luxurious penthouse in Bengaluru\'s tech hub with a private rooftop terrace, city views, modern design, gourmet kitchen, pool, and gym access.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Absolutely stunning penthouse. The views are incredible, and the apartment is so well-equipped. Vikram was a great host.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'The best Airbnb I have stayed in. Pure luxury. The rooftop terrace is the highlight.'}
+    ]
   },
   {
     id: '4',
@@ -116,7 +124,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden'],
     host: {
       name: 'Priya',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p1/100/100',
       isSuperhost: false,
     },
     images: [
@@ -128,7 +136,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/24/800/600',
     ],
     details: 'Experience authentic South Indian living in this beautifully maintained traditional home. The house features a central courtyard, antique furniture, and a lush private garden. Located in a quiet, residential neighborhood, it offers a peaceful retreat while being close to the city\'s main attractions.',
-    summary: 'Authentic South Indian traditional home with a central courtyard, antique furniture, and a private garden in a quiet Chennai neighborhood.'
+    summary: 'Authentic South Indian traditional home with a central courtyard, antique furniture, and a private garden in a quiet Chennai neighborhood.',
+    reviewDetails: [
+        { id: 'r1', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'August 2024', text: 'A truly authentic experience. The house is beautiful and Priya was a wonderful host. Felt like staying in a piece of history.'},
+        { id: 'r2', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'We loved the courtyard and the traditional feel of the house. A very peaceful stay.'}
+    ]
   },
   {
     id: '5',
@@ -146,7 +158,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Kitchen', 'Pool', 'Air conditioning', 'Beach access'],
     host: {
       name: 'Maria',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p8/100/100',
       isSuperhost: true,
     },
     images: [
@@ -158,7 +170,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/30/800/600',
     ],
     details: 'Indulge in luxury at this stunning Portuguese-style villa in South Goa. With a private pool, lush gardens, and just a short walk to the beach, this is your personal paradise. The villa is spacious, with large verandas and modern amenities, perfect for a family or group holiday.',
-    summary: 'A luxurious Portuguese-style villa in South Goa with a private pool, lush gardens, and easy beach access, ideal for a family or group.'
+    summary: 'A luxurious Portuguese-style villa in South Goa with a private pool, lush gardens, and easy beach access, ideal for a family or group.',
+    reviewDetails: [
+        { id: 'r1', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'August 2024', text: 'Paradise! The villa is even more beautiful than the pictures. The pool is fantastic. Maria is an excellent host.'},
+        { id: 'r2', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'July 2024', text: 'We had the most relaxing holiday here. The villa is so spacious and beautifully designed. Can\'t wait to come back.'}
+    ]
   },
   {
     id: '6',
@@ -176,7 +192,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Pool', 'Air conditioning', 'Breakfast included', 'Restaurant'],
     host: {
       name: 'Maharaja',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p9/100/100',
       isSuperhost: true,
     },
     images: [
@@ -188,7 +204,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/36/800/600',
     ],
     details: 'Live like royalty in this exquisite suite in a heritage haveli hotel. The suite is adorned with traditional Rajasthani art and antiques. Enjoy access to the hotel\'s beautiful pool and dine at the rooftop restaurant with views of the city. Located centrally, it is easy to explore the Pink City\'s forts and palaces.',
-    summary: 'A royal suite in a Jaipur heritage hotel with Rajasthani decor, a pool, and a rooftop restaurant, centrally located for exploring the city.'
+    summary: 'A royal suite in a Jaipur heritage hotel with Rajasthani decor, a pool, and a rooftop restaurant, centrally located for exploring the city.',
+    reviewDetails: [
+        { id: 'r1', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'August 2024', text: 'Felt like a king! The service is impeccable and the suite is breathtaking. The rooftop restaurant is a must-visit.'},
+        { id: 'r2', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'July 2024', text: 'An unforgettable experience. The hotel is a piece of art. So much history and beauty.'}
+    ]
   },
   {
     id: '7',
@@ -206,7 +226,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'TV'],
     host: {
       name: 'Anika',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p10/100/100',
       isSuperhost: false,
     },
     images: [
@@ -218,7 +238,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/42/800/600',
     ],
     details: 'Step back in time in this charming apartment in a colonial-era building in South Kolkata. The apartment features high ceilings, vintage furniture, and a lovely balcony overlooking a leafy street. Experience the "City of Joy" from this comfortable and characterful base.',
-    summary: 'A charming, colonial-era apartment in South Kolkata with high ceilings, vintage furniture, and a balcony, offering a comfortable base to explore the city.'
+    summary: 'A charming, colonial-era apartment in South Kolkata with high ceilings, vintage furniture, and a balcony, offering a comfortable base to explore the city.',
+    reviewDetails: [
+        { id: 'r1', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'August 2024', text: 'The apartment is full of character. We loved the high ceilings and the vintage feel. Anika was a very helpful host.'},
+        { id: 'r2', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'A great place to stay to experience the old-world charm of Kolkata. The location is excellent.'}
+    ]
   },
   {
     id: '8',
@@ -236,7 +260,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Kitchen', 'Pool', 'Air conditioning', 'TV', 'City view'],
     host: {
       name: 'Nawab',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p11/100/100',
       isSuperhost: true,
     },
     images: [
@@ -248,7 +272,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/48/800/600',
     ],
     details: 'Live the high life in this luxurious Hyderabad penthouse with views of the Chowmahalla Palace. The expansive terrace is perfect for evening gatherings. The apartment features opulent design, a modern kitchen, and access to a building pool and gym. Located in the old city, close to Charminar.',
-    summary: 'Luxurious Hyderabad penthouse with palace views, an expansive terrace, opulent design, modern kitchen, and access to a pool and gym, located in the old city near Charminar.'
+    summary: 'Luxurious Hyderabad penthouse with palace views, an expansive terrace, opulent design, modern kitchen, and access to a pool and gym, located in the old city near Charminar.',
+    reviewDetails: [
+        { id: 'r1', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'August 2024', text: 'What a view! The penthouse is incredibly luxurious and the terrace is huge. The host was very gracious.'},
+        { id: 'r2', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'July 2024', text: 'Felt like a Nawab! The location in the old city is perfect for exploring. The apartment is top-class.'}
+    ]
   },
   {
     id: '9',
@@ -266,7 +294,7 @@ export const properties: Property[] = [
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'TV'],
     host: {
       name: 'Aditi',
-      avatar: 'https://picsum.photos/100/100',
+      avatar: 'https://picsum.photos/seed/p12/100/100',
       isSuperhost: true,
     },
     images: [
@@ -278,7 +306,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/54/800/600',
     ],
     details: 'A stylish and modern studio apartment in Pune\'s most upscale neighborhood, Koregaon Park. The studio is cleverly designed to maximize space and comfort. You are surrounded by the city\'s best restaurants, bars, and boutiques. It is a perfect spot for solo travelers or couples.',
-    summary: 'A stylish, modern studio in upscale Koregaon Park, Pune, surrounded by top restaurants and shops, perfect for solo travelers or couples.'
+    summary: 'A stylish, modern studio in upscale Koregaon Park, Pune, surrounded by top restaurants and shops, perfect for solo travelers or couples.',
+    reviewDetails: [
+        { id: 'r1', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'August 2024', text: 'Perfect studio in the best location. So many great places to eat nearby. Aditi is a fantastic host.'},
+        { id: 'r2', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'July 2024', text: 'The studio is chic and very clean. Had a very comfortable stay. Highly recommended for solo travelers.'}
+    ]
   },
   {
     id: '10',
@@ -294,11 +326,7 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Gym'],
-    host: {
-      name: 'Anjali',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Anjali', avatar: 'https://picsum.photos/seed/p13/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/55/800/600',
         'https://picsum.photos/seed/56/800/600',
@@ -308,7 +336,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/60/800/600',
     ],
     details: 'A luxurious apartment in the star-studded neighborhood of Juhu. The building offers excellent amenities including a swimming pool and gym. The apartment is elegantly furnished and offers views of the city. A short walk to Juhu Beach and Prithvi Theatre.',
-    summary: 'A luxurious, elegantly furnished apartment in Juhu with city views, a pool, and a gym, just a short walk from Juhu Beach and Prithvi Theatre.'
+    summary: 'A luxurious, elegantly furnished apartment in Juhu with city views, a pool, and a gym, just a short walk from Juhu Beach and Prithvi Theatre.',
+    reviewDetails: [
+        { id: 'r1', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'August 2024', text: 'Great location and a beautiful apartment. Anjali was very helpful. The pool is a big plus.'},
+        { id: 'r2', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'We had a lovely stay. The apartment is very luxurious and comfortable. Juhu beach is just a few minutes away.'}
+    ]
   },
   {
     id: '11',
@@ -324,11 +356,7 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Lake view', 'Terrace'],
-    host: {
-      name: 'Arjun',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Arjun', avatar: 'https://picsum.photos/seed/p14/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/61/800/600',
         'https://picsum.photos/seed/62/800/600',
@@ -338,7 +366,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/66/800/600',
     ],
     details: 'A stunning designer duplex in the heart of Delhi\'s creative hub, Hauz Khas Village. The loft offers beautiful views of the lake and historic ruins. It features a private terrace, modern art, and a fully equipped kitchen. Explore the adjacent deer park, art galleries, and chic cafes.',
-    summary: 'A stunning designer duplex in Hauz Khas Village with lake and ruins views, a private terrace, modern art, and a full kitchen, near a deer park and cafes.'
+    summary: 'A stunning designer duplex in Hauz Khas Village with lake and ruins views, a private terrace, modern art, and a full kitchen, near a deer park and cafes.',
+    reviewDetails: [
+        { id: 'r1', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'August 2024', text: 'The view from the terrace is to die for. The apartment is super stylish. Hauz Khas Village is a great place to stay.'},
+        { id: 'r2', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'July 2024', text: 'Arjun\'s place is an oasis of calm in bustling Delhi. We loved the decor and the location.'}
+    ]
   },
   {
     id: '12',
@@ -354,11 +386,7 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden', 'Free parking'],
-    host: {
-      name: 'Sunita',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Sunita', avatar: 'https://picsum.photos/seed/p3/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/67/800/600',
         'https://picsum.photos/seed/68/800/600',
@@ -368,7 +396,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/72/800/600',
     ],
     details: 'A charming garden bungalow in the lively Indiranagar neighborhood. The house is surrounded by a beautiful garden, offering a quiet escape in the city. It is spacious and well-furnished. You are a short walk from some of Bengaluru\'s best pubs, restaurants, and shops.',
-    summary: 'A charming, spacious garden bungalow in lively Indiranagar, offering a quiet escape with easy access to top pubs, restaurants, and shops.'
+    summary: 'A charming, spacious garden bungalow in lively Indiranagar, offering a quiet escape with easy access to top pubs, restaurants, and shops.',
+    reviewDetails: [
+        { id: 'r1', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'August 2024', text: 'A beautiful and peaceful house in a great location. The garden is lovely. Sunita was a very welcoming host.'},
+        { id: 'r2', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'July 2024', text: 'We had a fantastic stay. The house is spacious and the location is unbeatable in Bangalore.'}
+    ]
   },
   {
     id: '13',
@@ -384,11 +416,7 @@ export const properties: Property[] = [
     beds: 5,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Pool', 'Air conditioning', 'Beachfront'],
-    host: {
-      name: 'Rajesh',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: false,
-    },
+    host: { name: 'Rajesh', avatar: 'https://picsum.photos/seed/p15/100/100', isSuperhost: false },
     images: [
         'https://picsum.photos/seed/73/800/600',
         'https://picsum.photos/seed/74/800/600',
@@ -398,7 +426,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/78/800/600',
     ],
     details: 'A sprawling beach house on the East Coast Road, perfect for large groups and celebrations. The property has direct access to a private beach area and a large swimming pool. Enjoy the sea breeze from the spacious balconies. It\'s a great weekend getaway from the city.',
-    summary: 'A large ECR beach house with private beach access and a pool, perfect for group getaways with spacious balconies and sea views.'
+    summary: 'A large ECR beach house with private beach access and a pool, perfect for group getaways with spacious balconies and sea views.',
+    reviewDetails: [
+        { id: 'r1', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'August 2024', text: 'The perfect place for a big group. The pool and beach access are amazing. We had a great time.'},
+        { id: 'r2', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'Rajesh\'s beach house is fantastic. So much space. Great for parties.'}
+    ]
   },
   {
     id: '14',
@@ -414,11 +446,7 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Pool', 'Air conditioning', 'Breakfast included', 'Bar'],
-    host: {
-      name: 'Sanjay',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Sanjay', avatar: 'https://picsum.photos/seed/p16/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/79/800/600',
         'https://picsum.photos/seed/80/800/600',
@@ -428,7 +456,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/84/800/600',
     ],
     details: 'A stylish room in a chic boutique hotel in Candolim, North Goa. The hotel has a beautiful swimming pool and a lively bar. Your room is tastefully decorated and has a private balcony. Located close to the beach and some of Goa\'s most popular restaurants and nightlife spots.',
-      summary: 'Stylish room in a chic Candolim boutique hotel with a pool, bar, and private balcony, near the beach and popular nightlife.'
+      summary: 'Stylish room in a chic Candolim boutique hotel with a pool, bar, and private balcony, near the beach and popular nightlife.',
+      reviewDetails: [
+        { id: 'r1', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'August 2024', text: 'Super chic hotel. The pool area is amazing. Great vibe. The rooms are very stylish.'},
+        { id: 'r2', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'July 2024', text: 'Loved our stay here. The location is perfect, close to everything. The hotel staff are very friendly and helpful.'}
+    ]
   },
   {
     id: '15',
@@ -444,11 +476,7 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Fort view'],
-    host: {
-      name: 'Meera',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: false,
-    },
+    host: { name: 'Meera', avatar: 'https://picsum.photos/seed/p17/100/100', isSuperhost: false },
     images: [
         'https://picsum.photos/seed/85/800/600',
         'https://picsum.photos/seed/86/800/600',
@@ -458,7 +486,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/90/800/600',
     ],
     details: 'A cozy studio apartment with stunning views of the Amber Fort. The studio is owned by a local artist and is filled with her work. It has a small kitchenette and a lovely terrace to enjoy the views. It\'s a perfect base for exploring the historic forts of Jaipur.',
-    summary: 'A cozy artist\'s studio with stunning Amber Fort views, a kitchenette, and a terrace, perfect for exploring Jaipur\'s historic forts.'
+    summary: 'A cozy artist\'s studio with stunning Amber Fort views, a kitchenette, and a terrace, perfect for exploring Jaipur\'s historic forts.',
+    reviewDetails: [
+        { id: 'r1', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'August 2024', text: 'The view of Amber Fort from the terrace is breathtaking. The studio is cozy and artistic. Meera is a lovely host.'},
+        { id: 'r2', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'July 2024', text: 'A very unique and special place to stay. It was inspiring to be surrounded by art.'}
+    ]
   },
   {
     id: '16',
@@ -474,11 +506,7 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Pool', 'Air conditioning', 'Lake view', 'Restaurant'],
-    host: {
-      name: 'Rana',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Rana', avatar: 'https://picsum.photos/seed/p18/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/91/800/600',
         'https://picsum.photos/seed/92/800/600',
@@ -488,7 +516,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/96/800/600',
     ],
     details: 'Stay in a real palace overlooking Lake Pichola. This room offers breathtaking views of the lake and the City Palace. Enjoy royal treatment, dine in magnificent halls, and take a boat ride on the lake directly from the palace.',
-    summary: 'A room in a palace on Lake Pichola with stunning views of the lake and City Palace, offering royal treatment and boat rides.'
+    summary: 'A room in a palace on Lake Pichola with stunning views of the lake and City Palace, offering royal treatment and boat rides.',
+    reviewDetails: [
+        { id: 'r1', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'August 2024', text: 'A once-in-a-lifetime experience. The view from the room is something I will never forget. Truly felt like royalty.'},
+        { id: 'r2', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'Magical. There is no other word to describe it. The hospitality is out of this world.'}
+    ]
   },
   {
     id: '17',
@@ -504,11 +536,7 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Fireplace', 'Garden', 'Mountain view'],
-    host: {
-      name: 'Thomas',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Thomas', avatar: 'https://picsum.photos/seed/p19/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/97/800/600',
         'https://picsum.photos/seed/98/800/600',
@@ -518,7 +546,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/102/800/600',
     ],
     details: 'Wake up to the smell of fresh tea leaves in this colonial-era bungalow set amidst a sprawling tea estate in Munnar. Enjoy guided tea plantation walks, trekking in the nearby hills, and cozy evenings by the fireplace.',
-    summary: 'A colonial-era bungalow on a Munnar tea estate with guided walks, trekking, and cozy fireplaces.'
+    summary: 'A colonial-era bungalow on a Munnar tea estate with guided walks, trekking, and cozy fireplaces.',
+    reviewDetails: [
+        { id: 'r1', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'August 2024', text: 'Heaven on earth. The bungalow is so charming and the surroundings are serene. The tea plantation walk was very informative.'},
+        { id: 'r2', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'July 2024', text: 'If you want to disconnect and be in nature, this is the place. So peaceful. The fireplace is a great touch.'}
+    ]
   },
   {
     id: '18',
@@ -534,11 +566,7 @@ export const properties: Property[] = [
     beds: 3,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Balcony', 'Courtyard'],
-    host: {
-      name: 'Jean-Pierre',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Jean-Pierre', avatar: 'https://picsum.photos/seed/p20/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/103/800/600',
         'https://picsum.photos/seed/104/800/600',
@@ -548,7 +576,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/108/800/600',
     ],
     details: 'Experience the unique Franco-Tamil culture of Pondicherry in this beautiful townhouse in the White Town. The house is full of character, with high ceilings, colorful walls, and a quiet inner courtyard. Walk to the Promenade Beach and explore the charming French Quarter.',
-    summary: 'A characterful townhouse in Pondicherry\'s White Town, featuring high ceilings, colorful walls, a courtyard, and a short walk to the beach.'
+    summary: 'A characterful townhouse in Pondicherry\'s White Town, featuring high ceilings, colorful walls, a courtyard, and a short walk to the beach.',
+    reviewDetails: [
+        { id: 'r1', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'August 2024', text: 'The house is beautiful and in the perfect location to explore White Town. Loved the French-style architecture.'},
+        { id: 'r2', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'July 2024', text: 'Felt like we were in a little corner of France. The house is very comfortable and has a lot of character.'}
+    ]
   },
   {
     id: '19',
@@ -564,11 +596,7 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Meals included', 'Lake view', 'Veranda'],
-    host: {
-      name: 'Yusuf',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: true,
-    },
+    host: { name: 'Yusuf', avatar: 'https://picsum.photos/seed/p21/100/100', isSuperhost: true },
     images: [
         'https://picsum.photos/seed/109/800/600',
         'https://picsum.photos/seed/110/800/600',
@@ -578,7 +606,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/114/800/600',
     ],
     details: 'An unforgettable experience awaits you on this luxurious houseboat on Dal Lake. The boat is intricately carved from cedar wood and features traditional Kashmiri carpets and furniture. Enjoy stunning views of the Himalayas, delicious home-cooked Kashmiri food, and a personal shikara ride.',
-    summary: 'A luxurious houseboat on Dal Lake with Himalayan views, offering traditional Kashmiri decor, home-cooked meals, and a personal shikara ride.'
+    summary: 'A luxurious houseboat on Dal Lake with Himalayan views, offering traditional Kashmiri decor, home-cooked meals, and a personal shikara ride.',
+    reviewDetails: [
+        { id: 'r1', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'August 2024', text: 'The houseboat is a work of art. The service and food were exceptional. Yusuf is a wonderful host. The shikara ride was magical.'},
+        { id: 'r2', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'July 2024', text: 'Staying on Dal Lake is a must-do in Srinagar, and this houseboat is the best way to do it. Pure luxury and amazing views.'}
+    ]
   },
   {
     id: '20',
@@ -594,11 +626,7 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Gym', 'Workspace'],
-    host: {
-      name: 'Sahil',
-      avatar: 'https://picsum.photos/100/100',
-      isSuperhost: false,
-    },
+    host: { name: 'Sahil', avatar: 'https://picsum.photos/seed/p22/100/100', isSuperhost: false },
     images: [
         'https://picsum.photos/seed/115/800/600',
         'https://picsum.photos/seed/116/800/600',
@@ -608,7 +636,11 @@ export const properties: Property[] = [
         'https://picsum.photos/seed/120/800/600',
     ],
     details: 'A modern and efficient studio in the business hub of Gurgaon. Perfect for corporate travelers, this studio comes with a dedicated workspace, high-speed internet, and access to a gym. It is well-connected by metro and close to major corporate parks and shopping malls.',
-    summary: 'A modern studio in Gurgaon\'s business hub with a dedicated workspace, high-speed internet, and a gym, perfect for corporate travelers.'
+    summary: 'A modern studio in Gurgaon\'s business hub with a dedicated workspace, high-speed internet, and a gym, perfect for corporate travelers.',
+    reviewDetails: [
+        { id: 'r1', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'August 2024', text: 'Very convenient for work. The studio has everything you need for a business trip. The workspace is a great addition.'},
+        { id: 'r2', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'July 2024', text: 'Clean, modern, and functional. Perfect for a short stay in Gurgaon.'}
+    ]
   },
   // Add 6 more for Mumbai
   {
@@ -625,10 +657,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'TV'],
-    host: { name: 'Priya', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Priya', avatar: 'https://picsum.photos/seed/p1/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/121/800/600', 'https://picsum.photos/seed/122/800/600'],
     details: 'A comfortable studio in the vibrant neighborhood of Powai, close to the lake. Ideal for students and professionals.',
-    summary: 'A cozy and affordable studio apartment in Powai, Mumbai, perfect for students and professionals visiting the area.'
+    summary: 'A cozy and affordable studio apartment in Powai, Mumbai, perfect for students and professionals visiting the area.',
+    reviewDetails: [
+        { id: 'r1', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'August 2024', text: 'Great value for money. The studio is small but has everything you need. The location is very convenient.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Priya is a very responsive host. The check-in was smooth. The studio is clean and comfortable.'}
+    ]
   },
   {
     id: '22',
@@ -644,10 +680,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 1,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'TV', 'Elevator'],
-    host: { name: 'Farhan', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Farhan', avatar: 'https://picsum.photos/seed/p23/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/123/800/600', 'https://picsum.photos/seed/124/800/600'],
     details: 'Charming Art Deco apartment in a heritage building in Colaba. Walking distance to Gateway of India and art galleries.',
-    summary: 'A beautiful Art Deco apartment in a heritage building in South Mumbai, close to major landmarks.'
+    summary: 'A beautiful Art Deco apartment in a heritage building in South Mumbai, close to major landmarks.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Such a charming apartment! Loved the art deco details. The location is unbeatable for tourists.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Farhan\'s place is a gem. It is like staying in a piece of Mumbai\'s history. Very clean and well-maintained.'}
+    ]
   },
   {
     id: '23',
@@ -663,10 +703,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Gym', 'Parking'],
-    host: { name: 'Siddharth', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Siddharth', avatar: 'https://picsum.photos/seed/p24/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/125/800/600', 'https://picsum.photos/seed/126/800/600'],
     details: 'Stay in a modern high-rise in Lower Parel, the new financial hub. Enjoy stunning city views and top-notch amenities.',
-    summary: 'A luxurious apartment in a modern Lower Parel high-rise, featuring spectacular city views and premium amenities.'
+    summary: 'A luxurious apartment in a modern Lower Parel high-rise, featuring spectacular city views and premium amenities.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The view from the 40th floor is insane! The apartment is very modern and luxurious. Great amenities in the building.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Perfect for a family stay in Mumbai. The location is very central. The host was very professional.'}
+    ]
   },
   {
     id: '24',
@@ -682,10 +726,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden', 'Parking'],
-    host: { name: 'Karan', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Karan', avatar: 'https://picsum.photos/seed/p6/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/127/800/600', 'https://picsum.photos/seed/128/800/600'],
     details: 'A rare find in Mumbai, this spacious bungalow in a quiet lane of Andheri offers a peaceful retreat with a private garden.',
-    summary: 'A serene and spacious bungalow with a private garden, located in a quiet lane in the bustling city of Mumbai.'
+    summary: 'A serene and spacious bungalow with a private garden, located in a quiet lane in the bustling city of Mumbai.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'A bungalow with a garden in Mumbai is a dream come true. We had a wonderful family gathering here. Karan is a superhost!'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Can\'t believe a place like this exists in Mumbai. So peaceful. The house is huge and beautiful.'}
+    ]
   },
   {
     id: '25',
@@ -701,10 +749,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Terrace', 'Jacuzzi'],
-    host: { name: 'Natasha', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Natasha', avatar: 'https://picsum.photos/seed/p25/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/129/800/600', 'https://picsum.photos/seed/130/800/600'],
     details: 'A stunning penthouse in Borivali with a large private terrace and a jacuzzi. Perfect for a luxurious staycation.',
-    summary: 'An exquisite penthouse in Mumbai, featuring a large private terrace and a jacuzzi for the ultimate luxury stay.'
+    summary: 'An exquisite penthouse in Mumbai, featuring a large private terrace and a jacuzzi for the ultimate luxury stay.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The terrace and the jacuzzi are the best parts. We had a great party here. Natasha was very accommodating.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Luxury at its best. The penthouse is beautifully decorated and the view is amazing.'}
+    ]
   },
   {
     id: '26',
@@ -720,10 +772,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning'],
-    host: { name: 'Suresh', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Suresh', avatar: 'https://picsum.photos/seed/p26/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/131/800/600', 'https://picsum.photos/seed/132/800/600'],
     details: 'A clean and comfortable private room with an attached bathroom, located very close to the Mumbai airport. Ideal for transit passengers.',
-    summary: 'A convenient and clean private room with an attached bathroom, situated near the Mumbai airport.'
+    summary: 'A convenient and clean private room with an attached bathroom, situated near the Mumbai airport.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'Very convenient for a layover. The room is basic but clean. Suresh is helpful.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Does the job perfectly for a short stay near the airport. Good value for money.'}
+    ]
   },
   // Add 5 more for Delhi
   {
@@ -740,10 +796,14 @@ export const properties: Property[] = [
     beds: 5,
     baths: 5,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden', 'Pool'],
-    host: { name: 'Mr. Singh', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Mr. Singh', avatar: 'https://picsum.photos/seed/p27/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/133/800/600', 'https://picsum.photos/seed/134/800/600'],
     details: 'An exclusive colonial bungalow in the heart of Lutyens\' Delhi. Experience unparalleled luxury and privacy.',
-    summary: 'An opulent colonial bungalow offering supreme luxury and privacy in the prestigious Lutyens\' Delhi.'
+    summary: 'An opulent colonial bungalow offering supreme luxury and privacy in the prestigious Lutyens\' Delhi.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The most amazing place I have ever stayed in. The bungalow is a palace. The service is top-notch.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'If you want to experience true luxury in Delhi, this is it. The garden and pool are magnificent.'}
+    ]
   },
   {
     id: '28',
@@ -759,10 +819,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Terrace', 'Monument view'],
-    host: { name: 'Deepika', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Deepika', avatar: 'https://picsum.photos/seed/p28/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/135/800/600', 'https://picsum.photos/seed/136/800/600'],
     details: 'A beautiful penthouse in Mehrauli with a direct, stunning view of the Qutub Minar from its private terrace.',
-    summary: 'A gorgeous penthouse in Delhi with a private terrace offering stunning, direct views of the Qutub Minar.'
+    summary: 'A gorgeous penthouse in Delhi with a private terrace offering stunning, direct views of the Qutub Minar.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Waking up to the view of Qutub Minar was magical. The penthouse is beautiful and very well done. Deepika is a great host.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'The terrace is the best part. We spent all our evenings there. Highly recommend this place.'}
+    ]
   },
   {
     id: '29',
@@ -778,10 +842,14 @@ export const properties: Property[] = [
     beds: 6,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Lawn'],
-    host: { name: 'Rakesh', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Rakesh', avatar: 'https://picsum.photos/seed/p29/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/137/800/600', 'https://picsum.photos/seed/138/800/600'],
     details: 'A sprawling farmhouse on the outskirts of Delhi, perfect for parties and weekend getaways. Comes with a private pool and a massive lawn.',
-    summary: 'A large farmhouse on the outskirts of Delhi, perfect for events with its private pool and expansive lawn.'
+    summary: 'A large farmhouse on the outskirts of Delhi, perfect for events with its private pool and expansive lawn.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The farmhouse is huge! Perfect for our family get-together. The kids loved the pool and the lawn.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'A great escape from the city. Very peaceful. The caretaker was very helpful.'}
+    ]
   },
   {
     id: '30',
@@ -797,10 +865,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Terrace'],
-    host: { name: 'Neha', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Neha', avatar: 'https://picsum.photos/seed/p5/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/139/800/600', 'https://picsum.photos/seed/140/800/600'],
     details: 'A private rooftop studio with a terrace in the posh Greater Kailash 2. Close to the M-Block market.',
-    summary: 'A private rooftop studio with a terrace in Greater Kailash 2, conveniently located near the M-Block market.'
+    summary: 'A private rooftop studio with a terrace in Greater Kailash 2, conveniently located near the M-Block market.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The studio is lovely, especially the terrace. Great location in GK2. Neha is a very sweet host.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Very comfortable stay. The studio is clean and has everything you need. The market is just a walk away.'}
+    ]
   },
   {
     id: '31',
@@ -816,10 +888,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'TV'],
-    host: { name: 'Rajiv', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Rajiv', avatar: 'https://picsum.photos/seed/p30/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/141/800/600', 'https://picsum.photos/seed/142/800/600'],
     details: 'A well-furnished apartment right in the heart of the city, Connaught Place. Everything you need is just a walk away.',
-    summary: 'A well-furnished apartment in the heart of Connaught Place, with all amenities within walking distance.'
+    summary: 'A well-furnished apartment in the heart of Connaught Place, with all amenities within walking distance.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'You cannot get a better location in Delhi. The apartment is spacious and clean. Rajiv was very helpful.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Very convenient stay. Being in CP makes it easy to get around. The apartment is comfortable for a family.'}
+    ]
   },
   // Add 6 more for Bengaluru
   {
@@ -836,10 +912,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Shared kitchen', 'Coworking space'],
-    host: { name: 'Sandeep', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Sandeep', avatar: 'https://picsum.photos/seed/p31/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/143/800/600', 'https://picsum.photos/seed/144/800/600'],
     details: 'A vibrant private room in a co-living space in the heart of Koramangala. Perfect for digital nomads and young professionals.',
-    summary: 'A lively private room in a Koramangala co-living space, ideal for digital nomads and professionals.'
+    summary: 'A lively private room in a Koramangala co-living space, ideal for digital nomads and professionals.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'Great place to meet new people. The vibe is very young and energetic. The room was clean and comfortable.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Sandeep has created a wonderful community here. The coworking space is a big plus. Excellent location.'}
+    ]
   },
   {
     id: '33',
@@ -855,10 +935,14 @@ export const properties: Property[] = [
     beds: 5,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Garden'],
-    host: { name: 'Anand', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Anand', avatar: 'https://picsum.photos/seed/p32/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/145/800/600', 'https://picsum.photos/seed/146/800/600'],
     details: 'A luxurious villa in the IT hub of Whitefield. Comes with a private pool and a beautiful garden. Perfect for families.',
-    summary: 'A luxurious villa in Whitefield with a private pool and garden, ideal for families seeking a premium stay.'
+    summary: 'A luxurious villa in Whitefield with a private pool and garden, ideal for families seeking a premium stay.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The villa is stunning. The private pool was a hit with the kids. Anand is a fantastic host.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'A perfect luxurious getaway in Bangalore. The villa is spacious and very well-maintained.'}
+    ]
   },
   {
     id: '34',
@@ -874,10 +958,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden'],
-    host: { name: 'Shanti', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Shanti', avatar: 'https://picsum.photos/seed/p33/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/147/800/600', 'https://picsum.photos/seed/148/800/600'],
     details: 'Experience old Bangalore in this charming traditional house in Malleswaram, known for its temples and traditional eateries.',
-    summary: 'A charming, traditional house in Malleswaram, offering a taste of old Bangalore with its temples and classic eateries.'
+    summary: 'A charming, traditional house in Malleswaram, offering a taste of old Bangalore with its temples and classic eateries.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Felt like staying at my grandmother\'s house. So much charm and character. The location is great for exploring old Bangalore.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Shanti was a very warm host. The house is beautiful and very well-kept. A very authentic experience.'}
+    ]
   },
   {
     id: '35',
@@ -893,10 +981,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Daily housekeeping'],
-    host: { name: 'Corporate Stays', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Corporate Stays', avatar: 'https://picsum.photos/seed/p34/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/149/800/600', 'https://picsum.photos/seed/150/800/600'],
     details: 'A fully serviced 2BHK apartment in HSR Layout, perfect for business travelers. Close to many tech parks.',
-    summary: 'A fully serviced 2BHK apartment in HSR Layout, ideal for business travelers and close to major tech parks.'
+    summary: 'A fully serviced 2BHK apartment in HSR Layout, ideal for business travelers and close to major tech parks.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'Very convenient for a work trip. The apartment is clean and the housekeeping is a plus.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Good value for money. The apartment is spacious and has all the necessary amenities.'}
+    ]
   },
   {
     id: '36',
@@ -912,10 +1004,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning'],
-    host: { name: 'Ravi', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Ravi', avatar: 'https://picsum.photos/seed/p35/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/151/800/600', 'https://picsum.photos/seed/152/800/600'],
     details: 'A clean, basic, and affordable room in Electronic City, very close to Infosys and Wipro campuses.',
-    summary: 'A clean, affordable room in Electronic City, conveniently located near Infosys and Wipro.'
+    summary: 'A clean, affordable room in Electronic City, conveniently located near Infosys and Wipro.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Perfect for a short work trip. The room is clean and Ravi is a helpful host.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Great location if you have work in Electronic City. The room is basic but has everything you need.'}
+    ]
   },
   {
     id: '37',
@@ -931,10 +1027,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Terrace'],
-    host: { name: 'Aarav', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Aarav', avatar: 'https://picsum.photos/seed/p36/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/153/800/600', 'https://picsum.photos/seed/154/800/600'],
     details: 'A super luxurious penthouse in central Bangalore with 360-degree views of the city. Comes with a private rooftop pool.',
-    summary: 'A lavish penthouse in central Bangalore with a private rooftop pool and 360-degree city views.'
+    summary: 'A lavish penthouse in central Bangalore with a private rooftop pool and 360-degree city views.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Absolutely breathtaking! The penthouse is out of this world. The rooftop pool is the highlight. Aarav is a superb host.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'The best Airbnb experience I have ever had. The views are unbelievable. Pure luxury.'}
+    ]
   },
   // Add 6 more for Chennai
   {
@@ -951,10 +1051,14 @@ export const properties: Property[] = [
     beds: 5,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Pool', 'Air conditioning', 'Beachfront'],
-    host: { name: 'Kumar', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Kumar', avatar: 'https://picsum.photos/seed/p37/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/155/800/600', 'https://picsum.photos/seed/156/800/600'],
     details: 'A beautiful seafront villa on the East Coast Road with a private pool and direct beach access. Close to Mahabalipuram.',
-    summary: 'A beautiful seafront villa on the East Coast Road with a private pool and direct beach access, close to Mahabalipuram.'
+    summary: 'A beautiful seafront villa on the East Coast Road with a private pool and direct beach access, close to Mahabalipuram.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The villa is beautiful and the location is perfect. The private beach access is a huge plus. We had a great family vacation.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Kumar is a great host. The villa is clean, spacious, and the pool is amazing. Highly recommend for a group.'}
+    ]
   },
   {
     id: '39',
@@ -970,10 +1074,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Gym'],
-    host: { name: 'Selva', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Selva', avatar: 'https://picsum.photos/seed/p38/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/157/800/600', 'https://picsum.photos/seed/158/800/600'],
     details: 'An ultra-luxurious apartment in the most exclusive neighborhood of Chennai, Poes Garden. Impeccable service and amenities.',
-    summary: 'An ultra-luxurious apartment in Chennai\'s exclusive Poes Garden, offering impeccable service and amenities.'
+    summary: 'An ultra-luxurious apartment in Chennai\'s exclusive Poes Garden, offering impeccable service and amenities.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The apartment is stunning and the location is very posh. Selva was a very professional host. Felt very safe and comfortable.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'A truly luxurious stay. The apartment is beautifully furnished and has all the modern amenities.'}
+    ]
   },
   {
     id: '40',
@@ -989,10 +1097,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'TV'],
-    host: { name: 'Lakshmi', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Lakshmi', avatar: 'https://picsum.photos/seed/p39/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/159/800/600', 'https://picsum.photos/seed/160/800/600'],
     details: 'A quirky and colorful apartment filled with modern art, located in the heart of Nungambakkam. Close to cafes and cultural spots.',
-    summary: 'A vibrant, art-filled apartment in the heart of Nungambakkam, near cafes and cultural attractions.'
+    summary: 'A vibrant, art-filled apartment in the heart of Nungambakkam, near cafes and cultural attractions.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The apartment is so colorful and cheerful. Loved the art. The location is great for exploring Chennai.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A very unique and comfortable stay. Lakshmi was very helpful and communicative.'}
+    ]
   },
   {
     id: '41',
@@ -1008,10 +1120,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'River view'],
-    host: { name: 'Ganesh', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Ganesh', avatar: 'https://picsum.photos/seed/p40/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/161/800/600', 'https://picsum.photos/seed/162/800/600'],
     details: 'A simple, clean room in a large house with a beautiful view of the Adyar River. Close to the Theosophical Society.',
-    summary: 'A clean, simple room with a scenic Adyar River view, conveniently located near the Theosophical Society.'
+    summary: 'A clean, simple room with a scenic Adyar River view, conveniently located near the Theosophical Society.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The view of the river is very peaceful. The room is clean and comfortable. Ganesh is a kind host.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Good value for money. The location is quiet and serene.'}
+    ]
   },
   {
     id: '42',
@@ -1027,10 +1143,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Gym'],
-    host: { name: 'OMR Stays', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'OMR Stays', avatar: 'https://picsum.photos/seed/p41/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/163/800/600', 'https://picsum.photos/seed/164/800/600'],
     details: 'A serviced apartment on OMR, the IT corridor of Chennai. Ideal for those traveling for work.',
-    summary: 'A serviced apartment on OMR in Chennai, perfect for business travelers working in the IT corridor.'
+    summary: 'A serviced apartment on OMR in Chennai, perfect for business travelers working in the IT corridor.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Very convenient for my work on OMR. The apartment is clean and has all the basics.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'A practical and comfortable stay for business travelers.'}
+    ]
   },
   {
     id: '43',
@@ -1046,10 +1166,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Terrace', 'Beach proximity'],
-    host: { name: 'Murali', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Murali', avatar: 'https://picsum.photos/seed/p42/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/165/800/600', 'https://picsum.photos/seed/166/800/600'],
     details: 'A spacious house just a street away from the popular Elliot\'s Beach in Besant Nagar. Surrounded by great food joints.',
-    summary: 'A spacious house near Elliot\'s Beach in Besant Nagar, surrounded by excellent dining options.'
+    summary: 'A spacious house near Elliot\'s Beach in Besant Nagar, surrounded by excellent dining options.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The location is fantastic! So close to the beach and so many amazing cafes. The house is spacious and great for a group.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Murali is a great host. The house was clean and comfortable. We had a wonderful time exploring Besant Nagar.'}
+    ]
   },
   // Add 6 more for Goa
   {
@@ -1066,10 +1190,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Pool'],
-    host: { name: 'Shiva', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Shiva', avatar: 'https://picsum.photos/seed/p43/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/167/800/600', 'https://picsum.photos/seed/168/800/600'],
     details: 'A basic but cool room in a guesthouse right next to the famous Anjuna Flea Market. Dive into the hippie culture.',
-    summary: 'A cool, basic guesthouse room next to the Anjuna Flea Market, perfect for experiencing the local hippie culture.'
+    summary: 'A cool, basic guesthouse room next to the Anjuna Flea Market, perfect for experiencing the local hippie culture.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The location is perfect for exploring Anjuna. The room is basic but has what you need. The pool is a nice bonus.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'If you want to be in the heart of the action, this is the place. Great value for money.'}
+    ]
   },
   {
     id: '45',
@@ -1085,10 +1213,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Beachfront', 'Restaurant'],
-    host: { name: 'Pedro', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Pedro', avatar: 'https://picsum.photos/seed/p44/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/169/800/600', 'https://picsum.photos/seed/170/800/600'],
     details: 'A classic Goan beach hut on the beautiful Palolem beach in South Goa. Wake up to the sound of waves.',
-    summary: 'A classic Goan beach hut on Palolem beach in South Goa, where you can wake up to the sound of waves.'
+    summary: 'A classic Goan beach hut on Palolem beach in South Goa, where you can wake up to the sound of waves.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Staying in a beach hut is a must-do in Goa. This one was perfect. Clean, comfortable, and right on the beach.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Pedro is a fantastic host. The food at the restaurant is delicious. Highly recommend this for a relaxing beach holiday.'}
+    ]
   },
   {
     id: '46',
@@ -1104,10 +1236,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Pool', 'Yoga classes', 'Vegan food'],
-    host: { name: 'Anya', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Anya', avatar: 'https://picsum.photos/seed/p45/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/171/800/600', 'https://picsum.photos/seed/172/800/600'],
     details: 'A peaceful room in a yoga retreat near Ashwem beach. Daily yoga classes and healthy vegan food available.',
-    summary: 'A serene room in a yoga retreat near Ashwem beach, offering daily yoga and healthy vegan meals.'
+    summary: 'A serene room in a yoga retreat near Ashwem beach, offering daily yoga and healthy vegan meals.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The perfect place to unwind and rejuvenate. The yoga classes were excellent. The food was healthy and delicious.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Anya has created a beautiful and peaceful space. I felt so refreshed after my stay.'}
+    ]
   },
   {
     id: '47',
@@ -1123,10 +1259,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Kitchenette'],
-    host: { name: 'Fernandes', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Fernandes', avatar: 'https://picsum.photos/seed/p46/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/173/800/600', 'https://picsum.photos/seed/174/800/600'],
     details: 'A cute studio in the colourful Latin Quarter of Panjim (Fontainhas). Explore the unique architecture and cafes.',
-    summary: 'A charming studio in Fontainhas, Panjim\'s colorful Latin Quarter, perfect for exploring unique architecture and cafes.'
+    summary: 'A charming studio in Fontainhas, Panjim\'s colorful Latin Quarter, perfect for exploring unique architecture and cafes.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'Fontainhas is a must-visit in Goa, and this studio is the perfect place to stay. It\'s cute, clean, and has everything you need.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Loved exploring the colorful lanes of Fontainhas. The studio is in a great location. Mr. Fernandes is a very kind host.'}
+    ]
   },
   {
     id: '48',
@@ -1142,10 +1282,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Sea view'],
-    host: { name: 'Vikrant', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Vikrant', avatar: 'https://picsum.photos/seed/p47/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/175/800/600', 'https://picsum.photos/seed/176/800/600'],
     details: 'A stunning villa on a hilltop in Vagator, offering panoramic views of the sea. Close to famous clubs and restaurants.',
-    summary: 'A stunning hilltop villa in Vagator with panoramic sea views, located near famous clubs and restaurants.'
+    summary: 'A stunning hilltop villa in Vagator with panoramic sea views, located near famous clubs and restaurants.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The view from the villa is absolutely spectacular. The villa itself is stunning and very luxurious. We had an amazing time.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'The best place to stay in North Goa for a large group. The pool and the view are unbeatable.'}
+    ]
   },
   {
     id: '49',
@@ -1161,10 +1305,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'River view'],
-    host: { name: 'Saldanha', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Saldanha', avatar: 'https://picsum.photos/seed/p48/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/177/800/600', 'https://picsum.photos/seed/178/800/600'],
     details: 'A modern apartment in a high-rise with beautiful views of the Mandovi river. Close to Panjim and the casinos.',
-    summary: 'A modern high-rise apartment with beautiful Mandovi river views, conveniently located near Panjim and the casinos.'
+    summary: 'A modern high-rise apartment with beautiful Mandovi river views, conveniently located near Panjim and the casinos.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The view of the river is lovely. The apartment is modern and spacious. The location is convenient for exploring both North and South Goa.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A comfortable stay. The apartment complex has good amenities. The host was very responsive.'}
+    ]
   },
   // Add 6 more for Jaipur
   {
@@ -1181,10 +1329,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Pool', 'Air conditioning', 'Restaurant', 'Gym'],
-    host: { name: 'The Raj Palace', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'The Raj Palace', avatar: 'https://picsum.photos/seed/p49/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/179/800/600', 'https://picsum.photos/seed/180/800/600'],
     details: 'A luxurious room in a modern boutique hotel in the upscale C-Scheme area. Close to shopping and fine dining.',
-    summary: 'A luxurious room in a modern C-Scheme boutique hotel, near upscale shopping and fine dining.'
+    summary: 'A luxurious room in a modern C-Scheme boutique hotel, near upscale shopping and fine dining.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'A very stylish hotel in a great location. The room was luxurious and the service was excellent.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Loved the modern design of the hotel. The rooftop restaurant has amazing views. Highly recommend.'}
+    ]
   },
   {
     id: '51',
@@ -1200,10 +1352,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Home-cooked meals'],
-    host: { name: 'Sharma Family', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Sharma Family', avatar: 'https://picsum.photos/seed/p50/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/181/800/600', 'https://picsum.photos/seed/182/800/600'],
     details: 'Experience true Rajasthani hospitality by staying with a local family in their home in Civil Lines. Enjoy delicious home-cooked meals.',
-    summary: 'Experience authentic Rajasthani hospitality and delicious home-cooked meals at a family homestay in Civil Lines.'
+    summary: 'Experience authentic Rajasthani hospitality and delicious home-cooked meals at a family homestay in Civil Lines.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The Sharma family are the most wonderful hosts. It felt like staying with family. The food was out of this world.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'The best way to experience Jaipur. I learned so much about the culture. Highly, highly recommend.'}
+    ]
   },
   {
     id: '52',
@@ -1219,10 +1375,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 1,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning'],
-    host: { name: 'Pankaj', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Pankaj', avatar: 'https://picsum.photos/seed/p51/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/183/800/600', 'https://picsum.photos/seed/184/800/600'],
     details: 'A simple apartment located right inside the walled city of Jaipur. Explore the bazaars and culture on foot.',
-    summary: 'A simple apartment in Jaipur\'s walled city, perfect for exploring the local bazaars and culture on foot.'
+    summary: 'A simple apartment in Jaipur\'s walled city, perfect for exploring the local bazaars and culture on foot.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The location is amazing. You can walk to all the major attractions in the Pink City. The apartment is basic but clean.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Pankaj was a very helpful host. If you want to experience the real Jaipur, this is a great place to stay.'}
+    ]
   },
   {
     id: '53',
@@ -1238,10 +1398,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Parking'],
-    host: { name: 'Sunita', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Sunita', avatar: 'https://picsum.photos/seed/p3/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/185/800/600', 'https://picsum.photos/seed/186/800/600'],
     details: 'A modern and spacious house in the residential area of Vaishali Nagar. Good for families and long stays.',
-    summary: 'A modern, spacious house in Vaishali Nagar, ideal for families and extended stays.'
+    summary: 'A modern, spacious house in Vaishali Nagar, ideal for families and extended stays.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The house is very spacious and modern. Perfect for our large family. Sunita was a wonderful host.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'A very comfortable stay in a quiet neighborhood. The house is well-equipped for a long stay.'}
+    ]
   },
   {
     id: '54',
@@ -1257,10 +1421,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Organic meals', 'Farm animals', 'Peaceful'],
-    host: { name: 'Devika', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Devika', avatar: 'https://picsum.photos/seed/p52/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/187/800/600', 'https://picsum.photos/seed/188/800/600'],
     details: 'An eco-friendly cottage on a farm on the outskirts of Jaipur. Enjoy fresh organic meals and a peaceful environment.',
-    summary: 'An eco-friendly farm cottage outside Jaipur, offering organic meals and a tranquil setting.'
+    summary: 'An eco-friendly farm cottage outside Jaipur, offering organic meals and a tranquil setting.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'A truly unique and refreshing experience. The food was amazing, all fresh from the farm. Devika is an inspiring host.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'If you want to escape the city and connect with nature, this is the place. So peaceful and beautiful.'}
+    ]
   },
   {
     id: '55',
@@ -1276,10 +1444,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Shared kitchen', 'Lockers', 'Common area'],
-    host: { name: 'Zostel', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Zostel', avatar: 'https://picsum.photos/seed/p53/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/189/800/600', 'https://picsum.photos/seed/190/800/600'],
     details: 'A lively backpacker hostel close to the Jaipur railway station. Meet fellow travelers and explore the city on a budget.',
-    summary: 'A vibrant backpacker hostel near Jaipur railway station, ideal for budget travelers looking to connect with others.'
+    summary: 'A vibrant backpacker hostel near Jaipur railway station, ideal for budget travelers looking to connect with others.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Great place to meet other travelers. The common area is very lively. The dorms are clean.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Excellent value for money. The staff is very friendly and helpful. Great location.'}
+    ]
   },
   // Add 7 more for Kolkata
   {
@@ -1296,10 +1468,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Terrace'],
-    host: { name: 'Roy', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Roy', avatar: 'https://picsum.photos/seed/p54/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/191/800/600', 'https://picsum.photos/seed/192/800/600'],
     details: 'A luxurious penthouse on Park Street, the heart of Kolkata\'s dining and nightlife scene. Enjoy city views from your private terrace.',
-    summary: 'A luxurious Park Street penthouse with a private terrace and city views, in the heart of Kolkata\'s dining and nightlife.'
+    summary: 'A luxurious Park Street penthouse with a private terrace and city views, in the heart of Kolkata\'s dining and nightlife.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The penthouse is stunning and the location is unbeatable. You are right in the middle of all the action on Park Street.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'A truly luxurious stay. The terrace is amazing for evening parties. The host was very professional.'}
+    ]
   },
   {
     id: '57',
@@ -1315,10 +1491,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'TV'],
-    host: { name: 'Deb', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Deb', avatar: 'https://picsum.photos/seed/p55/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/193/800/600', 'https://picsum.photos/seed/194/800/600'],
     details: 'A modern and clean apartment in the planned township of Salt Lake. Ideal for business travelers and families.',
-    summary: 'A clean, modern apartment in Salt Lake, perfect for business travelers and families.'
+    summary: 'A clean, modern apartment in Salt Lake, perfect for business travelers and families.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'A very comfortable and clean apartment. The location is peaceful. Deb was a very helpful host.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Great for a family stay. The apartment is modern and has all the necessary amenities.'}
+    ]
   },
   {
     id: '58',
@@ -1334,10 +1514,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'River view'],
-    host: { name: 'Banerjee', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Banerjee', avatar: 'https://picsum.photos/seed/p56/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/195/800/600', 'https://picsum.photos/seed/196/800/600'],
     details: 'An apartment with a serene view of the Hooghly river. Watch the boats go by from your balcony. Away from the city chaos.',
-    summary: 'A tranquil apartment with a serene Hooghly river view and a balcony, perfect for escaping the city\'s chaos.'
+    summary: 'A tranquil apartment with a serene Hooghly river view and a balcony, perfect for escaping the city\'s chaos.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The view of the river is so calming. The apartment is spacious and comfortable. A great escape.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'We had a very peaceful stay. The host was very welcoming. Loved watching the sunset over the river.'}
+    ]
   },
   {
     id: '59',
@@ -1353,10 +1537,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning'],
-    host: { name: 'Mrs. Das', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Mrs. Das', avatar: 'https://picsum.photos/seed/p57/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/197/800/600', 'https://picsum.photos/seed/198/800/600'],
     details: 'A private room in a house right in the middle of Gariahat, Kolkata\'s shopping hub. Perfect for shopaholics.',
-    summary: 'A private room in a Gariahat house, perfect for shoppers in the heart of Kolkata\'s shopping district.'
+    summary: 'A private room in a Gariahat house, perfect for shoppers in the heart of Kolkata\'s shopping district.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The location is a shopper\'s dream! The room is basic but clean. Mrs. Das is a very sweet lady.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'If you want to shop in Kolkata, this is the perfect place to stay. Very convenient.'}
+    ]
   },
   {
     id: '60',
@@ -1372,10 +1560,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Gym'],
-    host: { name: 'Rohan', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Rohan', avatar: 'https://picsum.photos/seed/p58/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/199/800/600', 'https://picsum.photos/seed/200/800/600'],
     details: 'A compact studio in New Town, close to the IT parks. Has all modern amenities for a comfortable stay.',
-    summary: 'A compact, modern studio in New Town with all amenities, ideal for a comfortable stay near the IT parks.'
+    summary: 'A compact, modern studio in New Town with all amenities, ideal for a comfortable stay near the IT parks.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Perfect for a short work trip. The studio is clean and modern. The gym is a nice bonus.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Good value for money. The location is very convenient if you have work in New Town.'}
+    ]
   },
   {
     id: '61',
@@ -1391,10 +1583,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 3,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden'],
-    host: { name: 'Chowdhury family', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Chowdhury family', avatar: 'https://picsum.photos/seed/p59/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/201/800/600', 'https://picsum.photos/seed/202/800/600'],
     details: 'Stay in a grand old ancestral home in the quiet, leafy lanes of Ballygunge. Full of antique furniture and character.',
-    summary: 'A grand ancestral home in Ballygunge, featuring antique furniture and character in a quiet, leafy setting.'
+    summary: 'A grand ancestral home in Ballygunge, featuring antique furniture and character in a quiet, leafy setting.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Felt like staying in a museum. The house is so beautiful and full of history. The hosts were very gracious.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A truly unique experience. The house is a masterpiece. A very peaceful and memorable stay.'}
+    ]
   },
   {
     id: '62',
@@ -1410,10 +1606,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi'],
-    host: { name: 'Sanjay', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Sanjay', avatar: 'https://picsum.photos/seed/p16/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/203/800/600', 'https://picsum.photos/seed/204/800/600'],
     details: 'A quirky room in an artist\'s apartment in Jadavpur. Close to the university and the cultural hub of South Kolkata.',
-    summary: 'A quirky room in a Jadavpur artist\'s apartment, near the university and South Kolkata\'s cultural hub.'
+    summary: 'A quirky room in a Jadavpur artist\'s apartment, near the university and South Kolkata\'s cultural hub.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'Sanjay is a very cool host. The room is full of interesting art. Great for solo travelers and students.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'A very inspiring place to stay. The location is great for exploring South Kolkata.'}
+    ]
   },
   // Add 7 more for Hyderabad
   {
@@ -1430,10 +1630,14 @@ export const properties: Property[] = [
     beds: 5,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Home theater'],
-    host: { name: 'Reddy', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Reddy', avatar: 'https://picsum.photos/seed/p60/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/205/800/600', 'https://picsum.photos/seed/206/800/600'],
     details: 'An opulent villa in the uber-rich Banjara Hills. Comes with a private pool and a home theater system.',
-    summary: 'An opulent Banjara Hills villa with a private pool and home theater.'
+    summary: 'An opulent Banjara Hills villa with a private pool and home theater.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The villa is absolutely stunning. The home theater is a great touch. Pure luxury.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'We had an amazing time. The villa is perfect for a luxurious family holiday. The host was very accommodating.'}
+    ]
   },
   {
     id: '64',
@@ -1449,10 +1653,14 @@ export const properties: Property[] = [
     beds: 2,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Gym', 'Pool'],
-    host: { name: 'Cyber Stays', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Cyber Stays', avatar: 'https://picsum.photos/seed/p61/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/207/800/600', 'https://picsum.photos/seed/208/800/600'],
     details: 'A comfortable serviced apartment in HITEC City, the IT hub of Hyderabad. Perfect for long stays for work.',
-    summary: 'A comfortable serviced apartment in HITEC City, ideal for extended work stays in Hyderabad\'s IT hub.'
+    summary: 'A comfortable serviced apartment in HITEC City, ideal for extended work stays in Hyderabad\'s IT hub.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Very convenient for my work in HITEC City. The apartment is clean and comfortable. The gym and pool are a nice bonus.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A good, practical option for business travelers. Has all the necessary amenities.'}
+    ]
   },
   {
     id: '65',
@@ -1468,10 +1676,14 @@ export const properties: Property[] = [
     beds: 4,
     baths: 4,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Garden'],
-    host: { name: 'A-List Host', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'A-List Host', avatar: 'https://picsum.photos/seed/p62/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/209/800/600', 'https://picsum.photos/seed/210/800/600'],
     details: 'Stay in a house straight out of a movie in Jubilee Hills, home to Tollywood stars. Ultimate luxury and privacy.',
-    summary: 'Experience ultimate luxury and privacy in a movie-like house in Jubilee Hills, a Tollywood star neighborhood.'
+    summary: 'Experience ultimate luxury and privacy in a movie-like house in Jubilee Hills, a Tollywood star neighborhood.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'Felt like a movie star! The house is incredible. The pool and garden are stunning. An unforgettable experience.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'The most luxurious place I have ever stayed in. Worth every penny. The host provides top-class service.'}
+    ]
   },
   {
     id: '66',
@@ -1487,10 +1699,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Breakfast included'],
-    host: { name: 'Begum Sahiba', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Begum Sahiba', avatar: 'https://picsum.photos/seed/p63/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/211/800/600', 'https://picsum.photos/seed/212/800/600'],
     details: 'A charming room in a beautiful old house in Begumpet. Experience the old-world charm of Hyderabad.',
-    summary: 'A charming room in a historic Begumpet house, offering a taste of old-world Hyderabad.'
+    summary: 'A charming room in a historic Begumpet house, offering a taste of old-world Hyderabad.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The house is so full of character and history. Begum Sahiba is a very gracious host. Loved the breakfast.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'A very special place to stay. It feels like you have stepped back in time. Very peaceful.'}
+    ]
   },
   {
     id: '67',
@@ -1506,10 +1722,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'TV'],
-    host: { name: 'Tech Pads', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Tech Pads', avatar: 'https://picsum.photos/seed/p64/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/213/800/600', 'https://picsum.photos/seed/214/800/600'],
     details: 'A compact and modern studio in Gachibowli, close to Microsoft, Amazon, and other major tech campuses.',
-    summary: 'A compact, modern studio in Gachibowli, near major tech campuses like Microsoft and Amazon.'
+    summary: 'A compact, modern studio in Gachibowli, near major tech campuses like Microsoft and Amazon.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Very convenient location for work. The studio is clean and has everything you need for a short stay.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'Good value for money. The check-in process was smooth and automated.'}
+    ]
   },
   {
     id: '68',
@@ -1525,10 +1745,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Air conditioning', 'Food tours'],
-    host: { name: 'Aslam', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Aslam', avatar: 'https://picsum.photos/seed/p65/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/215/800/600', 'https://picsum.photos/seed/216/800/600'],
     details: 'A room in the heart of the Old City, perfect for foodies. The host offers curated food tours to the best local joints.',
-    summary: 'An Old City room perfect for foodies, with curated food tours to the best local spots.'
+    summary: 'An Old City room perfect for foodies, with curated food tours to the best local spots.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'If you love food, this is the place to be. Aslam knows all the best spots. The room is comfortable and clean.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'The food tour was the highlight of my trip. I ate the best biryani of my life. Aslam is a legend.'}
+    ]
   },
   {
     id: '69',
@@ -1544,10 +1768,14 @@ export const properties: Property[] = [
     beds: 3,
     baths: 2,
     amenities: ['Wifi', 'Kitchen', 'Air conditioning'],
-    host: { name: 'Col. Rao', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Col. Rao', avatar: 'https://picsum.photos/seed/p66/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/217/800/600', 'https://picsum.photos/seed/218/800/600'],
     details: 'A comfortable apartment in Secunderabad, close to the famous Secunderabad Club. Quiet and peaceful neighborhood.',
-    summary: 'A comfortable apartment in a quiet Secunderabad neighborhood, near the famous Secunderabad Club.'
+    summary: 'A comfortable apartment in a quiet Secunderabad neighborhood, near the famous Secunderabad Club.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'A very comfortable and quiet place to stay. The apartment is spacious and well-maintained.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Good location in Secunderabad. The host was very helpful. A good option for families.'}
+    ]
   },
   // Add 7 more for Pune
   {
@@ -1564,10 +1792,14 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Peaceful'],
-    host: { name: 'Swami Prem', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
+    host: { name: 'Swami Prem', avatar: 'https://picsum.photos/seed/p67/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/219/800/600', 'https://picsum.photos/seed/220/800/600'],
     details: 'A serene studio apartment right next to the Osho International Meditation Resort in Koregaon Park. Perfect for spiritual seekers.',
-    summary: 'A serene studio next to the Osho Meditation Resort in Koregaon Park, ideal for spiritual seekers.'
+    summary: 'A serene studio next to the Osho Meditation Resort in Koregaon Park, ideal for spiritual seekers.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The location is perfect if you are visiting the ashram. The studio is very peaceful and clean.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A very calming and comfortable stay. Swami Prem is a great host. Highly recommend.'}
+    ]
   },
   {
     id: '71',
@@ -1583,247 +1815,44 @@ export const properties: Property[] = [
     beds: 1,
     baths: 1,
     amenities: ['Wifi', 'Shared kitchen', 'Study desk'],
-    host: { name: 'Student Homes', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    host: { name: 'Student Homes', avatar: 'https://picsum.photos/seed/p68/100/100', isSuperhost: false },
     images: ['https://picsum.photos/seed/221/800/600', 'https://picsum.photos/seed/222/800/600'],
     details: 'A budget-friendly private room in a student-centric apartment in Viman Nagar. Close to Symbiosis and other colleges.',
-    summary: 'An affordable private room in Viman Nagar, ideal for students, close to Symbiosis and other colleges.'
+    summary: 'A budget-friendly private room in a student-centric apartment in Viman Nagar, close to Symbiosis and other colleges.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'Great for students. The location is very convenient if you are studying at Symbiosis.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'Good value for money for students. The room is basic but clean.'}
+    ]
   },
   {
     id: '72',
-    title: 'Hinjewadi IT Park Apartment',
-    type: 'Entire apartment',
+    title: 'Lonavala Weekend Villa',
+    type: 'Entire villa',
     location: 'Pune, India',
-    coords: { lat: 18.59, lng: 73.73 },
-    price: 5000,
-    rating: 4.7,
-    reviews: 220,
-    guests: 4,
-    bedrooms: 2,
-    beds: 2,
-    baths: 2,
-    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Gym'],
-    host: { name: 'IT Stays', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
+    coords: { lat: 18.75, lng: 73.40 },
+    price: 15000,
+    rating: 4.88,
+    reviews: 180,
+    guests: 10,
+    bedrooms: 4,
+    beds: 5,
+    baths: 4,
+    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool'],
+    host: { name: 'Khanna', avatar: 'https://picsum.photos/seed/p69/100/100', isSuperhost: true },
     images: ['https://picsum.photos/seed/223/800/600', 'https://picsum.photos/seed/224/800/600'],
-    details: 'A modern 2BHK apartment in a large complex in Hinjewadi, the IT hub of Pune. Ideal for corporate stays.',
-    summary: 'A modern 2BHK apartment in Hinjewadi, perfect for corporate stays in Pune\'s IT hub.'
+    details: 'A beautiful villa in Lonavala, a popular weekend getaway from Pune. Comes with a private pool and a garden.',
+    summary: 'A beautiful villa in Lonavala with a private pool and garden, perfect for a weekend getaway from Pune.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'The villa is beautiful and the pool is amazing. We had a great weekend getaway from Pune.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A great place for a family or a group of friends. The host was very responsive and helpful.'}
+    ]
   },
   {
     id: '73',
-    title: 'Old Pune Wadas Homestay',
-    type: 'Private room in house',
+    title: 'Kalyani Nagar Loft',
+    type: 'Entire loft',
     location: 'Pune, India',
-    coords: { lat: 18.52, lng: 73.85 },
-    price: 3000,
-    rating: 4.9,
-    reviews: 300,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Authentic experience'],
-    host: { name: 'Joshi Kaka', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/225/800/600', 'https://picsum.photos/seed/226/800/600'],
-    details: 'Stay in a traditional "Wada" (mansion) in the heart of old Pune. Experience the authentic Puneri culture.',
-    summary: 'Experience authentic Puneri culture in a traditional "Wada" mansion in the heart of old Pune.'
-  },
-  {
-    id: '74',
-    title: 'Lavasa City View Apartment',
-    type: 'Entire apartment',
-    location: 'Pune, India',
-    coords: { lat: 18.40, lng: 73.50 },
-    price: 6000,
-    rating: 4.8,
-    reviews: 180,
-    guests: 4,
-    bedrooms: 1,
-    beds: 2,
-    baths: 1,
-    amenities: ['Wifi', 'Kitchenette', 'Air conditioning', 'Lake view'],
-    host: { name: 'Weekend Getaways', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/227/800/600', 'https://picsum.photos/seed/228/800/600'],
-    details: 'An apartment in Lavasa, a planned city styled on Portofino, Italy. Offers great views of the lake. A good weekend trip from Pune.',
-    summary: 'An apartment in Lavasa, a Portofino-styled city, offers lake views, perfect for a weekend trip from Pune.'
-  },
-  {
-    id: '75',
-    title: 'Khadki War Memorial Vicinity',
-    type: 'Entire house',
-    location: 'Pune, India',
-    coords: { lat: 18.56, lng: 73.85 },
-    price: 8000,
-    rating: 4.85,
-    reviews: 150,
-    guests: 6,
-    bedrooms: 3,
-    beds: 3,
-    baths: 2,
-    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden'],
-    host: { name: 'Patil', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/229/800/600', 'https://picsum.photos/seed/230/800/600'],
-    details: 'A comfortable house in the cantonment area of Khadki. Peaceful and green surroundings, close to the war memorial.',
-    summary: 'A comfortable house in Khadki\'s cantonment area, offering peaceful, green surroundings near the war memorial.'
-  },
-  {
-    id: '76',
-    title: 'FC Road Social Pad',
-    type: 'Private room',
-    location: 'Pune, India',
-    coords: { lat: 18.52, lng: 73.84 },
-    price: 2500,
-    rating: 4.7,
-    reviews: 350,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Air conditioning'],
-    host: { name: 'Riya', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/231/800/600', 'https://picsum.photos/seed/232/800/600'],
-    details: 'A room in an apartment on FC Road, the most happening street in Pune. Surrounded by cafes, restaurants, and shops.',
-    summary: 'A room on FC Road, Pune\'s liveliest street, surrounded by cafes, restaurants, and shops.'
-  },
-  // Add 7 for Udaipur
-  {
-    id: '77',
-    title: 'Ambrai Ghat View Haveli',
-    type: 'Private room in haveli',
-    location: 'Udaipur, India',
-    coords: { lat: 24.57, lng: 73.68 },
-    price: 10000,
-    rating: 4.95,
-    reviews: 200,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Air conditioning', 'Lake view', 'Rooftop restaurant'],
-    host: { name: 'Thakur Sahab', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/233/800/600', 'https://picsum.photos/seed/234/800/600'],
-    details: 'A room in a heritage haveli with the best view of the City Palace and Lake Pichola from Ambrai Ghat.',
-    summary: 'A heritage haveli room with stunning views of the City Palace and Lake Pichola from Ambrai Ghat.'
-  },
-  {
-    id: '78',
-    title: 'Laal Ghat Backpacker Hostel',
-    type: 'Shared dorm',
-    location: 'Udaipur, India',
-    coords: { lat: 24.57, lng: 73.68 },
-    price: 700,
-    rating: 4.8,
-    reviews: 800,
-    guests: 1,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Lockers', 'Rooftop cafe', 'Lake view'],
-    host: { name: 'Bunkyard', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/235/800/600', 'https://picsum.photos/seed/236/800/600'],
-    details: 'A lively backpacker hostel in the heart of the old city at Laal Ghat. Has a rooftop cafe with amazing lake views.',
-    summary: 'A lively backpacker hostel in the old city\'s Laal Ghat with a rooftop cafe and stunning lake views.'
-  },
-  {
-    id: '79',
-    title: 'Fateh Sagar Lake House',
-    type: 'Entire house',
-    location: 'Udaipur, India',
-    coords: { lat: 24.60, lng: 73.68 },
-    price: 15000,
-    rating: 4.9,
-    reviews: 150,
-    guests: 8,
-    bedrooms: 3,
-    beds: 4,
-    baths: 3,
-    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Garden', 'Lake view'],
-    host: { name: 'Sisodia family', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/237/800/600', 'https://picsum.photos/seed/238/800/600'],
-    details: 'A beautiful house overlooking the serene Fateh Sagar Lake. Away from the touristy crowds but still accessible.',
-    summary: 'A beautiful, accessible house with serene views of Fateh Sagar Lake, away from tourist crowds.'
-  },
-  {
-    id: '80',
-    title: 'Jagdish Temple Homestay',
-    type: 'Private room in house',
-    location: 'Udaipur, India',
-    coords: { lat: 24.57, lng: 73.68 },
-    price: 3000,
-    rating: 4.85,
-    reviews: 300,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Air conditioning'],
-    host: { name: 'Pandit ji', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/239/800/600', 'https://picsum.photos/seed/240/800/600'],
-    details: 'A simple room in a house in the lane of the famous Jagdish Temple. Experience the spiritual side of Udaipur.',
-    summary: 'A simple room in a house on Jagdish Temple lane, offering a spiritual experience in Udaipur.'
-  },
-  {
-    id: '81',
-    title: 'Shilpgram Rural Hut',
-    type: 'Entire hut',
-    location: 'Udaipur, India',
-    coords: { lat: 24.60, lng: 73.66 },
-    price: 2000,
-    rating: 4.7,
-    reviews: 250,
-    guests: 3,
-    bedrooms: 1,
-    beds: 2,
-    baths: 1,
-    amenities: ['Authentic experience', 'Peaceful'],
-    host: { name: 'Local Artisan', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/241/800/600', 'https://picsum.photos/seed/242/800/600'],
-    details: 'A traditional mud hut in the Shilpgram artists\' village. A truly unique and rustic experience.',
-    summary: 'A unique, rustic mud hut in Shilpgram artists\' village, offering a traditional experience.'
-  },
-  {
-    id: '82',
-    title: 'Island Palace on Lake Pichola',
-    type: 'Suite in hotel',
-    location: 'Udaipur, India',
-    coords: { lat: 24.575, lng: 73.68 },
-    price: 50000,
-    rating: 5.0,
-    reviews: 100,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Pool', 'Air conditioning', 'Restaurant', 'Spa', 'Boat service'],
-    host: { name: 'Taj Lake Palace', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/243/800/600', 'https://picsum.photos/seed/244/800/600'],
-    details: 'The ultimate luxury experience. Stay at the world-famous Taj Lake Palace, an island in the middle of Lake Pichola.',
-    summary: 'Experience ultimate luxury at the world-famous Taj Lake Palace, an island hotel in Lake Pichola.'
-  },
-  {
-    id: '83',
-    title: 'Aravalli Hills View Villa',
-    type: 'Entire villa',
-    location: 'Udaipur, India',
-    coords: { lat: 24.62, lng: 73.74 },
-    price: 20000,
-    rating: 4.9,
-    reviews: 120,
-    guests: 8,
-    bedrooms: 4,
-    beds: 4,
-    baths: 4,
-    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Pool', 'Mountain view'],
-    host: { name: 'Mr. Rathore', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/245/800/600', 'https://picsum.photos/seed/246/800/600'],
-    details: 'A modern villa with a private pool, nestled in the Aravalli hills. Enjoy panoramic views and tranquility.',
-    summary: 'A modern villa with a private pool in the Aravalli hills, offering panoramic views and tranquility.'
-  },
-  // Add 7 for Munnar
-  {
-    id: '84',
-    title: 'Cardamom Plantation Cottage',
-    type: 'Entire cottage',
-    location: 'Munnar, India',
-    coords: { lat: 10.05, lng: 77.05 },
+    coords: { lat: 18.54, lng: 73.90 },
     price: 8000,
     rating: 4.9,
     reviews: 150,
@@ -1831,394 +1860,83 @@ export const properties: Property[] = [
     bedrooms: 2,
     beds: 2,
     baths: 2,
-    amenities: ['Kitchen', 'Garden', 'Spice tour'],
-    host: { name: 'George', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/247/800/600', 'https://picsum.photos/seed/248/800/600'],
-    details: 'A rustic cottage in the middle of a cardamom plantation. The air is fragrant with spices. The host offers a free spice tour.',
-    summary: 'A rustic cottage in a cardamom plantation with fragrant air, offering free spice tours.'
+    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Terrace'],
+    host: { name: 'Isha', avatar: 'https://picsum.photos/seed/p70/100/100', isSuperhost: true },
+    images: ['https://picsum.photos/seed/225/800/600', 'https://picsum.photos/seed/226/800/600'],
+    details: 'A stylish loft in Kalyani Nagar with a private terrace. The area is known for its eateries and nightlife.',
+    summary: 'A stylish loft with a private terrace in Kalyani Nagar, a hub for dining and nightlife.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'The loft is very stylish and the terrace is a great place to hang out. The location is perfect.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'Isha is a great host. The loft is clean, comfortable, and very well-designed.'}
+    ]
   },
   {
-    id: '85',
-    title: 'Top Station Viewpoint Homestay',
-    type: 'Private room in house',
-    location: 'Munnar, India',
-    coords: { lat: 10.12, lng: 77.24 },
-    price: 4000,
-    rating: 4.8,
-    reviews: 200,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Home-cooked food', 'Mountain view'],
-    host: { name: 'Mary', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/249/800/600', 'https://picsum.photos/seed/250/800/600'],
-    details: 'A simple homestay with stunning views, located near the Top Station viewpoint. Enjoy authentic Kerala home-cooked food.',
-    summary: 'A simple homestay near Top Station viewpoint with stunning views and authentic Kerala home-cooked food.'
-  },
-  {
-    id: '86',
-    title: 'Luxury Resort & Spa',
-    type: 'Room in resort',
-    location: 'Munnar, India',
-    coords: { lat: 10.08, lng: 77.06 },
-    price: 15000,
-    rating: 4.95,
-    reviews: 250,
-    guests: 3,
-    bedrooms: 1,
-    beds: 2,
-    baths: 1,
-    amenities: ['Wifi', 'Pool', 'Air conditioning', 'Restaurant', 'Spa'],
-    host: { name: 'Club Mahindra', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/251/800/600', 'https://picsum.photos/seed/252/800/600'],
-    details: 'Indulge in luxury at this beautiful resort in Munnar. It offers a spa, multiple restaurants, and a range of activities.',
-    summary: 'A luxurious Munnar resort with a spa, multiple restaurants, and various activities.'
-  },
-  {
-    id: '87',
-    title: 'Treehouse in the Woods',
-    type: 'Entire treehouse',
-    location: 'Munnar, India',
-    coords: { lat: 10.03, lng: 77.01 },
-    price: 12000,
-    rating: 4.98,
-    reviews: 180,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Nature', 'Adventure'],
-    host: { name: 'Forest Escapes', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/253/800/600', 'https://picsum.photos/seed/254/800/600'],
-    details: 'A unique experience of staying in a treehouse in the middle of a forest. For the adventurous and nature lovers.',
-    summary: 'An adventurous treehouse stay in a forest, perfect for nature lovers.'
-  },
-  {
-    id: '88',
-    title: 'Echo Point Camping',
-    type: 'Tent',
-    location: 'Munnar, India',
-    coords: { lat: 10.10, lng: 77.10 },
-    price: 3000,
-    rating: 4.7,
-    reviews: 300,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Bonfire', 'Stargazing'],
-    host: { name: 'Munnar Adventures', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/255/800/600', 'https://picsum.photos/seed/256/800/600'],
-    details: 'Camp under the stars near Echo Point. A great experience for students and budget travelers. Bonfire and music at night.',
-    summary: 'An affordable camping experience near Echo Point with bonfires and music, ideal for students and budget travelers.'
-  },
-  {
-    id: '89',
-    title: 'Mattupetty Dam View Cottage',
-    type: 'Entire cottage',
-    location: 'Munnar, India',
-    coords: { lat: 10.10, lng: 77.13 },
-    price: 9000,
+    id: '74',
+    title: 'Deccan Gymkhana Old World Charm',
+    type: 'Entire apartment',
+    location: 'Pune, India',
+    coords: { lat: 18.51, lng: 73.83 },
+    price: 6000,
     rating: 4.85,
-    reviews: 160,
+    reviews: 200,
     guests: 5,
     bedrooms: 2,
     beds: 3,
     baths: 2,
-    amenities: ['Wifi', 'Kitchen', 'Mountain view', 'Dam view'],
-    host: { name: 'Kumar', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/257/800/600', 'https://picsum.photos/seed/258/800/600'],
-    details: 'A cozy cottage with a direct view of the beautiful Mattupetty Dam. Enjoy the misty mountains and serene waters.',
-    summary: 'A cozy cottage with a direct view of Mattupetty Dam, offering serene waters and misty mountains.'
+    amenities: ['Wifi', 'Kitchen', 'Air conditioning'],
+    host: { name: 'Joshi', avatar: 'https://picsum.photos/seed/p71/100/100', isSuperhost: false },
+    images: ['https://picsum.photos/seed/227/800/600', 'https://picsum.photos/seed/228/800/600'],
+    details: 'An apartment in an old building in the heart of old Pune, Deccan Gymkhana. Close to Fergusson College and many iconic eateries.',
+    summary: 'An apartment in a historic Deccan Gymkhana building, close to Fergusson College and iconic eateries in old Pune.',
+    reviewDetails: [
+        { id: 'r1', author: 'Priya', authorAvatar: 'https://picsum.photos/seed/p1/100/100', date: 'August 2024', text: 'The apartment has a lot of character. It\'s like stepping back in time. The location is great for exploring old Pune.'},
+        { id: 'r2', author: 'Amit', authorAvatar: 'https://picsum.photos/seed/p2/100/100', date: 'July 2024', text: 'A very comfortable stay. The host was very helpful. Loved being so close to Vaishali and Good Luck Cafe.'}
+    ]
   },
   {
-    id: '90',
-    title: 'Budget Homestay in Munnar Town',
-    type: 'Private room',
-    location: 'Munnar, India',
-    coords: { lat: 10.08, lng: 77.06 },
-    price: 1500,
-    rating: 4.6,
-    reviews: 500,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi'],
-    host: { name: 'Joseph', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/259/800/600', 'https://picsum.photos/seed/260/800/600'],
-    details: 'A clean and basic room in the heart of Munnar town. Easy access to the market and restaurants.',
-    summary: 'A clean, basic room in central Munnar, with easy access to the market and restaurants.'
-  },
-  // Add 7 for Pondicherry
-  {
-    id: '91',
-    title: 'Auroville Earth-Mud House',
-    type: 'Entire house',
-    location: 'Pondicherry, India',
-    coords: { lat: 12.00, lng: 79.81 },
-    price: 5000,
-    rating: 4.9,
-    reviews: 300,
-    guests: 4,
-    bedrooms: 2,
-    beds: 2,
-    baths: 2,
-    amenities: ['Kitchen', 'Garden', 'Peaceful'],
-    host: { name: 'Aurovillian', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/261/800/600', 'https://picsum.photos/seed/262/800/600'],
-    details: 'An experimental, eco-friendly earth-mud house in the green belt of Auroville. A unique and sustainable living experience.',
-    summary: 'An experimental, eco-friendly earth-mud house in Auroville\'s green belt, offering a unique and sustainable living experience.'
-  },
-  {
-    id: '92',
-    title: 'Promenade Beach Sea View Apt',
-    type: 'Entire apartment',
-    location: 'Pondicherry, India',
-    coords: { lat: 11.93, lng: 79.83 },
-    price: 10000,
-    rating: 4.85,
-    reviews: 200,
-    guests: 4,
-    bedrooms: 2,
-    beds: 2,
-    baths: 2,
-    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Sea view', 'Balcony'],
-    host: { name: 'Francois', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/263/800/600', 'https://picsum.photos/seed/264/800/600'],
-    details: 'An apartment on Goubert Avenue with a direct, uninterrupted view of the sea. Watch the sunrise from your balcony.',
-    summary: 'An apartment on Goubert Avenue with a balcony offering a direct, uninterrupted sunrise sea view.'
-  },
-{
-    id: '93',
-    title: 'Tamil Quarter Heritage Home',
-    type: 'Entire house',
-    location: 'Pondicherry, India',
-    coords: { lat: 11.93, lng: 79.82 },
-    price: 8000,
-    rating: 4.88,
-    reviews: 180,
-    guests: 6,
-    bedrooms: 3,
-    beds: 3,
-    baths: 2,
-    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Courtyard'],
-    host: { name: 'Muthu', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/265/800/600', 'https://picsum.photos/seed/266/800/600'],
-    details: 'A restored heritage home in the Tamil Quarter of Pondicherry. Experience the local culture and architecture.',
-    summary: 'A restored heritage home in Pondicherry\'s Tamil Quarter, offering an immersive cultural and architectural experience.'
-  },
-  {
-    id: '94',
-    title: 'Serenity Beach Surfer\'s Hut',
-    type: 'Entire hut',
-    location: 'Pondicherry, India',
-    coords: { lat: 11.96, lng: 79.84 },
+    id: '75',
+    title: 'Hinjewadi IT Park Studio',
+    type: 'Entire studio',
+    location: 'Pune, India',
+    coords: { lat: 18.59, lng: 73.73 },
     price: 3000,
+    rating: 4.65,
+    reviews: 300,
+    guests: 2,
+    bedrooms: 1,
+    beds: 1,
+    baths: 1,
+    amenities: ['Wifi', 'Kitchenette', 'Air conditioning'],
+    host: { name: 'IT Stays', avatar: 'https://picsum.photos/seed/p72/100/100', isSuperhost: false },
+    images: ['https://picsum.photos/seed/229/800/600', 'https://picsum.photos/seed/230/800/600'],
+    details: 'A compact and functional studio in Hinjewadi, the IT hub of Pune. Perfect for short work trips.',
+    summary: 'A compact, functional studio in Hinjewadi, Pune\'s IT hub, ideal for short work trips.',
+    reviewDetails: [
+        { id: 'r1', author: 'Sunita', authorAvatar: 'https://picsum.photos/seed/p3/100/100', date: 'August 2024', text: 'Very convenient for work in Hinjewadi. The studio is clean and has all the basics.'},
+        { id: 'r2', author: 'Vikram', authorAvatar: 'https://picsum.photos/seed/p4/100/100', date: 'July 2024', text: 'A practical and affordable option for business travelers. No frills, but gets the job done.'}
+    ]
+  },
+  {
+    id: '76',
+    title: 'Magarpatta City Apartment',
+    type: 'Entire apartment',
+    location: 'Pune, India',
+    coords: { lat: 18.51, lng: 73.92 },
+    price: 5000,
     rating: 4.7,
-    reviews: 250,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Beachfront', 'Surfing lessons'],
-    host: { name: 'Kallialay Surf School', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/267/800/600', 'https://picsum.photos/seed/268/800/600'],
-    details: 'A basic but cool beach hut at Serenity Beach, home to Pondicherry\'s surfing scene. The host offers surfing lessons.',
-    summary: 'A cool, basic beach hut at Serenity Beach, the heart of Pondicherry\'s surf scene, with surfing lessons available.'
-  },
-  {
-    id: '95',
-    title: 'Boutique Hotel in White Town',
-    type: 'Private room in hotel',
-    location: 'Pondicherry, India',
-    coords: { lat: 11.93, lng: 79.83 },
-    price: 9000,
-    rating: 4.9,
     reviews: 220,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Pool', 'Air conditioning', 'Restaurant', 'Cafe'],
-    host: { name: 'Le Dupleix', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/269/800/600', 'https://picsum.photos/seed/270/800/600'],
-    details: 'A room in a beautifully restored French colonial villa, now a boutique hotel. High-end dining and a chic bar.',
-    summary: 'A room in a restored French colonial villa turned boutique hotel, featuring high-end dining and a chic bar.'
-  },
-  {
-    id: '96',
-    title: 'Ashram-adjacent Guesthouse',
-    type: 'Private room',
-    location: 'Pondicherry, India',
-    coords: { lat: 11.93, lng: 79.83 },
-    price: 2500,
-    rating: 4.6,
-    reviews: 400,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Air conditioning', 'Peaceful'],
-    host: { name: 'Sri Aurobindo Ashram', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/271/800/600', 'https://picsum.photos/seed/272/800/600'],
-    details: 'A clean, simple, and peaceful room in a guesthouse affiliated with the Sri Aurobindo Ashram. Perfect for devotees.',
-    summary: 'A clean, peaceful room in an ashram-affiliated guesthouse, ideal for devotees of Sri Aurobindo.'
-  },
-  {
-    id: '97',
-    title: 'Paradise Beach Camping',
-    type: 'Tent',
-    location: 'Pondicherry, India',
-    coords: { lat: 11.85, lng: 79.79 },
-    price: 2000,
-    rating: 4.5,
-    reviews: 300,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Beachfront', 'Boating'],
-    host: { name: 'Pondy Adventures', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/273/800/600', 'https://picsum.photos/seed/274/800/600'],
-    details: 'Camp on the beautiful Paradise Beach, which is an island accessible by boat. A basic but thrilling experience.',
-    summary: 'A basic but thrilling camping experience on the beautiful, boat-accessible Paradise Beach island.'
-  },
-  // Add 7 for Srinagar
-  {
-    id: '98',
-    title: 'Nigeen Lake View Houseboat',
-    type: 'Entire houseboat',
-    location: 'Srinagar, India',
-    coords: { lat: 34.11, lng: 74.82 },
-    price: 15000,
-    rating: 4.95,
-    reviews: 250,
-    guests: 6,
-    bedrooms: 3,
-    beds: 3,
-    baths: 3,
-    amenities: ['Wifi', 'Meals included', 'Lake view', 'Veranda'],
-    host: { name: 'Butt\'s Clermont Houseboats', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/275/800/600', 'https://picsum.photos/seed/276/800/600'],
-    details: 'A luxurious houseboat on the quieter and cleaner Nigeen Lake. Offers more privacy and serenity than Dal Lake.',
-    summary: 'A luxurious houseboat on serene Nigeen Lake, offering greater privacy than Dal Lake.'
-  },
-  {
-    id: '99',
-    title: 'Shalimar Bagh Vicinity Homestay',
-    type: 'Private room in house',
-    location: 'Srinagar, India',
-    coords: { lat: 34.14, lng: 74.87 },
-    price: 4000,
-    rating: 4.8,
-    reviews: 180,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Home-cooked food', 'Garden'],
-    host: { name: 'Khan family', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/277/800/600', 'https://picsum.photos/seed/278/800/600'],
-    details: 'Stay with a local family in their beautiful home with a saffron and apple garden, near the famous Shalimar Bagh.',
-    summary: 'A homestay with a local family, featuring a saffron and apple garden, near Shalimar Bagh.'
-  },
-  {
-    id: '100',
-    title: 'The Lalit Grand Palace',
-    type: 'Room in palace hotel',
-    location: 'Srinagar, India',
-    coords: { lat: 34.09, lng: 74.83 },
-    price: 25000,
-    rating: 4.98,
-    reviews: 300,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi', 'Pool', 'Restaurant', 'Spa', 'Palace grounds'],
-    host: { name: 'The Lalit', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/279/800/600', 'https://picsum.photos/seed/280/800/600'],
-    details: 'Stay in the former palace of the Maharaja of Kashmir. Sprawling grounds, regal interiors, and unmatched service.',
-    summary: 'A former Maharaja\'s palace with sprawling grounds, regal interiors, and exceptional service.'
-  },
-  {
-    id: '101',
-    title: 'Old City Heritage Home',
-    type: 'Entire house',
-    location: 'Srinagar, India',
-    coords: { lat: 34.08, lng: 74.79 },
-    price: 9000,
-    rating: 4.85,
-    reviews: 150,
-    guests: 6,
-    bedrooms: 3,
-    beds: 3,
+    guests: 4,
+    bedrooms: 2,
+    beds: 2,
     baths: 2,
-    amenities: ['Wifi', 'Kitchen', 'Authentic Kashmiri architecture'],
-    host: { name: 'Bhat family', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/281/800/600', 'https://picsum.photos/seed/282/800/600'],
-    details: 'A restored heritage home in the old city (Shehr-e-Khaas) of Srinagar. Experience the intricate wood carvings and architecture.',
-    summary: 'A restored heritage home in old Srinagar, featuring intricate wood carvings and authentic architecture.'
-  },
-  {
-    id: '102',
-    title: 'Gurez Valley Eco-Lodge',
-    type: 'Room in lodge',
-    location: 'Srinagar, India',
-    coords: { lat: 34.63, lng: 74.67 },
-    price: 7000,
-    rating: 4.9,
-    reviews: 100,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Off-grid', 'Trekking', 'River view'],
-    host: { name: 'Kashmir Eco Tours', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/283/800/600', 'https://picsum.photos/seed/284/800/600'],
-    details: 'For the truly adventurous. An eco-lodge in the remote but stunningly beautiful Gurez Valley. Requires a permit to visit.',
-    summary: 'An adventurous eco-lodge in the remote, beautiful Gurez Valley, requiring a permit for entry.'
-  },
-  {
-    id: '103',
-    title: 'Pahalgam River-Side Cottage',
-    type: 'Entire cottage',
-    location: 'Srinagar, India',
-    coords: { lat: 34.01, lng: 75.32 },
-    price: 12000,
-    rating: 4.92,
-    reviews: 200,
-    guests: 6,
-    bedrooms: 3,
-    beds: 3,
-    baths: 2,
-    amenities: ['Kitchen', 'Fireplace', 'River view', 'Garden'],
-    host: { name: 'Mr. Malik', avatar: 'https://picsum.photos/100/100', isSuperhost: true },
-    images: ['https://picsum.photos/seed/285/800/600', 'https://picsum.photos/seed/286/800/600'],
-    details: 'A beautiful cottage on the banks of the Lidder river in Pahalgam, a popular day trip from Srinagar. Perfect for nature lovers.',
-    summary: 'A beautiful cottage on the Lidder river in Pahalgam, perfect for nature lovers and a popular day trip from Srinagar.'
-  },
-  {
-    id: '104',
-    title: 'Budget guesthouse near TRC',
-    type: 'Private room',
-    location: 'Srinagar, India',
-    coords: { lat: 34.07, lng: 74.82 },
-    price: 2000,
-    rating: 4.5,
-    reviews: 400,
-    guests: 2,
-    bedrooms: 1,
-    beds: 1,
-    baths: 1,
-    amenities: ['Wifi'],
-    host: { name: 'Javid', avatar: 'https://picsum.photos/100/100', isSuperhost: false },
-    images: ['https://picsum.photos/seed/287/800/600', 'https://picsum.photos/seed/288/800/600'],
-    details: 'A basic guesthouse near the Tourist Reception Center in Srinagar. Convenient location and budget-friendly.',
-    summary: 'A basic, budget-friendly guesthouse conveniently located near the Tourist Reception Center in Srinagar.'
+    amenities: ['Wifi', 'Kitchen', 'Air conditioning', 'Gym', 'Pool'],
+    host: { name: 'Patil', avatar: 'https://picsum.photos/seed/p73/100/100', isSuperhost: false },
+    images: ['https://picsum.photos/seed/231/800/600', 'https://picsum.photos/seed/232/800/600'],
+    details: 'A modern apartment in the self-sufficient township of Magarpatta City. Everything you need is within the township.',
+    summary: 'A modern apartment in Magarpatta City, a self-sufficient township with all amenities close by.',
+    reviewDetails: [
+        { id: 'r1', author: 'Neha', authorAvatar: 'https://picsum.photos/seed/p5/100/100', date: 'August 2024', text: 'A very convenient place to stay if you have work in Magarpatta. The apartment is comfortable and the complex has great amenities.'},
+        { id: 'r2', author: 'Karan', authorAvatar: 'https://picsum.photos/seed/p6/100/100', date: 'July 2024', text: 'A good option for families. The apartment is spacious and the township has many parks and restaurants.'}
+    ]
   }
 ];
-
-    
