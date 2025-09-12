@@ -110,7 +110,7 @@ function InboxPageContent() {
       <div className="grid grid-cols-1 lg:grid-cols-4 h-full border rounded-lg overflow-hidden">
         {/* Left Sidebar: Conversations List */}
         <aside className={cn(
-            "lg:col-span-1 border-r flex-col",
+            "lg:col-span-1 border-r flex-col min-h-0",
             view === 'list' ? 'flex' : 'hidden lg:flex'
         )}>
           <div className="p-4 border-b">
