@@ -20,6 +20,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthProvider';
 import { Input } from '../ui/input';
 import { mockNotifications } from '@/lib/notifications-data';
+import { HoverBorderGradient } from '../ui/hover-border-gradient';
 
 const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
@@ -149,10 +150,14 @@ export function Navbar() {
                 </div>
             
                 <Link href="/work-in-progress" className="hidden md:block">
-                  <Button variant="default" size="sm" className="rounded-full">
-                      <Sparkles className="mr-2" />
-                      Become a host
-                  </Button>
+                  <HoverBorderGradient
+                    containerClassName="rounded-full"
+                    as="button"
+                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+                  >
+                    <Sparkles className="mr-2" />
+                    Become a host
+                  </HoverBorderGradient>
                 </Link>
 
                 <DropdownMenu>
