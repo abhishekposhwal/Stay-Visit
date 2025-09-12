@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook, Plus, AlertCircle, Camera, Mail, Phone, CheckCircle, UserPlus } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -606,17 +606,22 @@ export default function ProfilePage() {
           <div>
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
-                <Button variant="default">Add friends</Button>
+                <Button variant="default">
+                    <UserPlus className="mr-2 h-4 w-4" /> Add friends
+                </Button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                 {mockConnections.map((connection) => (
-                    <Link href={`/profile/${connection.id}`} key={connection.id} className="block border rounded-lg p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
-                        <Avatar>
+                    <div key={connection.id} className="border rounded-lg p-4 flex flex-col gap-4 text-center hover:shadow-lg transition-shadow duration-300">
+                        <Avatar className="h-20 w-20 mx-auto">
                             <AvatarImage src={connection.avatar} alt={connection.name} />
                             <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <span className="font-semibold text-sm">{connection.name}</span>
-                    </Link>
+                        <Button asChild variant="outline" size="sm">
+                            <Link href={`/profile/${connection.id}`}>View Profile</Link>
+                        </Button>
+                    </div>
                 ))}
             </div>
           </div>
@@ -680,6 +685,8 @@ export default function ProfilePage() {
 
 
 
+
+    
 
     
 
