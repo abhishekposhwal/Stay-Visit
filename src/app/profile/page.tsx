@@ -162,7 +162,7 @@ export default function ProfilePage() {
             {/* Left Sidebar */}
             <aside className={cn(
                 "lg:col-span-1",
-                activeView === 'menu' ? 'block px-4' : 'hidden lg:block lg:px-0'
+                activeView === 'menu' ? 'block px-4' : 'hidden lg:block'
             )}>
                 <SidebarContent />
             </aside>
@@ -224,7 +224,7 @@ export default function ProfilePage() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {mockConnections.map((connection, index) => (
-                          <div key={index} className="border rounded-lg p-4 flex items-center gap-4">
+                          <div key={index} className="border rounded-lg p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
                               <Avatar>
                                   <AvatarImage src={connection.avatar} alt={connection.name} />
                                   <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
