@@ -256,7 +256,7 @@ export default function ProfilePage() {
                         <h1 className="text-xl md:text-2xl font-bold">Personal Info</h1>
                         {!isEditing && (
                             <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
-                                <Pencil className="mr-2 h-4 w-4" />
+                                <Pencil className="h-4 w-4" />
                                 Edit
                             </Button>
                         )}
@@ -472,7 +472,7 @@ export default function ProfilePage() {
                              <div className="flex justify-between items-center mb-4">
                                 <h2 className="font-bold text-lg">Payment Methods</h2>
                                 <Button variant="outline" size="sm">
-                                    <Plus className="h-4 w-4 mr-2" /> Add payment method
+                                    <Plus className="h-4 w-4" /> Add payment method
                                 </Button>
                             </div>
                             <div className="space-y-4">
