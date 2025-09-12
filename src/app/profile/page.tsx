@@ -90,6 +90,9 @@ export default function ProfilePage() {
     address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
   });
 
+  const [showAllTransactions, setShowAllTransactions] = useState(false);
+  const transactionsToShow = showAllTransactions ? mockBookings : mockBookings.slice(0, 3);
+
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login');
@@ -403,7 +406,7 @@ export default function ProfilePage() {
                         <div className="p-6 md:p-8 rounded-xl border">
                             <h2 className="font-bold text-lg mb-4">Transaction History</h2>
                             <div className="space-y-4">
-                                {mockBookings.map((booking, i) => (
+                                {transactionsToShow.map((booking, i) => (
                                     <div key={i} className="flex justify-between items-center">
                                         <div>
                                             <p className="font-semibold text-sm">{booking.property.title}</p>
@@ -413,7 +416,11 @@ export default function ProfilePage() {
                                     </div>
                                 ))}
                             </div>
-                             <Button variant="link" className="px-0 mt-2">Show all transaction history</Button>
+                             {mockBookings.length > 3 && !showAllTransactions && (
+                                <Button variant="link" className="px-0 mt-2" onClick={() => setShowAllTransactions(true)}>
+                                    Show all transaction history
+                                </Button>
+                            )}
                         </div>
 
                          <div className="p-6 md:p-8 rounded-xl border bg-muted/30">
