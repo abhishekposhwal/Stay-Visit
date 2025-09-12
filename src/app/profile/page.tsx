@@ -590,16 +590,22 @@ export default function ProfilePage() {
                               <span>Verified</span>
                            </div>
                        ) : (
-                           <Button variant="outline" size="sm">Verify</Button>
+                            <div className="flex items-center gap-2">
+                                <AlertCircle className="h-5 w-5 text-destructive" />
+                                <Button variant="outline" size="sm">Verify</Button>
+                            </div>
                        )}
                   </div>
                    <Separator/>
                    <div className="flex items-center justify-between">
                         <div>
                             <p className="text-sm font-semibold">Identity verification</p>
-                            <p className="text-sm text-muted-foreground">Not verified</p>
+                            <p className="text-sm text-muted-foreground">Show your ID to build trust</p>
                         </div>
-                        <Button variant="outline" size="sm">Verify</Button>
+                        <div className="flex items-center gap-2">
+                            <AlertCircle className="h-5 w-5 text-destructive" />
+                            <Button variant="outline" size="sm">Verify</Button>
+                        </div>
                   </div>
               </div>
             </div>
@@ -622,7 +628,7 @@ export default function ProfilePage() {
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
                     <Button variant="default" size="sm">
-                        <UserPlus /> Add friends
+                        <UserPlus className="mr-2" /> Add friends
                     </Button>
                 </div>
                 <div className="space-y-4">
