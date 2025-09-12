@@ -211,6 +211,14 @@ export default function ProfilePage() {
                                 </div>
                                 <Button variant="outline" size="sm">Edit</Button>
                             </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="font-semibold text-sm">Identity verification</p>
+                                    <p className="text-muted-foreground text-xs">Not verified</p>
+                                </div>
+                                <Button variant="outline" size="sm">Verify</Button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -349,5 +357,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
