@@ -166,7 +166,7 @@ export function Navbar() {
                             <DropdownMenuLabel>My Account</DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem asChild>
-                                <Link href="/work-in-progress">
+                                <Link href="/notifications">
                                     <Bell className="mr-2" /> Notifications
                                 </Link>
                             </DropdownMenuItem>
