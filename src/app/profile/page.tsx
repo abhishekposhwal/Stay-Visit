@@ -568,25 +568,40 @@ export default function ProfilePage() {
             <h1 className="text-xl md:text-2xl font-bold mb-6">Confirmed Information</h1>
             <div className="p-6 md:p-8 rounded-xl border">
               <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-sm font-semibold">Email address</span>
-                    <span className="text-sm text-muted-foreground ml-auto">{user.email}</span>
+                  <div className="flex items-center justify-between">
+                      <div>
+                          <p className="text-sm font-semibold">Email address</p>
+                          <p className="text-sm text-muted-foreground">{user.email}</p>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                          <CheckCircle className="h-5 w-5" />
+                          <span>Verified</span>
+                      </div>
                   </div>
                   <Separator/>
-                  <div className="flex items-center gap-4">
-                     {user.phoneNumber ? <CheckCircle className="h-5 w-5 text-green-600" /> : <AlertCircle className="h-5 w-5 text-amber-500" />}
-                    <span className="text-sm font-semibold">Phone number</span>
-                    <span className="text-sm text-muted-foreground ml-auto">{user.phoneNumber || 'Not provided'}</span>
+                  <div className="flex items-center justify-between">
+                      <div>
+                          <p className="text-sm font-semibold">Phone number</p>
+                          <p className="text-sm text-muted-foreground">{user.phoneNumber || 'Not provided'}</p>
+                      </div>
+                       {user.phoneNumber ? (
+                           <div className="flex items-center gap-2 text-sm text-green-600 font-semibold">
+                              <CheckCircle className="h-5 w-5" />
+                              <span>Verified</span>
+                           </div>
+                       ) : (
+                           <Button variant="outline" size="sm">Verify</Button>
+                       )}
                   </div>
                    <Separator/>
-                   <div className="flex items-center gap-4">
-                    <AlertCircle className="h-5 w-5 text-amber-500" />
-                    <span className="text-sm font-semibold">Identity verification</span>
-                    <Button variant="outline" size="sm" className="ml-auto">Verify</Button>
+                   <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm font-semibold">Identity verification</p>
+                        <p className="text-sm text-muted-foreground">Not verified</p>
+                      </div>
+                      <Button variant="outline" size="sm" className="ml-auto">Verify</Button>
                   </div>
               </div>
-
             </div>
           </div>
         );
@@ -607,10 +622,10 @@ export default function ProfilePage() {
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-xl md:text-2xl font-bold">Connections</h1>
                 <Button variant="default" size="sm">
-                    <UserPlus className="h-4 w-4" /> Add friends
+                    <UserPlus /> Add friends
                 </Button>
             </div>
-            <div className="grid grid-cols-1 gap-4">
+            <div className="space-y-4">
                 {mockConnections.map((connection) => (
                     <div key={connection.id} className="border rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow duration-200">
                         <div className="flex items-center gap-4">
