@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BookingHistoryItem } from '@/components/profile/BookingHistoryItem';
 import { properties } from '@/lib/data';
-import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor } from 'lucide-react';
+import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock, CreditCard, Bell, Shield, Smartphone, Monitor, Instagram, Twitter, Facebook } from 'lucide-react';
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -285,7 +285,7 @@ export default function ProfilePage() {
         if (activeSetting === 'login-security') {
             return (
                 <div>
-                    <h1 className="text-xl md:text-2xl font-bold mb-6">Login & Security</h1>
+                    <h1 className="text-xl md:text-2xl font-bold mb-6">Login &amp; Security</h1>
                     <div className="space-y-6">
                         <div className="p-6 md:p-8 rounded-xl border">
                             <h2 className="font-bold text-lg mb-4">Login</h2>
@@ -298,14 +298,61 @@ export default function ProfilePage() {
                             </div>
                         </div>
 
-                        <div className="p-6 md:p-8 rounded-xl border">
-                            <h2 className="font-bold text-lg mb-4">Social accounts</h2>
+                        <div className="p-6 md:p-8 rounded-xl border space-y-4">
+                            <h2 className="font-bold text-lg">Social accounts</h2>
                              <div className="flex justify-between items-center">
-                                <div>
-                                    <p className="font-semibold text-sm">Google</p>
-                                    <p className="text-muted-foreground text-xs">Connected</p>
+                                <div className="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"></path></svg>
+                                    <div>
+                                        <p className="font-semibold text-sm">Google</p>
+                                        <p className="text-muted-foreground text-xs">Connected</p>
+                                    </div>
                                 </div>
                                 <Button variant="outline" size="sm">Disconnect</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-3">
+                                    <Instagram className="h-6 w-6" />
+                                    <div>
+                                        <p className="font-semibold text-sm">Instagram</p>
+                                        <p className="text-muted-foreground text-xs">Not connected</p>
+                                    </div>
+                                </div>
+                                <Button variant="outline" size="sm">Connect</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-3">
+                                    <Twitter className="h-6 w-6" />
+                                    <div>
+                                        <p className="font-semibold text-sm">Twitter</p>
+                                        <p className="text-muted-foreground text-xs">Not connected</p>
+                                    </div>
+                                </div>
+                                <Button variant="outline" size="sm">Connect</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-3">
+                                    <Facebook className="h-6 w-6" />
+                                    <div>
+                                        <p className="font-semibold text-sm">Facebook</p>
+                                        <p className="text-muted-foreground text-xs">Not connected</p>
+                                    </div>
+                                </div>
+                                <Button variant="outline" size="sm">Connect</Button>
+                            </div>
+                            <Separator />
+                             <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-3">
+                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M22.999 6.246c0-1.01-.933-1.838-2.086-1.838-1.01 0-1.802.587-2.124 1.192l-4.707-2.652c.23-.46.36-1 .36-1.57C14.442 1.258 13.184 0 11.85 0 10.516 0 9.258 1.258 9.258 2.378c0 .57.13 1.11.36 1.57L4.91 6.59c-.322-.605-1.114-1.192-2.124-1.192C1.753 5.4 1 6.246 1 7.256c0 .142.02.28.05.412-1.31 2.392-1.042 6.13 0 8.53.11.23.23.44.37.64v3.13c0 1.25 1.014 2.82 2.256 2.82 1.244 0 2.257-1.57 2.257-2.82v-3.13c.14-.2.26-.41.37-.64 1.043 2.4 1.312 6.138 0 8.53-.03.132-.05.27-.05.412 0 1.01.753 1.848 1.886 1.848 1.154 0 2.087-.83 2.087-1.848 0-.54-.12-1.05-.33-1.5l4.76-2.68s.26.02.32.02c.06 0 .26-.02.26-.02l4.76 2.68c-.21.45-.33.96-.33 1.5 0 1.018.933 1.848 2.087 1.848 1.152 0 1.905-.83 1.905-1.848 0-.142-.02-.28-.05-.412 1.31-2.392 1.042-6.13 0-8.53-.11-.23-.23-.44-.37-.64v-3.13c.14-.2.26-.41.37-.64 1.043-2.4 1.312-6.138 0-8.53.03-.132.05-.27.05-.412z"/></svg>
+                                    <div>
+                                        <p className="font-semibold text-sm">Snapchat</p>
+                                        <p className="text-muted-foreground text-xs">Not connected</p>
+                                    </div>
+                                </div>
+                                <Button variant="outline" size="sm">Connect</Button>
                             </div>
                         </div>
 
@@ -338,10 +385,10 @@ export default function ProfilePage() {
         }
 
         let title = '';
-        if (activeSetting === 'payments') title = 'Payments & Payouts';
+        if (activeSetting === 'payments') title = 'Payments &amp; Payouts';
         else if (activeSetting === 'notifications') title = 'Notifications';
         else if (activeSetting === 'taxes') title = 'Taxes';
-        else if (activeSetting === 'privacy') title = 'Privacy & Sharing';
+        else if (activeSetting === 'privacy') title = 'Privacy &amp; Sharing';
 
         return (
             <div>
