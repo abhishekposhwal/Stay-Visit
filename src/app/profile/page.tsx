@@ -48,6 +48,48 @@ const mockBookings = [
         checkOut: '2023-09-05',
         total: 20000,
     },
+    {
+        property: properties[10],
+        checkIn: '2023-08-10',
+        checkOut: '2023-08-15',
+        total: 35000,
+    },
+    {
+        property: properties[12],
+        checkIn: '2023-07-01',
+        checkOut: '2023-07-05',
+        total: 90000,
+    },
+    {
+        property: properties[15],
+        checkIn: '2023-06-20',
+        checkOut: '2023-06-25',
+        total: 65000,
+    },
+    {
+        property: properties[18],
+        checkIn: '2023-05-01',
+        checkOut: '2023-05-06',
+        total: 37500,
+    },
+     {
+        property: properties[20],
+        checkIn: '2023-04-12',
+        checkOut: '2023-04-17',
+        total: 22500,
+    },
+     {
+        property: properties[22],
+        checkIn: '2023-02-15',
+        checkOut: '2023-02-20',
+        total: 55000,
+    },
+     {
+        property: properties[25],
+        checkIn: '2023-01-10',
+        checkOut: '2023-01-15',
+        total: 15000,
+    },
 ];
 
 const mockConnections = [
@@ -102,8 +144,8 @@ export default function ProfilePage() {
     address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
   });
 
-  const [showAllTransactions, setShowAllTransactions] = useState(false);
-  const transactionsToShow = showAllTransactions ? mockBookings : mockBookings.slice(0, 3);
+  const [visibleTransactions, setVisibleTransactions] = useState(10);
+  const transactionsToShow = mockBookings.slice(0, visibleTransactions);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -241,32 +283,32 @@ export default function ProfilePage() {
                     </div>
                     <div className="p-6 md:p-8 rounded-xl border">
                         <div className="space-y-4">
-                            <div className="grid gap-2">
-                                <Label htmlFor="displayName" className="text-sm">Name</Label>
+                            <div>
+                                <Label htmlFor="displayName" className="text-sm font-semibold">Name</Label>
                                 {isEditing ? (
                                     <Input id="displayName" value={userInfo.displayName} onChange={handleInputChange} />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.displayName || 'Not provided'}</p>
                                 )}
                             </div>
-                            <div className="grid gap-2">
-                                <Label htmlFor="email" className="text-sm">Email</Label>
+                            <div>
+                                <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
                                  {isEditing ? (
                                     <Input id="email" type="email" value={userInfo.email} onChange={handleInputChange} />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.email}</p>
                                 )}
                             </div>
-                            <div className="grid gap-2">
-                                <Label htmlFor="phoneNumber" className="text-sm">Phone number</Label>
+                            <div>
+                                <Label htmlFor="phoneNumber" className="text-sm font-semibold">Phone number</Label>
                                  {isEditing ? (
                                     <Input id="phoneNumber" value={userInfo.phoneNumber} onChange={handleInputChange} />
                                 ) : (
                                     <p className="text-muted-foreground text-sm">{userInfo.phoneNumber}</p>
                                 )}
                             </div>
-                            <div className="grid gap-2">
-                                <Label htmlFor="address" className="text-sm">Address</Label>
+                            <div>
+                                <Label htmlFor="address" className="text-sm font-semibold">Address</Label>
                                  {isEditing ? (
                                     <Input id="address" value={userInfo.address} onChange={handleInputChange} />
                                 ) : (
@@ -428,9 +470,9 @@ export default function ProfilePage() {
                                     </div>
                                 ))}
                             </div>
-                             {mockBookings.length > 3 && !showAllTransactions && (
-                                <Button variant="link" className="px-0 mt-2" onClick={() => setShowAllTransactions(true)}>
-                                    Show all transaction history
+                            {mockBookings.length > visibleTransactions && (
+                                <Button variant="link" className="px-0 mt-2" onClick={() => setVisibleTransactions(prev => prev + 10)}>
+                                    Show more
                                 </Button>
                             )}
                         </div>
@@ -580,8 +622,3 @@ export default function ProfilePage() {
 }
 
     
-
-    
-
-    
-
