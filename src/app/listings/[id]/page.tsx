@@ -34,7 +34,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
     <div className="pb-24">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-8">
         <div className="mb-4">
-          <h1 className={cn("text-3xl md:text-4xl font-bold font-headline")}>{property.title}</h1>
+          <h1 className={cn("text-3xl md:text-4xl font-bold")}>{property.title}</h1>
           <div className="flex items-center space-x-4 text-muted-foreground mt-2">
             <div className="flex items-center gap-1">
                 <Star className="h-4 w-4 text-foreground" />
@@ -58,7 +58,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <div className="pb-6 border-b">
               <div className="flex justify-between items-start">
                   <div>
-                      <h2 className={cn("text-2xl font-semibold font-headline")}>{property.type} hosted by {property.host.name}</h2>
+                      <h2 className={cn("text-2xl font-semibold")}>{property.type} hosted by {property.host.name}</h2>
                       <div className="flex items-center space-x-2 text-muted-foreground mt-1">
                           <span>{property.guests} guests</span>
                           <span>·</span>
@@ -83,12 +83,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <Separator className="my-8"/>
 
             <div className="py-8 border-b">
-              <h2 className={cn("text-2xl font-semibold mb-4 font-headline")}>AI Summary</h2>
+              <h2 className={cn("text-2xl font-semibold mb-4")}>AI Summary</h2>
               <p className="text-lg text-foreground leading-relaxed">{property.summary}</p>
             </div>
 
             <div className="py-8">
-              <h2 className={cn("text-2xl font-semibold mb-4 font-headline")}>About this space</h2>
+              <h2 className={cn("text-2xl font-semibold mb-4")}>About this space</h2>
               <p className="text-foreground leading-loose">{property.details}</p>
             </div>
             
@@ -117,4 +117,3 @@ export default async function ListingPage({ params }: ListingPageProps) {
     </div>
   );
 }
-
