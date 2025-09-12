@@ -13,6 +13,8 @@ import { ListingHighlights } from '@/components/listings/ListingHighlights';
 import { HostInfo } from '@/components/listings/HostInfo';
 import { GuestFavoriteBadge } from '@/components/listings/GuestFavoriteBadge';
 import Reviews from '@/components/listings/Reviews';
+import { cn } from '@/lib/utils';
+import { ListingActions } from '@/components/listings/ListingActions';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,23 +32,25 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
   }
 
   return (
-    <div className="pb-24">
-      <div className="container mx-auto px-12 pt-8">
+    <div className="pb-28">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-8">
         <div className="mb-4">
-          <h1 className="text-3xl md:text-4xl font-bold">{property.title}</h1>
-          <div className="flex items-center space-x-4 text-muted-foreground mt-2">
-            <div className="flex items-center gap-1">
-                <Star className="h-4 w-4 text-foreground" />
-                <span className="font-medium text-foreground">{property.rating} ({property.reviews} reviews)</span>
+          <h1 className={cn("text-2xl md:text-3xl font-bold")}>{property.title}</h1>
+          <div className="flex flex-wrap items-center justify-between mt-2 gap-y-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <div className="flex items-center gap-1">
+                    <Star className="h-4 w-4" />
+                    <span className="font-medium">{property.rating} ({property.reviews} reviews)</span>
+                </div>
+                {property.host.isSuperhost && (
+                    <div className="flex items-center gap-2">
+                        <Award className="h-4 w-4" />
+                        <span className="font-medium">Superhost</span>
+                    </div>
+                )}
+                <span className="font-medium underline">{property.location}</span>
             </div>
-            <span>·</span>
-            {property.host.isSuperhost && (
-              <>
-                <Badge variant="secondary">Superhost</Badge>
-                <span>·</span>
-              </>
-            )}
-            <span className="font-medium text-foreground underline">{property.location}</span>
+            <ListingActions property={property} />
           </div>
         </div>
 
@@ -57,8 +61,8 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <div className="pb-6 border-b">
               <div className="flex justify-between items-start">
                   <div>
-                      <h2 className="text-xl font-semibold">{property.type} hosted by {property.host.name}</h2>
-                      <div className="flex items-center space-x-2 text-muted-foreground mt-1">
+                      <h2 className={cn("text-2xl font-semibold")}>{property.type} hosted by {property.host.name}</h2>
+                      <div className="flex items-center space-x-2 text-muted-foreground mt-1 text-sm">
                           <span>{property.guests} guests</span>
                           <span>·</span>
                           <span>{property.bedrooms} bedrooms</span>
@@ -82,13 +86,13 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <Separator className="my-8"/>
 
             <div className="py-8 border-b">
-              <h2 className="text-xl font-semibold mb-4">AI Summary</h2>
-              <p className="text-lg text-foreground leading-relaxed">{property.summary}</p>
+              <h2 className={cn("text-2xl font-semibold mb-4")}>Summary</h2>
+              <p className="text-foreground text-sm">{property.summary}</p>
             </div>
 
             <div className="py-8">
-              <h2 className="text-xl font-semibold mb-4">About this experience</h2>
-              <p className="text-foreground leading-loose">{property.details}</p>
+              <h2 className={cn("text-2xl font-semibold mb-4")}>About this experience</h2>
+              <p className="text-foreground text-sm">{property.details}</p>
             </div>
             
             <Separator className="my-8"/>
@@ -99,14 +103,14 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
 
             <HostInfo host={property.host} />
 
-            <Separator className="my-8"/>
-
             <Reviews property={property} />
 
           </div>
 
-          <div className="hidden lg:block lg:col-span-1">
-            <BookingCard property={property} />
+          <div className="hidden lg:block lg:col-span-1 relative">
+            <div className="sticky top-28">
+                <BookingCard property={property} />
+            </div>
           </div>
         </div>
       </div>
