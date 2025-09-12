@@ -16,6 +16,7 @@ import { LifeBuoy, ShieldCheck, FileText, Settings, Wifi, ArrowLeft, User, Lock,
 import { AccountSettings } from '@/components/profile/AccountSettings';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { NotificationSettings } from '@/components/profile/NotificationSettings';
 
 const mockTransactions = [
     { type: 'payment', description: properties[0].title, date: '2024-05-10', amount: 40000 },
@@ -398,7 +399,7 @@ export default function ProfilePage() {
                     <h1 className="text-xl md:text-2xl font-bold mb-6">Payments &amp; Payouts</h1>
                     <div className="space-y-8">
                         <div className="p-6 md:p-8 rounded-xl border">
-                            <div className="flex justify-between items-center mb-4">
+                             <div className="flex justify-between items-center mb-4">
                                 <h2 className="font-bold text-lg">Payment Methods</h2>
                                 <Button variant="outline" size="sm">
                                     <Plus className="h-4 w-4 mr-2" /> Add payment method
@@ -500,9 +501,12 @@ export default function ProfilePage() {
             )
         }
 
+        if (activeSetting === 'notifications') {
+            return <NotificationSettings />;
+        }
+
         let title = '';
-        if (activeSetting === 'notifications') title = 'Notifications';
-        else if (activeSetting === 'taxes') title = 'Taxes';
+        if (activeSetting === 'taxes') title = 'Taxes';
         else if (activeSetting === 'privacy') title = 'Privacy & Sharing';
 
         return (
@@ -630,9 +634,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
-
-    
-
-    
