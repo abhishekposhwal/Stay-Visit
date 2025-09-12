@@ -73,11 +73,11 @@ export function BookingCard({ property }: BookingCardProps) {
                 <div className="grid grid-cols-2 divide-x">
                     <div className={cn('p-3 text-left cursor-pointer', !date?.from && 'text-muted-foreground')}>
                         <span className="text-xs font-semibold block">CHECK-IN</span>
-                        {date?.from ? format(date.from, 'MM/dd/yyyy') : <span>Add date</span>}
+                        <span className="text-sm">{date?.from ? format(date.from, 'MM/dd/yyyy') : 'Add date'}</span>
                     </div>
                     <div className={cn('p-3 text-left cursor-pointer', !date?.to && 'text-muted-foreground')}>
                         <span className="text-xs font-semibold block">CHECKOUT</span>
-                        {date?.to ? format(date.to, 'MM/dd/yyyy') : <span>Add date</span>}
+                        <span className="text-sm">{date?.to ? format(date.to, 'MM/dd/yyyy') : 'Add date'}</span>
                     </div>
                 </div>
             </PopoverTrigger>
