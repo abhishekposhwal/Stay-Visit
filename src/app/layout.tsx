@@ -13,7 +13,6 @@ import './globals.css';
 import { SearchBar } from '@/components/layout/SearchBar';
 import { AuthProvider } from '@/context/AuthProvider';
 import { usePathname } from 'next/navigation';
-import { Bubbles } from '@/components/ui/bubbles';
 
 
 const inter = Inter({
@@ -65,7 +64,6 @@ export default function RootLayout({
         <meta name="description" content="Find your next stay with AI-powered insights." />
       </head>
       <body className={cn("antialiased bg-background font-body", inter.variable, playfairDisplay.variable)}>
-        <Bubbles />
         <LayoutContent>{children}</LayoutContent>
       </body>
     </html>

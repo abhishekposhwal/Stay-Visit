@@ -114,16 +114,15 @@ export function Navbar() {
                 >
                   <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style={{ stopColor: 'rgba(131, 58, 180, 1)' }} />
-                      <stop offset="40%" style={{ stopColor: 'rgba(255, 23, 23, 1)' }} />
-                      <stop offset="100%" style={{ stopColor: 'rgba(252, 176, 69, 1)' }} />
+                      <stop offset="0%" style={{ stopColor: 'rgba(20, 136, 204, 1)' }} />
+                      <stop offset="100%" style={{ stopColor: 'rgba(43, 50, 178, 1)' }} />
                     </linearGradient>
                   </defs>
                   <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
                 <span className={cn(
-                    "font-bold text-lg transition-colors text-foreground"
+                    "font-bold text-lg transition-colors text-primary-gradient"
                 )}>
                     StayVisit
                 </span>

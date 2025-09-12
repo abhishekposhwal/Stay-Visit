@@ -19,7 +19,7 @@ export default {
     extend: {
       backgroundImage: {
         'primary-gradient': 'linear-gradient(to right, #1488cc, #2b32b2)',
-        'primary-gradient-hover': 'linear-gradient(to right, #1488cc, #2b32b2)',
+        'primary-gradient-hover': 'linear-gradient(to right, #2b32b2, #1488cc)',
       },
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
@@ -107,9 +107,10 @@ export default {
       },
       text: {
         'primary-gradient': {
-          'background-image': 'linear-gradient(208deg, rgba(131, 58, 180, 1) 0%, rgba(255, 23, 23, 1) 40%, rgba(252, 176, 69, 1) 100%)',
+          'background-image': 'linear-gradient(to right, #1488cc, #2b32b2)',
           '-webkit-background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
+          'background-clip': 'text',
+          color: 'transparent',
         }
       }
     },
