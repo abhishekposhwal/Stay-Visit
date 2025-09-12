@@ -33,20 +33,22 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   const showSearchBar = pathname !== '/inbox';
 
   return (
-    <>
-      <div className="flex min-h-screen flex-col">
-        <Navbar />
-        {showSearchBar && (
-          <div className="sticky top-16 z-40 py-4">
-            <SearchBar />
-          </div>
-        )}
-        <main className="flex-grow">{children}</main>
-        <Footer />
-      </div>
-      <MobileFooterNav />
-      <Toaster />
-    </>
+    <AuthProvider>
+      <WishlistProvider>
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          {showSearchBar && (
+            <div className="sticky top-16 z-40 py-4">
+              <SearchBar />
+            </div>
+          )}
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
+        <MobileFooterNav />
+        <Toaster />
+      </WishlistProvider>
+    </AuthProvider>
   );
 }
 
@@ -62,11 +64,7 @@ export default function RootLayout({
         <meta name="description" content="Find your next stay with AI-powered insights." />
       </head>
       <body className={cn("antialiased bg-background font-body", inter.variable, playfairDisplay.variable)}>
-        <AuthProvider>
-          <WishlistProvider>
-            <LayoutContent>{children}</LayoutContent>
-          </WishlistProvider>
-        </AuthProvider>
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );

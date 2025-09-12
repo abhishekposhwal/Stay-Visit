@@ -163,7 +163,7 @@ export function Navbar() {
                             </Avatar>
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56" align="end">
+                    <DropdownMenuContent className="w-48" align="end">
                         {user ? (
                         <>
                             <DropdownMenuLabel>My Account</DropdownMenuLabel>
