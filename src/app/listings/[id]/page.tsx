@@ -5,7 +5,7 @@ import { ListingHero } from '@/components/listings/ListingHero';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { BedDouble, Bath, Users, Star, Award } from 'lucide-react';
+import { BedDouble, Bath, Users, Star, Award, Share, Heart } from 'lucide-react';
 import { BookingCard } from '@/components/listings/BookingCard';
 import { Amenities } from '@/components/listings/Amenities';
 import { MobileBookingFooter } from '@/components/listings/MobileBookingFooter';
@@ -14,6 +14,7 @@ import { HostInfo } from '@/components/listings/HostInfo';
 import { GuestFavoriteBadge } from '@/components/listings/GuestFavoriteBadge';
 import Reviews from '@/components/listings/Reviews';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,20 +35,31 @@ export default async function ListingPage({ params }: ListingPageProps) {
     <div className="pb-24">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-8">
         <div className="mb-4">
-          <h1 className={cn("text-3xl md:text-4xl font-bold")}>{property.title}</h1>
-          <div className="flex items-center space-x-4 text-muted-foreground mt-2">
-            <div className="flex items-center gap-1">
-                <Star className="h-4 w-4 text-foreground" />
-                <span className="font-medium text-foreground">{property.rating} ({property.reviews} reviews)</span>
+          <h1 className={cn("text-2xl md:text-3xl font-bold")}>{property.title}</h1>
+          <div className="flex flex-wrap items-center justify-between mt-2 gap-y-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <div className="flex items-center gap-1">
+                    <Star className="h-4 w-4" />
+                    <span className="font-medium">{property.rating} ({property.reviews} reviews)</span>
+                </div>
+                {property.host.isSuperhost && (
+                    <div className="flex items-center gap-2">
+                        <Award className="h-4 w-4" />
+                        <span className="font-medium">Superhost</span>
+                    </div>
+                )}
+                <span className="font-medium underline">{property.location}</span>
             </div>
-            <span>·</span>
-            {property.host.isSuperhost && (
-              <>
-                <Badge variant="secondary">Superhost</Badge>
-                <span>·</span>
-              </>
-            )}
-            <span className="font-medium text-foreground underline">{property.location}</span>
+            <div className="flex items-center gap-2">
+                <Button variant="ghost" size="sm" className="underline">
+                    <Share className="h-4 w-4 mr-2" />
+                    Share
+                </Button>
+                <Button variant="ghost" size="sm" className="underline">
+                    <Heart className="h-4 w-4 mr-2" />
+                    Save
+                </Button>
+            </div>
           </div>
         </div>
 
