@@ -264,10 +264,6 @@ export default function ProfilePage() {
                                         <AvatarImage src={userInfo.photoURL} alt="User avatar" />
                                         <AvatarFallback>{userInfo.displayName?.charAt(0).toUpperCase()}</AvatarFallback>
                                     </Avatar>
-                                    <div>
-                                        <p className="font-semibold">{userInfo.displayName || 'Name not set'}</p>
-                                        <p className="text-sm text-muted-foreground">{userInfo.email}</p>
-                                    </div>
                                 </div>
                                 {isEditing && (
                                     <div>
@@ -679,3 +675,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
