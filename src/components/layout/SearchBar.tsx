@@ -224,7 +224,7 @@ export function SearchBar() {
             
             <Separator orientation="vertical" className="h-8" />
 
-            <div className="flex-1 flex items-center justify-between pl-4">
+            <div className="flex-1 flex items-center justify-between pl-4 pr-2">
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
                     <PopoverTrigger asChild>
                         <div className="text-left w-full cursor-pointer">
@@ -307,5 +307,7 @@ export function SearchBar() {
     </div>
   );
 }
+
+    
 
     
