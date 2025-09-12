@@ -223,11 +223,11 @@ export default function ProfilePage() {
 
         <Separator className="my-2" />
         
-        <div className="p-3 rounded-lg bg-muted/50 text-center">
-            <h3 className="font-bold text-sm">Become a host</h3>
-            <p className="text-xs text-muted-foreground mt-1 mb-2">It’s easy to start hosting and earn extra income.</p>
-            <Button asChild>
-                <Link href="/work-in-progress">Get started</Link>
+        <div className="p-4 rounded-xl bg-primary-gradient text-center text-white">
+            <h3 className="font-bold">Become a host</h3>
+            <p className="text-xs text-white/80 mt-1 mb-3">It’s easy to start hosting and earn extra income.</p>
+            <Button asChild variant="outline" size="sm" className="bg-white/20 text-white border-white/50 hover:bg-white/30">
+                <Link href="/work-in-progress">Get started <ArrowRight /></Link>
             </Button>
         </div>
 
@@ -237,7 +237,7 @@ export default function ProfilePage() {
             <button 
                 onClick={() => handleMenuClick('account')} 
                 className={cn(
-                    "w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg transition-colors text-sm", 
+                    "w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg transition-colors", 
                     activeTab === 'account' && !activeSetting ? 'font-semibold bg-muted' : 'hover:bg-muted/50'
                 )}
             >
@@ -247,7 +247,7 @@ export default function ProfilePage() {
             <button 
                 onClick={() => handleMenuClick('help')} 
                 className={cn(
-                    "w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg transition-colors text-sm", 
+                    "w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg transition-colors", 
                     activeTab === 'help' ? 'font-semibold bg-muted' : 'hover:bg-muted/50'
                 )}
             >
@@ -256,7 +256,7 @@ export default function ProfilePage() {
             </button>
             <button 
                 onClick={signOut} 
-                className="w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors text-sm"
+                className="w-full flex items-center gap-3 text-left px-3 py-2 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors"
             >
                 <LogOut className="h-5 w-5" />
                 <span className="text-sm">Log out</span>
@@ -852,6 +852,8 @@ export default function ProfilePage() {
     
 
 
+
+    
 
     
 
