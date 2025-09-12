@@ -237,7 +237,7 @@ export default function ProfilePage() {
             <button onClick={() => handleMenuClick('account')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'account' && !activeSetting ? 'font-semibold' : '')}>
                 Account settings
             </button>
-            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors text-sm", activeTab === 'help' ? 'font-semibold' : '')}>
+            <button onClick={() => handleMenuClick('help')} className={cn("w-full text-left block px-3 py-1 rounded-lg transition-colors textsm", activeTab === 'help' ? 'font-semibold' : '')}>
                 Get help
             </button>
             <button onClick={signOut} className="w-full text-left px-3 py-1 rounded-lg text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors text-sm">
@@ -548,7 +548,7 @@ export default function ProfilePage() {
                                     </thead>
                                     <tbody>
                                         {transactionsToShow.map((transaction, i) => (
-                                            <tr key={i} className="border-b last:border-b-0 hover:bg-muted/20">
+                                            <tr key={i} className="border-b last:border-b-0 even:bg-muted/30 hover:bg-muted/50">
                                                 <td className="px-6 py-4 font-semibold">{transaction.description}</td>
                                                 <td className="px-6 py-4 text-muted-foreground">{transaction.date}</td>
                                                 <td className={cn(
@@ -576,7 +576,7 @@ export default function ProfilePage() {
                                         Page {transactionPage} of {totalTransactionPages}
                                     </span>
                                     <Button 
-                                        variant="secondary"
+                                        variant="outline"
                                         size="sm"
                                         onClick={() => setTransactionPage(prev => Math.min(totalTransactionPages, prev + 1))}
                                         disabled={transactionPage === totalTransactionPages}
@@ -776,4 +776,5 @@ export default function ProfilePage() {
   );
 }
 
+    
     
