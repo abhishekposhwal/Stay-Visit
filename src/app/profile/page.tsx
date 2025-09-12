@@ -525,10 +525,16 @@ export default function ProfilePage() {
                                             </div>
                                         </div>
                                     </div>
-                                    <Button variant="destructive" size="sm">
-                                        <X />
-                                        Remove
-                                    </Button>
+                                    <div className="flex flex-col gap-2">
+                                        <Button variant="outline" size="sm">
+                                            <Pencil />
+                                            Update
+                                        </Button>
+                                        <Button variant="destructive" size="sm">
+                                            <X />
+                                            Remove
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -779,6 +785,8 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
 
