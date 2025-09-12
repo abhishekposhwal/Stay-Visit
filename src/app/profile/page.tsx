@@ -805,16 +805,20 @@ export default function ProfilePage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {mockConnections.map((connection) => (
-                        <div key={connection.id} className="relative group p-4 border rounded-xl flex flex-col items-center justify-center text-center hover:shadow-lg transition-all duration-300">
-                           <div className="absolute inset-0 bg-primary-gradient opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl"></div>
-                            <Avatar className="h-20 w-20 mb-4 border-2 border-primary-gradient p-1">
-                                <AvatarImage src={connection.avatar} alt={connection.name} />
-                                <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
-                            </Avatar>
-                            <span className="font-bold text-md mb-2">{connection.name}</span>
-                            <Button asChild variant="default" size="sm" className="mt-auto">
-                                <Link href={`/profile/${connection.id}`}><Eye className="mr-2 h-4 w-4" />View Profile</Link>
-                            </Button>
+                        <div key={connection.id} className="relative group overflow-hidden rounded-xl border hover:shadow-lg transition-all duration-300">
+                            <Link href={`/profile/${connection.id}`} className="block">
+                                <Avatar className="h-48 w-full rounded-none">
+                                    <AvatarImage src={connection.avatar} alt={connection.name} className="object-cover" />
+                                    <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                                    <h3 className="font-bold text-white text-lg">{connection.name}</h3>
+                                    <Button variant="secondary" size="sm" className="mt-2 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <Eye className="mr-2 h-4 w-4" />
+                                        View Profile
+                                    </Button>
+                                </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
