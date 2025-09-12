@@ -322,7 +322,6 @@ export default function ProfilePage() {
                                  <div className="flex justify-between items-start">
                                     <div>
                                         <Label htmlFor="phoneNumber" className="font-semibold">Phone number</Label>
-                                         <p className="text-xs text-muted-foreground mt-1">Used for verification and communication with hosts/guests.</p>
                                         {isEditing ? (
                                             <Input id="phoneNumber" type="tel" value={userInfo.phoneNumber} onChange={handleInputChange} className="border mt-1" pattern="^\+?[1-9]\d{1,14}$" maxLength={15} />
                                         ) : (
@@ -731,4 +730,5 @@ export default function ProfilePage() {
     
 
     
+
 
