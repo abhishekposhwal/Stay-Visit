@@ -19,12 +19,12 @@ export default function Reviews({ property }: ReviewsProps) {
     if (!property.rating) return [];
     
     return [
-        { name: 'Cleanliness', value: 5.0 },
-        { name: 'Accuracy', value: 4.8 },
-        { name: 'Check-in', value: 4.4 },
-        { name: 'Communication', value: 3.6 },
-        { name: 'Location', value: 2.3 },
-        { name: 'Value', value: 1.2 },
+      { name: 'Cleanliness', value: 4.9 },
+      { name: 'Accuracy', value: 4.8 },
+      { name: 'Check-in', value: 4.7 },
+      { name: 'Communication', value: 4.6 },
+      { name: 'Location', value: 4.5 },
+      { name: 'Value', value: 4.4 },
     ];
   }, [property.rating]);
 
@@ -53,9 +53,9 @@ export default function Reviews({ property }: ReviewsProps) {
                 <div className="flex items-center gap-2">
                     <Progress value={(category.value / 5) * 100} className={cn("w-24 h-1", 
                       {
-                        '[&>div]:bg-green-600': category.value >= 4.0,
-                        '[&>div]:bg-orange-500': category.value >= 3 && category.value < 4.0,
-                        '[&>div]:bg-red-600': category.value < 3
+                        'bg-green-100 [&>div]:bg-green-600': category.value >= 4.0,
+                        'bg-orange-100 [&>div]:bg-orange-500': category.value >= 3 && category.value < 4.0,
+                        'bg-red-100 [&>div]:bg-red-600': category.value < 3
                       }
                     )} />
                     <span className="text-xs font-medium text-foreground">{category.value.toFixed(1)}</span>
