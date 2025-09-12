@@ -37,12 +37,12 @@ const mockBookings = [
 ];
 
 const mockConnections = [
-    { name: 'Priya', avatar: 'https://picsum.photos/seed/p1/100/100' },
-    { name: 'Amit', avatar: 'https://picsum.photos/seed/p2/100/100' },
-    { name: 'Sunita', avatar: 'https://picsum.photos/seed/p3/100/100' },
-    { name: 'Vikram', avatar: 'https://picsum.photos/seed/p4/100/100' },
-    { name: 'Neha', avatar: 'https://picsum.photos/seed/p5/100/100' },
-    { name: 'Karan', avatar: 'https://picsum.photos/seed/p6/100/100' },
+    { id: '1', name: 'Priya', avatar: 'https://picsum.photos/seed/p1/100/100' },
+    { id: '2', name: 'Amit', avatar: 'https://picsum.photos/seed/p2/100/100' },
+    { id: '3', name: 'Sunita', avatar: 'https://picsum.photos/seed/p3/100/100' },
+    { id: '4', name: 'Vikram', avatar: 'https://picsum.photos/seed/p4/100/100' },
+    { id: '5', name: 'Neha', avatar: 'https://picsum.photos/seed/p5/100/100' },
+    { id: '6', name: 'Karan', avatar: 'https://picsum.photos/seed/p6/100/100' },
 ];
 
 const helpTopics = [
@@ -223,14 +223,14 @@ export default function ProfilePage() {
                       <Button variant="default">Add friends</Button>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {mockConnections.map((connection, index) => (
-                          <div key={index} className="border rounded-lg p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+                      {mockConnections.map((connection) => (
+                          <Link href={`/profile/${connection.id}`} key={connection.id} className="block border rounded-lg p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
                               <Avatar>
                                   <AvatarImage src={connection.avatar} alt={connection.name} />
                                   <AvatarFallback>{connection.name.charAt(0)}</AvatarFallback>
                               </Avatar>
                               <span className="font-semibold text-sm">{connection.name}</span>
-                          </div>
+                          </Link>
                       ))}
                   </div>
                 </div>
