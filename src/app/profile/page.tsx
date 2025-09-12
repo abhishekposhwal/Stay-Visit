@@ -490,7 +490,9 @@ export default function ProfilePage() {
                                     <p className="font-semibold text-sm">IFSC Code</p>
                                     <p className="text-muted-foreground text-sm">SBIN0001234</p>
                                 </div>
-                                <Button variant="outline" className="w-full">Update Payout Method</Button>
+                                <div className="flex justify-end">
+                                    <Button variant="outline" size="sm">Update Payout Method</Button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -628,5 +630,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
