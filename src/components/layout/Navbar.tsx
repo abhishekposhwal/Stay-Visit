@@ -166,6 +166,11 @@ export function Navbar() {
                             <DropdownMenuLabel>My Account</DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem asChild>
+                                <Link href="/work-in-progress">
+                                    <Bell className="mr-2" /> Notifications
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
                                 <Link href="/wishlist">
                                     <Heart className="mr-2" /> Wishlist ({wishlist.length})
                                 </Link>
@@ -177,11 +182,6 @@ export function Navbar() {
                             <DropdownMenuItem asChild>
                                 <Link href="/inbox">
                                     <MessageSquare className="mr-2" /> Inbox
-                                </Link>
-                            </DropdownMenuItem>
-                             <DropdownMenuItem asChild>
-                                <Link href="/work-in-progress">
-                                    <Bell className="mr-2" /> Notifications
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
