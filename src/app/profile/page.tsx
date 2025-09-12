@@ -349,7 +349,7 @@ export default function ProfilePage() {
                                         <p className="font-semibold">Identity verification</p>
                                         <p className="text-xs text-muted-foreground mt-1">Verify your identity to build trust in the community.</p>
                                     </div>
-                                    <Button variant="outline" size="sm">Verify</Button>
+                                    <Button variant="destructive" size="sm">Verify</Button>
                                 </div>
                             </div>
                         </div>
@@ -619,7 +619,7 @@ export default function ProfilePage() {
                         ) : (
                              <div className="flex items-center gap-2">
                                  <AlertCircle className="h-5 w-5 text-destructive" />
-                                 <Button variant="outline" size="sm">Verify</Button>
+                                 <Button variant="destructive" size="sm">Verify</Button>
                              </div>
                         )}
                    </div>
@@ -631,7 +631,7 @@ export default function ProfilePage() {
                         </div>
                         <div className="flex items-center gap-2">
                             <AlertCircle className="h-5 w-5 text-destructive" />
-                            <Button variant="outline" size="sm">Verify</Button>
+                            <Button variant="destructive" size="sm">Verify</Button>
                         </div>
                   </div>
               </div>
@@ -728,5 +728,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
