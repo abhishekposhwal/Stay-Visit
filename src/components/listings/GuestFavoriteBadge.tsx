@@ -8,10 +8,9 @@ export function GuestFavoriteBadge() {
                 <Award className="h-10 w-10 text-rose-500" />
                 <div>
                     <h3 className="text-xl font-bold">Guest favorite</h3>
-                    <p className="text-muted-foreground">One of the most-loved homes on StayVisit, according to guests.</p>
+                    <p className="text-sm text-muted-foreground">One of the most-loved homes on StayVisit, according to guests.</p>
                 </div>
             </div>
         </div>
     )
 }
-
