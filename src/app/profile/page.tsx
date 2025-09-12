@@ -144,8 +144,14 @@ export default function ProfilePage() {
     address: '123, Sunshine Apartments, Dreamville, Wonderland - 123456, India',
   });
 
-  const [visibleTransactions, setVisibleTransactions] = useState(10);
-  const transactionsToShow = mockBookings.slice(0, visibleTransactions);
+  const [transactionPage, setTransactionPage] = useState(1);
+  const transactionsPerPage = 10;
+  const totalTransactionPages = Math.ceil(mockBookings.length / transactionsPerPage);
+  const transactionsToShow = mockBookings.slice(
+    (transactionPage - 1) * transactionsPerPage,
+    transactionPage * transactionsPerPage
+  );
+
 
   useEffect(() => {
     if (!loading && !user) {
@@ -459,21 +465,48 @@ export default function ProfilePage() {
 
                         <div className="p-6 md:p-8 rounded-xl border">
                             <h2 className="font-bold text-lg mb-4">Transaction History</h2>
-                            <div className="space-y-4">
-                                {transactionsToShow.map((booking, i) => (
-                                    <div key={i} className="flex justify-between items-center">
-                                        <div>
-                                            <p className="font-semibold text-sm">{booking.property.title}</p>
-                                            <p className="text-muted-foreground text-xs">{booking.checkIn}</p>
-                                        </div>
-                                        <p className="font-semibold text-sm">-₹{booking.total.toLocaleString()}</p>
-                                    </div>
-                                ))}
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-sm text-left">
+                                    <thead className="text-xs text-muted-foreground uppercase">
+                                        <tr>
+                                            <th scope="col" className="px-6 py-3">Property</th>
+                                            <th scope="col" className="px-6 py-3">Date</th>
+                                            <th scope="col" className="px-6 py-3 text-right">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {transactionsToShow.map((booking, i) => (
+                                            <tr key={i} className="border-b">
+                                                <td className="px-6 py-4 font-semibold">{booking.property.title}</td>
+                                                <td className="px-6 py-4 text-muted-foreground">{booking.checkIn}</td>
+                                                <td className="px-6 py-4 font-semibold text-right">-₹{booking.total.toLocaleString()}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </div>
-                            {mockBookings.length > visibleTransactions && (
-                                <Button variant="link" className="px-0 mt-2" onClick={() => setVisibleTransactions(prev => prev + 10)}>
-                                    Show more
-                                </Button>
+                            {mockBookings.length > transactionsPerPage && (
+                                <div className="flex justify-between items-center mt-4">
+                                    <Button 
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={() => setTransactionPage(prev => Math.max(1, prev - 1))}
+                                        disabled={transactionPage === 1}
+                                    >
+                                        Previous
+                                    </Button>
+                                    <span className="text-sm text-muted-foreground">
+                                        Page {transactionPage} of {totalTransactionPages}
+                                    </span>
+                                    <Button 
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={() => setTransactionPage(prev => Math.min(totalTransactionPages, prev + 1))}
+                                        disabled={transactionPage === totalTransactionPages}
+                                    >
+                                        Next
+                                    </Button>
+                                </div>
                             )}
                         </div>
 
@@ -621,4 +654,5 @@ export default function ProfilePage() {
   );
 }
 
+    
     
