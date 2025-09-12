@@ -36,12 +36,6 @@ const settingsSections = [
         id: "notifications"
     },
     { 
-        icon: <FileText className="h-6 w-6" />,
-        title: "Taxes",
-        description: "Manage your tax information.",
-        id: "taxes"
-    },
-    { 
         icon: <Shield className="h-6 w-6" />,
         title: "Privacy & sharing",
         description: "Control your privacy settings.",
