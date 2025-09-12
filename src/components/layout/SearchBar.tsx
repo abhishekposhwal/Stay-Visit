@@ -160,7 +160,7 @@ export function SearchBar() {
         ) : (
             <>
             <div className="flex-[1.5] relative">
-                <label htmlFor="destination" className="block text-xs font-bold text-left pl-4 text-foreground/80">
+                <label htmlFor="destination" className="block text-xs font-bold text-left pl-4 text-foreground">
                 Where
                 </label>
                 <Input
@@ -180,7 +180,7 @@ export function SearchBar() {
                 <PopoverTrigger asChild>
                     <div className="flex-1 flex cursor-pointer">
                         <div className="flex-1 text-left pl-4">
-                            <label className="block text-xs font-bold text-foreground/80">Check in</label>
+                            <label className="block text-xs font-bold text-foreground">Check in</label>
                             <div className="text-sm text-muted-foreground">
                                 {date?.from ? format(date.from, 'LLL dd') : <span>Add dates</span>}
                             </div>
@@ -203,7 +203,7 @@ export function SearchBar() {
                 <PopoverTrigger asChild>
                      <div className="flex-1 flex cursor-pointer">
                         <div className="text-left pl-4">
-                            <label className="block text-xs font-bold text-foreground/80">Check out</label>
+                            <label className="block text-xs font-bold text-foreground">Check out</label>
                             <div className="text-sm text-muted-foreground">
                                 {date?.to ? format(date.to, 'LLL dd') : <span>Add dates</span>}
                             </div>
@@ -228,7 +228,7 @@ export function SearchBar() {
                 <Popover open={isGuestPopoverOpen} onOpenChange={setIsGuestPopoverOpen}>
                     <PopoverTrigger asChild>
                         <div className="text-left w-full cursor-pointer pr-4">
-                            <label className="block text-xs font-bold text-foreground/80">Who</label>
+                            <label className="block text-xs font-bold text-foreground">Who</label>
                             <div className="text-sm text-muted-foreground truncate">{guestDisplay}</div>
                         </div>
                     </PopoverTrigger>
