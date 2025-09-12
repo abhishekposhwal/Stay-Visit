@@ -736,8 +736,8 @@ export default function ProfilePage() {
                       <Link href={topic.link} key={index} className="border rounded-lg p-4 flex items-start gap-4 hover:bg-muted/50 transition-colors">
                           {topic.icon}
                           <div>
-                              <h3 className="font-semibold text-sm">{section.title}</h3>
-                              <p className="text-xs text-muted-foreground">{section.description}</p>
+                              <h3 className="font-semibold text-sm">{topic.title}</h3>
+                              <p className="text-xs text-muted-foreground">{topic.description}</p>
                           </div>
                       </Link>
                   ))}
@@ -779,5 +779,7 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
 
     
