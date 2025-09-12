@@ -148,7 +148,7 @@ export function Navbar() {
                     </Button>
                 </div>
             
-                <Button asChild size="sm" className="hidden md:block rounded-full">
+                <Button asChild className="hidden md:block rounded-full">
                   <Link href="/work-in-progress">
                     Become a host
                   </Link>
