@@ -73,7 +73,7 @@ export default function Reviews({ property }: ReviewsProps) {
       </div>
       
       {property.reviews > 6 && (
-        <Button variant="default" className="mt-8">
+        <Button variant="default" className="mt-8" size="sm">
             Show all {property.reviews} reviews
             <ChevronRight />
         </Button>
